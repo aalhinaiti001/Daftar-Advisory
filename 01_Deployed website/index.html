@@ -11,9 +11,14 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://daftaradvisory.com">
 <meta property="og:site_name" content="Daftar Advisory">
+<meta property="og:image" content="https://daftaradvisory.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Daftar Advisory — Rigorous finance, without the overhead.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Daftar Advisory | Independent Financial Advisory">
 <meta name="twitter:description" content="Independent IFRS financial advisory for founders and CFOs in KSA, UAE, and Jordan. One senior practitioner. Fixed scope.">
+<meta name="twitter:image" content="https://daftaradvisory.com/og-image.png">
 <link rel="canonical" href="https://daftaradvisory.com/">
 <link rel="alternate" hreflang="en" href="https://daftaradvisory.com/">
 <link rel="alternate" hreflang="ar" href="https://daftaradvisory.com/ar/">
@@ -28,7 +33,7 @@
   --paper:        #F4F1EA;
   --paper-dark:   #EBE6DA;
   --ink:          #1A1814;
-  --muted:        #6B655D;
+  --muted:        #78726A;
   --rust:         #A8341F;
   --rust-on-ink:  #E07458;
   --rule-light:   rgba(26, 24, 20, 0.10);
@@ -177,9 +182,79 @@ body {
 }
 .topbar .cta-btn:hover { background: var(--rust); }
 
+/* ============ HAMBURGER MENU ============ */
+.hamburger {
+  display: none;
+  background: none; border: none; cursor: pointer;
+  width: 36px; height: 36px;
+  position: relative; z-index: 210;
+  padding: 0;
+  flex-shrink: 0;
+}
+.hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--ink);
+  position: absolute; left: 7px;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+}
+.hamburger span:nth-child(1) { top: 10px; }
+.hamburger span:nth-child(2) { top: 17px; }
+.hamburger span:nth-child(3) { top: 24px; }
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(244, 241, 234, 0.98);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  z-index: 200;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.mobile-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.mobile-overlay nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.mobile-overlay nav a {
+  font-family: 'Fraunces', serif;
+  font-size: 32px; font-weight: 300;
+  color: var(--ink); text-decoration: none;
+  padding: 16px 0;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 48;
+  transition: color 0.2s;
+}
+.mobile-overlay nav a:hover { color: var(--rust); }
+.mobile-overlay nav a em { color: var(--rust); font-style: italic; }
+.mobile-overlay .mobile-cta {
+  margin-top: 40px;
+  display: inline-flex; align-items: center; gap: 14px;
+  background: var(--ink); color: var(--paper);
+  padding: 18px 32px; border-radius: 2px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  text-decoration: none; transition: background 0.2s;
+}
+.mobile-overlay .mobile-cta:hover { background: var(--rust); }
+
 /* ============ HERO ============ */
 .hero {
-  padding: 112px 56px 120px;
+  padding: 80px 56px 88px;
   max-width: 1440px; margin: 0 auto;
 }
 .hero-eyebrow {
@@ -715,14 +790,10 @@ a:focus-visible, button:focus-visible {
   .when-service { font-size: 14px; }
   .service-plain { font-size: 13px; }
   .topbar { padding: 14px 20px; gap: 10px; }
-  .topbar nav {
-    display: flex; overflow-x: auto; gap: 16px;
-    flex: 1; min-width: 0; margin: 0 6px;
-    scrollbar-width: none; -ms-overflow-style: none;
-  }
-  .topbar nav::-webkit-scrollbar { display: none; }
-  .topbar nav a { font-size: 10px; flex-shrink: 0; }
-  .topbar .cta-btn { padding: 9px 14px; font-size: 9px; flex-shrink: 0; }
+  .topbar nav { display: none; }
+  .topbar .cta-btn { display: none; }
+  .hamburger { display: block; }
+  .mobile-overlay { display: flex; }
   .wordmark { font-size: 16px; flex-shrink: 0; }
 
   .hero { padding: 64px 24px 72px; }
@@ -790,10 +861,25 @@ a:focus-visible, button:focus-visible {
     <a href="#cases">Case Studies</a>
     <a href="#process">How It Works</a>
     <a href="articles.html">Research</a>
-    <a href="/ar/" lang="ar" hreflang="ar" style="font-family: 'IBM Plex Sans Arabic', sans-serif; font-weight: 400;">العربية</a>
+    <a href="/ar/" lang="ar" hreflang="ar" style="font-family: 'IBM Plex Sans Arabic', sans-serif; font-weight: 400; letter-spacing: normal; text-transform: none; font-size: 14px;">العربية</a>
   </nav>
   <a href="#contact" class="cta-btn">Book a free call</a>
+  <button class="hamburger" aria-label="Open menu" aria-expanded="false" id="hamburger-btn">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+
+<!-- ============ MOBILE OVERLAY ============ -->
+<div class="mobile-overlay" id="mobile-menu" aria-hidden="true">
+  <nav aria-label="Mobile">
+    <a href="#services" class="mobile-nav-link">Services</a>
+    <a href="#cases" class="mobile-nav-link">Case <em>Studies</em></a>
+    <a href="#process" class="mobile-nav-link">How It <em>Works</em></a>
+    <a href="articles.html" class="mobile-nav-link">Research</a>
+    <a href="/ar/" lang="ar" hreflang="ar" class="mobile-nav-link" style="font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 28px; letter-spacing: normal;">العربية</a>
+  </nav>
+  <a href="#contact" class="mobile-cta">Book a free call</a>
+</div>
 
 <main id="main">
 
@@ -836,7 +922,7 @@ a:focus-visible, button:focus-visible {
     </div>
     <div class="trust-item">
       <div class="trust-num">SAR <em>3B+</em></div>
-      <div class="trust-lbl">Audited at EY — experience on<br>companies with SAR 3B+ revenue</div>
+      <div class="trust-lbl">Audited at EY<br>SAR 3B+ revenue experience</div>
     </div>
     <div class="trust-item">
       <div class="trust-num"><em>4</em></div>
@@ -1178,6 +1264,35 @@ if ('IntersectionObserver' in window && !reduceMotion) {
     io.observe(el);
   });
 }
+
+/* ============ HAMBURGER MENU JS ============ */
+(function() {
+  const btn = document.getElementById('hamburger-btn');
+  const overlay = document.getElementById('mobile-menu');
+  if (!btn || !overlay) return;
+
+  function toggleMenu() {
+    const isOpen = btn.classList.toggle('open');
+    overlay.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen);
+    overlay.setAttribute('aria-hidden', !isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  btn.addEventListener('click', toggleMenu);
+
+  // Close on nav link click
+  overlay.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (overlay.classList.contains('open')) toggleMenu();
+    });
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) toggleMenu();
+  });
+})();
 </script>
 
 </body>
