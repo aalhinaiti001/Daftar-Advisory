@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar Advisory — The Daftar · Research Briefs</title>
+<meta name="description" content="The Daftar — a short, irregular series of research briefs on IFRS, ZATCA, UAE Corporate Tax, and Nomu pre-IPO readiness. Written for operators and audit committees.">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="The Daftar — Research Briefs">
+<meta property="og:description" content="A short, irregular series of research briefs. One take per brief, with the workings underneath.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://daftaradvisory.com/articles.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+<style>
+  /* ============ BRAND HANDBOOK v1.0 — TOKENS ============ */
+  :root {
+    --paper:       #F4F1EA;
+    --paper-dark:  #EBE6DA;
+    --ink:         #1A1814;
+    --muted:       #6B655D;
+    --rust:        #A8341F;
+
+    --rule-light:  rgba(26, 24, 20, 0.10);
+    --rule-mid:    rgba(26, 24, 20, 0.22);
+  }
+
+  /* ============ RESET ============ */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.55;
+    font-variation-settings: "opsz" 14;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  em { font-style: italic; color: var(--rust); font-weight: 400; }
+
+  /* ============ TOPBAR ============ */
+  .topbar {
+    border-bottom: 1px solid var(--rule-light);
+    padding: 22px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: rgba(244, 241, 234, 0.92);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 50;
+  }
+  .wordmark {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+  .wordmark em { color: var(--rust); font-style: italic; font-weight: 400; }
+  .topbar nav {
+    display: flex;
+    gap: 28px;
+  }
+  .topbar nav a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.18s ease;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+  }
+  .topbar nav a:hover { color: var(--ink); }
+  .topbar nav a.is-here { color: var(--rust); border-bottom-color: var(--rust); }
+  .topbar .cta-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--paper);
+    background: var(--ink);
+    padding: 12px 18px;
+    transition: background 0.18s ease;
+  }
+  .topbar .cta-btn:hover { background: var(--rust); }
+
+  /* ============ HERO ============ */
+  .hero {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 88px 40px 64px;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--rust);
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(44px, 7vw, 76px);
+    font-weight: 300;
+    line-height: 1.02;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    font-variation-settings: "opsz" 144;
+    margin-bottom: 32px;
+    max-width: 880px;
+  }
+  .hero h1 em { color: var(--rust); font-style: italic; font-weight: 300; }
+  .hero p.lede {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    color: var(--ink);
+    line-height: 1.55;
+    font-variation-settings: "opsz" 16;
+    max-width: 640px;
+  }
+
+  /* ============ BRIEFS LIST ============ */
+  .briefs {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 32px 40px 96px;
+  }
+  .briefs-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .briefs-label .count { color: var(--rust); }
+
+  .brief {
+    display: grid;
+    grid-template-columns: 100px 1fr 200px 44px;
+    gap: 36px;
+    padding: 36px 4px;
+    border-bottom: 1px solid var(--rule-light);
+    text-decoration: none;
+    color: inherit;
+    align-items: start;
+    transition: background 0.2s ease, padding 0.2s ease;
+  }
+  .brief:hover {
+    background: rgba(168, 52, 31, 0.04);
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .brief:hover .brief-title { color: var(--rust); }
+  .brief:hover .brief-arrow { color: var(--rust); transform: translateX(4px); }
+
+  .brief-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding-top: 6px;
+  }
+
+  .brief-body { min-width: 0; }
+
+  .brief-title {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    line-height: 1.22;
+    margin-bottom: 12px;
+    font-variation-settings: "opsz" 28;
+    transition: color 0.18s ease;
+  }
+  .brief-title em { color: var(--rust); font-style: italic; font-weight: 400; }
+
+  .brief-deck {
+    font-family: 'Fraunces', serif;
+    font-size: 15.5px;
+    color: var(--ink);
+    line-height: 1.55;
+    font-variation-settings: "opsz" 14;
+    max-width: 580px;
+    margin-bottom: 0;
+  }
+
+  .brief-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-align: right;
+    line-height: 1.7;
+    padding-top: 6px;
+  }
+  .brief-meta .brief-status {
+    display: block;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .brief-meta .brief-topic {
+    display: block;
+    color: var(--rust);
+    margin-bottom: 6px;
+  }
+
+  .brief-arrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px;
+    color: var(--muted);
+    text-align: right;
+    padding-top: 6px;
+    transition: all 0.2s ease;
+  }
+
+  /* Forthcoming briefs — visually distinct, still clickable */
+  .brief.forthcoming { opacity: 0.62; }
+  .brief.forthcoming .brief-meta .brief-status { color: var(--muted); }
+
+  /* ============ FOOTER NOTE ============ */
+  .footer-note {
+    background: var(--paper-dark);
+    border-left: 2px solid var(--rust);
+    padding: 28px 32px;
+    margin-top: 48px;
+  }
+  .footer-note .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--rust);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .footer-note p {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.55;
+    font-variation-settings: "opsz" 14;
+    max-width: 720px;
+  }
+  .footer-note p em { color: var(--rust); font-style: italic; }
+  .footer-note p a {
+    color: var(--rust);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rust);
+  }
+  .footer-note p a:hover { opacity: 0.7; }
+
+  /* ============ SITE FOOTER ============ */
+  .site-footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 56px 40px 32px;
+    margin-top: auto;
+  }
+  .site-footer-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: end;
+  }
+  .site-footer .wordmark-dark {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    color: var(--paper);
+  }
+  .site-footer .wordmark-dark em { color: var(--rust); font-style: italic; }
+  .site-footer .footer-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgba(244, 241, 234, 0.55);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-align: right;
+    line-height: 1.8;
+  }
+  .site-footer .footer-meta a {
+    color: rgba(244, 241, 234, 0.55);
+    text-decoration: none;
+    transition: color 0.18s ease;
+  }
+  .site-footer .footer-meta a:hover { color: var(--rust); }
+
+  /* ============ MOBILE ============ */
+  @media (max-width: 880px) {
+    .topbar { padding: 16px 20px; flex-wrap: wrap; gap: 12px; }
+    .topbar nav { display: none; }
+    .topbar .cta-btn { padding: 10px 14px; font-size: 10px; }
+    .hero { padding: 56px 20px 40px; }
+    .hero h1 { font-size: 40px; }
+    .hero p.lede { font-size: 17px; }
+    .briefs { padding: 24px 20px 64px; }
+    .brief {
+      grid-template-columns: 70px 1fr 32px;
+      grid-template-rows: auto auto auto;
+      gap: 12px 16px;
+      padding: 28px 4px;
+    }
+    .brief-num { grid-column: 1 / 2; grid-row: 1; }
+    .brief-meta {
+      grid-column: 2 / 4;
+      grid-row: 1;
+      text-align: right;
+      padding-top: 6px;
+    }
+    .brief-meta .brief-status,
+    .brief-meta .brief-topic { display: inline; margin-right: 12px; }
+    .brief-body { grid-column: 1 / 4; grid-row: 2; }
+    .brief-arrow { grid-column: 1 / 4; grid-row: 3; text-align: right; padding-top: 8px; }
+    .brief-title { font-size: 22px; }
+    .brief-deck { font-size: 15px; }
+    .footer-note { padding: 22px 24px; margin-top: 32px; }
+    .site-footer { padding: 40px 20px 24px; }
+    .site-footer-inner { grid-template-columns: 1fr; gap: 20px; align-items: start; }
+    .site-footer .footer-meta { text-align: left; }
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--rust);
+    outline-offset: 3px;
+  }
+
+  @media print {
+    .topbar, .site-footer { display: none; }
+    .brief { break-inside: avoid; }
+  }
+
+  /* ============ REDUCED MOTION ============ */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ============ TOPBAR ============ -->
+<header class="topbar">
+  <a href="index.html" class="wordmark">Daftar <em>Advisory.</em></a>
+  <nav>
+    <a href="index.html#markets">Markets</a>
+    <a href="index.html#discipline">Practice</a>
+    <a href="areas.html">Areas</a>
+    <a href="index.html#work">Work</a>
+    <a href="articles.html" class="is-here">Articles</a>
+    <a href="index.html#engagement">Engagement</a>
+    <a href="index.html#record">Record</a>
+  </nav>
+  <a href="scoping.html" class="cta-btn">Start a conversation</a>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="eyebrow">The Daftar · Research Briefs</div>
+  <h1>
+    Notes from a single <em>practitioner.</em>
+  </h1>
+  <p class="lede">
+    A short, irregular series of research briefs. Written for operators and audit committees — not for tax-alert distribution lists. One take per brief, with the workings underneath.
+  </p>
+</section>
+
+<!-- ============ BRIEFS LIST ============ -->
+<section class="briefs">
+  <div class="briefs-label">
+    <span>Issues</span>
+    <span class="count">04 · in print and forthcoming</span>
+  </div>
+
+  <a href="daftar-001-zatca-wave-24.html" class="brief">
+    <span class="brief-num">№ 001</span>
+    <span class="brief-body">
+      <span class="brief-title">The SAR 375,000 threshold — what ZATCA Phase 2 Wave 24 asks of Saudi SMEs, and why most of them are being quietly <em>over-sold.</em></span>
+      <span class="brief-deck">Wave 24 goes live on 30 June 2026. The technical requirement is well-defined. The implementation market around it is not. This brief is for the founder asking why the quote on their desk reads SAR 150,000 for what should cost a quarter of that.</span>
+    </span>
+    <span class="brief-meta">
+      <span class="brief-status">Forthcoming · Q2 2026</span>
+      <span class="brief-topic">ZATCA · KSA</span>
+      <span>14 min read</span>
+    </span>
+    <span class="brief-arrow">→</span>
+  </a>
+
+  <a href="daftar-002-uae-ct-first-season.html" class="brief">
+    <span class="brief-num">№ 002</span>
+    <span class="brief-body">
+      <span class="brief-title">UAE Corporate Tax — the first audit <em>season,</em> and what went wrong in the September 2025 filings.</span>
+      <span class="brief-deck">The first FY24 returns are filed. The first auditor reviews are coming back. The pattern that emerged is consistent enough to be useful — and uncomfortable enough to be worth writing down before FY25 closes.</span>
+    </span>
+    <span class="brief-meta">
+      <span class="brief-status">In drafting · Q2 2026</span>
+      <span class="brief-topic">UAE CT</span>
+      <span>16 min read</span>
+    </span>
+    <span class="brief-arrow">→</span>
+  </a>
+
+  <a href="daftar-003-ifrs16-construction-jv.html" class="brief">
+    <span class="brief-num">№ 003</span>
+    <span class="brief-body">
+      <span class="brief-title">IFRS 16 in Saudi construction JVs — the five most common recomputation <em>errors.</em></span>
+      <span class="brief-deck">In the construction-JV population specifically — site offices, plant-and-equipment leases, accommodation contracts, and the long-tail of fleet rentals — the IFRS 16 working paper rarely ties. This brief is the field guide to the five errors that produce the variance, and how the audit picks each one up.</span>
+    </span>
+    <span class="brief-meta">
+      <span class="brief-status">Scheduled · Q3 2026</span>
+      <span class="brief-topic">IFRS 16 · KSA</span>
+      <span>18 min read</span>
+    </span>
+    <span class="brief-arrow">→</span>
+  </a>
+
+  <a href="daftar-004-nomu-without-big-four.html" class="brief">
+    <span class="brief-num">№ 004</span>
+    <span class="brief-body">
+      <span class="brief-title">Nomu without Big Four — a pre-IPO readiness <em>playbook</em> for SAR 30–80M SMEs.</span>
+      <span class="brief-deck">Most Saudi SMEs in the Nomu band do not need a Big Four reporting accountant on day one. They need an honest diagnostic six to twelve months earlier — and the readiness work the financial adviser will not do.</span>
+    </span>
+    <span class="brief-meta">
+      <span class="brief-status">Scheduled · Q3 2026</span>
+      <span class="brief-topic">Nomu · CMA</span>
+      <span>17 min read</span>
+    </span>
+    <span class="brief-arrow">→</span>
+  </a>
+
+  <!-- FOOTER NOTE -->
+  <div class="footer-note">
+    <div class="label">Cadence</div>
+    <p>
+      The Daftar publishes <em>irregularly</em> — when there is something specific to write, with the workings to back it. To be notified when the next brief lands, <a href="mailto:ahmad@daftaradvisory.com?subject=The%20Daftar%20%E2%80%94%20notify%20me">email a one-line note</a> or <a href="https://linkedin.com/in/ahmad-alhinaiti" target="_blank" rel="noopener">connect on LinkedIn</a>. No newsletter platform, no list rental, no tax-alert distribution.
+    </p>
+  </div>
+</section>
+
+<!-- ============ SITE FOOTER ============ -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="wordmark-dark">Daftar <em>Advisory.</em></div>
+    <div class="footer-meta">
+      <div>© 2026 · Amman, Jordan</div>
+      <div><a href="index.html">daftaradvisory.com</a> · <a href="mailto:ahmad@daftaradvisory.com">ahmad@daftaradvisory.com</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Daftar Advisory capability statement (long form). Full nine-outcome catalogue with fee anchors and references.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar Advisory — Capability Statement v1.1</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* ============ BRAND HANDBOOK v1.0 — EXACT TOKENS ============ */
+  :root {
+    --paper:       #F4F1EA;
+    --paper-dark:  #EBE6DA;
+    --ink:         #1A1814;
+    --muted:       #6B655D;
+    --rust:        #A8341F;
+    --rule-light:  rgba(26, 24, 20, 0.10);
+    --rule-mid:    rgba(26, 24, 20, 0.22);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    background: #888;
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ============ A4 PAGE ============ */
+  .page {
+    width: 210mm;
+    height: 297mm;
+    padding: 18mm 22mm 14mm;
+    background: var(--paper);
+    margin: 8mm auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    position: relative;
+    page-break-after: always;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* ============ HEADER STRIP (every page) ============ */
+  .pg-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10mm;
+    border-bottom: 1px solid var(--rule-light);
+    margin-bottom: 12mm;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .pg-header .left { color: var(--ink); }
+  .pg-header .right { color: var(--muted); }
+
+  /* ============ FOOTER STRIP (every page) ============ */
+  .pg-footer {
+    margin-top: auto;
+    padding-top: 10mm;
+    border-top: 1px solid var(--rule-light);
+    display: flex;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5pt;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  /* ============ COVER PAGE ============ */
+  .cover {
+    background: var(--paper);
+  }
+  .cover .pg-header { border-bottom: 1px solid var(--rule-light); }
+  .cover-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20mm 0;
+  }
+  .cover .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    color: var(--rust);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 10mm;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .cover .eyebrow::before {
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: var(--rust);
+  }
+  .cover h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 88pt;
+    font-weight: 300;
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144;
+    margin-bottom: 8mm;
+  }
+  .cover h1 em {
+    color: var(--rust);
+    font-style: italic;
+    font-weight: 300;
+  }
+  .cover .motto {
+    font-family: 'Fraunces', serif;
+    font-size: 22pt;
+    font-weight: 300;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 16mm;
+    font-variation-settings: "opsz" 24;
+    max-width: 140mm;
+  }
+  .cover .motto em {
+    color: var(--rust);
+    font-style: italic;
+  }
+  .cover .meta-grid {
+    display: grid;
+    grid-template-columns: 35mm 1fr;
+    gap: 4mm 8mm;
+    margin-top: 8mm;
+  }
+  .cover .meta-grid dt {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    color: var(--muted);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding-top: 2pt;
+  }
+  .cover .meta-grid dd {
+    font-family: 'Fraunces', serif;
+    font-size: 11pt;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .cover .meta-grid dd em {
+    color: var(--rust);
+    font-style: italic;
+  }
+
+  /* ============ SECTION HEADERS ============ */
+  .sec-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    color: var(--rust);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 8mm;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .sec-num::before {
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: var(--rust);
+  }
+  h2.sec-title {
+    font-family: 'Fraunces', serif;
+    font-size: 32pt;
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144;
+    margin-bottom: 10mm;
+    max-width: 150mm;
+  }
+  h2.sec-title em {
+    color: var(--rust);
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  /* ============ BODY PROSE ============ */
+  p.lead {
+    font-family: 'Fraunces', serif;
+    font-size: 13pt;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-bottom: 6mm;
+    font-variation-settings: "opsz" 14;
+  }
+  p.body {
+    font-family: 'Fraunces', serif;
+    font-size: 11.5pt;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-bottom: 5mm;
+    font-variation-settings: "opsz" 12;
+  }
+  p.body em, p.lead em {
+    color: var(--rust);
+    font-style: italic;
+  }
+  p.pullquote {
+    font-family: 'Fraunces', serif;
+    font-size: 17pt;
+    font-weight: 300;
+    line-height: 1.35;
+    color: var(--ink);
+    border-left: 2px solid var(--rust);
+    padding-left: 8mm;
+    margin: 8mm 0;
+    font-variation-settings: "opsz" 24;
+    font-style: italic;
+  }
+  p.pullquote strong {
+    font-style: normal;
+    font-weight: 300;
+    color: var(--rust);
+  }
+
+  /* ============ STAT BLOCK ============ */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--rule-light);
+    margin: 4mm 0 8mm;
+  }
+  .stat {
+    padding: 5mm 4mm 5mm 0;
+    border-right: 1px solid var(--rule-light);
+  }
+  .stat:last-child { border-right: none; }
+  .stat .num {
+    font-family: 'Fraunces', serif;
+    font-size: 22pt;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    font-variation-settings: "opsz" 144;
+    margin-bottom: 3mm;
+  }
+  .stat .num em { color: var(--rust); font-style: italic; }
+  .stat .lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7pt;
+    color: var(--muted);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  /* ============ CAREER LIST ============ */
+  .career-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    color: var(--rust);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-top: 6mm;
+    margin-bottom: 4mm;
+  }
+  .career-item {
+    display: grid;
+    grid-template-columns: 50mm 1fr;
+    gap: 6mm;
+    padding: 4mm 0;
+    border-top: 1px solid var(--rule-light);
+  }
+  .career-item:last-child { border-bottom: 1px solid var(--rule-light); }
+  .career-item .when {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5pt;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding-top: 2pt;
+  }
+  .career-item .what {
+    font-family: 'Fraunces', serif;
+    font-size: 11pt;
+    color: var(--ink);
+    line-height: 1.45;
+  }
+  .career-item .what strong {
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  /* ============ SERVICE BLOCK ============ */
+  .area-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    color: var(--rust);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-top: 8mm;
+    margin-bottom: 6mm;
+    padding-bottom: 3mm;
+    border-bottom: 2px solid var(--ink);
+  }
+  .service {
+    padding: 4mm 0;
+    border-bottom: 1px solid var(--rule-light);
+  }
+  .service:last-child { border-bottom: none; }
+  .service .code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    color: var(--muted);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 2mm;
+  }
+  .service .title {
+    font-family: 'Fraunces', serif;
+    font-size: 15pt;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+    margin-bottom: 2.5mm;
+    font-variation-settings: "opsz" 24;
+  }
+  .service .title em {
+    color: var(--rust);
+    font-style: italic;
+  }
+  .service .desc {
+    font-family: 'Fraunces', serif;
+    font-size: 10pt;
+    line-height: 1.45;
+    color: var(--ink);
+    margin-bottom: 3mm;
+    font-variation-settings: "opsz" 12;
+  }
+  .service .meta {
+    display: grid;
+    grid-template-columns: 22mm 1fr;
+    gap: 1.5mm 5mm;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5pt;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.5;
+  }
+  .service .meta dt { color: var(--muted); }
+  .service .meta dd { color: var(--ink); }
+  .service .meta dd.tags { color: var(--muted); }
+
+  /* ============ CASE STUDY ============ */
+  .case {
+    padding: 5mm 0;
+    border-bottom: 1px solid var(--rule-light);
+  }
+  .case .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    color: var(--rust);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 3mm;
+  }
+  .case h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 16pt;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 3mm;
+    font-variation-settings: "opsz" 24;
+  }
+  .case h3 em { color: var(--rust); font-style: italic; }
+  .case p {
+    font-family: 'Fraunces', serif;
+    font-size: 10pt;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 3mm;
+    font-variation-settings: "opsz" 12;
+  }
+  .case-meta {
+    display: grid;
+    grid-template-columns: 26mm 1fr;
+    gap: 1.5mm 5mm;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5pt;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.5;
+    margin-top: 3mm;
+  }
+  .case-meta dd { color: var(--ink); }
+
+  /* ============ STEP BLOCK ============ */
+  .step {
+    padding: 4mm 0;
+    border-top: 1px solid var(--rule-light);
+  }
+  .step:last-child { border-bottom: 1px solid var(--rule-light); }
+  .step .step-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    color: var(--rust);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 2mm;
+  }
+  .step h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 13pt;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 2mm;
+    font-variation-settings: "opsz" 18;
+  }
+  .step p {
+    font-family: 'Fraunces', serif;
+    font-size: 10pt;
+    line-height: 1.5;
+    color: var(--ink);
+    font-variation-settings: "opsz" 12;
+  }
+
+  /* ============ REFUSAL LIST ============ */
+  .refuse {
+    padding: 4mm 0;
+    border-top: 1px solid var(--rule-light);
+  }
+  .refuse:last-child { border-bottom: 1px solid var(--rule-light); }
+  .refuse .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    color: var(--rust);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 2mm;
+  }
+  .refuse h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 12pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 2mm;
+    font-variation-settings: "opsz" 16;
+  }
+  .refuse p {
+    font-family: 'Fraunces', serif;
+    font-size: 9.5pt;
+    line-height: 1.5;
+    color: var(--ink);
+    font-variation-settings: "opsz" 12;
+  }
+
+  /* ============ CONTACT BLOCK ============ */
+  .contact {
+    background: var(--paper-dark);
+    padding: 8mm;
+    margin: 8mm 0;
+  }
+  .contact dl {
+    display: grid;
+    grid-template-columns: 30mm 1fr;
+    gap: 3mm 6mm;
+  }
+  .contact dt {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    color: var(--muted);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding-top: 2pt;
+  }
+  .contact dd {
+    font-family: 'Fraunces', serif;
+    font-size: 11pt;
+    color: var(--ink);
+  }
+
+  /* ============ DISCLAIMER ============ */
+  .disclaimer {
+    border-top: 1px solid var(--rule-mid);
+    padding-top: 5mm;
+    margin-top: 8mm;
+  }
+  .disclaimer .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    color: var(--rust);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 3mm;
+  }
+  .disclaimer p {
+    font-family: 'Fraunces', serif;
+    font-size: 9pt;
+    line-height: 1.5;
+    color: var(--muted);
+    font-variation-settings: "opsz" 10;
+  }
+
+  /* ============ END PAGE ============ */
+  .end {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .end .wm {
+    font-family: 'Fraunces', serif;
+    font-size: 64pt;
+    font-weight: 300;
+    line-height: 0.95;
+    color: var(--ink);
+    letter-spacing: -0.03em;
+    margin-bottom: 6mm;
+    font-variation-settings: "opsz" 144;
+  }
+  .end .wm em {
+    color: var(--rust);
+    font-style: italic;
+    font-weight: 300;
+  }
+  .end .closing {
+    font-family: 'Fraunces', serif;
+    font-size: 16pt;
+    font-weight: 300;
+    color: var(--ink);
+    font-variation-settings: "opsz" 24;
+  }
+  .end .closing em { color: var(--rust); font-style: italic; }
+
+  /* ============ PRINT ============ */
+  @media print {
+    body { background: var(--paper); }
+    .page {
+      box-shadow: none;
+      margin: 0;
+    }
+    @page {
+      size: A4;
+      margin: 0;
+    }
+  }
+
+  /* ============ REDUCED MOTION ============ */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 — COVER ============ -->
+<div class="page cover">
+  <div class="pg-header">
+    <span class="left">Daftar · Advisory</span>
+    <span class="right">Capability Statement · v1.1</span>
+  </div>
+
+  <div class="cover-content">
+    <div class="eyebrow">Capability statement · v1.1 · 2026</div>
+
+    <h1>Daftar<br>Advisory<em>.</em></h1>
+
+    <p class="motto">
+      Rigorous finance, without the <em>overhead</em>.
+    </p>
+
+    <dl class="meta-grid">
+      <dt>For</dt>
+      <dd>The reader who DM'd <em>SCOPE</em></dd>
+      <dt>Principal</dt>
+      <dd>Ahmad Al Hinaiti</dd>
+      <dt>Based</dt>
+      <dd>Amman, Jordan · Serving KSA · UAE · Jordan</dd>
+      <dt>Issued</dt>
+      <dd>2026 · v1.1</dd>
+      <dt>Contact</dt>
+      <dd>ahmad@daftaradvisory.com · +962 798 008 835</dd>
+    </dl>
+  </div>
+
+  <div class="pg-footer">
+    <span>ahmad@daftaradvisory.com · +962 798 008 835</span>
+    <span>01 / 12</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 2 — THE PRACTICE ============ -->
+<div class="page">
+  <div class="pg-header">
+    <span class="left">Daftar · Advisory</span>
+    <span class="right">Capability Statement · v1.1</span>
+  </div>
+
+  <div class="sec-num">01 · The practice</div>
+  <h2 class="sec-title">One practitioner.<br>Three practice <em>areas</em>.</h2>
+
+  <p class="lead">
+    Daftar Advisory is an independent finance practice serving founders, CFOs, and finance teams across MENA. The work is technical, the scope is fixed, the fee is named before the engagement begins, and the deliverable comes with the working file.
+  </p>
+
+  <p class="body">
+    Eight years inside PwC and EY produced a clear observation. The middle of the MENA finance market is under-served. The Big Four are priced for large listed groups. Mid-tier firms are priced for compliance minima. Operators in between are over-billed when they buy the Big Four and under-supported when they don't. Daftar exists for that gap.
+  </p>
+
+  <p class="pullquote">
+    The Big Four sell you an audit file. <strong>Daftar sells the judgement that produced it.</strong>
+  </p>
+
+  <div class="pg-footer">
+    <span>ahmad@daftaradvisory.com · +962 798 008 835</span>
+    <span>02 / 12</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 3 — THE PRACTITIONER ============ -->
+<div class="page" style="display:block;">
+  <div class="pg-header" style="margin-bottom:8mm;">
+    <span class="left">Daftar · Advisory</span>
+    <span class="right">Capability Statement · v1.1</span>
+  </div>
+
+  <div class="sec-num">02 · The practitioner</div>
+  <h2 class="sec-title">Eight years.<br>Four <em>jurisdictions</em>.</h2>
+
+  <p class="body">
+    Dual Big Four trained — PwC (Amman, then Dubai) → EY (Riyadh) — with a US assurance interlude at MillerMusmar in the Washington DC metro. Active engagements across KSA, UAE, Jordan, and the USA. Reporting frameworks practised to senior level: IFRS, SOCPA, US GAAP, and Yellow Book. CPA candidate, two of four sections passed.
+  </p>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="num">8 <em>yrs</em></div>
+      <div class="lbl">PwC + EY · Dual<br>Big Four</div>
+    </div>
+    <div class="stat">
+      <div class="num">SAR 3B<em>+</em></div>
+      <div class="lbl">Audited client revenue,<br>current portfolio</div>
+    </div>
+    <div class="stat">
+      <div class="num">4 <em>jx</em></div>
+      <div class="lbl">KSA · UAE<br>JO · US</div>
+    </div>
+    <div class="stat">
+      <div class="num">4 <em>fw</em></div>
+      <div class="lbl">IFRS · SOCPA<br>GAAP · Yellow Book</div>
+    </div>
+  </div>
+
+  <div class="career-label">Career to date</div>
+
+  <div class="career-item">
+    <div class="when">Sep 2024 — Present</div>
+    <div class="what"><strong>Senior Auditor, Ernst &amp; Young (Riyadh)</strong> · KSA-listed portfolios across construction, infrastructure JVs, energy.</div>
+  </div>
+  <div class="career-item">
+    <div class="when">Oct 2023 — Mar 2024</div>
+    <div class="what"><strong>Senior Auditor, MillerMusmar CPAs (Washington DC metro)</strong> · Non-profits, government, HNW; US GAAP, Yellow Book, ASC 958.</div>
+  </div>
+  <div class="career-item">
+    <div class="when">Mar 2020 — Nov 2022</div>
+    <div class="what"><strong>Associate, PwC (Dubai)</strong> · Healthcare, hospitality, media; UAE and GCC group audits.</div>
+  </div>
+  <div class="career-item">
+    <div class="when">Apr 2017 — Mar 2020</div>
+    <div class="what"><strong>Associate, PwC (Amman)</strong> · Trade, government, healthcare, manufacturing; 10+ engagements.</div>
+  </div>
+
+  <div class="pg-footer">
+    <span>ahmad@daftaradvisory.com · +962 798 008 835</span>
+    <span>03 / 12</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 4 — AREA A ============ -->
+<div class="page" style="display:block;">
+  <div class="pg-header" style="margin-bottom:8mm;">
+    <span class="left">Daftar · Advisory</span>
+    <span class="right">Capability Statement · v1.1</span>
+  </div>
+
+  <div class="sec-num">03 · What gets bought</div>
+  <h2 class="sec-title" style="font-size:26pt; margin-bottom:6mm;">Nine outcomes,<br>plus a retainer <em>lane</em>.</h2>
+
+  <p class="body" style="font-size:10pt; margin-bottom:5mm;">
+    Every engagement maps to one of nine defined outcomes across three practice areas, plus an ongoing retainer lane. Fee anchors are listed below. The actual fee for any engagement comes back within 48 hours of the scoping call.
+  </p>
+
+  <div class="area-label">Area A — Technical Finance</div>
+
+  <div class="service">
+    <div class="code">A / 01 · IFRS Financial Statements</div>
+    <div class="title">Financial statements your auditor can <em>sign</em>.</div>
+    <div class="desc">
+      Standalone or consolidated IFRS — or IFRS for SMEs — including first-time adoption and restatement. Formula-driven TB → Notes → FS linkage, delivered with the working file so your team can maintain it.
+    </div>
+    <dl class="meta">
+      <dt>Fee</dt><dd>USD 4,500–16,000 · SAR 17,000–60,000</dd>
+      <dt>Time</dt><dd>3–5 weeks</dd>
+      <dt>Codes</dt><dd class="tags">IFRS 10 · IAS 1 · Consolidation</dd>
+    </dl>
+  </div>
+
+  <div class="service">
+    <div class="code">A / 02 · Independent Technical Review</div>
+    <div class="title">A technical review that holds in the <em>committee</em> room.</div>
+    <div class="desc">
+      Independent opinion on one contested position — IFRS 15, 16, 9, IAS 37, consolidation — with a documented memo, paragraph references, supporting workpapers, and an IAS 8 disclosure draft.
+    </div>
+    <dl class="meta">
+      <dt>Fee</dt><dd>USD 5,500–22,000 · SAR 20,625–82,500</dd>
+      <dt>Time</dt><dd>2 weeks</dd>
+      <dt>Codes</dt><dd class="tags">IFRS 15 · IFRS 16 · IAS 37 · IFRS 9</dd>
+    </dl>
+  </div>
+
+  <div class="service">
+    <div class="code">A / 03 · Audit Readiness &amp; Remediation</div>
+    <div class="title">The audit opens on a <em>clean</em> file.</div>
+    <div class="desc">
+      Four-week sprint: PBC discipline, reconciliations, documented positions, disclosure drafts. The audit opens on a file that is already clean. The auditor's planning estimate moves by weeks, not days.
+    </div>
+    <dl class="meta">
+      <dt>Fee</dt><dd>USD 7,500–18,000 · SAR 28,125–67,500</dd>
+      <dt>Time</dt><dd>4 weeks</dd>
+      <dt>Codes</dt><dd class="tags">PBC · ISQM 1 · SOCPA · JACPA</dd>
+    </dl>
+  </div>
+
+  <div class="pg-footer">
+    <span>ahmad@daftaradvisory.com · +962 798 008 835</span>
+    <span>04 / 12</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 5 — AREA B ============ -->
+<div class="page" style="display:block;">
+  <div class="pg-header" style="margin-bottom:8mm;">
+    <span class="left">Daftar · Advisory</span>
+    <span class="right">Capability Statement · v1.1</span>
+  </div>
+
+  <div class="area-label" style="margin-top:0;">Area B — Compliance, Filed on Time</div>
+
+  <div class="service">
+    <div class="code">B / 01 · ZATCA Phase 2 Readiness</div>
+    <div class="title">ZATCA Phase 2 integrated in <em>six</em> weeks.</div>
+    <div class="desc">
+      Wave 24 (SAR 375k threshold, go-live 30 June 2026) or Wave 23 remediation. Vendor selection, CSID onboarding, sandbox tests, parallel run, cutover. No middleware up-sell; no ERP migration in disguise.
+    </div>
+    <dl class="meta">
+      <dt>Fee</dt><dd>SAR 12,000–35,000 · USD 3,200–9,300</dd>
+      <dt>Time</dt><dd>4–6 weeks</dd>
+      <dt>Codes</dt><dd class="tags">UBL 2.1 · Fatoora · CSID · BR-KSA</dd>
+    </dl>
+  </div>
+
+  <div class="service">
+    <div class="code">B / 02 · UAE Corporate Tax Compliance</div>
+    <div class="title">UAE Corporate Tax, decided before <em>year-end</em>.</div>
+    <div class="desc">
+      FY24 amendments, FY25 planning, and the Small Business Relief vs QFZP decision memo — with the IFRS-for-SME book rebuilt where needed and related-party disclosure discipline documented. One entity or group.
+    </div>
+    <dl class="meta">
+      <dt>Fee</dt><dd>AED 12,000–40,000 · USD 3,270–10,900</dd>
+      <dt>Time</dt><dd>2–6 weeks</dd>
+      <dt>Codes</dt><dd class="tags">CT Law · SBR · QFZP · FTA</dd>
+    </dl>
+  </div>
+
+  <div class="service">
+    <div class="code">B / 03 · KSA Transfer Pricing</div>
+    <div class="title">Transfer pricing the auditor will <em>accept</em>.</div>
+    <div class="desc">
+      Controlled Transactions Disclosure Form, Master File and Local File — aligned to the SAR 48M and SAR 100M Zakat-payer thresholds. Benchmarking, functional analysis, and the auditor affidavit package.
+    </div>
+    <dl class="meta">
+      <dt>Fee</dt><dd>SAR 15,000–70,000 · USD 4,000–18,700</dd>
+      <dt>Time</dt><dd>2–7 weeks</dd>
+      <dt>Codes</dt><dd class="tags">CTDF · Master File · Local File · CbCR</dd>
+    </dl>
+  </div>
+
+  <div class="pg-footer">
+    <span>ahmad@daftaradvisory.com · +962 798 008 835</span>
+    <span>05 / 12</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 6 — AREA C ============ -->
+<div class="page" style="display:block;">
+  <div class="pg-header" style="margin-bottom:8mm;">
+    <span class="left">Daftar · Advisory</span>
+    <span class="right">Capability Statement · v1.1</span>
+  </div>
+
+  <div class="area-label" style="margin-top:0;">Area C — Investment Decisions</div>
+
+  <div class="service">
+    <div class="code">C / 01 · Investment Case</div>
+    <div class="title">An investment case that survives the <em>board</em> meeting.</div>
+    <div class="desc">
+      Market sizing, unit economics, NPV and IRR, sensitivity analysis, governance, risk register, and a written go / no-go recommendation. 25–40 pages plus the supporting model. Replaces the feasibility-then-proposal shuffle with one defensible answer.
+    </div>
+    <dl class="meta">
+      <dt>Fee</dt><dd>USD 8,000–25,000 · SAR 30,000–94,000</dd>
+      <dt>Time</dt><dd>4–6 weeks</dd>
+      <dt>Codes</dt><dd class="tags">DCF · Sensitivity · Governance · Unit Econ</dd>
+    </dl>
+  </div>
+
+  <div class="service">
+    <div class="code">C / 02 · Nomu Readiness Diagnostic</div>
+    <div class="title">Pre-IPO readiness before you hire the <em>adviser</em>.</div>
+    <div class="desc">
+      For SAR 30–80M SMEs with 12–24 months to a Nomu listing. IFRS, governance, MIS, and disclosure-readiness gap — documented with a remediation runway. Not a substitute for a CMA-licensed financial adviser; the bridge that gets you ready to hire one.
+    </div>
+    <dl class="meta">
+      <dt>Fee</dt><dd>USD 12,000–22,000 · SAR 45,000–82,500</dd>
+      <dt>Time</dt><dd>4–6 weeks</dd>
+      <dt>Codes</dt><dd class="tags">Nomu · CMA · IPO Readiness · Governance</dd>
+    </dl>
+  </div>
+
+  <div class="service">
+    <div class="code">C / 03 · Quality of Earnings</div>
+    <div class="title">Quality of earnings for SME <em>deals</em>.</div>
+    <div class="desc">
+      Five to fifteen days. Normalised EBITDA bridge, working-capital analysis, debt-like items, revenue quality. Built for corporate buyers acquiring SAR 10–100M targets where Big Four commercial DD is disproportionate.
+    </div>
+    <dl class="meta">
+      <dt>Fee</dt><dd>USD 8,000–25,000 · SAR 30,000–94,000</dd>
+      <dt>Time</dt><dd>1–3 weeks</dd>
+      <dt>Codes</dt><dd class="tags">EBITDA Bridge · Working Capital · Debt-Like</dd>
+    </dl>
+  </div>
+
+  <div class="pg-footer">
+    <span>ahmad@daftaradvisory.com · +962 798 008 835</span>
+    <span>06 / 12</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 7 — LANE D ============ -->
+<div class="page" style="display:block;">
+  <div class="pg-header" style="margin-bottom:8mm;">
+    <span class="left">Daftar · Advisory</span>
+    <span class="right">Capability Statement · v1.1</span>
+  </div>
+
+  <div class="area-label" style="margin-top:0;">Lane D — Ongoing Partnership</div>
+
+  <div class="service">
+    <div class="code">D / 01 · Fractional Finance Function</div>
+    <div class="title">A finance function, sized to <em>fit</em>.</div>
+    <div class="desc">
+      Monthly retainer for SMEs and startups that need senior finance attention but cannot justify a full-time CFO. Scope sized to the business: monthly close, board reporting, IFRS positions as they come up, audit liaison.
+    </div>
+    <dl class="meta">
+      <dt>Fee</dt><dd>USD 2,800–5,500 per month</dd>
+      <dt>Time</dt><dd>Minimum three months</dd>
+      <dt>Codes</dt><dd class="tags">Monthly Close · Board MIS · Audit Liaison</dd>
+    </dl>
+  </div>
+
+  <div class="service">
+    <div class="code">D / 02 · Audit-Firm Subcontract</div>
+    <div class="title">Senior capacity, partner-to-<em>partner</em>.</div>
+    <div class="desc">
+      For local audit firms that need senior IFRS or SOCPA capacity on a specific engagement without hiring. Day-rate basis, partner-to-partner terms, full confidentiality, the engagement signs in your firm's name.
+    </div>
+    <dl class="meta">
+      <dt>Fee</dt><dd>From SAR 4,500 per day</dd>
+      <dt>Time</dt><dd>Engagement-specific</dd>
+      <dt>Codes</dt><dd class="tags">IFRS · SOCPA · Technical Review</dd>
+    </dl>
+  </div>
+
+  <div class="pg-footer">
+    <span>ahmad@daftaradvisory.com · +962 798 008 835</span>
+    <span>07 / 12</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 8 — RECENT WORK ============ -->
+<div class="page" style="display:block;">
+  <div class="pg-header" style="margin-bottom:8mm;">
+    <span class="left">Daftar · Advisory</span>
+    <span class="right">Capability Statement · v1.1</span>
+  </div>
+
+  <div class="sec-num">04 · Recent work</div>
+  <h2 class="sec-title" style="font-size:28pt; margin-bottom:6mm;">Two engagements,<br><em>anonymised</em>.</h2>
+
+  <p class="body">
+    Both engagements ran on fixed-fee terms, delivered against a defined scope, and shipped with the underlying working file. Client names available on request, subject to confidentiality.
+  </p>
+
+  <div class="case">
+    <div class="tag">KSA Construction JV ◆ SAR 800M Revenue</div>
+    <h3>IFRS 16 lease recomputation across <em>47</em> contracts.</h3>
+    <p>
+      The original lease model had understated the right-of-use asset by approximately 11%, driven by inconsistent discount-rate application across equipment leases. Rebuilt the complete IFRS 16 schedule from source contracts, reconciled to the audited prior-year position, and delivered a single working file with full audit trail.
+    </p>
+    <dl class="case-meta">
+      <dt>Deliverable</dt><dd>Recomputed lease schedule · Technical memo · Audit response file</dd>
+      <dt>Timeline</dt><dd>3 weeks · fixed fee</dd>
+      <dt>Outcome</dt><dd>Auditor cleared the position without further adjustment</dd>
+    </dl>
+  </div>
+
+  <div class="case">
+    <div class="tag">MENA Healthcare Group ◆ SAR 1.2B Revenue</div>
+    <h3>Full financial statements + audit readiness <em>package</em>.</h3>
+    <p>
+      Client was preparing for a first external audit under IFRS after three years of internal-only reporting. Built the complete financial statements with TB → Notes → FS linkage, documented all accounting policy positions, and pre-emptively constructed the PBC working paper set before the auditor arrived on site.
+    </p>
+    <dl class="case-meta">
+      <dt>Deliverable</dt><dd>Draft FS · Notes · Policy memo · PBC binder</dd>
+      <dt>Timeline</dt><dd>5 weeks · fixed fee</dd>
+      <dt>Outcome</dt><dd>Audit completed ~40% faster than management letter estimate</dd>
+    </dl>
+  </div>
+
+  <div class="pg-footer">
+    <span>ahmad@daftaradvisory.com · +962 798 008 835</span>
+    <span>08 / 12</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 9 — HOW IT WORKS ============ -->
+<div class="page" style="display:block;">
+  <div class="pg-header" style="margin-bottom:8mm;">
+    <span class="left">Daftar · Advisory</span>
+    <span class="right">Capability Statement · v1.1</span>
+  </div>
+
+  <div class="sec-num">05 · How it works</div>
+  <h2 class="sec-title" style="font-size:28pt; margin-bottom:8mm;">Four steps.<br>No <em>ambiguity</em>.</h2>
+
+  <div class="step">
+    <div class="step-label">Step 01 · Scope</div>
+    <h3>A 30-minute call to understand exactly what is needed.</h3>
+    <p>If the fit isn't right, you'll hear that on the call — and a recommendation to a firm better positioned. Free. Same week.</p>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Step 02 · Proposal</div>
+    <h3>A one-page engagement letter with numbered scope.</h3>
+    <p>Fixed fee, fixed timeline, payment schedule, and the non-attest disclaimer. You know what the work is and what it costs before it starts. Delivered within 48 hours of the scoping call.</p>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Step 03 · Execute</div>
+    <h3>The work is done directly.</h3>
+    <p>Weekly checkpoints with drafts shared openly — not held until a grand reveal at the end. Typical engagement runs 1 to 6 weeks. Longer engagements break into milestones with explicit deliverables at each.</p>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Step 04 · Deliver</div>
+    <h3>The deliverable plus the working files.</h3>
+    <p>Formulas, assumptions, sources. One review pass included; additional revisions priced per pass. Everything is yours to extend, share, or hand to your auditor.</p>
+  </div>
+
+  <p class="body" style="margin-top: 8mm;">
+    <strong style="font-weight:500;">Payment.</strong> Standard split is 50% on engagement letter signature, 50% on delivery. For engagements over USD 15,000 the split moves to 40 / 30 / 30 — letter, midpoint, delivery. Wire to a Jordan-based USD account; AED and SAR accepted on request.
+  </p>
+
+  <div class="pg-footer">
+    <span>ahmad@daftaradvisory.com · +962 798 008 835</span>
+    <span>09 / 12</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 10 — REFUSAL ============ -->
+<div class="page" style="display:block;">
+  <div class="pg-header" style="margin-bottom:8mm;">
+    <span class="left">Daftar · Advisory</span>
+    <span class="right">Capability Statement · v1.1</span>
+  </div>
+
+  <div class="sec-num">06 · Where the refusal lives</div>
+  <h2 class="sec-title" style="font-size:28pt; margin-bottom:6mm;">When no is the right <em>answer</em>.</h2>
+
+  <p class="body" style="font-size:10pt; margin-bottom:5mm;">
+    The practice wins by saying no to the wrong engagement. Five categories of work go elsewhere. A name and an introduction usually go with the referral.
+  </p>
+
+  <div class="refuse">
+    <div class="num">01 · Attest engagements</div>
+    <h3>Anything that requires a licensed auditor to sign.</h3>
+    <p>Statutory audit, review, agreed-upon procedures. Daftar is non-attest advisory only — no JACPA, SOCPA, or UAE Ministry of Economy audit licence is held. If you need an attest signature, you need a licensed firm.</p>
+  </div>
+
+  <div class="refuse">
+    <div class="num">02 · Tax filings</div>
+    <h3>The registered agent files.</h3>
+    <p>ZATCA VAT and CIT returns, UAE FTA filings, JACPA tax returns. The practice supports the technical work and documentation that goes into the filing — but the registered tax agent files. Referrals available in all three jurisdictions.</p>
+  </div>
+
+  <div class="refuse">
+    <div class="num">03 · Engagements that need five people</div>
+    <h3>Group audits, multi-entity TP studies, large ERP work.</h3>
+    <p>If five practitioners are required, this is the wrong firm. Mid-tier and Big Four referrals available.</p>
+  </div>
+
+  <div class="refuse">
+    <div class="num">04 · Pre-decided conclusions</div>
+    <h3>Independence is not for sale.</h3>
+    <p>If the principal has already decided the answer and wants documentation that supports it, that is a job for someone else. Every engagement letter carries an independence clause. Recommendations are written on the evidence.</p>
+  </div>
+
+  <div class="refuse">
+    <div class="num">05 · Arabic-first regulatory relationship work</div>
+    <h3>A practice in Riyadh or Jeddah is better placed.</h3>
+    <p>Some engagements turn primarily on Arabic-first regulatory relationship management — extended ZATCA hearings, Zakat assessments under appeal, inheritance-trigger restructures. Two named referrals on request.</p>
+  </div>
+
+  <div class="pg-footer">
+    <span>ahmad@daftaradvisory.com · +962 798 008 835</span>
+    <span>10 / 12</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 11 — NEXT STEP ============ -->
+<div class="page" style="display:block;">
+  <div class="pg-header" style="margin-bottom:8mm;">
+    <span class="left">Daftar · Advisory</span>
+    <span class="right">Capability Statement · v1.1</span>
+  </div>
+
+  <div class="sec-num">07 · The next step</div>
+  <h2 class="sec-title" style="font-size:28pt; margin-bottom:8mm;">Tell me about the<br>problem you're trying<br>to <em>solve</em>.</h2>
+
+  <p class="body">
+    A 30-minute scoping call — no obligation, no pitch. If there is a fit, you'll have a fixed quote within 48 hours of the call. If there isn't, you'll have a referral to a firm better positioned for the work.
+  </p>
+
+  <p class="body" style="margin-top:8mm;">
+    <strong style="font-weight:500;">To start.</strong> Reply to the message thread, or write directly to <strong style="font-weight:500;">ahmad@daftaradvisory.com</strong>. Include: the question you are trying to answer, the deadline if there is one, and any documents already in hand. A scoping-call slot will come back within one business day.
+  </p>
+
+  <div class="contact">
+    <dl>
+      <dt>Email</dt><dd>ahmad@daftaradvisory.com</dd>
+      <dt>Phone</dt><dd>+962 798 008 835</dd>
+      <dt>WhatsApp</dt><dd>+962 798 008 835</dd>
+      <dt>LinkedIn</dt><dd>linkedin.com/in/ahmad-alhinaiti</dd>
+      <dt>Website</dt><dd>daftaradvisory.com</dd>
+    </dl>
+  </div>
+
+  <div class="disclaimer">
+    <div class="label">Independence &amp; Engagement Basis</div>
+    <p>
+      Daftar Advisory is a non-attest advisory practice. The principal does not hold a JACPA, SOCPA, or UAE Ministry of Economy audit licence and does not perform statutory audit, review, or agreed-upon procedures engagements. Where work requires an attest signature, the engagement is referred. Every engagement is governed by a written engagement letter with fixed scope, fixed fee, fixed timeline, and a written non-attest disclaimer.
+    </p>
+  </div>
+
+  <div class="pg-footer">
+    <span>ahmad@daftaradvisory.com · +962 798 008 835</span>
+    <span>11 / 12</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 12 — END ============ -->
+<div class="page">
+  <div class="pg-header">
+    <span class="left">Daftar · Advisory</span>
+    <span class="right">Capability Statement · v1.1</span>
+  </div>
+
+  <div class="end">
+    <div class="wm">Daftar<br>Advisory<em>.</em></div>
+    <div class="closing">Rigorous finance, without the <em>overhead</em>.</div>
+  </div>
+
+  <div class="pg-footer">
+    <span>ahmad@daftaradvisory.com · +962 798 008 835</span>
+    <span>12 / 12</span>
+  </div>
+</div>
+
+</body>
+</html>

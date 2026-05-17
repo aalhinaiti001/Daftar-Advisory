@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Daftar №002 — UAE Corporate Tax · The first audit season</title>
+<meta name="description" content="What went wrong in the September 2025 UAE Corporate Tax filings, and what FY25 needs to do differently. A research brief from Daftar Advisory.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:       #F4F1EA;
+    --paper-dark:  #EBE6DA;
+    --ink:         #1A1814;
+    --muted:       #6B655D;
+    --rust:        #A8341F;
+    --rule-light:  rgba(26, 24, 20, 0.10);
+    --rule-mid:    rgba(26, 24, 20, 0.22);
+    --rule-strong: rgba(26, 24, 20, 1.00);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Fraunces', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-variation-settings: "opsz" 14;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.65;
+  }
+  em { font-style: italic; color: var(--rust); font-weight: 300; }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+  .top-strip { border-bottom: 1px solid var(--rule-light); background: var(--paper); }
+  .top-strip-inner {
+    max-width: 980px; margin: 0 auto; padding: 18px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);
+  }
+  .wordmark {
+    font-family: 'Fraunces', serif; font-size: 16px; color: var(--ink);
+    letter-spacing: -0.01em; text-transform: none; font-weight: 400; text-decoration: none;
+  }
+  .wordmark em { color: var(--rust); font-style: italic; }
+
+  .masthead { max-width: 980px; margin: 0 auto; padding: 96px 40px 64px; }
+  .pub-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust);
+    margin-bottom: 36px; display: flex; align-items: center; gap: 14px;
+  }
+  .pub-num::before { content: ''; width: 32px; height: 1px; background: var(--rust); }
+  h1.headline {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(44px, 6vw, 78px);
+    font-weight: 300; line-height: 0.98; letter-spacing: -0.02em; color: var(--ink);
+    font-variation-settings: "opsz" 144;
+    margin-bottom: 36px; max-width: 880px;
+  }
+  .deck {
+    font-family: 'Fraunces', serif; font-size: 22px; line-height: 1.45; color: var(--ink);
+    max-width: 720px; font-variation-settings: "opsz" 18;
+    margin-bottom: 56px; font-weight: 400;
+  }
+  .deck em { color: var(--rust); }
+  .byline {
+    border-top: 1px solid var(--rule-mid); padding-top: 20px;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
+  }
+  .byline strong {
+    display: block; color: var(--ink); font-weight: 400; margin-top: 6px;
+    font-family: 'Fraunces', serif; font-size: 14px; letter-spacing: 0; text-transform: none;
+  }
+
+  article { max-width: 720px; margin: 0 auto; padding: 64px 40px 96px; }
+  article > h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 32px; font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; color: var(--ink);
+    margin: 64px 0 24px; padding-top: 32px; border-top: 1px solid var(--rule-light);
+    font-variation-settings: "opsz" 36;
+  }
+  article > h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  article > h2 .sec-num {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rust);
+    margin-bottom: 14px; font-weight: 400;
+  }
+  article p {
+    font-family: 'Fraunces', serif; font-size: 17px; line-height: 1.7; color: var(--ink);
+    margin-bottom: 22px; font-variation-settings: "opsz" 14;
+  }
+  article p.lede { font-size: 19px; line-height: 1.55; color: var(--ink); }
+  article p.lede::first-letter {
+    font-family: 'Fraunces', serif; font-size: 64px; line-height: 0.9; float: left;
+    padding: 4px 12px 0 0; color: var(--rust); font-weight: 400;
+    font-variation-settings: "opsz" 144;
+  }
+  article ul, article ol { margin: 0 0 24px 0; padding-left: 0; list-style: none; }
+  article ul li, article ol li {
+    font-family: 'Fraunces', serif; font-size: 17px; line-height: 1.65; color: var(--ink);
+    padding: 8px 0 8px 28px; position: relative;
+  }
+  article ul li::before { content: '—'; position: absolute; left: 0; color: var(--rust); font-weight: 400; }
+  article ol { counter-reset: list-counter; }
+  article ol li { padding-left: 44px; counter-increment: list-counter; }
+  article ol li::before {
+    content: counter(list-counter, decimal-leading-zero);
+    position: absolute; left: 0; top: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.1em; color: var(--rust); font-weight: 400;
+  }
+  article strong { font-weight: 500; color: var(--ink); }
+
+  .callout { border-left: 2px solid var(--rust); padding: 12px 0 12px 24px; margin: 32px 0; background: transparent; }
+  .callout .callout-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rust); margin-bottom: 8px;
+  }
+  .callout p { font-family: 'Fraunces', serif; font-size: 17px; line-height: 1.6; font-style: italic; color: var(--ink); margin: 0; }
+
+  .data-table { margin: 36px 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule-light); }
+  .data-table .row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 16px 0;
+    border-bottom: 1px solid var(--rule-light); font-size: 15px; line-height: 1.5;
+  }
+  .data-table .row:last-child { border-bottom: none; }
+  .data-table .lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); padding-top: 4px;
+  }
+  .data-table .val { font-family: 'Fraunces', serif; font-size: 16px; color: var(--ink); }
+  .data-table .val em { color: var(--rust); font-style: italic; }
+
+  .price-box {
+    background: var(--paper-dark); padding: 32px 32px; margin: 36px 0;
+    border-left: 2px solid var(--rust);
+  }
+  .price-box .pb-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rust); margin-bottom: 12px;
+  }
+  .price-box h4 {
+    font-family: 'Fraunces', serif; font-size: 26px; font-weight: 400; color: var(--ink);
+    margin-bottom: 16px; font-variation-settings: "opsz" 36;
+  }
+  .price-box h4 em { color: var(--rust); }
+  .price-box p { font-size: 15px; line-height: 1.55; color: var(--ink); margin: 0; }
+  .price-box .pb-fee {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; color: var(--ink); margin-top: 16px; letter-spacing: 0.06em;
+  }
+
+  .post-footer { border-top: 1px solid var(--rule-light); background: var(--paper); }
+  .post-footer-inner { max-width: 720px; margin: 0 auto; padding: 48px 40px; }
+  .post-footer .closing {
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 17px; color: var(--muted);
+    line-height: 1.6; margin-bottom: 36px; border-left: 2px solid var(--rule-mid); padding-left: 20px;
+  }
+  .post-footer .cta {
+    border-top: 2px solid var(--ink); padding-top: 24px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 36px;
+  }
+  .post-footer .cta-block .cta-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rust); margin-bottom: 8px;
+  }
+  .post-footer .cta-block h4 {
+    font-family: 'Fraunces', serif; font-size: 22px; font-weight: 400; color: var(--ink);
+    margin-bottom: 6px; font-variation-settings: "opsz" 24;
+  }
+  .post-footer .cta-block p { font-size: 15px; color: var(--muted); line-height: 1.5; }
+  .post-footer .cta-block a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rust); }
+  .post-footer .colophon {
+    border-top: 1px solid var(--rule-light); padding-top: 18px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
+  }
+
+  @media (max-width: 720px) {
+    .masthead { padding: 64px 24px 48px; }
+    article { padding: 48px 24px 72px; }
+    .top-strip-inner { padding: 14px 24px; }
+    .post-footer-inner { padding: 36px 24px; }
+    h1.headline { font-size: 40px; }
+    .deck { font-size: 18px; }
+    .byline { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .post-footer .cta { grid-template-columns: 1fr; gap: 24px; }
+    .data-table .row { grid-template-columns: 1fr; gap: 4px; }
+    article > h2 { font-size: 26px; }
+    article p, article ul li, article ol li { font-size: 16px; }
+    .post-footer .colophon { flex-direction: column; gap: 8px; align-items: flex-start; }
+  }
+
+  /* ============ REDUCED MOTION ============ */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="top-strip">
+  <div class="top-strip-inner">
+    <a href="https://daftaradvisory.com" class="wordmark">Daftar <em>Advisory.</em></a>
+    <span>The Daftar · №002</span>
+  </div>
+</div>
+
+<div class="masthead">
+  <div class="pub-num">№ 002 · Research Brief</div>
+  <h1 class="headline">UAE Corporate Tax — the first audit <em>season,</em> and what went wrong in the September 2025 filings.</h1>
+  <p class="deck">The first FY24 returns are filed. The first auditor reviews are coming back. The pattern that emerged is consistent enough to be useful — and uncomfortable enough to be worth writing down before FY25 closes.</p>
+  <div class="byline">
+    <div>Author<strong>Ahmad Al Hinaiti</strong></div>
+    <div>Published<strong>May 2026</strong></div>
+    <div>Read<strong>16 minutes</strong></div>
+    <div>Topic<strong>UAE CT</strong></div>
+  </div>
+</div>
+
+<article>
+
+  <h2><span class="sec-num">01 / The Position</span>Most of the FY24 returns were filed on numbers the auditor will not accept.</h2>
+  <p class="lede">The UAE Federal Corporate Tax Law took effect for financial years starting on or after 1 June 2023. The first major filing deadline — the FY24 return for entities with calendar-year reporting — fell on 30 September 2025. A large share of those filings went in on provisional figures, with the implicit plan to amend after the audited statements were finalised. The audited statements have now arrived, and the gap between the filed position and the auditable position is wider than the market expected.</p>
+  <p>The visible problem is the amendment. The deeper problem is the underlying book. UAE CT was layered onto an SME population that, in many cases, had been preparing management accounts on a non-IFRS framework — a localised cash-and-accrual hybrid that worked perfectly well for VAT and for the bank, but that does not survive the substance tests embedded in the CT law. The result, eight months after the first deadline, is a population of FY24 filings that are technically submitted, materially wrong, and — for entities now preparing FY25 — sitting on top of an opening balance the auditor cannot sign.</p>
+
+  <h2><span class="sec-num">02 / The Five Patterns</span>What the post-mortem on the September 2025 filings looks like.</h2>
+  <p>Across the FY24 reviews I have seen and the desk-research on the broader market, five patterns repeat. They are not exotic. They are exactly the kinds of errors a first-cycle compliance regime produces in a population that filed before the audit work was done.</p>
+
+  <ol>
+    <li><strong>The Small Business Relief election was claimed without testing the AED 3 million threshold properly.</strong> SBR is a revenue-based test, not a profit-based test, and the revenue includes amounts that founders did not always include in their internal management figure — connected-party revenue, reimbursements treated as pass-throughs, and gross revenue before commissions in agency arrangements. A meaningful share of SBR claimants for FY24 are in the AED 2.8M to AED 3.4M band where the test outcome depends entirely on which revenue definition was applied.</li>
+    <li><strong>The QFZP election was claimed on substance the entity could not later evidence.</strong> Qualifying Free Zone Person status carries a 0% rate on Qualifying Income, but it requires adequate substance, audited financial statements, qualifying activity classification, and de minimis compliance. Entities that ticked the QFZP box on the return without an audited FY24 file in hand are now finding the audit is the first time the substance position is being tested seriously.</li>
+    <li><strong>Related-party transactions were either not disclosed or disclosed on a notional basis.</strong> The disclosure requirement bites at the AED 40 million threshold, but the underlying arm's-length principle applies regardless of disclosure. Founders who run multiple entities frequently moved cash, shared services, and intercompany invoicing on terms that worked operationally but cannot be defended as arm's-length without documentation that was never written.</li>
+    <li><strong>The IFRS-for-SME book was used as a label, not as a framework.</strong> Entities above AED 3 million are required to apply IFRS or IFRS for SMEs. A substantial share of FY24 filings were prepared on management accounts that were called "IFRS for SMEs" but did not actually apply Sections 11, 17, 20, or 28 — financial instruments, PP&amp;E, leases, employee benefits — in any form recognisable to an auditor.</li>
+    <li><strong>The transition adjustment was either ignored or estimated.</strong> Many FY24 filings did not run a clean opening balance reconciliation against the FY23 closing position under the new framework. The result is a missing or wrong transition adjustment, which propagates into the FY25 comparatives and into any future audit opinion.</li>
+  </ol>
+
+  <div class="callout">
+    <div class="callout-label">The compounding problem</div>
+    <p>FY24 errors do not stay in FY24. They become opening balances for FY25. An audit that begins with a contested opening position is materially harder, longer, and more expensive than an audit that begins with a clean transition. This is the cost most founders are not yet pricing into the FY25 plan.</p>
+  </div>
+
+  <h2><span class="sec-num">03 / The SBR Mistake, Decomposed</span>What "qualifying revenue" actually means.</h2>
+  <p>The Small Business Relief election deserves its own section because it is the most common error and the most reversible — if it is caught before the FY25 filing is built on top of it.</p>
+  <p>SBR is available to a Resident Person whose Revenue does not exceed AED 3 million in the relevant Tax Period and in all previous Tax Periods up to and including the relevant Tax Period. The claim that confuses founders is what counts as Revenue.</p>
+  <ul>
+    <li>Revenue is measured under the applicable accounting framework — IFRS or IFRS for SMEs — not under the simplified-VAT lens many founders default to</li>
+    <li>Revenue is gross, not net of cost of sales</li>
+    <li>Revenue includes income from connected parties, even where that income would be eliminated on consolidation</li>
+    <li>For agency arrangements, the gross-versus-net question turns on the IFRS 15 control test — many SME founders treat themselves as agents in management accounts and as principals in the bank account, and only one of those positions is correct</li>
+    <li>Revenue includes incidental revenue that does not appear on the VAT return — interest income, gain on disposal of assets, foreign-exchange gains where the underlying transaction is operating in nature</li>
+  </ul>
+  <p>The practical consequence: any entity that filed FY24 with SBR claimed and reported revenue between AED 2.5M and AED 3.5M needs to rerun the threshold test against an IFRS-defined revenue figure before FY25 is filed. If the rerun pushes revenue above AED 3M, the FY24 SBR claim is exposed and the FY25 position is standard 9% — with the AED 375,000 small-amount-of-tax exemption applied to taxable income, not to revenue.</p>
+
+  <h2><span class="sec-num">04 / The QFZP Substance Test</span>What the audit asks that the return did not.</h2>
+  <p>The QFZP route is more material than SBR — a 0% rate against a fully taxable counterfactual is worth real money — and the substance bar is correspondingly higher. The audit work on FY24 QFZP claimants is testing four things, in order:</p>
+
+  <ol>
+    <li><strong>Adequate substance.</strong> Does the entity carry on its core income-generating activity in the Free Zone, with adequate qualified employees, adequate operating expenditure, and adequate physical assets? The test is fact-and-circumstance, but it is not satisfied by a registered office and a part-time consultant.</li>
+    <li><strong>Qualifying income classification.</strong> Each revenue stream must be tested against the qualifying-income list — transactions with other Free Zone Persons in respect of qualifying activities, certain transactions with non-Free-Zone Persons, and a defined set of qualifying activities. Mainland customer revenue does not automatically disqualify, but it must fit the qualifying-income tests independently.</li>
+    <li><strong>De minimis compliance.</strong> Non-qualifying revenue must remain below the de minimis threshold — the lower of 5% of total revenue or AED 5 million. A breach disqualifies the entity from QFZP for the period in which the breach occurs.</li>
+    <li><strong>Audited financial statements.</strong> QFZP status requires audited financial statements. An FY24 QFZP claim filed before the audit was complete is provisional by construction, and the audit work is the moment of truth on whether the claim survives.</li>
+  </ol>
+
+  <p>The FY24 cohort of QFZP claimants includes a meaningful number of entities that will not survive the substance test under audit scrutiny. The right move for those entities is not to amend the return — it is to redirect to the standard 9% CT position with full reasoning documented, and to plan FY25 around that position rather than continue to assert a QFZP claim that cannot be defended.</p>
+
+  <h2><span class="sec-num">05 / Related-Party Transactions</span>The disclosure that was not made.</h2>
+  <p>The arm's-length principle applies to all transactions between Connected Persons and Related Parties, regardless of whether the disclosure threshold is breached. The disclosure schedule itself is required where related-party transactions in aggregate exceed AED 40 million, with full Master and Local File documentation required at AED 200 million.</p>
+  <p>The FY24 filing season produced three sub-patterns:</p>
+  <ul>
+    <li><strong>Group structures with intercompany services that were never invoiced.</strong> The shared CFO, the shared back office, the shared technology — provided to a sister entity for free in management accounts, then disclosed as a market-rate intercompany charge in the audited file. The reconciling difference is the CT exposure</li>
+    <li><strong>Founder-loans treated as equity.</strong> The interest-free shareholder loan that funded working capital. Under the arm's-length principle, an interest charge is imputed; under management accounts, it was not. The audit picks this up</li>
+    <li><strong>Director remuneration paid through a connected entity.</strong> The founder paid through a sister company on a service-fee basis rather than as a director's fee. The CT treatment turns on the substance of the arrangement, not on the paperwork</li>
+  </ul>
+
+  <h2><span class="sec-num">06 / The FY25 Plan</span>What the next twelve months should produce.</h2>
+  <p>For any entity that filed FY24 on provisional figures, the path forward is not a single document. It is a sequenced workstream that aligns the audited book, the CT position, and the FY25 plan in that order.</p>
+
+  <ol>
+    <li><strong>Rebuild the IFRS-for-SME book first.</strong> Trial-balance integrity, accounting-policy alignment, transition adjustment from prior framework, related-party transaction register. Without this foundation, every downstream CT decision is contingent</li>
+    <li><strong>Run the threshold tests against the rebuilt book.</strong> SBR availability against a defensible Revenue figure. QFZP substance against the actual operating footprint. Disclosure thresholds against the related-party register</li>
+    <li><strong>Decide the FY25 election before year-end.</strong> The election is most powerful when it is documented prospectively, with a three-year scenario projection showing which election dominates under plausible revenue paths. Decided in retrospect at filing time, it is a defence; decided prospectively, it is a position</li>
+    <li><strong>Amend FY24 only where the amendment is material and unavoidable.</strong> Not every FY24 filing needs to be amended — the cost-benefit of amendment versus a clean FY25 disclosure of the prior-year position is a judgement call, and it should be a judgement call made on the audited file, not on the management accounts</li>
+    <li><strong>Build the auditor-ready package.</strong> The deliverable is not the CT return. The deliverable is the workpaper file the client's tax agent files from, and the client's auditor reviews against. That package is what makes the FY25 audit faster than FY24 was</li>
+  </ol>
+
+  <h2><span class="sec-num">07 / The Refusal</span>What this practice will not do.</h2>
+  <p>UAE CT advisory has attracted a substantial supplier population, and the buyer has limited tools to distinguish substance from brochure. Two clarifications on what the practice is not.</p>
+  <ul>
+    <li><strong>The return is not filed by Daftar.</strong> Filing requires an FTA-registered tax agent. The practice rebuilds the IFRS-for-SME book, documents the elections, and assembles the auditor-ready package — and the client's tax agent files from it. That separation is structural and intentional</li>
+    <li><strong>Tax-planning structures are not in scope.</strong> Substance-over-form is the only register the practice writes in. Where the right answer for the client is a structuring opinion that approaches general anti-avoidance territory, the work is for a tax law firm or a Big Four tax practice — not a single-practitioner advisory</li>
+  </ul>
+
+  <h2><span class="sec-num">08 / The Daftar Engagement</span>What the practice does, scoped.</h2>
+
+  <div class="price-box">
+    <div class="pb-label">Service B / 02 — UAE Corporate Tax Compliance</div>
+    <h4>UAE Corporate Tax, decided before <em>year-end.</em></h4>
+    <p>FY24 amendment review, FY25 prospective planning, and the SBR vs standard 9% vs QFZP decision memo with three-year scenario projection. IFRS-for-SME book rebuilt where required. Related-party register, substance-test documentation, and the auditor-ready package. Final handover to the client's FTA-registered tax agent for filing.</p>
+    <div class="pb-fee">From AED 12,000 · USD 3,270 · 2–6 weeks · fixed fee</div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">A note on this brief</div>
+    <p>The patterns described above are drawn from public guidance, FTA decisions, and the work I have seen on Q1 2026 amendment reviews. CT law is still maturing — every quarter brings new public clarifications. This brief reflects the state of play at the date of publication.</p>
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="post-footer-inner">
+
+    <p class="closing">If your FY24 was filed on provisional numbers, FY25 is the audit that decides whether the provisional position holds. The right next step is not to wait for the September 2026 deadline — it is to rebuild the book now and let the FY25 plan flow from a defensible position.</p>
+
+    <div class="cta">
+      <div class="cta-block">
+        <div class="cta-label">If this is your problem</div>
+        <h4>Book a 30-minute scoping call.</h4>
+        <p>Free, same week. Fixed quote within 48 hours. <a href="mailto:ahmad@daftaradvisory.com">ahmad@daftaradvisory.com</a></p>
+      </div>
+      <div class="cta-block">
+        <div class="cta-label">Direct line</div>
+        <h4>WhatsApp +962 798 008 835</h4>
+        <p>Amman-based. Works remotely across KSA, UAE, and Jordan.</p>
+      </div>
+    </div>
+
+    <div class="colophon">
+      <span>Daftar · Advisory · Amman</span>
+      <span>The Daftar · №002 · May 2026</span>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

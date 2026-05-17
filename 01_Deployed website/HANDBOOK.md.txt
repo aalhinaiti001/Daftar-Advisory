@@ -1,0 +1,375 @@
+PROJECT_HANDBOOK.md
+— — —   B R A N D  H A N D B O O K  ·  V 1 . 2
+Daftar
+Advisory.
+The rules of the house. How we write, how we design, how we post, and what we refuse to do.
+P R I N C I P A L    Ahmad Al Hinaiti
+B A S E D        Amman · MENA · Remote
+I S S U E D       2026 · V 1.2 · Internal reference document
+R E P L A C E S     Brand Handbook V 1.1
+C H A N G E S      Tightening pass: Brand Idea reordered, voice test added, decision rules embedded across sections
+C O N T A C T      ahmad@daftaradvisory.com
+ 
+0 0  /  C O N T E N T S
+What's inside.
+0 1    The Brand Idea    The one-sentence reason this exists.
+0 2    Voice & Tone    How we sound. How we don't.
+0 3    Typography    Two Latin fonts. One Arabic. Forever.
+0 4    Colour System    The 70/25/5 ratio, then the swatches.
+0 5    Logo & Wordmark    Rules of the name — Latin and Arabic.
+0 6    The Grid    Layout and spacing principles.
+0 7    Post Anatomy    The 5 parts of every post.
+0 8    Post Templates    Nine formats that always work.
+0 9    Writing Captions    The 4-beat structure. And bilingual rules.
+1 0    Hashtags & Tagging    A short, deliberate set.
+1 1    Posting Cadence    Rhythm over volume.
+1 2    What We Never Post    The refusal list. In both languages.
+1 3    Content Calendar    A template that scales.
+1 4    Pre-Flight Checklist    The 11-point check before posting.
+ 
+0 0 . 1  /  C H A N G E  L O G  ·  V 1 . 1  →  V 1 . 2
+What changed.
+Voice and content unchanged. Structure tightened so the Handbook is faster to apply, harder to misuse, and easier to defend under pressure. Six edits, all surgical.
+
+0 1   B R A N D  I D E A   Reordered: one-line idea first, practice-of-one explanation second, refusals last. Position before proof.
+0 2   V O I C E  &  T O N E   Added the senior-auditor-coffee test as a self-policing rule at the top of the section.
+0 4   C O L O U R   Promoted the 70 / 25 / 5 ratio from Rule 01 to the section's governing line. Everything else is consequence.
+0 7   P O S T  A N A T O M Y   Added one framing line: "Consistency is what makes Daftar recognisable before the logo is read."
+0 8   T E M P L A T E S   Added rebalancing rule: if three consecutive posts share a format, switch before posting again.
+0 9   C A P T I O N S   Added closing test: if the Hook or Takeaway isn't instantly identifiable, the caption isn't finished.
+1 2   R E F U S A L S   Promoted the refusal-as-protection line to the top — names the threat (reach, ego, pressure) explicitly.
+ 
+0 1  /  T H E  B R A N D  I D E A
+Why Daftar exists.
+Daftar exists to deliver rigorous finance, without Big Four overhead — by doing the work ourselves and standing behind every number.
+That sentence is the spine. Everything else — the typography, the colour, the way we talk — flows from it.
+Daftar Advisory is a practice of one. One experienced practitioner who actually does the work — who opens the Excel file, reads the contracts, writes the memo, and stands behind the number. No pyramid team. No outsourced execution. No layer of analysts between the reader and the judgement.
+Every piece of content must be true to that. No stock photos of handshakes. No "leveraging synergies." No fake team photos. No AI-generated anything pretending to be human.
+
+T H R E E  P R O M I S E S  T O  E V E R Y  R E A D E R
+1.	Real craft. We show working papers, formulas, actual numbers (sanitised). We don't hide behind jargon.
+2.	Plain language. If a sentence needs decoding, we rewrite it. IFRS is already complicated enough.
+3.	No time-wasting. Every post earns its place. If it's not useful, interesting, or true — we don't post it.
+ 
+0 2  /  V O I C E  &  T O N E
+How we sound.
+If a sentence wouldn't sound natural coming from a senior auditor explaining something over coffee, it doesn't belong.
+That's the test. Run every headline, caption, and email through it before publishing. The voice is direct, confident, quietly funny, and always rooted in real work. Not a consulting slide deck. Not a LinkedIn influencer. Not corporate cheerful.
+
+W E  A R E   ·   W E  A R E  N O T
+✓  Direct	✗  Hedging
+✓  Technical when it matters	✗  Jargon for its own sake
+✓  Confident	✗  Arrogant
+✓  Dry, occasionally funny	✗  Corporate cheerful
+✓  Specific ("SAR 3B portfolio")	✗  Vague ("extensive experience")
+✓  Honest about trade-offs	✗  Selling the dream
+✓  Editorial, considered	✗  Rushed, emoji-heavy
+✓  Bilingual when useful	✗  Code-switching for show
+
+W O R D S  W E  U S E
+Practice · Practitioner · Rigorous · Tie-out · Working paper · Technical · Craft · Judgement · Position · Memo · Scope
+W O R D S  W E  A V O I D
+Leverage · Synergy · Cutting-edge · World-class · Innovative · Unlock · Empower · Disrupt · Game-changer · Passionate · Dynamic · Best-in-class · Journey
+
+I F  I T  S O U N D S  L I K E  T H I S ,  I T ' S  D A F T A R
+A clean tie-out is a love letter to the auditor who comes next.
+I F  I T  S O U N D S  L I K E  T H I S ,  D E L E T E  I T
+"We leverage best-in-class IFRS expertise to unlock transformative value for our clients."
+ 
+0 3  /  T Y P O G R A P H Y
+Two Latin fonts. One Arabic.
+Three fonts carry everything — Fraunces for Latin display and body, JetBrains Mono for Latin labels, IBM Plex Sans Arabic for Arabic. Don't add a fourth. Don't substitute similar fonts. Don't use system defaults in a pinch — download the real files and keep them on your desktop.
+If a third Latin font appears in the design, the design is wrong.
+0 3 . 1  ·  D I S P L A Y  &  L A T I N  B O D Y  —  F R A U N C E S
+Fraunces is a variable serif with real personality. Headlines, pull quotes, service names, big numbers, and anything that should feel considered. The italic is our signature — it's how Daftar announces itself on the page.
+Rigorous finance, without the overhead.
+Download: fonts.google.com/specimen/Fraunces (free, open-source). Weights we use: 300 (light) for headlines · 400 (regular) for body · italic for accent words.
+0 3 . 2  ·  L A B E L S  &  D A T A  —  J E T B R A I N S  M O N O
+The monospace voice. Tiny labels, post numbers (01 / 09), service codes (S / 01), timestamps, tags, footers, and any time a number needs to feel engineered. The typographic equivalent of a pencil mark on a working paper.
+Download: fonts.google.com/specimen/JetBrains+Mono (free, open-source). Weights we use: 400 (regular) — one weight only. Don't bold mono.
+0 3 . 3  ·  A R A B I C  —  I B M  P L E X  S A N S  A R A B I C
+Modern Naskh-influenced humanist sans. Free, OFL-licensed, designed by Bold Monday for IBM. Reads with the same quiet authority as PwC's Arabic system across the Middle East — restrained, modern, professional — without the corporate-anonymous feel of defaulting to Helvetica Arabic.
+ممارسة دقيقة، بلا أعباء الشركات الكبرى.
+Above: "Rigorous practice, without Big Four overhead." Set in IBM Plex Sans Arabic Light. The closing phrase carries the rust accent — same role as italic in Latin.
+Download: fonts.google.com/specimen/IBM+Plex+Sans+Arabic. Weights: 300 (light) headlines · 400 (regular) body · 500 (medium) replaces italic for emphasis.
+ 
+0 3 . 4  ·  T H R E E  A R A B I C  F O N T S  W E  C O N S I D E R E D
+Every Arabic typeface decision is also a brand decision. Here's what was on the table and why each one fell short.
+▪	Amiri — Beautiful classical Naskh. Reads as Quranic, religious, manuscript-traditional. Daftar is a working practice, not an illuminated text. The handbook's original V1.0 placeholder — replaced.
+▪	Cairo — Modern geometric sans, popular and competent. Reads generic — the Arabic equivalent of using Open Sans for a brand that wants to feel considered. No editorial gravity.
+▪	Tajawal — Clean, friendly, well-made — but built for product UI, not editorial body text. Doesn't carry the same weight Fraunces brings to Latin headlines.
+IBM Plex Sans Arabic wins because it's the only one that reads as considered — engineered, professional, slightly serious — without slipping into either tradition or genericism.
+0 3 . 5  ·  H I E R A R C H Y  R U L E S
+▪	Headlines are always Fraunces (Latin) or IBM Plex Sans Arabic (Arabic). Never mono. Never sans-serif Latin.
+▪	Italic Fraunces in accent rust is reserved for the one word you want the reader to remember — in Latin only. Arabic has no italic.
+▪	Monospace is always uppercase, always small (10–14pt), always muted grey or accent rust. Latin labels only — Arabic has no monospace tradition; don't fake one.
+▪	Latin body text is Fraunces regular, ink black, 14–18pt. Arabic body is Plex Sans Arabic 400 regular, ink black, 14–18pt.
+▪	Never mix more than two sizes in the same paragraph.
+0 3 . 6  ·  A R A B I C  —  S A M E  H I E R A R C H Y ,  M I R R O R E D
+Arabic doesn't have italic. The accent rule still works — it just becomes colour-only instead of colour-plus-slant. The eye still lands on the word you'd underline.
+W E I G H T S
+▪	300 — Light. Headlines and display, 28–48pt. Mirrors Fraunces 300 in Latin.
+▪	400 — Regular. Body text, 14–18pt. Reading weight.
+▪	500 — Medium. Replaces italic for emphasis. Use it sparingly — once per paragraph at most.
+T H E  A C C E N T  R U L E ,  I N  A R A B I C
+One rust word per headline. Same as Latin — the word you'd underline with a pen. No slant (Arabic has no italic), just colour. If you find yourself colouring two words, recolour one of them ink and try again.
+N U M E R A L S
+Arabic-Indic ( ٠١٢٣٤٥٦٧٨٩ ) for fully Arabic posts where the audience is Arabic-first. Western Arabic ( 0123456789 ) for mixed-language posts and any post where international readers are part of the audience. Pick one per post and stay consistent. Never mix the two systems in the same headline.
+A L I G N M E N T
+Arabic body and headlines are always right-aligned. Mixed-language posts align to the dominant language. Same hierarchy as Latin — just mirrored.
+ 
+0 4  /  C O L O U R  S Y S T E M
+Five colours. No more.
+Paper 70%. Ink 25%. Rust 5%. Never invert these ratios.
+Everything else in this section is a consequence of that ratio. Paper dominates the canvas. Ink carries the content. Rust is the 5% that makes the eye land. The restraint is the brand.
+
+S W A T C H E S
+Paper	#F4F1EA	The background. Warm offwhite. Never pure white.
+Paper Dark	#EBE6DA	Secondary surface. Card backgrounds, subtle contrast zones.
+Ink	#1A1814	Primary text. Near-black but warm. Never pure black.
+Muted	#78726A	Labels, captions, metadata. Reads as grey but has warmth.
+Accent Rust	#A8341F	The one hero colour. Italic words, rules, dots, highlights.
+
+R U L E S  O F  C O L O U R
+1.	Accent is precious. If everything is highlighted, nothing is. Rust gets one or two words per post — the word you'd underline with a pen.
+2.	Never introduce new colours. No blue for "professional." No green for "finance." No gold for "premium." The restraint is the brand.
+3.	Black-and-white fallback. If you're ever forced to print or share in monochrome, the design still holds because contrast does the work.
+ 
+0 5  /  L O G O  &  W O R D M A R K
+The name is the logo.
+Daftar doesn't have a mark — the wordmark is the brand. That's intentional. It keeps us from leaning on a symbol and forces every post to earn its identity through typography.
+0 5 . 1  ·  T H E  P R I M A R Y  L A T I N  W O R D M A R K
+Daftar
+Advisory.
+T H E  M I C R O  L A T I N  W O R D M A R K  —  F O R  P O S T  H E A D E R S
+D A F T A R   ·   A D V I S O R Y
+L A T I N  R U L E S
+▪	The word "Daftar" is always upright. "Advisory" is always italic and always rust.
+▪	Never stack the two words vertically unless the space demands it.
+▪	Never change the colour of "Daftar." It is always ink.
+▪	Never add a tagline under the wordmark in a post. The caption is the tagline.
+▪	Clear space: leave at least one "D" of empty space around the wordmark on all sides.
+ 
+0 5 . 2  ·  T H E  A R A B I C  W O R D M A R K  —  T H R E E  O P T I O N S
+V1.0 of this handbook gave one line on Arabic — "may appear as a secondary wordmark, set in a serif like Amiri." That line was replaced in V1.1. Three Arabic wordmark options, with clear rules for when to use each.
+P R I M A R Y  A R A B I C  W O R D M A R K  —  F U L L Y  A R A B I C  L A Y O U T S
+دفتر للاستشارات.
+Read: Daftar lil-istisharat — "Daftar for Advisory." The Latin wordmark is two words (Daftar + Advisory.). The Arabic uses the construct preposition lil- so the brand reads as one grammatical unit. دفتر stays ink. للاستشارات. is rust, with the period — same role as italic-rust "Advisory." in Latin.
+H Y B R I D  W O R D M A R K  —  B I L I N G U A L  O R  L A T I N - L E D  P O S T S
+دفتر  ·  Advisory.
+Use when the audience is bilingual or Latin-first but you want to acknowledge the Arabic identity. The middot · is set in muted, never rust — rust is reserved for "Advisory." alone.
+M I C R O  A R A B I C  W O R D M A R K  —  A R A B I C  P O S T  H E A D E R S
+د ف ت ر   ·   ل ل ا س ت ش ا ر ا ت
+Mirrors the Latin micro wordmark used in post header strips. Letter-spaced, muted ink, top-right of any Arabic-led post.
+A R A B I C  R U L E S
+▪	Daftar (دفتر) is always ink. Never rust. Never coloured.
+▪	The Arabic wordmark sits flush right in fully Arabic layouts.
+▪	Don't transliterate. Don't write "Daftar" in Arabic letters as a phonetic — use the actual Arabic word دفتر, which means notebook/ledger and is the etymological source.
+▪	Clear space: leave at least one د of empty space around the wordmark on all sides.
+ 
+0 6  /  T H E  G R I D
+Space is a feature.
+Daftar is built on generous whitespace. If a post feels crowded, it's wrong — delete something. The editorial feel comes from what you leave out, not what you put in.
+S Q U A R E  P O S T  C A N V A S
+▪	Dimensions: 1080 × 1080 px (Instagram native)
+▪	Safe margins: 60px on all sides — nothing touches the edge
+▪	Content area: 960 × 960 px inside the margins
+▪	Top rule: thin 1px line under the micro wordmark and post number
+▪	Bottom rule: same — meta info sits between the two rules
+V E R T I C A L  S T R U C T U R E  ( E V E R Y  P O S T )
+1.	Top strip (60px): Wordmark left · post number right (01 ◆ 09)
+2.	Content zone (varies): The actual post — headline, quote, grid, whatever
+3.	Bottom strip (60px): Micro-meta left · @handle right
+A L I G N M E N T
+▪	Latin: left-align almost everything. Centred text is reserved for the credo/CTA posts only.
+▪	Arabic: right-align body and headlines. Mixed-language posts align to the dominant language.
+▪	Headlines sit flush left (or flush right in Arabic) with no indent.
+▪	Long lines break early — Fraunces and Plex Sans Arabic at big sizes both want room to breathe.
+G R I D - B R E A K I N G
+One post in every nine can break the grid deliberately — centred typography, asymmetric layout, a single huge number. Use it sparingly. The surprise only works when the rest is disciplined.
+ 
+0 7  /  P O S T  A N A T O M Y
+The five parts.
+Consistency is what makes Daftar recognisable before the logo is read.
+Every Daftar post — regardless of format or language — has the same five structural parts. Learn them once, and you can produce a post in 15 minutes instead of an hour.
+
+0 1  ·  W O R D M A R K  S T R I P
+Latin micro wordmark top-left (or Arabic micro top-right for Arabic-led posts), post number opposite. Thin rule underneath. Always the same. Never decorated.
+0 2  ·  S E C T I O N  L A B E L
+A monospace kicker in accent rust: "03 / SERVICES" or "08 / BEHIND THE DESK." This tells the reader what kind of post they're looking at before they read the headline.
+0 3  ·  H E A D L I N E
+Fraunces (Latin) or Plex Sans Arabic Light (Arabic), 60–108pt, one or two sentences max. One word in rust — italic if Latin, colour-only if Arabic. The word you want the reader to remember.
+0 4  ·  B O D Y
+The actual content: a list, a grid, a table, a quote, a stat. This is the "what" — kept as minimal as possible.
+0 5  ·  F O O T E R  S T R I P
+Context left (e.g. "FIXED SCOPE · FIXED FEE"), handle right. Same as the wordmark strip but inverted. Closes the frame.
+ 
+0 8  /  P O S T  T E M P L A T E S
+Nine formats that always work.
+Every Daftar post you will ever make fits into one of these nine buckets. If you can't assign a format, it's not a Daftar post yet — keep editing.
+If three consecutive posts fall into the same format, rebalance before posting again.
+
+F O R M A T   A    Manifesto
+One giant headline. Maybe a small kicker. Used for brand moments and major announcements.
+~ 1 2 %  O F  P O S T S
+F O R M A T   B    List / Who it's for
+A headline plus 3–5 numbered items. Great for "who this is for," "things I learned," "why X matters."
+~ 1 5 %  O F  P O S T S
+F O R M A T   C    Services Grid
+A headline plus a 2×N grid of services or offerings. Use for menu posts, offer announcements, scope-of-work summaries.
+~ 8 %  O F  P O S T S
+F O R M A T   D    Big Stat
+One giant number. One sentence of context. Used for proof, milestones, surprising facts.
+~ 1 2 %  O F  P O S T S
+F O R M A T   E    Myth vs Reality
+Two blocks: "The Myth" in muted italic, "The Reality" in ink with a rust rule. Perfect for IFRS explainers and misconceptions.
+~ 1 8 %  O F  P O S T S
+ 
+F O R M A T   F    Numbered Advice
+4–5 short pieces of advice with monospace numbers. Career posts, lessons learned, rules of thumb.
+~ 1 5 %  O F  P O S T S
+F O R M A T   G    Credo / Pull Quote
+A centred quote with a giant opening mark. For brand statements, client praise, principles.
+~ 1 0 %  O F  P O S T S
+F O R M A T   H    Behind the Desk
+A table, spreadsheet excerpt, or working-paper artefact plus a caption. Shows actual craft.
+~ 5 %  O F  P O S T S
+F O R M A T   I    CTA
+Eyebrow, headline, three contact boxes. Used monthly at most.
+~ 5 %  O F  P O S T S
+ 
+0 9  /  W R I T I N G  C A P T I O N S
+The 4-beat caption.
+The image does the heavy lifting. The caption exists to add context, start a conversation, and give the algorithm something to index. Every Daftar caption follows the same 4-beat structure.
+B E A T  ·  H O O K
+One sharp sentence that earns the second sentence. No "Hey guys." No emoji rain. Just a sentence that makes someone pause their scroll.
+B E A T  ·  C O N T E X T
+Two or three sentences that expand the idea. This is where your actual point lives. Write it like you're explaining it to one specific person — not "my audience."
+B E A T  ·  T A K E A W A Y
+The thing you want the reader to remember. One sentence. If the caption had to shrink to a tweet, this is what would survive.
+B E A T  ·  C A L L
+A single action: save this, DM "SCOPE," share with a junior auditor, book a call. One call per post. Never two.
+If you can't identify the Hook or the Takeaway instantly, the caption isn't finished.
+L E N G T H  R U L E S
+▪	Minimum: 40 words. Anything shorter reads as lazy.
+▪	Maximum: 180 words. Anything longer gets truncated and ignored.
+▪	Sweet spot: 80–120 words — enough to say something, short enough to finish.
+ 
+0 9 . 1  ·  B I L I N G U A L  P O S T S  —  T W O  L A N G U A G E S ,  O N E  C O M P O S I T I O N
+W H E N  T O  P U B L I S H  I N  A R A B I C
+Default: English-only. Most Daftar content — IFRS-technical posts, audit-craft, CPA-journey, lessons from EY and PwC — lives natively in English in MENA finance and travels globally that way. Add Arabic when the topic is GCC-regulatory (ZATCA waves, Saudi TP, SOCPA-specific guidance) or the audience is Arabic-first (KSA family-office CFOs, Jordan SME founders). Skip Arabic when you don't have time to write it natively — half-translated Arabic is worse than no Arabic at all.
+O R D E R
+Arabic first when the post topic is GCC-regulatory (ZATCA, Saudi TP, SOCPA) or when the audience is dominantly Arabic. English first for IFRS technical posts, audit-craft posts, and any content that's likely to travel internationally. Pick one per post — never run them side-by-side in two columns.
+T H E  R U L E  B E T W E E N
+نصّ عربي. مكتوب أصلاً بالعربيّة، ليس ترجمة.
+—————
+English text. Written natively. Not a translation of the Arabic.
+Five em dashes (—————), centred, in rust. Not a horizontal line. Not a rule across the full width. The five dashes are the visual handoff — short enough to feel intentional, long enough to register.
+T H E  T R A N S L A T I O N  R U L E
+Don't machine-translate. Don't translate at all, in fact. Write each version natively to the language. The English version may say something the Arabic doesn't, and vice versa — that's correct. The two versions are siblings, not copies.
+L E N G T H  I N  B I L I N G U A L  P O S T S
+Each language follows the caption length rules independently — minimum 40 words, maximum 180, sweet spot 80–120. The combined caption can run up to 300 words because the algorithm reads each language separately.
+ 
+1 0  /  H A S H T A G S  &  T A G G I N G
+Fewer than you think.
+Instagram has moved on from hashtag farms. A handful of specific, relevant tags beats a wall of generic ones. Aim for 5–8 per post. Never more than 10.
+T I E R  1  —  A L W A Y S
+These three go on every post:
+▪	#IFRS
+▪	#Audit
+▪	#MENAFinance
+T I E R  2  —  T O P I C - S P E C I F I C  ( P I C K  2 – 3 )
+▪	#FinancialStatements · #BigFour · #CPA · #CPACandidate · #Accounting · #CFO · #Bookkeeping · #Controller
+▪	#KSA · #Jordan · #UAE · #GulfBusiness (for location/market-specific posts)
+▪	#AuditLife · #WorkingPapers · #TechnicalAccounting (for "behind the desk" posts)
+T I E R  3  —  A R A B I C  ( P I C K  1 – 2  F O R  B I L I N G U A L  P O S T S )
+#محاسبة · #تدقيق · #المعايير_الدولية · #ريادة_أعمال
+H A S H T A G S  W E  N E V E R  U S E
+▪	#Motivation #Success #Hustle #GrindMode — cliché, low-signal, attracts bots
+▪	#FollowForFollow #LikeForLike — algorithm poison
+▪	Anything over 5M posts — your post drowns in seconds
+T A G G I N G
+▪	Tag real people and organisations when you mention them — never tag unrelated big accounts for reach.
+ 
+1 1  /  P O S T I N G  C A D E N C E
+Rhythm over volume.
+Three posts per week, forever. Not four. Not seven. Three. The algorithm rewards consistency far more than volume, and burnout kills more finance IG accounts than anything else.
+
+M O N	Educational (E or F)	Myth-buster or numbered advice. Starts the week with value — highest save rate.
+W E D	Proof or craft (D or H)	Big stat or behind-the-desk. Builds credibility mid-week.
+F R I	Voice or brand (A, B, G)	Manifesto, list, or credo. Leaves the follower with a feeling heading into the weekend.
+
+B E S T  P O S T I N G  T I M E S  ( A M M A N  /  G C C  A U D I E N C E )
+▪	Morning: 8:00–9:00 AM — commuters, morning coffee scroll
+▪	Evening: 7:00–9:00 PM — after-work scroll, highest engagement window in MENA
+▪	Avoid: Friday mornings (prayer) and late nights after 11 PM
+S T O R I E S  V S  F E E D  P O S T S
+▪	Feed: the 3 posts per week above. These are the brand.
+▪	Stories: daily or every-other-day. Behind-the-scenes, polls, quick takes, reshares. Lower stakes, higher frequency.
+▪	Never move feed-quality content to stories. Stories disappear — your grid is forever.
+ 
+1 2  /  W H A T  W E  N E V E R  P O S T
+The refusal list.
+Refusals are what protect the brand when reach, ego, or pressure creep in.
+The things you refuse to do shape a brand more than the things you do.
+
+1 2 . 1  ·  G E N E R A L  R E F U S A L S
+▪	Client names or sanitised client work without written permission. Audit confidentiality is permanent. If in doubt, don't.
+▪	Motivational quotes over stock photos. Not our brand. Not our voice. Not ever.
+▪	"Hustle culture" content. We're selling craft and judgement, not burnout.
+▪	Hot takes on politics or religion. We work across MENA, GCC, and the US — neutrality is a commercial asset.
+▪	Bashing other firms by name. You can critique Big 4 overhead as a category. Never name and shame a specific firm or partner.
+▪	AI-generated imagery pretending to be real. Hand-drawn diagrams and real screenshots only. This is a craft practice.
+▪	Inspirational humblebrags. "Can't believe I landed this huge client" — no.
+▪	Ultra-generic advice. "Work hard, stay humble" adds nothing. If a post could be about any profession, it's not a Daftar post.
+▪	Emoji storms. One or two per caption, maximum. Geometric only — ▪ ◆ ▣ — never the festive ones.
+▪	Promises about outcomes. Never "save 40% on your audit" or "guaranteed pass." This is a regulated-adjacent practice. Overpromising is career-ending.
+ 
+1 2 . 2  ·  A R A B I C - S P E C I F I C  R E F U S A L S
+Same logic as 12.1. The things we refuse to do in Arabic shape the brand more than the things we do.
+▪	Machine translation. Google Translate is a starting point at best. Always rewrite. If we don't have time to write Arabic natively, we publish English-only that week.
+▪	Decorative Naskh or Diwani fonts. These belong on wedding invitations and book covers, not on a finance practice's working voice.
+▪	Arabic translation of the avoided English words. If we don't say "leverage" in English, we don't say نُوظِّف in Arabic. The avoidance list applies in both languages.
+▪	Religious framing. Phrases like بإذن الله or ما شاء الله in business posts — even when authentic to the writer — read as performative on a professional feed. Save them for personal accounts.
+▪	Mixing numeral systems. If a post uses ٢٠٢٦ (Arabic-Indic), it can't also use 2026 (Western). One per post.
+▪	Forced bilingualism. Not every post needs Arabic. Audit-technical content (deferred tax, IFRS 15 disaggregation, lease modifications) lives natively in English in the MENA finance world. Forcing Arabic on it sounds awkward to readers and dilutes the post.
+ 
+1 3  /  C O N T E N T  C A L E N D A R
+A month at a glance.
+Plan content one month at a time. Batch-design posts on one afternoon, schedule them out, and spend the rest of the month on real work. Here's a sample month — copy this structure into a Notion / Google Sheets doc and fill in each week.
+W E E K	M O N	W E D	F R I
+W 1	Myth-buster: IFRS 16 leases (E)	Big stat: SAR 3B portfolio (D)	Manifesto / intro (A)
+W 2	Numbered advice: 4 things at 22 (F)	Behind the desk: clean tie-out (H)	Who it's for (B)
+W 3	Myth-buster: revenue recognition (E)	Services grid (C)	Credo / pull quote (G)
+W 4	Numbered advice: CPA path (F)	Big stat: 30% faster FS prep (D)	Monthly CTA (I)
+
+T H E  3 : 1  R A T I O
+For every three posts of value (education, craft, advice), publish one post about the business (services, CTA, manifesto). Followers unfollow quickly when a feed becomes a sales channel. Give first, ask occasionally.
+B A T C H I N G  W O R K F L O W
+1.	Last Sunday of the month: plan the next month's topics (30 min)
+2.	First Saturday: design all 12 post images in one sitting (2–3 hrs)
+3.	First Sunday: write all 12 captions in one sitting (1 hr)
+4.	Schedule everything in Meta Business Suite (free) — set-and-forget
+5.	Spend the rest of the month on client work, not on Instagram
+ 
+1 4  /  P R E - F L I G H T  C H E C K L I S T
+Before you hit post.
+Run through this 11-point list on every post. It takes 60 seconds and prevents 90% of the mistakes that kill finance IG accounts.
+☐  0 1    The post fits one of the 9 formats (A through I)
+☐  0 2    The headline has one rust accent word — italic in Latin, colour-only in Arabic — no more, no less
+☐  0 3    The image uses only the 5 brand colours
+☐  0 4    Only Fraunces, JetBrains Mono, and IBM Plex Sans Arabic appear in the design
+☐  0 5    The wordmark and post number are in the top strip (Latin micro top-left, Arabic micro top-right for Arabic-led posts)
+☐  0 6    The @handle appears in the bottom strip
+☐  0 7    The caption follows the 4-beat structure (Hook → Context → Takeaway → Call)
+☐  0 8    If bilingual: Arabic and English are written natively — neither is a translation of the other
+☐  0 9    5–8 hashtags, mixing Tier 1, 2, and optionally 3
+☐  1 0    No client names, no confidential data, no unauthorized tagging
+☐  1 1    One clear call to action — just one
+
+If any of the eleven are unchecked, the post isn't ready. Save the draft. Come back tomorrow. A one-day delay is always cheaper than a brand mistake.
+ 
+E N D  O F  H A N D B O O K  ·  V 1 . 2
+Daftar Advisory.
+Ahmad Al Hinaiti  ·  Amman, Jordan  ·  2026
+ahmad@daftaradvisory.com  ·  daftaradvisory.com

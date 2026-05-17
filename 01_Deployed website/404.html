@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar Advisory — Page not found.</title>
+<meta name="description" content="The page you're looking for isn't here. Head back to the homepage.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F4F1EA">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #F4F1EA;
+    --ink: #1A1814;
+    --muted: #6B655D;
+    --rust: #A8341F;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.55;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .topstrip {
+    border-bottom: 1px solid rgba(26, 24, 20, 0.10);
+    padding: 22px 32px;
+  }
+
+  .wordmark {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .wordmark em {
+    color: var(--rust);
+    font-style: italic;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 32px;
+    max-width: 720px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(40px, 8vw, 72px);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin-bottom: 24px;
+  }
+
+  h1 em {
+    color: var(--rust);
+    font-style: italic;
+  }
+
+  p {
+    color: var(--ink);
+    max-width: 520px;
+    margin-bottom: 32px;
+  }
+
+  .links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .links a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 4px;
+    transition: color 0.18s, border-color 0.18s;
+  }
+
+  .links a:hover {
+    color: var(--rust);
+    border-color: var(--rust);
+  }
+
+  .links a:focus-visible {
+    outline: 2px solid var(--rust);
+    outline-offset: 4px;
+  }
+
+  footer {
+    border-top: 1px solid rgba(26, 24, 20, 0.10);
+    padding: 32px;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<header class="topstrip">
+  <a href="/" class="wordmark">Daftar <em>Advisory.</em></a>
+</header>
+
+<main>
+  <div class="eyebrow">Error · 404</div>
+  <h1>That page isn't <em>here.</em></h1>
+  <p>You followed a link that doesn't lead anywhere — at least not on this site. The homepage is the best place to start.</p>
+  <div class="links">
+    <a href="/">Homepage</a>
+    <a href="/articles">Briefs</a>
+    <a href="/start">Start a conversation</a>
+  </div>
+</main>
+
+<footer>
+  © 2026 · Amman, Jordan
+</footer>
+
+</body>
+</html>

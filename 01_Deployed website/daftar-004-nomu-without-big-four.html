@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Daftar №004 — Nomu without Big Four · A pre-IPO readiness playbook</title>
+<meta name="description" content="A pre-IPO readiness playbook for Saudi SMEs in the SAR 30-80M revenue band considering a Nomu listing. A research brief from Daftar Advisory.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:       #F4F1EA;
+    --paper-dark:  #EBE6DA;
+    --ink:         #1A1814;
+    --muted:       #6B655D;
+    --rust:        #A8341F;
+    --rule-light:  rgba(26, 24, 20, 0.10);
+    --rule-mid:    rgba(26, 24, 20, 0.22);
+    --rule-strong: rgba(26, 24, 20, 1.00);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Fraunces', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-variation-settings: "opsz" 14;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.65;
+  }
+  em { font-style: italic; color: var(--rust); font-weight: 300; }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+  .top-strip { border-bottom: 1px solid var(--rule-light); background: var(--paper); }
+  .top-strip-inner {
+    max-width: 980px; margin: 0 auto; padding: 18px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);
+  }
+  .wordmark {
+    font-family: 'Fraunces', serif; font-size: 16px; color: var(--ink);
+    letter-spacing: -0.01em; text-transform: none; font-weight: 400; text-decoration: none;
+  }
+  .wordmark em { color: var(--rust); font-style: italic; }
+
+  .masthead { max-width: 980px; margin: 0 auto; padding: 96px 40px 64px; }
+  .pub-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust);
+    margin-bottom: 36px; display: flex; align-items: center; gap: 14px;
+  }
+  .pub-num::before { content: ''; width: 32px; height: 1px; background: var(--rust); }
+  h1.headline {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(44px, 6vw, 78px);
+    font-weight: 300; line-height: 0.98; letter-spacing: -0.02em; color: var(--ink);
+    font-variation-settings: "opsz" 144;
+    margin-bottom: 36px; max-width: 880px;
+  }
+  .deck {
+    font-family: 'Fraunces', serif; font-size: 22px; line-height: 1.45; color: var(--ink);
+    max-width: 720px; font-variation-settings: "opsz" 18;
+    margin-bottom: 56px; font-weight: 400;
+  }
+  .deck em { color: var(--rust); }
+  .byline {
+    border-top: 1px solid var(--rule-mid); padding-top: 20px;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
+  }
+  .byline strong {
+    display: block; color: var(--ink); font-weight: 400; margin-top: 6px;
+    font-family: 'Fraunces', serif; font-size: 14px; letter-spacing: 0; text-transform: none;
+  }
+
+  article { max-width: 720px; margin: 0 auto; padding: 64px 40px 96px; }
+  article > h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 32px; font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; color: var(--ink);
+    margin: 64px 0 24px; padding-top: 32px; border-top: 1px solid var(--rule-light);
+    font-variation-settings: "opsz" 36;
+  }
+  article > h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  article > h2 .sec-num {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rust);
+    margin-bottom: 14px; font-weight: 400;
+  }
+  article p {
+    font-family: 'Fraunces', serif; font-size: 17px; line-height: 1.7; color: var(--ink);
+    margin-bottom: 22px; font-variation-settings: "opsz" 14;
+  }
+  article p.lede { font-size: 19px; line-height: 1.55; color: var(--ink); }
+  article p.lede::first-letter {
+    font-family: 'Fraunces', serif; font-size: 64px; line-height: 0.9; float: left;
+    padding: 4px 12px 0 0; color: var(--rust); font-weight: 400;
+    font-variation-settings: "opsz" 144;
+  }
+  article ul, article ol { margin: 0 0 24px 0; padding-left: 0; list-style: none; }
+  article ul li, article ol li {
+    font-family: 'Fraunces', serif; font-size: 17px; line-height: 1.65; color: var(--ink);
+    padding: 8px 0 8px 28px; position: relative;
+  }
+  article ul li::before { content: '—'; position: absolute; left: 0; color: var(--rust); font-weight: 400; }
+  article ol { counter-reset: list-counter; }
+  article ol li { padding-left: 44px; counter-increment: list-counter; }
+  article ol li::before {
+    content: counter(list-counter, decimal-leading-zero);
+    position: absolute; left: 0; top: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.1em; color: var(--rust); font-weight: 400;
+  }
+  article strong { font-weight: 500; color: var(--ink); }
+
+  .callout { border-left: 2px solid var(--rust); padding: 12px 0 12px 24px; margin: 32px 0; background: transparent; }
+  .callout .callout-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rust); margin-bottom: 8px;
+  }
+  .callout p { font-family: 'Fraunces', serif; font-size: 17px; line-height: 1.6; font-style: italic; color: var(--ink); margin: 0; }
+
+  .data-table { margin: 36px 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule-light); }
+  .data-table .row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 16px 0;
+    border-bottom: 1px solid var(--rule-light); font-size: 15px; line-height: 1.5;
+  }
+  .data-table .row:last-child { border-bottom: none; }
+  .data-table .lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); padding-top: 4px;
+  }
+  .data-table .val { font-family: 'Fraunces', serif; font-size: 16px; color: var(--ink); }
+  .data-table .val em { color: var(--rust); font-style: italic; }
+
+  /* Runway exhibit — for Nomu timeline */
+  .runway {
+    margin: 36px 0;
+    background: var(--paper-dark);
+    padding: 32px;
+    border-left: 2px solid var(--rust);
+  }
+  .runway .rw-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rust); margin-bottom: 8px;
+  }
+  .runway .rw-title {
+    font-family: 'Fraunces', serif; font-size: 18px; font-weight: 400; color: var(--ink); margin-bottom: 24px;
+  }
+  .runway .rw-stage {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule-light);
+  }
+  .runway .rw-stage:last-child { border-bottom: none; }
+  .runway .rw-when {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rust); padding-top: 4px;
+  }
+  .runway .rw-stage h5 {
+    font-family: 'Fraunces', serif; font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 6px;
+  }
+  .runway .rw-stage p {
+    font-family: 'Fraunces', serif; font-size: 14px; line-height: 1.55; color: var(--ink); margin: 0;
+  }
+
+  .price-box {
+    background: var(--paper-dark); padding: 32px 32px; margin: 36px 0;
+    border-left: 2px solid var(--rust);
+  }
+  .price-box .pb-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rust); margin-bottom: 12px;
+  }
+  .price-box h4 {
+    font-family: 'Fraunces', serif; font-size: 26px; font-weight: 400; color: var(--ink);
+    margin-bottom: 16px; font-variation-settings: "opsz" 36;
+  }
+  .price-box h4 em { color: var(--rust); }
+  .price-box p { font-size: 15px; line-height: 1.55; color: var(--ink); margin: 0; }
+  .price-box .pb-fee {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; color: var(--ink); margin-top: 16px; letter-spacing: 0.06em;
+  }
+
+  .post-footer { border-top: 1px solid var(--rule-light); background: var(--paper); }
+  .post-footer-inner { max-width: 720px; margin: 0 auto; padding: 48px 40px; }
+  .post-footer .closing {
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 17px; color: var(--muted);
+    line-height: 1.6; margin-bottom: 36px; border-left: 2px solid var(--rule-mid); padding-left: 20px;
+  }
+  .post-footer .cta {
+    border-top: 2px solid var(--ink); padding-top: 24px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 36px;
+  }
+  .post-footer .cta-block .cta-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rust); margin-bottom: 8px;
+  }
+  .post-footer .cta-block h4 {
+    font-family: 'Fraunces', serif; font-size: 22px; font-weight: 400; color: var(--ink);
+    margin-bottom: 6px; font-variation-settings: "opsz" 24;
+  }
+  .post-footer .cta-block p { font-size: 15px; color: var(--muted); line-height: 1.5; }
+  .post-footer .cta-block a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rust); }
+  .post-footer .colophon {
+    border-top: 1px solid var(--rule-light); padding-top: 18px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
+  }
+
+  @media (max-width: 720px) {
+    .masthead { padding: 64px 24px 48px; }
+    article { padding: 48px 24px 72px; }
+    .top-strip-inner { padding: 14px 24px; }
+    .post-footer-inner { padding: 36px 24px; }
+    h1.headline { font-size: 40px; }
+    .deck { font-size: 18px; }
+    .byline { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .post-footer .cta { grid-template-columns: 1fr; gap: 24px; }
+    .data-table .row { grid-template-columns: 1fr; gap: 4px; }
+    article > h2 { font-size: 26px; }
+    article p, article ul li, article ol li { font-size: 16px; }
+    .post-footer .colophon { flex-direction: column; gap: 8px; align-items: flex-start; }
+    .runway { padding: 20px; }
+    .runway .rw-stage { grid-template-columns: 1fr; gap: 6px; }
+  }
+
+  /* ============ REDUCED MOTION ============ */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="top-strip">
+  <div class="top-strip-inner">
+    <a href="https://daftaradvisory.com" class="wordmark">Daftar <em>Advisory.</em></a>
+    <span>The Daftar · №004</span>
+  </div>
+</div>
+
+<div class="masthead">
+  <div class="pub-num">№ 004 · Research Brief</div>
+  <h1 class="headline">Nomu without Big Four — a pre-IPO readiness <em>playbook</em> for SAR 30–80M SMEs.</h1>
+  <p class="deck">Most Saudi SMEs in the Nomu band do not need a Big Four reporting accountant on day one. They need an honest diagnostic six to twelve months earlier — and the readiness work the financial adviser will not do.</p>
+  <div class="byline">
+    <div>Author<strong>Ahmad Al Hinaiti</strong></div>
+    <div>Published<strong>May 2026</strong></div>
+    <div>Read<strong>17 minutes</strong></div>
+    <div>Topic<strong>Nomu · CMA</strong></div>
+  </div>
+</div>
+
+<article>
+
+  <h2><span class="sec-num">01 / The Position</span>The financial adviser is not the right first hire. The diagnostic is.</h2>
+  <p class="lede">A Saudi family business at SAR 30 to 80 million in revenue, considering a Nomu listing in 12 to 24 months, almost always begins the conversation by asking who its financial adviser should be. That is the right second question. The right first question is whether the company is ready to be the kind of client a CMA-licensed financial adviser will take on at all — and if not, what specifically would have to be true for that to change.</p>
+  <p>The reason the question gets asked in the wrong order is the same reason most things in pre-IPO go wrong: the founder is being advised by people whose engagement begins with the formal CMA process, not with the readiness work that has to precede it. The financial adviser will tell the founder, accurately and politely, that the company is not yet ready. They will rarely tell the founder exactly what would need to change, in what order, by when, and at what cost. That gap — the structured truth between "you are not ready" and "you are listed" — is what this brief is about.</p>
+
+  <h2><span class="sec-num">02 / Who This Brief Is For</span>The Nomu band, defined.</h2>
+  <p>Not every SME considering a Nomu listing fits the profile this brief addresses. The patterns described below are most relevant to:</p>
+  <ul>
+    <li>Saudi-resident family businesses or founder-led companies in the SAR 30 to 80 million revenue band — large enough to be Nomu-eligible, small enough that a Big Four readiness engagement at SAR 350,000 plus is disproportionate to the company's current state</li>
+    <li>Companies with a 12 to 24 month horizon to listing — close enough that the readiness gaps are now binding constraints, far enough that there is time to remediate them in a structured way</li>
+    <li>Sectors where Nomu listings have actually closed — consumer, healthcare, light industrial, professional services, food and beverage. Not deep tech, not regulated financials, not heavy infrastructure</li>
+    <li>A finance function led by a single CFO or a senior controller, with a bookkeeping or accounting team underneath. Not yet a finance organisation</li>
+  </ul>
+  <p>Above SAR 80 million and the readiness conversation is different — the Big Four reporting-accountant engagement starts to be proportionate, and the gap between "ready" and "not ready" is wider in different places. Below SAR 30 million and Nomu is rarely the right answer regardless of readiness; the right answer is usually a private growth round.</p>
+
+  <h2><span class="sec-num">03 / The Four Readiness Dimensions</span>Where the gap actually sits.</h2>
+  <p>The CMA Nomu requirements are extensive but not opaque. The readiness gap, in practice, sits across four dimensions — and the gaps within each dimension are different in kind. Treating them as one undifferentiated "IPO readiness" workstream is the most common mistake.</p>
+
+  <ol>
+    <li><strong>IFRS compliance and technical accounting positions.</strong> The gap is rarely "we are not on IFRS." It is "we are nominally on IFRS but the IFRS 15 revenue policy was last reviewed five years ago," "the IFRS 16 lease portfolio has not been recomputed since transition," "the IFRS 9 ECL methodology is a percentage of receivables with no forward-looking adjustment," and "the IAS 36 impairment review on the largest CGU was performed by the auditor, not by management." Each of these is a position the CMA's reporting-accountant review will probe, and each takes weeks to remediate honestly</li>
+    <li><strong>Corporate governance and board structure.</strong> Independent directors. An audit committee with the right composition and a written charter. A risk management framework that exists in the file, not in the founder's head. Internal audit — a function or a co-sourced arrangement, but a function. Related-party transaction governance with a register and a ratification process. The gap here is rarely the founder's reluctance; it is that nobody has told the founder exactly what governance the CMA will expect to see in writing</li>
+    <li><strong>MIS and close-quality.</strong> The month-end close cycle. The interim-reporting capability. The board pack format. The MIS architecture — does the system that produces the management accounts also produce the audited statements without manual reconciliation? At SAR 30–80M most Nomu candidates close in 18 to 25 days. The CMA will expect demonstrable capacity to close in 8 to 12 days, with interim financials produced and reviewed on a quarterly cadence</li>
+    <li><strong>Disclosure-readiness against CMA Nomu requirements.</strong> Prospectus-style disclosures that do not yet exist in the company's reporting. Pro-forma financials where the company's structure has changed in the look-back period. A risk-factor inventory that is real, not boilerplate. Related-party-transaction disclosure at the level of detail the CMA requires. Most candidates are 60% to 70% of the way to disclosure-ready and the remaining 30% is concentrated in three or four specific notes</li>
+  </ol>
+
+  <h2><span class="sec-num">04 / The Big Four Question, Decomposed</span>What the SAR 350,000 engagement actually does.</h2>
+  <p>"Nomu without Big Four" is a deliberately provocative framing. The realistic version is more nuanced: the Big Four reporting-accountant role is required at a specific point in the CMA process, and it cannot be substituted by independent advisory. What can be substituted — and substituted well — is the readiness work that precedes it.</p>
+
+  <div class="data-table">
+    <div class="row"><span class="lbl">Pre-readiness diagnostic</span><span class="val">Gap report against IFRS, governance, MIS, and disclosure. <em>Independent advisory works.</em></span></div>
+    <div class="row"><span class="lbl">Readiness remediation</span><span class="val">IFRS restatement, governance implementation, MIS upgrade, disclosure note drafting. <em>Independent advisory works.</em></span></div>
+    <div class="row"><span class="lbl">Reporting accountant engagement</span><span class="val">CMA-mandated comfort opinion on prospectus financial information. <em>Big Four or licensed equivalent only.</em></span></div>
+    <div class="row"><span class="lbl">Financial adviser role</span><span class="val">Sponsor function, prospectus drafting, CMA submission. <em>CMA-licensed adviser only.</em></span></div>
+    <div class="row"><span class="lbl">Auditor</span><span class="val">Statutory audit and CMA-recognised audit opinion. <em>Licensed auditor only.</em></span></div>
+  </div>
+
+  <p>The bottom three roles are non-substitutable. The top two are not. And the cost stack of the bottom three is determined, in large part, by the quality of the work in the top two. A Nomu candidate that arrives at the reporting accountant with a clean IFRS 15 revenue position, a documented IFRS 16 portfolio, a working audit committee, and a 10-day month-end close pays a very different price for the comfort opinion than a candidate that arrives with five contested positions and an MIS that needs three weeks to produce a reliable trial balance.</p>
+
+  <h2><span class="sec-num">05 / The 18-Month Runway</span>What a structured pre-IPO readiness path looks like.</h2>
+  <p>A defensible 18-month path from "considering Nomu" to "ready to engage the financial adviser" is concrete, sequenced, and sized to the SME's actual finance capacity. The runway below is illustrative — every company is different — but it captures the order of operations that survives audit and CMA scrutiny.</p>
+
+  <div class="runway">
+    <div class="rw-label">Runway exhibit · representative</div>
+    <div class="rw-title">SAR 30–80M Nomu candidate · 18-month pre-IPO path</div>
+    <div class="rw-stage">
+      <div class="rw-when">Month 0–1</div>
+      <div>
+        <h5>Diagnostic</h5>
+        <p>Independent gap report across IFRS, governance, MIS, and disclosure. Each finding categorised by remediation complexity (days / weeks / months) with indicative fees. Output is a single document the founder can take to the board.</p>
+      </div>
+    </div>
+    <div class="rw-stage">
+      <div class="rw-when">Month 2–6</div>
+      <div>
+        <h5>IFRS remediation</h5>
+        <p>Revenue policy review and restatement where required. IFRS 16 lease portfolio recomputation. IFRS 9 ECL methodology rebuilt with forward-looking inputs. IAS 36 impairment review on material CGUs. Two prior-year audited periods restated where the diagnostic identifies a prior-period error under IAS 8.</p>
+      </div>
+    </div>
+    <div class="rw-stage">
+      <div class="rw-when">Month 4–9</div>
+      <div>
+        <h5>Governance build</h5>
+        <p>Independent directors recruited and onboarded — typically two for a Nomu candidate. Audit committee charter drafted, ratified, and convened on a quarterly cadence. Risk management framework documented. Internal audit function established or co-sourced. Related-party register and ratification process operational.</p>
+      </div>
+    </div>
+    <div class="rw-stage">
+      <div class="rw-when">Month 6–12</div>
+      <div>
+        <h5>MIS and close upgrade</h5>
+        <p>Month-end close cycle compressed from 18–25 days to 8–12 days. Quarterly interim-reporting capability built and tested for two consecutive quarters. Board-pack format aligned to listed-company expectations. MIS architecture reviewed; manual reconciliation between MIS and audited financials eliminated where present.</p>
+      </div>
+    </div>
+    <div class="rw-stage">
+      <div class="rw-when">Month 10–14</div>
+      <div>
+        <h5>Disclosure-note drafting</h5>
+        <p>Risk-factor inventory built from operational reality, not boilerplate. Related-party transaction disclosure rewritten at prospectus depth. Pro-forma financials drafted for any structural change in the look-back period. Segment reporting, EPS, and capital management notes brought to listed-company standard.</p>
+      </div>
+    </div>
+    <div class="rw-stage">
+      <div class="rw-when">Month 14–18</div>
+      <div>
+        <h5>Adviser engagement</h5>
+        <p>Financial adviser shortlisted and engaged — typically Jadwa Capital, Albilad Capital, Yaqeen Capital, or SNB Capital depending on deal size and sector fit. Reporting accountant engaged. The CMA process begins on a clean readiness foundation, not on top of unresolved positions.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2><span class="sec-num">06 / The Five Questions Before You Hire Anyone</span>What the founder should answer before the first call with an adviser.</h2>
+  <p>The diagnostic exists to answer five questions in sequence. If the founder cannot answer them in writing, the readiness conversation has not yet started.</p>
+
+  <ol>
+    <li><strong>What is the exit thesis?</strong> Why Nomu, and why now? Liquidity for shareholders? Growth capital? Currency for acquisitions? Each thesis implies a different optimal structure, a different timeline, and a different set of remediation priorities. "We are listing because the bank suggested it" is not a thesis; it is a default</li>
+    <li><strong>What does the look-back period actually contain?</strong> Three years of audited IFRS financials are required for Nomu. Look at them and answer honestly: are the comparatives consistent? Have there been structural changes — acquisitions, disposals, restructurings — that require pro-forma treatment? Are there contested IFRS positions that the auditor flagged but did not require a qualification? The look-back is the foundation; if it has cracks, every subsequent step is more expensive</li>
+    <li><strong>What is the related-party transaction footprint?</strong> Family-owned businesses at this scale almost always have related-party transactions — shared services, intercompany financing, common ownership of premises, founder remuneration through connected entities. Each transaction needs to be identified, classified, ratified by an independent body, and disclosed. The work is structured, not theoretical</li>
+    <li><strong>Who is the post-listing CFO?</strong> A founder-led, founder-trusted senior controller who runs a 22-day close is a fine pre-listing finance lead. They are usually not the right post-listing CFO. The decision — promote, hire alongside, or replace — is the most consequential people decision in the runway, and it cannot be deferred to month 17</li>
+    <li><strong>What does the board look like in 18 months?</strong> Independent directors, audit committee chair, risk and remuneration governance. The board the listed company needs to have on day one is not the board the private company has today. The transition takes time, takes recruitment work, and is not something an adviser can do for the founder</li>
+  </ol>
+
+  <h2><span class="sec-num">07 / The Refusal</span>Where this practice will not work.</h2>
+  <p>The Nomu Readiness Diagnostic is structurally an upstream service — it ends where the licensed work begins. The boundary matters because the founder's most expensive mistake is engaging an unlicensed party in a licensed role.</p>
+  <ul>
+    <li><strong>The financial adviser role is out of scope.</strong> Daftar is not CMA-licensed. The diagnostic produces a remediation runway and an indicative fee estimate for downstream work; it does not act as sponsor, reporting accountant, or financial adviser. Where the company is ready, the diagnostic ends with a referral to a CMA-licensed FA</li>
+    <li><strong>Prospectus drafting is out of scope.</strong> The disclosure-note drafting in the readiness phase is preparatory — it gets the underlying disclosures to listed-company standard. The prospectus itself is drafted by the licensed FA and counsel</li>
+    <li><strong>Audit attest work is out of scope.</strong> The IFRS remediation produces positions, memos, and workpapers. The audit opinion remains with the licensed auditor</li>
+  </ul>
+  <p>A well-built diagnostic improves every downstream engagement and replaces none of them. The premise is not that Big Four firms are unnecessary at the right point in the runway. The premise is that they are necessary at the right point — and not before.</p>
+
+  <h2><span class="sec-num">08 / The Daftar Engagement</span>What the practice does, scoped.</h2>
+
+  <div class="price-box">
+    <div class="pb-label">Service C / 02 — Nomu Readiness Diagnostic</div>
+    <h4>A Nomu readiness diagnostic before you hire the <em>adviser.</em></h4>
+    <p>Four-to-six week diagnostic across IFRS compliance, corporate governance, MIS and close-quality, and CMA disclosure-readiness. Gap report with every finding categorised by remediation complexity. Prioritised 12–24 month runway. Indicative fee estimates for downstream work. The bridge that gets the company ready to engage a CMA-licensed financial adviser.</p>
+    <div class="pb-fee">From USD 12,000 · SAR 45,000 · 4–6 weeks · fixed fee</div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">A note on this brief</div>
+    <p>Nomu rules continue to evolve. CMA guidance is updated periodically and the readiness expectations move with it. The framework above reflects the state of play at the date of publication; specific positions should be retested against current guidance before any decision is taken.</p>
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="post-footer-inner">
+
+    <p class="closing">If a Nomu listing is on the 18-month horizon, the most useful engagement available right now is not the financial adviser. It is the diagnostic that tells the founder, in writing and in detail, exactly what would have to be true for the financial adviser conversation to begin well.</p>
+
+    <div class="cta">
+      <div class="cta-block">
+        <div class="cta-label">If this is your problem</div>
+        <h4>Book a 30-minute scoping call.</h4>
+        <p>Free, same week. Fixed quote within 48 hours. <a href="mailto:ahmad@daftaradvisory.com">ahmad@daftaradvisory.com</a></p>
+      </div>
+      <div class="cta-block">
+        <div class="cta-label">Direct line</div>
+        <h4>WhatsApp +962 798 008 835</h4>
+        <p>Amman-based. Works remotely across KSA, UAE, and Jordan.</p>
+      </div>
+    </div>
+
+    <div class="colophon">
+      <span>Daftar · Advisory · Amman</span>
+      <span>The Daftar · №004 · May 2026</span>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

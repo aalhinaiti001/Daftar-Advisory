@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Daftar №003 — IFRS 16 in KSA construction JVs · Five recomputation errors</title>
+<meta name="description" content="The five most common IFRS 16 recomputation errors in Saudi construction joint ventures, and how the audit catches them. A research brief from Daftar Advisory.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:       #F4F1EA;
+    --paper-dark:  #EBE6DA;
+    --ink:         #1A1814;
+    --muted:       #6B655D;
+    --rust:        #A8341F;
+    --rule-light:  rgba(26, 24, 20, 0.10);
+    --rule-mid:    rgba(26, 24, 20, 0.22);
+    --rule-strong: rgba(26, 24, 20, 1.00);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Fraunces', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-variation-settings: "opsz" 14;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.65;
+  }
+  em { font-style: italic; color: var(--rust); font-weight: 300; }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+  .top-strip { border-bottom: 1px solid var(--rule-light); background: var(--paper); }
+  .top-strip-inner {
+    max-width: 980px; margin: 0 auto; padding: 18px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);
+  }
+  .wordmark {
+    font-family: 'Fraunces', serif; font-size: 16px; color: var(--ink);
+    letter-spacing: -0.01em; text-transform: none; font-weight: 400; text-decoration: none;
+  }
+  .wordmark em { color: var(--rust); font-style: italic; }
+
+  .masthead { max-width: 980px; margin: 0 auto; padding: 96px 40px 64px; }
+  .pub-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust);
+    margin-bottom: 36px; display: flex; align-items: center; gap: 14px;
+  }
+  .pub-num::before { content: ''; width: 32px; height: 1px; background: var(--rust); }
+  h1.headline {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(44px, 6vw, 78px);
+    font-weight: 300; line-height: 0.98; letter-spacing: -0.02em; color: var(--ink);
+    font-variation-settings: "opsz" 144;
+    margin-bottom: 36px; max-width: 880px;
+  }
+  .deck {
+    font-family: 'Fraunces', serif; font-size: 22px; line-height: 1.45; color: var(--ink);
+    max-width: 720px; font-variation-settings: "opsz" 18;
+    margin-bottom: 56px; font-weight: 400;
+  }
+  .deck em { color: var(--rust); }
+  .byline {
+    border-top: 1px solid var(--rule-mid); padding-top: 20px;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
+  }
+  .byline strong {
+    display: block; color: var(--ink); font-weight: 400; margin-top: 6px;
+    font-family: 'Fraunces', serif; font-size: 14px; letter-spacing: 0; text-transform: none;
+  }
+
+  article { max-width: 720px; margin: 0 auto; padding: 64px 40px 96px; }
+  article > h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 32px; font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; color: var(--ink);
+    margin: 64px 0 24px; padding-top: 32px; border-top: 1px solid var(--rule-light);
+    font-variation-settings: "opsz" 36;
+  }
+  article > h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  article > h2 .sec-num {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rust);
+    margin-bottom: 14px; font-weight: 400;
+  }
+  article p {
+    font-family: 'Fraunces', serif; font-size: 17px; line-height: 1.7; color: var(--ink);
+    margin-bottom: 22px; font-variation-settings: "opsz" 14;
+  }
+  article p.lede { font-size: 19px; line-height: 1.55; color: var(--ink); }
+  article p.lede::first-letter {
+    font-family: 'Fraunces', serif; font-size: 64px; line-height: 0.9; float: left;
+    padding: 4px 12px 0 0; color: var(--rust); font-weight: 400;
+    font-variation-settings: "opsz" 144;
+  }
+  article ul, article ol { margin: 0 0 24px 0; padding-left: 0; list-style: none; }
+  article ul li, article ol li {
+    font-family: 'Fraunces', serif; font-size: 17px; line-height: 1.65; color: var(--ink);
+    padding: 8px 0 8px 28px; position: relative;
+  }
+  article ul li::before { content: '—'; position: absolute; left: 0; color: var(--rust); font-weight: 400; }
+  article ol { counter-reset: list-counter; }
+  article ol li { padding-left: 44px; counter-increment: list-counter; }
+  article ol li::before {
+    content: counter(list-counter, decimal-leading-zero);
+    position: absolute; left: 0; top: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.1em; color: var(--rust); font-weight: 400;
+  }
+  article strong { font-weight: 500; color: var(--ink); }
+
+  .callout { border-left: 2px solid var(--rust); padding: 12px 0 12px 24px; margin: 32px 0; background: transparent; }
+  .callout .callout-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rust); margin-bottom: 8px;
+  }
+  .callout p { font-family: 'Fraunces', serif; font-size: 17px; line-height: 1.6; font-style: italic; color: var(--ink); margin: 0; }
+
+  .data-table { margin: 36px 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule-light); }
+  .data-table .row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 16px 0;
+    border-bottom: 1px solid var(--rule-light); font-size: 15px; line-height: 1.5;
+  }
+  .data-table .row:last-child { border-bottom: none; }
+  .data-table .lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); padding-top: 4px;
+  }
+  .data-table .val { font-family: 'Fraunces', serif; font-size: 16px; color: var(--ink); }
+  .data-table .val em { color: var(--rust); font-style: italic; }
+
+  /* Working Paper exhibit */
+  .wp-exhibit {
+    margin: 36px 0;
+    background: var(--paper-dark);
+    padding: 32px;
+    border: 1px solid var(--rule-light);
+  }
+  .wp-exhibit .wp-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rust); margin-bottom: 8px;
+  }
+  .wp-exhibit .wp-title {
+    font-family: 'Fraunces', serif; font-size: 18px; font-weight: 400; color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .wp-exhibit table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+  }
+  .wp-exhibit th {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 2px solid var(--ink);
+    color: var(--ink);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 10px;
+  }
+  .wp-exhibit td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--rule-light);
+    color: var(--ink);
+  }
+  .wp-exhibit td.num { text-align: right; }
+  .wp-exhibit tr.total td {
+    border-top: 1px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    font-weight: 400;
+    color: var(--rust);
+  }
+
+  .price-box {
+    background: var(--paper-dark); padding: 32px 32px; margin: 36px 0;
+    border-left: 2px solid var(--rust);
+  }
+  .price-box .pb-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rust); margin-bottom: 12px;
+  }
+  .price-box h4 {
+    font-family: 'Fraunces', serif; font-size: 26px; font-weight: 400; color: var(--ink);
+    margin-bottom: 16px; font-variation-settings: "opsz" 36;
+  }
+  .price-box h4 em { color: var(--rust); }
+  .price-box p { font-size: 15px; line-height: 1.55; color: var(--ink); margin: 0; }
+  .price-box .pb-fee {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; color: var(--ink); margin-top: 16px; letter-spacing: 0.06em;
+  }
+
+  .post-footer { border-top: 1px solid var(--rule-light); background: var(--paper); }
+  .post-footer-inner { max-width: 720px; margin: 0 auto; padding: 48px 40px; }
+  .post-footer .closing {
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 17px; color: var(--muted);
+    line-height: 1.6; margin-bottom: 36px; border-left: 2px solid var(--rule-mid); padding-left: 20px;
+  }
+  .post-footer .cta {
+    border-top: 2px solid var(--ink); padding-top: 24px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 36px;
+  }
+  .post-footer .cta-block .cta-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rust); margin-bottom: 8px;
+  }
+  .post-footer .cta-block h4 {
+    font-family: 'Fraunces', serif; font-size: 22px; font-weight: 400; color: var(--ink);
+    margin-bottom: 6px; font-variation-settings: "opsz" 24;
+  }
+  .post-footer .cta-block p { font-size: 15px; color: var(--muted); line-height: 1.5; }
+  .post-footer .cta-block a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rust); }
+  .post-footer .colophon {
+    border-top: 1px solid var(--rule-light); padding-top: 18px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
+  }
+
+  @media (max-width: 720px) {
+    .masthead { padding: 64px 24px 48px; }
+    article { padding: 48px 24px 72px; }
+    .top-strip-inner { padding: 14px 24px; }
+    .post-footer-inner { padding: 36px 24px; }
+    h1.headline { font-size: 40px; }
+    .deck { font-size: 18px; }
+    .byline { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .post-footer .cta { grid-template-columns: 1fr; gap: 24px; }
+    .data-table .row { grid-template-columns: 1fr; gap: 4px; }
+    article > h2 { font-size: 26px; }
+    article p, article ul li, article ol li { font-size: 16px; }
+    .post-footer .colophon { flex-direction: column; gap: 8px; align-items: flex-start; }
+    .wp-exhibit { padding: 20px; overflow-x: auto; }
+    .wp-exhibit table { min-width: 480px; }
+  }
+
+  /* ============ REDUCED MOTION ============ */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="top-strip">
+  <div class="top-strip-inner">
+    <a href="https://daftaradvisory.com" class="wordmark">Daftar <em>Advisory.</em></a>
+    <span>The Daftar · №003</span>
+  </div>
+</div>
+
+<div class="masthead">
+  <div class="pub-num">№ 003 · Research Brief</div>
+  <h1 class="headline">IFRS 16 in Saudi construction JVs — the five most common recomputation <em>errors.</em></h1>
+  <p class="deck">In the construction-JV population specifically — site offices, plant-and-equipment leases, accommodation contracts, and the long-tail of fleet rentals — the IFRS 16 working paper rarely ties. This brief is the field guide to the five errors that produce the variance, and how the audit picks each one up.</p>
+  <div class="byline">
+    <div>Author<strong>Ahmad Al Hinaiti</strong></div>
+    <div>Published<strong>May 2026</strong></div>
+    <div>Read<strong>18 minutes</strong></div>
+    <div>Topic<strong>IFRS 16 · KSA</strong></div>
+  </div>
+</div>
+
+<article>
+
+  <h2><span class="sec-num">01 / The Position</span>The variance is not random. It comes from five places, and four of them are the discount rate.</h2>
+  <p class="lede">The Saudi construction joint venture is a particular animal. Multi-party governance, a defined project life, a lease portfolio that mixes long-tenure site offices with rolling fleet contracts, and an accounting function that — in most cases — was set up to deliver progress billings, not IFRS 16 schedules. The result is a recomputation file that, when re-run from source contracts, returns a right-of-use asset and lease liability that differ from the client's working paper by 5% to 15% in the typical case I have seen.</p>
+  <p>The Selected Work entry on the practice's own portfolio describes a SAR 800M revenue construction JV where 47 lease contracts were recomputed and the right-of-use asset came back understated by approximately 11%. That is not an outlier. It is the median. The brief below decomposes where the 11% comes from in a representative portfolio, which audit procedure typically catches it, and what the recomputation looks like at the schedule level.</p>
+
+  <h2><span class="sec-num">02 / Error One</span>The discount rate is one number applied to every lease.</h2>
+  <p>The first and largest error: applying a single weighted-average incremental borrowing rate to every contract in the portfolio, regardless of tenure, currency, or asset class. IFRS 16 paragraph 26 requires the lessee to discount lease payments using the rate implicit in the lease if readily determinable, and otherwise the lessee's incremental borrowing rate — and the IBR is defined as the rate the lessee would have to pay to borrow over a similar term, with similar security, the funds necessary to obtain an asset of similar value to the right-of-use asset in a similar economic environment.</p>
+  <p>Read literally, the IBR is contract-specific. In a construction-JV portfolio with leases ranging from a 10-year head office to a 14-month tower-crane rental, the IBR for the 10-year lease and the IBR for the 14-month lease are different rates by construction. Applying a single 6.0% (or whatever the JV's funding rate is) to both is a material misstatement waiting for the auditor's recomputation sample.</p>
+
+  <div class="wp-exhibit">
+    <div class="wp-label">Working paper exhibit · representative</div>
+    <div class="wp-title">Single rate vs term-structured rate — illustrative impact on a 10-lease subset</div>
+    <table>
+      <thead>
+        <tr><th>Lease</th><th>Tenure (yrs)</th><th class="num">Annual rent (SAR k)</th><th class="num">Single-rate ROU</th><th class="num">Term-IBR ROU</th><th class="num">Δ</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Site office — Eastern Province</td><td>10.0</td><td class="num">2,400</td><td class="num">17,664</td><td class="num">17,210</td><td class="num">(2.6%)</td></tr>
+        <tr><td>Accommodation block A</td><td>5.0</td><td class="num">3,800</td><td class="num">16,008</td><td class="num">16,440</td><td class="num">+2.7%</td></tr>
+        <tr><td>Accommodation block B</td><td>5.0</td><td class="num">3,800</td><td class="num">16,008</td><td class="num">16,440</td><td class="num">+2.7%</td></tr>
+        <tr><td>Plant yard</td><td>7.0</td><td class="num">1,650</td><td class="num">9,209</td><td class="num">9,261</td><td class="num">+0.6%</td></tr>
+        <tr><td>Tower crane rental</td><td>1.2</td><td class="num">5,200</td><td class="num">6,054</td><td class="num">6,182</td><td class="num">+2.1%</td></tr>
+        <tr><td>Telehandler fleet</td><td>2.0</td><td class="num">2,100</td><td class="num">3,855</td><td class="num">3,909</td><td class="num">+1.4%</td></tr>
+        <tr><td>Light vehicle fleet</td><td>3.0</td><td class="num">1,750</td><td class="num">4,675</td><td class="num">4,738</td><td class="num">+1.3%</td></tr>
+        <tr><td>Generator hire</td><td>1.5</td><td class="num">980</td><td class="num">1,407</td><td class="num">1,432</td><td class="num">+1.8%</td></tr>
+        <tr><td>Workshop — Riyadh</td><td>8.0</td><td class="num">1,200</td><td class="num">7,448</td><td class="num">7,341</td><td class="num">(1.4%)</td></tr>
+        <tr><td>Storage yard</td><td>4.0</td><td class="num">880</td><td class="num">3,047</td><td class="num">3,098</td><td class="num">+1.7%</td></tr>
+        <tr class="total"><td>Subset total</td><td></td><td class="num">23,760</td><td class="num">85,375</td><td class="num">86,051</td><td class="num">+0.8%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Note the direction: at the subset level, the variance from re-running with a term-structured IBR is small, because the over-discounting of the long leases offsets the under-discounting of the short ones. The error becomes material at the portfolio level — and at the individual-lease level — only when combined with the other four errors in this brief. Discount-rate misapplication is the carrier; the other four are the load.</p>
+
+  <h2><span class="sec-num">03 / Error Two</span>The lease term is the contract term, not the enforceable term.</h2>
+  <p>IFRS 16 paragraphs 18 to 21 define the lease term as the non-cancellable period plus periods covered by an option to extend the lease if the lessee is reasonably certain to exercise that option, plus periods covered by an option to terminate if the lessee is reasonably certain not to exercise that option.</p>
+  <p>In construction JV practice, two patterns produce the wrong answer:</p>
+  <ul>
+    <li><strong>The contract is for "the duration of the project, plus six months."</strong> The recomputation often takes the project completion date as the lease term, ignoring the six-month tail. If the six months is enforceable — and in construction JV demobilisation contracts it usually is — the lease term includes it</li>
+    <li><strong>The contract has a one-year roll-over with a five-year economic life.</strong> The lease term is one year plus the renewal periods the lessee is reasonably certain to exercise. If the underlying asset is a tower crane being used through to project completion in year four, the reasonably-certain assessment likely produces a four-year term, not a one-year term — even though the legal contract is one year</li>
+  </ul>
+  <p>The audit catches this two ways: by reading the underlying contract and the project programme together, or — more commonly — by reading the "options to renew" disclosure note and the "lease term" footnote and noticing that they are inconsistent.</p>
+
+  <h2><span class="sec-num">04 / Error Three</span>Variable lease payments are excluded; index-linked payments are not.</h2>
+  <p>The boundary is sharp and frequently misapplied. IFRS 16 paragraph 27(b) includes in lease payments those variable lease payments that depend on an index or a rate, measured initially using the index or rate at the commencement date. Paragraph 38(b) requires the liability to be remeasured when there is a change in the cash flows arising from a change in the index or rate. Paragraphs B42 to B43 describe the mechanics.</p>
+  <p>In practice:</p>
+  <ul>
+    <li><strong>An accommodation lease at SAR 3.8M per year, escalating annually by Saudi CPI.</strong> The CPI-linked escalation is index-linked. The future payments must be measured initially at the day-one CPI rate, and remeasured each year as CPI moves. Many recomputation files freeze the initial rate and never remeasure</li>
+    <li><strong>A plant rental at a base rate plus a fuel-price adjustment.</strong> The fuel-price adjustment is an index-linked payment. It is included in the lease liability at the commencement-date fuel index and remeasured as fuel prices change</li>
+    <li><strong>A site-office lease at a base rate plus a "service charge to be agreed annually."</strong> This is variable but neither index- nor rate-linked. It is excluded from the lease payments and expensed as incurred</li>
+  </ul>
+  <p>The third bullet is correctly excluded. The first two are frequently — and incorrectly — excluded as well, because the model builder treats anything labelled "variable" the same way.</p>
+
+  <h2><span class="sec-num">05 / Error Four</span>Initial direct costs and restoration provisions are missing from the ROU asset.</h2>
+  <p>IFRS 16 paragraph 24 specifies what the right-of-use asset comprises: the initial measurement of the lease liability, plus lease payments made at or before the commencement date less lease incentives received, plus initial direct costs incurred by the lessee, plus an estimate of the costs to be incurred by the lessee in dismantling and removing the underlying asset, restoring the site on which it is located, or restoring the underlying asset to the condition required by the terms and conditions of the lease.</p>
+  <p>In construction JVs specifically, the dismantling and restoration estimate is often material and almost always omitted. A site office or accommodation block leased on a "return in original condition" basis carries a contractual restoration obligation. The cost of demobilisation, demolition of installed fit-out, and ground reinstatement should be capitalised into the right-of-use asset at the commencement date and recognised as a corresponding provision under IAS 37, with the unwinding of the discount running through finance costs.</p>
+  <p>The audit catches this through the lease contract walk-through, the IAS 37 provisions schedule, or — most often — the auditor's enquiry as to where the demobilisation budget in the JV cost plan is being recognised. If the answer is "in the cost-to-complete forecast, not in the IFRS 16 schedule," the recomputation is incomplete.</p>
+
+  <h2><span class="sec-num">06 / Error Five</span>The transition adjustment was never reconciled to the comparative period.</h2>
+  <p>IFRS 16 was effective from 1 January 2019, but a meaningful share of the Saudi construction-JV population transitioned to IFRS for the first time later — driven by group-reporting requirements, banking-facility covenants, or first-time external audit. For these entities, the IFRS 16 transition entry — the modified retrospective approach under paragraph C5(b), or the full retrospective approach — was made at a particular date. The schedule from that date forward must reconcile, year by year, against the audited comparative position.</p>
+  <p>The recomputation error is straightforward: the schedule was rebuilt prospectively from a later date, and the prior-period comparatives were not re-derived. The result is a current-year ROU and LL position that disagrees with the prior-year audited closing balance by the cumulative effect of the recomputation errors above, applied retroactively.</p>
+
+  <div class="callout">
+    <div class="callout-label">Why this one matters disproportionately</div>
+    <p>The other four errors compound. Error five is where the auditor sees the compounding, because the comparative closing balance and the current-year opening balance must agree. When they do not, the recomputation file is the explanation — or the qualification.</p>
+  </div>
+
+  <h2><span class="sec-num">07 / The Recomputation Methodology</span>How the working file should be built.</h2>
+  <p>A defensible IFRS 16 recomputation in a Saudi construction-JV portfolio takes a specific shape. Not the only shape, but the one that survives audit scrutiny without further adjustment.</p>
+
+  <ol>
+    <li><strong>One master schedule per lease, formula-driven, no hard-coded numbers.</strong> Inputs at the top: commencement date, lease term, payment schedule, IBR, index basis, restoration estimate. Outputs at the bottom: ROU at commencement, LL at commencement, year-by-year amortisation, year-by-year interest, ROU and LL at each balance sheet date</li>
+    <li><strong>A discount-rate workbook that builds the IBR by tenure and asset class.</strong> Using SAIBOR plus a credit spread for the JV's actual funding profile, with documented yield-curve construction. The IBR for a 10-year lease and the IBR for a 14-month lease are produced from the same workbook, but they are not the same number</li>
+    <li><strong>An indexation tab that maintains CPI, SAIBOR, and any fuel/material indices used in the contracts.</strong> The remeasurement entries flow from this tab; the master schedule does not have CPI hard-coded into it</li>
+    <li><strong>A restoration-provisions tab tied to the lease portfolio.</strong> Each lease that carries a contractual restoration obligation has a corresponding row in this tab. The IAS 37 provision and the IFRS 16 ROU asset reconcile by construction</li>
+    <li><strong>A consolidation tab that aggregates the portfolio to the disclosure note.</strong> Lease maturity profile, undiscounted cash flows, weighted-average remaining term, and weighted-average IBR — all derived from the master schedules, not separately calculated</li>
+    <li><strong>A transition-adjustment tab where applicable.</strong> Showing the modified retrospective entry, the prior-period comparatives, and the reconciliation to the audited closing balance at the date of transition</li>
+  </ol>
+
+  <p>The architecture is the deliverable. A recomputation that produces the right answer once but cannot be re-run when the discount rate or a payment schedule changes is not a working paper — it is a result. The auditor needs the working paper.</p>
+
+  <h2><span class="sec-num">08 / The Refusal</span>Where this work ends.</h2>
+  <p>An independent recomputation produces a position with reasoning, supporting workpapers, and a draft disclosure note. It does not produce an audit opinion. Where the engagement is appropriate to the practice and where it is not:</p>
+  <ul>
+    <li><strong>In scope.</strong> Independent recomputation, technical-review memo, audit-response file. The auditor reviews the position; the audit opinion remains with the licensed auditor</li>
+    <li><strong>Out of scope.</strong> Audit attest work — Daftar is not licensed for this in any jurisdiction. Where the JV needs an auditor, the right next step is a licensed audit firm</li>
+    <li><strong>Out of scope.</strong> Lease-classification opinions on bespoke arrangements with embedded service components, where the IFRIC 4 / IFRS 16 separation requires a formal accounting opinion. Where this is the question, refer to a Big Four technical accounting practice</li>
+  </ul>
+
+  <h2><span class="sec-num">09 / The Daftar Engagement</span>What the practice does, scoped.</h2>
+
+  <div class="price-box">
+    <div class="pb-label">Service A / 02 — Independent Technical Review</div>
+    <h4>A technical review that holds in the <em>committee</em> room.</h4>
+    <p>Independent recomputation of the IFRS 16 portfolio against source contracts. Technical memo with paragraph-level IFRS 16 references, supporting workpapers in editable Excel, draft IAS 8 disclosure language where a prior-period adjustment is required, and an audit-response file that pre-empts the auditor's recomputation sample.</p>
+    <div class="pb-fee">From USD 5,500 · SAR 20,625 · 2 weeks · fixed fee</div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">A note on this brief</div>
+    <p>The five errors above are drawn from the practice's recomputation work on Saudi construction-JV portfolios. Every JV is different — the patterns are common, the materiality is not. The diagnostic that matters is whether the working file ties back to source contracts and a defensible discount-rate workbook. If it does not, the recomputation is the engagement.</p>
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="post-footer-inner">
+
+    <p class="closing">If your IFRS 16 working paper has been carried forward year over year without a re-derivation against source contracts, the audit-readiness exercise is the recomputation. The right next step is a two-week independent review that either confirms the position or quantifies the variance — before the auditor does.</p>
+
+    <div class="cta">
+      <div class="cta-block">
+        <div class="cta-label">If this is your problem</div>
+        <h4>Book a 30-minute scoping call.</h4>
+        <p>Free, same week. Fixed quote within 48 hours. <a href="mailto:ahmad@daftaradvisory.com">ahmad@daftaradvisory.com</a></p>
+      </div>
+      <div class="cta-block">
+        <div class="cta-label">Direct line</div>
+        <h4>WhatsApp +962 798 008 835</h4>
+        <p>Amman-based. Works remotely across KSA, UAE, and Jordan.</p>
+      </div>
+    </div>
+
+    <div class="colophon">
+      <span>Daftar · Advisory · Amman</span>
+      <span>The Daftar · №003 · May 2026</span>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

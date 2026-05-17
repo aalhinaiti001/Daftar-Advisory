@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Daftar №001 — The SAR 375,000 threshold · ZATCA Phase 2 Wave 24</title>
+<meta name="description" content="What ZATCA Phase 2 Wave 24 actually asks of Saudi SMEs, and why most of them are being quietly over-sold. A research brief from Daftar Advisory.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:       #F4F1EA;
+    --paper-dark:  #EBE6DA;
+    --ink:         #1A1814;
+    --muted:       #6B655D;
+    --rust:        #A8341F;
+    --rule-light:  rgba(26, 24, 20, 0.10);
+    --rule-mid:    rgba(26, 24, 20, 0.22);
+    --rule-strong: rgba(26, 24, 20, 1.00);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Fraunces', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-variation-settings: "opsz" 14;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.65;
+  }
+  em { font-style: italic; color: var(--rust); font-weight: 300; }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+  /* ============ TOP STRIP ============ */
+  .top-strip {
+    border-bottom: 1px solid var(--rule-light);
+    background: var(--paper);
+  }
+  .top-strip-inner {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .wordmark {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    text-transform: none;
+    font-weight: 400;
+    text-decoration: none;
+  }
+  .wordmark em { color: var(--rust); font-style: italic; }
+
+  /* ============ MASTHEAD ============ */
+  .masthead {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 96px 40px 64px;
+  }
+  .pub-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .pub-num::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--rust);
+  }
+  h1.headline {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(44px, 6vw, 78px);
+    font-weight: 300;
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144;
+    margin-bottom: 36px;
+    max-width: 880px;
+  }
+  .deck {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    line-height: 1.45;
+    color: var(--ink);
+    max-width: 720px;
+    font-variation-settings: "opsz" 18;
+    margin-bottom: 56px;
+    font-weight: 400;
+  }
+  .deck em { color: var(--rust); }
+  .byline {
+    border-top: 1px solid var(--rule-mid);
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .byline strong {
+    display: block;
+    color: var(--ink);
+    font-weight: 400;
+    margin-top: 6px;
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  /* ============ BODY ============ */
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 40px 96px;
+  }
+  article > h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 64px 0 24px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule-light);
+    font-variation-settings: "opsz" 36;
+  }
+  article > h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  article > h2 .sec-num {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 14px;
+    font-weight: 400;
+  }
+  article p {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 22px;
+    font-variation-settings: "opsz" 14;
+  }
+  article p.lede {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  article p.lede::first-letter {
+    font-family: 'Fraunces', serif;
+    font-size: 64px;
+    line-height: 0.9;
+    float: left;
+    padding: 4px 12px 0 0;
+    color: var(--rust);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144;
+  }
+  article ul, article ol {
+    margin: 0 0 24px 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  article ul li, article ol li {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink);
+    padding: 8px 0 8px 28px;
+    position: relative;
+  }
+  article ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--rust);
+    font-weight: 400;
+  }
+  article ol { counter-reset: list-counter; }
+  article ol li {
+    padding-left: 44px;
+    counter-increment: list-counter;
+  }
+  article ol li::before {
+    content: counter(list-counter, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--rust);
+    font-weight: 400;
+  }
+  article strong { font-weight: 500; color: var(--ink); }
+
+  /* ============ CALLOUT ============ */
+  .callout {
+    border-left: 2px solid var(--rust);
+    padding: 12px 0 12px 24px;
+    margin: 32px 0;
+    background: transparent;
+  }
+  .callout .callout-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 8px;
+  }
+  .callout p {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    line-height: 1.6;
+    font-style: italic;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ============ TABLE ============ */
+  .data-table {
+    margin: 36px 0;
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--rule-light);
+  }
+  .data-table .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--rule-light);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .data-table .row:last-child { border-bottom: none; }
+  .data-table .lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 4px;
+  }
+  .data-table .val {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    color: var(--ink);
+  }
+  .data-table .val em { color: var(--rust); font-style: italic; }
+
+  /* ============ PRICE BOX ============ */
+  .price-box {
+    background: var(--paper-dark);
+    padding: 32px 32px;
+    margin: 36px 0;
+    border-left: 2px solid var(--rust);
+  }
+  .price-box .pb-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 12px;
+  }
+  .price-box h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 16px;
+    font-variation-settings: "opsz" 36;
+  }
+  .price-box h4 em { color: var(--rust); }
+  .price-box p {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+  }
+  .price-box .pb-fee {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--ink);
+    margin-top: 16px;
+    letter-spacing: 0.06em;
+  }
+
+  /* ============ FOOTER ============ */
+  .post-footer {
+    border-top: 1px solid var(--rule-light);
+    background: var(--paper);
+  }
+  .post-footer-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 40px;
+  }
+  .post-footer .closing {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 36px;
+    border-left: 2px solid var(--rule-mid);
+    padding-left: 20px;
+  }
+  .post-footer .cta {
+    border-top: 2px solid var(--ink);
+    padding-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 36px;
+  }
+  .post-footer .cta-block .cta-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 8px;
+  }
+  .post-footer .cta-block h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 6px;
+    font-variation-settings: "opsz" 24;
+  }
+  .post-footer .cta-block p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .post-footer .cta-block a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rust);
+  }
+  .post-footer .colophon {
+    border-top: 1px solid var(--rule-light);
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ============ MOBILE ============ */
+  @media (max-width: 720px) {
+    .masthead { padding: 64px 24px 48px; }
+    article { padding: 48px 24px 72px; }
+    .top-strip-inner { padding: 14px 24px; }
+    .post-footer-inner { padding: 36px 24px; }
+    h1.headline { font-size: 40px; }
+    .deck { font-size: 18px; }
+    .byline { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .post-footer .cta { grid-template-columns: 1fr; gap: 24px; }
+    .data-table .row { grid-template-columns: 1fr; gap: 4px; }
+    article > h2 { font-size: 26px; }
+    article p, article ul li, article ol li { font-size: 16px; }
+    .post-footer .colophon { flex-direction: column; gap: 8px; align-items: flex-start; }
+  }
+
+  /* ============ REDUCED MOTION ============ */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- TOP STRIP -->
+<div class="top-strip">
+  <div class="top-strip-inner">
+    <a href="https://daftaradvisory.com" class="wordmark">Daftar <em>Advisory.</em></a>
+    <span>The Daftar · №001</span>
+  </div>
+</div>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="pub-num">№ 001 · Research Brief</div>
+  <h1 class="headline">The SAR 375,000 threshold — what ZATCA Phase 2 Wave 24 actually asks of Saudi SMEs, and why most of them are being quietly <em>over-sold.</em></h1>
+  <p class="deck">Wave 24 goes live on 30 June 2026. The technical requirement is well-defined. The implementation market around it is not. This brief is for the founder asking why the quote on their desk reads SAR 150,000 for what should cost a quarter of that.</p>
+  <div class="byline">
+    <div>Author<strong>Ahmad Al Hinaiti</strong></div>
+    <div>Published<strong>May 2026</strong></div>
+    <div>Read<strong>14 minutes</strong></div>
+    <div>Topic<strong>ZATCA · KSA</strong></div>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<article>
+
+  <h2><span class="sec-num">01 / The Position</span>Wave 24 is a small invoice problem dressed up as a transformation project.</h2>
+  <p class="lede">The Saudi Wave 24 cohort is the smallest population ZATCA has ever asked to integrate. The threshold is SAR 375,000 in VAT-taxable revenue across any of 2022, 2023, or 2024. A business in this band issues — at most — a few hundred invoices a month. The technical requirement is real. The transformation programme being sold around it is not.</p>
+  <p>The Phase 2 specification has not changed since it was published. Standard tax invoices clear with ZATCA before they reach the buyer. Simplified tax invoices are reported within 24 hours of issue. Both carry a UUID, a hash chain, a QR code, and a Production CSID issued against the seller's tax registration. That is the engineering. Everything else attached to it — the project plans, the change-management workshops, the quarterly retainers — is implementation overhead the small SME does not need.</p>
+  <p>The reason the market reads otherwise is that Phase 2 was designed for the Wave 1 enterprise tier first, and the implementation playbooks that work at SAR 3 billion in revenue have been quietly recycled down the wave schedule without rescaling. By the time the methodology reached the SAR 375k cohort, it carried 18 months of consulting margin baked into a six-week problem.</p>
+
+  <h2><span class="sec-num">02 / Who Wave 24 Captures</span>The population is more specific than the threshold suggests.</h2>
+  <p>The SAR 375,000 figure is a revenue threshold, not an invoice-volume threshold. The businesses inside Wave 24 share a profile:</p>
+  <ul>
+    <li>Single-location or low-multi-location retail, F&amp;B, or professional services — the typical operator has between 1 and 6 sites</li>
+    <li>Revenue concentrated in B2C with a smaller B2B tail — most invoices are simplified, a minority are standard</li>
+    <li>An existing accounting stack that is already Phase 1 compliant — Zoho Books, Wafeq, Qoyod, Daftra, Foodics, Salla, Zid, or an ERP module — the Phase 2 question is whether the stack supports it natively or needs a middleware layer</li>
+    <li>A finance function of one to three people, often led by an external accountant rather than an in-house controller</li>
+  </ul>
+  <p>That last point matters. The buyer for Wave 24 implementation is rarely a CFO. It is a founder, a managing partner, or an operations director who is being shown the quote by their bookkeeper. The asymmetry between buyer and seller is the whole reason the over-quoting works.</p>
+
+  <div class="callout">
+    <div class="callout-label">Diagnostic</div>
+    <p>If your business issued more than 1.0M in VAT-registrable revenue in 2024 and you are being quoted as a Wave 24 client, you are not Wave 24. You are Wave 23 remediation. The conversation changes — and so does the price.</p>
+  </div>
+
+  <h2><span class="sec-num">03 / What ZATCA Actually Requires</span>The technical scope, decomposed.</h2>
+  <p>There are six things Wave 24 must produce by 30 June 2026. Not seven, not twelve. Six.</p>
+
+  <ol>
+    <li><strong>A Compliance CSID for sandbox testing.</strong> Generated against the seller's tax registration through the ZATCA portal. This is free, takes under 30 minutes, and is reversible — sandbox CSIDs can be regenerated without consequence.</li>
+    <li><strong>Three documented sandbox flows.</strong> One Standard Tax Invoice, one Simplified Tax Invoice, one credit note referencing a previously cleared invoice. Each must produce a valid UUID, a correct hash chain back to the previous invoice, a scannable QR code, and a successful clearance or reporting response from the ZATCA endpoint.</li>
+    <li><strong>A Production CSID for go-live.</strong> Generated only when the sandbox flows are confirmed clean. Production CSIDs are tied to specific invoicing devices or environments, and renewal is on a 12-month or earlier cycle depending on configuration.</li>
+    <li><strong>A parallel run.</strong> 10 to 15 invoices issued in production through the new flow, reconciled against the pre-Phase-2 flow, with the daily clearance log reviewed for rejections, retries, and timing breaches.</li>
+    <li><strong>A B2C offline contingency.</strong> Simplified tax invoices have a 24-hour reporting window. The contingency must specify what happens if the ZATCA endpoint is unreachable at the moment of sale — typically a queue-and-retry pattern at the POS.</li>
+    <li><strong>A CSID renewal calendar.</strong> Most Phase 2 failures in 2025 were not first-time integration failures. They were CSID expiries that rolled over without anyone noticing.</li>
+  </ol>
+
+  <p>That is the entire technical scope of a Wave 24 engagement. It is six artefacts, all of which are produced by configuring a vendor stack the client almost certainly already owns — not by writing custom code, not by procuring middleware, and not by replacing the ERP.</p>
+
+  <h2><span class="sec-num">04 / The Three Quotes</span>What the market is charging, and what it represents.</h2>
+  <p>I have seen three quote bands in the market for Wave 24 implementation in Q1 and Q2 2026. They are not equivalent.</p>
+
+  <div class="data-table">
+    <div class="row"><span class="lbl">Band 1 — SAR 5,000 to 10,000</span><span class="val">The native-vendor quote. Issued by the SaaS provider whose stack the client already pays for. Configuration only — sandbox set-up, CSID onboarding, three test flows, handover. <em>Often correct.</em></span></div>
+    <div class="row"><span class="lbl">Band 2 — SAR 12,000 to 22,000</span><span class="val">The independent practitioner quote. Includes vendor selection if the client's stack is wrong, plus a parallel run, plus runbook documentation. <em>The middle market.</em></span></div>
+    <div class="row"><span class="lbl">Band 3 — SAR 60,000 to 250,000</span><span class="val">The enterprise-method quote applied to a SAR 500k revenue business. Includes process re-engineering, change management, executive workshops, and a middleware layer the client neither needs nor will use. <em>Theatre.</em></span></div>
+  </div>
+
+  <p>Band 3 is where the over-selling lives. The quote is not fraudulent — there is real work proposed inside it. But the work is sized for a client who is not the client in front of you. A SAR 500,000 retail operator does not need a change-management workstream to teach their two-person finance team how to issue an invoice through a button that already exists in Zoho Books.</p>
+
+  <h2><span class="sec-num">05 / The Wave 23 Penalty Window</span>If you missed 31 March 2026, the conversation has already shifted.</h2>
+  <p>Wave 23 — SAR 750,000 and above — went live on 31 March 2026. Operators who missed that deadline are now in the penalty band, and the conversation about their integration is no longer about cost-of-implementation. It is about cost-of-exposure under the Cancellation of Fines amnesty window.</p>
+  <p>The amnesty mechanism allows for partial or full waiver of penalties on first-time non-compliance, conditional on remediation within a specified window and a clean filing posture going forward. It is administered case by case. It is not a default.</p>
+  <p>Two practical points for any operator in the Wave 23 remediation band:</p>
+  <ul>
+    <li>The amnesty window is finite and the application is technical. It is not enough to integrate Phase 2; the application has to evidence the integration date, the parallel-run record, and a clean clearance log going forward</li>
+    <li>The fee for Wave 23 remediation is structurally higher than Wave 24 implementation — typically SAR 25,000 to 35,000 — because the work includes the penalty-exposure assessment and the amnesty-window paperwork, not just the technical onboarding</li>
+  </ul>
+
+  <h2><span class="sec-num">06 / The Five Pre-Quote Diagnostics</span>What the founder should answer before requesting any quote.</h2>
+  <p>Before any vendor or practitioner is asked to price a Wave 24 engagement, the founder should know the answer to five questions. The answers determine whether the engagement is Band 1, Band 2, or — rarely — outside Wave 24 altogether.</p>
+
+  <ol>
+    <li><strong>What was your VAT-taxable revenue in 2022, 2023, and 2024?</strong> The wave classification rule reads to the highest of the three years. If any of the three crossed SAR 1.0 million, you are likely already in a prior wave.</li>
+    <li><strong>What is your current invoicing stack?</strong> If the answer is a ZATCA-certified SaaS — Zoho Books, Wafeq, Qoyod, Daftra, Foodics, Salla, Zid — the engagement is configuration, not integration. If the answer is "Excel" or a legacy ERP without a certified Phase 2 module, the engagement is materially different.</li>
+    <li><strong>How many invoicing touchpoints exist?</strong> Count POS terminals, e-commerce checkouts, manual back-office invoicing, self-billing arrangements, and credit-note flows. The work scales with touchpoints, not with revenue.</li>
+    <li><strong>Do you issue any foreign-currency invoices, or any invoices to government or VAT-exempt buyers?</strong> Both add specific reporting requirements that affect the test-flow scope.</li>
+    <li><strong>Who renews the CSID in March 2027?</strong> If no one in the finance function can answer this without checking, the engagement is not done at go-live. The renewal calendar is the deliverable that prevents the second-year failure.</li>
+  </ol>
+
+  <h2><span class="sec-num">07 / The Refusal</span>Where Daftar will not work.</h2>
+  <p>This brief is not a sales document for an unbounded service. The practice has a defined Wave 24 engagement — six weeks, fixed scope, fixed fee — and an equally defined set of cases where it should not be the engagement.</p>
+  <ul>
+    <li><strong>Custom middleware build.</strong> If the client's flow genuinely requires a self-billing engine at volume, multi-ERP consolidation, or bespoke integration code, the work is for an integrator — InvoiceQ, ClearTax SA, or ecosio — not for a single practitioner</li>
+    <li><strong>ZATCA representation on penalty appeals.</strong> A licensed ZATCA representative is required for any penalty proceeding. Daftar is not licensed for this and will not pretend otherwise</li>
+    <li><strong>ERP replacement.</strong> If the underlying ERP cannot support Phase 2 without being replaced, the engagement is an ERP project, not a Phase 2 project. The right next step is an ERP implementation partner, with Phase 2 as the second engagement after the ERP is stable</li>
+  </ul>
+
+  <h2><span class="sec-num">08 / The Daftar Engagement</span>What the practice does, scoped.</h2>
+
+  <div class="price-box">
+    <div class="pb-label">Service B / 01 — ZATCA Phase 2 Readiness</div>
+    <h4>ZATCA Phase 2, integrated in <em>six</em> weeks.</h4>
+    <p>Wave 24 implementation or Wave 23 remediation. Vendor selection memo, CSID onboarding, sandbox testing of the three mandatory flows, parallel run with daily clearance-log review, production cutover, runbook handover, and the CSID renewal calendar installed. Delivered as a working file the client's finance team can maintain without us.</p>
+    <div class="pb-fee">From SAR 12,000 · USD 3,200 · 4–6 weeks · fixed fee</div>
+  </div>
+
+  <p>The engagement is sized to the actual problem. The fee is published. The scope is on a one-page engagement letter, with a numbered exclusions list and a change-order mechanism. There is no retainer attached, no upsell to middleware, and no ERP migration in disguise.</p>
+
+  <div class="callout">
+    <div class="callout-label">A note on this brief</div>
+    <p>This is the first in a short, irregular series of research briefs. Written for operators and audit committees — not for tax-alert distribution lists. One take per brief, with the workings underneath.</p>
+  </div>
+
+</article>
+
+<!-- POST FOOTER -->
+<div class="post-footer">
+  <div class="post-footer-inner">
+
+    <p class="closing">If you are the founder reading the SAR 150,000 quote on your desk, the right next step is not to negotiate the quote down. It is to verify whether you are actually a Wave 24 client at all, and to scope the work against what ZATCA technically requires — not against what the implementation playbook proposes.</p>
+
+    <div class="cta">
+      <div class="cta-block">
+        <div class="cta-label">If this is your problem</div>
+        <h4>Book a 30-minute scoping call.</h4>
+        <p>Free, same week. Fixed quote within 48 hours. <a href="mailto:ahmad@daftaradvisory.com">ahmad@daftaradvisory.com</a></p>
+      </div>
+      <div class="cta-block">
+        <div class="cta-label">Direct line</div>
+        <h4>WhatsApp +962 798 008 835</h4>
+        <p>Amman-based. Works remotely across KSA, UAE, and Jordan.</p>
+      </div>
+    </div>
+
+    <div class="colophon">
+      <span>Daftar · Advisory · Amman</span>
+      <span>The Daftar · №001 · May 2026</span>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
