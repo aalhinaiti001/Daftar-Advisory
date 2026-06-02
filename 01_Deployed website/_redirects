@@ -1,13 +1,23 @@
-# Pretty URLs — let visitors hit /start instead of /start.html
+# Pretty URLs — rewrite (no redirect)
 /start              /start.html              200
 /scoping            /scoping.html            200
 /articles           /articles.html           200
 /areas              /areas.html              200
 /capability         /capability-statement.html              200
 /capability-long    /capability-statement-long.html         200
-
-# Research briefs — short slugs
 /briefs/zatca-wave-24       /daftar-001-zatca-wave-24.html        200
 /briefs/uae-ct-2025         /daftar-002-uae-ct-first-season.html  200
 /briefs/ifrs16-jv           /daftar-003-ifrs16-construction-jv.html 200
 /briefs/nomu                /daftar-004-nomu-without-big-four.html 200
+
+# .html → pretty (301, canonical)
+/start.html                                  /start                              301!
+/scoping.html                                /scoping                            301!
+/articles.html                               /articles                           301!
+/areas.html                                  /areas                              301!
+/capability-statement.html                   /capability                         301!
+/capability-statement-long.html              /capability-long                    301!
+/daftar-001-zatca-wave-24.html               /briefs/zatca-wave-24               301!
+/daftar-002-uae-ct-first-season.html         /briefs/uae-ct-2025                 301!
+/daftar-003-ifrs16-construction-jv.html      /briefs/ifrs16-jv                   301!
+/daftar-004-nomu-without-big-four.html       /briefs/nomu                        301!
