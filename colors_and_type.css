@@ -1,0 +1,236 @@
+/* ============================================================
+   DAFTAR ADVISORY — COLOURS & TYPE
+   The full foundation. Lifted verbatim from daftaradvisory.com
+   and the Brand Handbook v1.2.
+
+   Five colours. Two Latin fonts. One Arabic. Forever.
+   Paper 70% · Ink 25% · Rust 5%. Never invert these ratios.
+   ============================================================ */
+
+/* ---- FONTS ----
+   Fraunces is self-hosted from the user's uploaded variable-font files
+   (base cut, with the SOFT + WONK + opsz + wght axes). JetBrains Mono and
+   IBM Plex Sans Arabic remain on the Google Fonts CDN — both free/OFL and
+   no local files were provided. All three are still the brand's only fonts. */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=IBM+Plex+Sans+Arabic:wght@300;400;500&display=swap');
+
+@font-face {
+  font-family: 'Fraunces';
+  src: url('fonts/Fraunces-VariableFont_SOFT_WONK_opsz_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fraunces';
+  src: url('fonts/Fraunces-Italic-VariableFont_SOFT_WONK_opsz_wght.ttf') format('truetype-variations');
+  font-weight: 301 900;
+  font-style: italic;
+  font-display: swap;
+}
+/* Dedicated static Soft Light Italic — the cut used for the rust accent
+   words and italic headlines (weight 300). Takes precedence at ≤300. */
+@font-face {
+  font-family: 'Fraunces';
+  src: url('fonts/Fraunces_72pt_Soft-LightItalic.ttf') format('truetype');
+  font-weight: 1 300;
+  font-style: italic;
+  font-display: swap;
+}
+/* IBM Plex Sans — Latin variable (self-hosted). NOTE: this file has no
+   Arabic glyphs; the Arabic family below stays on the CDN. Not used by the
+   brand by default (kept available for incidental Latin sans needs). */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url('fonts/IBMPlexSans-VariableFont_wdth_wght.ttf') format('truetype-variations');
+  font-weight: 100 700;
+  font-stretch: 75% 100%;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ========== COLOUR — THE FIVE SWATCHES (+ 2 working tints) ========== */
+  --paper:        #F4F1EA;   /* The background. Warm offwhite. NEVER pure white. ~70% of canvas */
+  --paper-dark:   #EBE6DA;   /* Secondary surface. Card backgrounds, subtle contrast zones */
+  --ink:          #1A1814;   /* Primary text. Near-black but warm. NEVER pure black. ~25% */
+  --muted:        #78726A;   /* Labels, captions, metadata. Reads grey, has warmth */
+  --rust:         #A8341F;   /* THE one hero colour. Italic words, rules, dots. ~5% — precious */
+
+  --rust-on-ink:  #E07458;   /* Rust lightened for legibility on Ink surfaces only */
+
+  /* Hairlines — Ink at low opacity, never a new grey */
+  --rule-light:   rgba(26, 24, 20, 0.10);  /* dividers between rows / cards */
+  --rule-mid:     rgba(26, 24, 20, 0.22);  /* table borders, byline tops */
+  --rule-strong:  rgba(26, 24, 20, 1.00);  /* the 2px ink section-opening rule */
+
+  /* ========== TYPE FAMILIES ========== */
+  --font-display: 'Fraunces', Georgia, serif;        /* display + body. The voice. */
+  --font-body:    'Fraunces', Georgia, serif;        /* same cut — never a second serif */
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace; /* labels/data ONLY, 400 only */
+  --font-arabic:  'IBM Plex Sans Arabic', sans-serif; /* Arabic display + body */
+
+  /* ========== TYPE SCALE (px, desktop) ========== */
+  --fs-hero:    clamp(48px, 8vw, 120px);  /* @kind font */ /* h1 homepage hero */
+  --fs-display: clamp(44px, 6vw, 78px);   /* @kind font */ /* article masthead / contact */
+  --fs-h2:      clamp(36px, 5vw, 64px);   /* @kind font */ /* section titles */
+  --fs-h3:      32px;                      /* article subheads */
+  --fs-card:    28px;                      /* service / card names */
+  --fs-lede:    20px;                      /* opening sub-paragraphs */
+  --fs-body:    17px;                      /* default reading size */
+  --fs-small:   15px;                      /* dense body, table values */
+  --fs-label:   11px;                      /* mono labels */
+  --fs-micro:   10px;                      /* mono micro-meta */
+
+  /* ========== WEIGHTS ========== */
+  --w-light:   300;   /* @kind font */ /* headlines + display — the considered weight */
+  --w-regular: 400;   /* @kind font */ /* body, card names, mono (always) */
+  --w-medium:  500;   /* @kind font */ /* sparing emphasis only (replaces italic in Arabic) */
+
+  /* ========== MONO LABEL TRACKING ========== */
+  --track-label: 0.14em;   /* default mono label */
+  --track-wide:  0.18em;   /* eyebrows / section kickers */
+  --track-tight: -0.02em;  /* large Fraunces display */
+}
+
+/* ============================================================
+   BASE ELEMENT STYLES
+   ============================================================ */
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: var(--w-regular);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  font-variation-settings: "opsz" 14;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* The signature: one italic-rust accent word per headline (Latin only) */
+em {
+  font-style: italic;
+  color: var(--rust);
+  font-weight: var(--w-light);
+}
+
+/* ============================================================
+   SEMANTIC TYPE CLASSES
+   Mirror the production site's hierarchy exactly.
+   ============================================================ */
+
+/* --- Display / headlines: Fraunces light, tight leading, optical 144 --- */
+.h-hero {
+  font-family: var(--font-display);
+  font-size: var(--fs-hero);
+  font-weight: var(--w-light);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  font-variation-settings: "opsz" 144;
+}
+.h-display {
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  font-weight: var(--w-light);
+  line-height: 0.98;
+  letter-spacing: var(--track-tight);
+  font-variation-settings: "opsz" 144;
+}
+.h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: var(--w-light);
+  line-height: 0.98;
+  letter-spacing: var(--track-tight);
+  font-variation-settings: "opsz" 144;
+}
+.h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--w-regular);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 36;
+}
+.card-name {
+  font-family: var(--font-display);
+  font-size: var(--fs-card);
+  font-weight: var(--w-regular);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 48;
+}
+
+/* --- Body --- */
+.lede {
+  font-family: var(--font-body);
+  font-size: var(--fs-lede);
+  line-height: 1.55;
+  font-variation-settings: "opsz" 18;
+}
+.p, p {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  font-variation-settings: "opsz" 14;
+}
+.p-small {
+  font-size: var(--fs-small);
+  line-height: 1.65;
+  font-variation-settings: "opsz" 14;
+}
+strong { font-weight: var(--w-medium); color: var(--ink); }
+
+/* --- Mono labels / data — ALWAYS uppercase, small, tracked, 400 --- */
+.mono, .label {
+  font-family: var(--font-mono);
+  font-weight: var(--w-regular);
+  font-size: var(--fs-label);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  color: var(--muted);
+}
+.label--rust   { color: var(--rust); letter-spacing: var(--track-wide); }
+.label--micro  { font-size: var(--fs-micro); }
+
+/* --- Eyebrow: rust mono kicker with leading rule --- */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  color: var(--rust);
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--rust);
+}
+
+/* --- The wordmark — Daftar (ink, upright) + Advisory. (rust, italic) --- */
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: var(--w-regular);
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+.wordmark em { font-style: italic; color: var(--rust); font-weight: var(--w-regular); }
+
+/* ============================================================
+   ARABIC — same hierarchy, mirrored. No italic; emphasis is
+   colour-only (rust) or weight 500. Right-aligned.
+   ============================================================ */
+.ar {
+  font-family: var(--font-arabic);
+  direction: rtl;
+  text-align: right;
+  font-weight: var(--w-regular);
+}
+.ar.h-display { font-weight: var(--w-light); letter-spacing: 0; }
+.ar em { font-style: normal; color: var(--rust); font-weight: var(--w-medium); }

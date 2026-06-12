@@ -1,0 +1,33 @@
+<!-- @dsCard group="Brand" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 30px 32px; }
+  .lbl { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
+  .stack { display: flex; flex-direction: column; gap: 22px; }
+  .item { display: grid; grid-template-columns: 130px 1fr; gap: 28px; align-items: baseline; border-top: 1px solid var(--rule-light); padding-top: 18px; }
+  .item:first-child { border-top: none; padding-top: 0; }
+  .k { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rust); line-height: 1.6; }
+  .primary { font-family: var(--font-display); font-size: 30px; font-weight: 400; color: var(--ink); letter-spacing: -0.01em; }
+  .primary em { font-style: italic; color: var(--rust); }
+  .micro { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); }
+  .hybrid { font-family: var(--font-display); font-size: 24px; color: var(--ink); }
+  .hybrid .dot { color: var(--muted); }
+  .hybrid em { font-style: italic; color: var(--rust); }
+  .arabic { font-family: var(--font-arabic); direction: rtl; font-size: 28px; font-weight: 400; color: var(--ink); }
+  .arabic em { font-style: normal; color: var(--rust); }
+</style>
+</head>
+<body>
+  <div class="lbl">Wordmark — the name is the logo. Always with the period.</div>
+  <div class="stack">
+    <div class="item"><div class="k">Primary<br>Latin</div><div class="primary">Daftar <em>Advisory.</em></div></div>
+    <div class="item"><div class="k">Micro<br>header strip</div><div class="micro">DAFTAR · ADVISORY</div></div>
+    <div class="item"><div class="k">Hybrid<br>bilingual</div><div class="hybrid">دفتر <span class="dot">·</span> <em>Advisory.</em></div></div>
+    <div class="item"><div class="k">Primary<br>Arabic</div><div class="arabic">دفتر <em>للاستشارات.</em></div></div>
+  </div>
+</body>
+</html>

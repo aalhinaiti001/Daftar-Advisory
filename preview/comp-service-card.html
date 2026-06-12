@@ -1,0 +1,41 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 24px 28px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule-mid); border: 1px solid var(--rule-mid); }
+  .card { background: var(--paper); padding: 30px 30px; position: relative; transition: background 0.2s; }
+  .card:hover { background: var(--paper-dark); }
+  .tag { font-family: var(--font-mono); font-size: 10px; color: var(--rust); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 18px; }
+  .name { font-family: var(--font-display); font-size: 25px; font-weight: 400; color: var(--ink); line-height: 1.12; letter-spacing: -0.01em; margin-bottom: 14px; font-variation-settings: "opsz" 48; }
+  .name em { color: var(--rust); font-style: italic; }
+  .plain { font-family: var(--font-display); font-size: 14px; font-style: italic; color: var(--rust); margin-bottom: 14px; }
+  .desc { font-family: var(--font-display); font-size: 14px; color: var(--ink); line-height: 1.6; margin-bottom: 22px; }
+  .del { font-family: var(--font-mono); font-size: 9.5px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; padding-top: 16px; border-top: 1px solid var(--rule-light); line-height: 1.8; }
+  .del strong { color: var(--ink); font-weight: 400; }
+  .flag { position: absolute; top: 0; right: 0; background: var(--rust); color: var(--paper); font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; padding: 6px 14px; border-bottom-left-radius: 2px; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="card">
+      <div class="flag">Most asked</div>
+      <div class="tag">Technical Finance</div>
+      <div class="name">IFRS Financial <em>Statements</em></div>
+      <div class="plain">Full statements built from your trial balance</div>
+      <div class="desc">Balance sheet, income statement, cash flow, equity, and notes — formula-driven so every number is traceable.</div>
+      <div class="del"><strong>You receive:</strong> Draft statements · Working model · Policy memo</div>
+    </div>
+    <div class="card">
+      <div class="tag">Transaction Support</div>
+      <div class="name">Quality of <em>Earnings</em></div>
+      <div class="plain">What profit is real, recurring, investor-ready</div>
+      <div class="desc">Separates recurring earnings from one-offs, identifies working-capital patterns, and flags anything that changes the number.</div>
+      <div class="del"><strong>You receive:</strong> QoE memo · Earnings bridge · Working model</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 0; background: var(--ink); }
+  .wrap { padding: 32px 32px; }
+  .lbl { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rust-on-ink); margin-bottom: 26px; }
+  .steps { display: grid; grid-template-columns: 1fr 1fr; }
+  .step { padding: 0 30px 0 0; border-right: 1px solid rgba(244,241,234,0.12); position: relative; }
+  .step:last-child { border-right: none; padding-right: 0; }
+  .step:not(:first-child) { padding-left: 30px; }
+  .step::before { content: ''; position: absolute; top: 0; left: 0; width: 34px; height: 2px; background: var(--rust-on-ink); }
+  .step:not(:first-child)::before { left: 30px; }
+  .sn { font-family: var(--font-mono); font-size: 10px; color: var(--rust-on-ink); letter-spacing: 0.14em; text-transform: uppercase; margin-top: 22px; margin-bottom: 12px; }
+  .st { font-family: var(--font-display); font-size: 27px; font-weight: 400; color: var(--paper); margin-bottom: 10px; line-height: 1.1; letter-spacing: -0.01em; }
+  .sb { font-family: var(--font-display); font-size: 13.5px; color: rgba(244,241,234,0.75); line-height: 1.6; }
+  .tm { font-family: var(--font-mono); font-size: 9.5px; color: var(--rust-on-ink); letter-spacing: 0.14em; text-transform: uppercase; margin-top: 16px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="lbl">Process — full-bleed ink section · rust-on-ink accent</div>
+    <div class="steps">
+      <div class="step">
+        <div class="sn">Step 01</div>
+        <div class="st">Scoping call</div>
+        <div class="sb">A 30-minute call to understand what you need. If it's a fit, I'll say so. If it isn't, I'll tell you directly.</div>
+        <div class="tm">Free · same week</div>
+      </div>
+      <div class="step">
+        <div class="sn">Step 02</div>
+        <div class="st">Written proposal</div>
+        <div class="sb">A one-page engagement letter — what the work covers, what it doesn't, the timeline, the fee.</div>
+        <div class="tm">Within 48 hours</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
