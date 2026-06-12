@@ -1,4 +1,5 @@
 # Pretty URLs — let visitors hit /start instead of /start.html
+/about              /about.html              200
 /start              /start.html              200
 /scoping            /scoping.html            200
 /articles           /articles.html           200
