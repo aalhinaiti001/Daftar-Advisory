@@ -1,0 +1,28 @@
+<!-- @dsCard group="Type" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 26px 32px; }
+  .lbl { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .scale > div { display: flex; align-items: baseline; gap: 18px; border-top: 1px solid var(--rule-light); padding: 8px 0; }
+  .scale > div:first-of-type { border-top: 2px solid var(--ink); }
+  .tok { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rust); width: 96px; flex-shrink: 0; }
+  .spec { font-family: var(--font-display); color: var(--ink); font-weight: 300; line-height: 1; white-space: nowrap; }
+  .px { font-family: var(--font-mono); font-size: 9.5px; color: var(--muted); margin-left: auto; letter-spacing: 0.1em; }
+</style>
+</head>
+<body>
+  <div class="lbl">Type scale</div>
+  <div class="scale">
+    <div><span class="tok">hero</span><span class="spec" style="font-size:46px">Aa</span><span class="px">120 / 300</span></div>
+    <div><span class="tok">h2</span><span class="spec" style="font-size:34px">Aa</span><span class="px">64 / 300</span></div>
+    <div><span class="tok">card-name</span><span class="spec" style="font-size:26px;font-weight:400">Aa</span><span class="px">28 / 400</span></div>
+    <div><span class="tok">lede</span><span class="spec" style="font-size:20px;font-weight:400">Aa</span><span class="px">20 / 400</span></div>
+    <div><span class="tok">body</span><span class="spec" style="font-size:17px;font-weight:400">Aa</span><span class="px">17 / 400</span></div>
+    <div><span class="tok">label</span><span class="spec" style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase">Label</span><span class="px">11 / mono</span></div>
+  </div>
+</body>
+</html>

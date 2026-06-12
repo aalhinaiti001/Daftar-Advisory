@@ -1,0 +1,123 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "ui_kits/website/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Fraunces|IBM Plex Sans|JetBrains Mono|IBM Plex Sans Arabic))/i]",
+        "message": "Font not provided by the design system. Available: Fraunces, IBM Plex Sans, JetBrains Mono, IBM Plex Sans Arabic."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {},
+    "tokens": [
+      "--font-arabic",
+      "--font-body",
+      "--font-display",
+      "--font-mono",
+      "--fs-body",
+      "--fs-card",
+      "--fs-display",
+      "--fs-h2",
+      "--fs-h3",
+      "--fs-hero",
+      "--fs-label",
+      "--fs-lede",
+      "--fs-micro",
+      "--fs-small",
+      "--ink",
+      "--muted",
+      "--paper",
+      "--paper-dark",
+      "--rule-light",
+      "--rule-mid",
+      "--rule-strong",
+      "--rust",
+      "--rust-on-ink",
+      "--track-label",
+      "--track-tight",
+      "--track-wide",
+      "--w-light",
+      "--w-medium",
+      "--w-regular"
+    ],
+    "tokenKinds": {
+      "--paper": "color",
+      "--paper-dark": "color",
+      "--ink": "color",
+      "--muted": "color",
+      "--rust": "color",
+      "--rust-on-ink": "color",
+      "--rule-light": "color",
+      "--rule-mid": "color",
+      "--rule-strong": "color",
+      "--font-display": "font",
+      "--font-body": "font",
+      "--font-mono": "font",
+      "--font-arabic": "font",
+      "--fs-hero": "font",
+      "--fs-display": "font",
+      "--fs-h2": "font",
+      "--fs-h3": "spacing",
+      "--fs-card": "spacing",
+      "--fs-lede": "spacing",
+      "--fs-body": "spacing",
+      "--fs-small": "spacing",
+      "--fs-label": "spacing",
+      "--fs-micro": "spacing",
+      "--w-light": "font",
+      "--w-regular": "font",
+      "--w-medium": "font",
+      "--track-label": "spacing",
+      "--track-wide": "spacing",
+      "--track-tight": "spacing"
+    },
+    "fontFamilies": [
+      "Fraunces",
+      "IBM Plex Sans",
+      "IBM Plex Sans Arabic",
+      "JetBrains Mono"
+    ]
+  }
+}

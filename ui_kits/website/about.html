@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<!-- @dsCard group="UI Kit — Website" name="About Page" subtitle="Editorial About page — credentials, practice, markets, contact" viewport="1080x1100" -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Daftar Advisory</title>
+<link rel="icon" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="kit.css">
+<style>
+  /* ===== About page — layout only; all tokens inherited from kit.css ===== */
+  .about-hero { max-width:1080px; margin:0 auto; padding:96px 56px 72px; }
+  .about-hero h1 {
+    font-family:'Fraunces',serif; font-size:clamp(48px,7.5vw,104px); font-weight:300;
+    line-height:0.96; letter-spacing:-0.025em; color:var(--ink);
+    font-variation-settings:"opsz" 144; max-width:980px;
+  }
+  .about-hero h1 em { color:var(--rust); font-style:italic; font-weight:300; }
+
+  /* shared editorial section frame */
+  .ed-section { max-width:1080px; margin:0 auto; padding:0 56px; }
+  .ed-block { padding:72px 0; border-top:1px solid var(--rule-light); }
+  .ed-grid { display:grid; grid-template-columns:200px 1fr; gap:56px; align-items:start; }
+  .ed-label {
+    font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--rust);
+    letter-spacing:0.18em; text-transform:uppercase; padding-top:8px; line-height:1.6;
+  }
+  .ed-prose { max-width:680px; }
+  .ed-prose p {
+    font-family:'Fraunces',serif; font-size:19px; line-height:1.7; color:var(--ink);
+    font-variation-settings:"opsz" 16; margin-bottom:24px;
+  }
+  .ed-prose p:last-child { margin-bottom:0; }
+  .ed-prose p em { color:var(--rust); font-style:italic; }
+  .ed-prose strong { font-weight:500; color:var(--ink); }
+
+  /* credentials path — mono, no bullets */
+  .cred-lede { font-size:21px !important; line-height:1.6 !important; }
+  .cred-path {
+    font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--ink); line-height:2.4; margin:34px 0 0;
+    display:flex; flex-wrap:wrap; align-items:center; gap:0 14px;
+  }
+  .cred-path .firm { color:var(--ink); }
+  .cred-path .arrow { color:var(--rust); }
+  .cred-status {
+    margin-top:36px; padding-top:28px; border-top:1px solid var(--rule-light);
+    display:grid; grid-template-columns:1fr 1fr; gap:28px 40px;
+  }
+  .cred-item .k {
+    font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.16em;
+    text-transform:uppercase; color:var(--muted); margin-bottom:8px;
+  }
+  .cred-item .v {
+    font-family:'Fraunces',serif; font-size:17px; line-height:1.45; color:var(--ink);
+  }
+  .cred-item .v em { color:var(--rust); font-style:italic; }
+
+  /* markets — one line each */
+  .markets { border-top:2px solid var(--ink); margin-top:8px; }
+  .market-row {
+    display:grid; grid-template-columns:88px 1fr; gap:40px; align-items:baseline;
+    padding:26px 0; border-bottom:1px solid var(--rule-light);
+  }
+  .market-code {
+    font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.16em;
+    text-transform:uppercase; color:var(--rust); padding-top:6px;
+  }
+  .market-name {
+    font-family:'Fraunces',serif; font-size:28px; font-weight:400; color:var(--ink);
+    letter-spacing:-0.01em; font-variation-settings:"opsz" 36; line-height:1.2;
+  }
+  .market-detail {
+    font-family:'Fraunces',serif; font-size:16px; color:var(--muted); line-height:1.5;
+    margin-top:6px;
+  }
+
+  @media (max-width:820px) {
+    .about-hero { padding:56px 22px 48px; }
+    .ed-section { padding:0 22px; }
+    .ed-block { padding:48px 0; }
+    .ed-grid { grid-template-columns:1fr; gap:20px; }
+    .cred-status { grid-template-columns:1fr; gap:22px; }
+    .market-row { grid-template-columns:1fr; gap:6px; }
+  }
+</style>
+</head>
+<body>
+
+<template id="__bundler_thumbnail" data-bg-color="#f4f1ea">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#f4f1ea"/>
+    <text x="120" y="360" font-family="Georgia,serif" font-size="150" font-weight="300" fill="#1a1a18">Daftar</text>
+    <text x="120" y="500" font-family="Georgia,serif" font-size="150" font-style="italic" font-weight="300" fill="#9c4221">Advisory.</text>
+    <rect x="120" y="560" width="320" height="3" fill="#9c4221"/>
+  </svg>
+</template>
+
+<!-- ===== Header (matches site nav) ===== -->
+<header class="topbar">
+  <a class="wordmark" href="../../ui_kits/website/index.html">Daftar <em>Advisory.</em></a>
+  <nav aria-label="Primary">
+    <a class="navlink" href="index.html">Services</a>
+    <a class="navlink" href="index.html">Case Studies</a>
+    <a class="navlink" href="index.html">How It Works</a>
+    <a class="navlink" href="index.html">Research</a>
+    <a class="navlink is-here" href="about.html">About</a>
+    <a class="ar-link" href="#" lang="ar" onclick="return false">العربية</a>
+  </nav>
+  <a class="cta-btn" href="#contact">Book a free call</a>
+</header>
+
+<main id="main">
+
+  <!-- ===== Hero ===== -->
+  <section class="about-hero">
+    <div class="eyebrow" style="margin-bottom:40px;">About the practice</div>
+    <h1>Eight years.<br>Four firms.<br>One <em>practice.</em></h1>
+  </section>
+
+  <!-- ===== Credentials ===== -->
+  <div class="ed-section">
+    <div class="ed-block" style="border-top:none;">
+      <div class="ed-grid">
+        <div class="ed-label">Credentials</div>
+        <div class="ed-prose">
+          <p class="cred-lede">
+            Daftar is run by <strong>Ahmad Al Hinaiti</strong> — a senior auditor trained across
+            four firms on two continents, from the IFRS work in Amman to the large-cap engagements in Riyadh.
+            Every engagement is run by the same person who took the call.
+          </p>
+          <div class="cred-path">
+            <span class="firm">PwC Amman</span><span class="arrow">→</span>
+            <span class="firm">PwC Dubai</span><span class="arrow">→</span>
+            <span class="firm">MillerMusmar DC</span><span class="arrow">→</span>
+            <span class="firm">EY Riyadh</span>
+          </div>
+          <div class="cred-status">
+            <div class="cred-item">
+              <div class="k">Role</div>
+              <div class="v">Senior auditor — IFRS, SOCPA, and US GAAP engagements</div>
+            </div>
+            <div class="cred-item">
+              <div class="k">Qualification</div>
+              <div class="v">US CPA <em>in progress</em> — 2 of 4 sections passed, Q3 2026 target</div>
+            </div>
+            <div class="cred-item">
+              <div class="k">Standards</div>
+              <div class="v">IFRS · SOCPA · US GAAP · Yellow Book</div>
+            </div>
+            <div class="cred-item">
+              <div class="k">Independence</div>
+              <div class="v">EY no-objection clearance <em>confirmed</em></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== What this practice is ===== -->
+    <div class="ed-block">
+      <div class="ed-grid">
+        <div class="ed-label">What this is</div>
+        <div class="ed-prose">
+          <p>
+            Daftar is a practice of <em>one.</em> Fixed scope, fixed fee, one practitioner — the work is done
+            by the person you spoke to, not handed down to a team you never meet. Each engagement is priced and
+            bounded before it begins, and ends in a written deliverable plus the editable working file.
+          </p>
+          <p>
+            This is <strong>not an audit firm.</strong> Daftar does not issue audit opinions, sign financial
+            statements, or provide any attest service. The work is non-attest advisory only — technical review,
+            statement preparation, audit readiness, and transaction support — kept deliberately separate from
+            the assurance function so it never compromises an auditor's independence or its own.
+          </p>
+          <p>
+            What you get is senior judgement on the specific technical question in front of you, without the
+            overhead, the handoffs, or the lock-in. The file is yours; the position is one you can defend.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Markets served ===== -->
+    <div class="ed-block">
+      <div class="ed-grid">
+        <div class="ed-label">Markets served</div>
+        <div>
+          <div class="markets">
+            <div class="market-row">
+              <div class="market-code">KSA</div>
+              <div>
+                <div class="market-name">Saudi Arabia</div>
+                <div class="market-detail">SOCPA-aligned IFRS, ZATCA Phase 2, transfer pricing, Nomu readiness.</div>
+              </div>
+            </div>
+            <div class="market-row">
+              <div class="market-code">UAE</div>
+              <div>
+                <div class="market-name">United Arab Emirates</div>
+                <div class="market-detail">Corporate tax, IFRS financial statements, transaction support.</div>
+              </div>
+            </div>
+            <div class="market-row">
+              <div class="market-code">JOR</div>
+              <div>
+                <div class="market-name">Jordan</div>
+                <div class="market-detail">IFRS preparation, audit readiness, independent technical review.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Contact strip ===== -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div>
+        <div class="eyebrow" style="margin-bottom:32px;">Currently accepting engagements</div>
+        <h2 class="contact-title">Start with a<br>30-minute <em>call.</em></h2>
+        <p class="contact-note">
+          The scoping call is free and takes 30 minutes. You will get a clear answer about whether the work
+          is a fit — and if it is, a written quote within 48 hours. If it isn't, I will tell you on the call.
+        </p>
+      </div>
+      <div class="contact-methods">
+        <a class="contact-method" href="mailto:ahmad@daftaradvisory.com">
+          <div class="m-label">Email</div>
+          <div class="m-value">ahmad@daftaradvisory.com</div>
+          <div class="m-arrow">→</div>
+        </a>
+        <a class="contact-method" href="tel:+962798008835">
+          <div class="m-label">Phone</div>
+          <div class="m-value">+962 798 008 835</div>
+          <div class="m-arrow">→</div>
+        </a>
+        <a class="contact-method" href="#" onclick="return false">
+          <div class="m-label">LinkedIn</div>
+          <div class="m-value">ahmad-alhinaiti</div>
+          <div class="m-arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Footer (matches site) ===== -->
+<footer class="site-footer">
+  <span class="wordmark">Daftar <em>Advisory.</em></span>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="index.html">Capability statement</a>
+    <a href="index.html">Research</a>
+    <a href="#contact">Start a scoping call</a>
+    <a href="#" onclick="return false">Privacy</a>
+  </nav>
+  <div class="footer-copy">© 2026 · Amman, Jordan</div>
+</footer>
+
+</body>
+</html>

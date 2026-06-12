@@ -1,0 +1,29 @@
+<!-- @dsCard group="Spacing" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 28px 32px; }
+  .lbl { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+  .open { border-top: 2px solid var(--ink); padding-top: 16px; margin-bottom: 22px; }
+  .open .k { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: var(--rule-mid); border: 1px solid var(--rule-mid); }
+  .cell { background: var(--paper); padding: 18px 16px 22px; }
+  .cn { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rust); margin-bottom: 8px; }
+  .ct { font-family: var(--font-display); font-size: 16px; color: var(--ink); line-height: 1.2; }
+  .note { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 18px; }
+</style>
+</head>
+<body>
+  <div class="lbl">The ledger grid — 2px ink rule opens a section; 2px gaps read as fine rule</div>
+  <div class="open"><span class="k">— Services</span></div>
+  <div class="grid">
+    <div class="cell"><div class="cn">S / 01</div><div class="ct">Technical Review</div></div>
+    <div class="cell"><div class="cn">S / 02</div><div class="ct">Financial Statements</div></div>
+    <div class="cell"><div class="cn">S / 03</div><div class="ct">Audit Readiness</div></div>
+  </div>
+  <div class="note">Cards are cells in a ruled grid — not floating panels</div>
+</body>
+</html>

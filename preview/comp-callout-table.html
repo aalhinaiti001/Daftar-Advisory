@@ -1,0 +1,35 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 28px 32px; }
+  .lbl { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+  /* callout */
+  .callout { border-left: 2px solid var(--rust); padding: 10px 0 10px 22px; margin-bottom: 28px; }
+  .callout .cl { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rust); margin-bottom: 8px; }
+  .callout p { font-family: var(--font-display); font-size: 17px; line-height: 1.55; font-style: italic; color: var(--ink); margin: 0; }
+  /* data table */
+  .data-table { border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule-light); }
+  .dt-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 14px 0; border-bottom: 1px solid var(--rule-light); }
+  .dt-row:last-child { border-bottom: none; }
+  .dt-lbl { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
+  .dt-val { font-family: var(--font-display); font-size: 16px; color: var(--ink); }
+  .dt-val em { color: var(--rust); font-style: italic; }
+</style>
+</head>
+<body>
+  <div class="lbl">Brief callout + data table</div>
+  <div class="callout">
+    <div class="cl">The position</div>
+    <p>A clean tie-out is a love letter to the auditor who comes next.</p>
+  </div>
+  <div class="data-table">
+    <div class="dt-row"><span class="dt-lbl">Threshold</span><span class="dt-val">SAR <em>375,000</em> annual revenue</span></div>
+    <div class="dt-row"><span class="dt-lbl">Go-live</span><span class="dt-val">30 June 2026 · Wave 24</span></div>
+    <div class="dt-row"><span class="dt-lbl">Typical quote</span><span class="dt-val">SAR 150,000 — <em>4× over</em></span></div>
+  </div>
+</body>
+</html>
