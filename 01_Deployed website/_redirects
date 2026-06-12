@@ -1,5 +1,5 @@
 # Pretty URLs — rewrite (no redirect)
-/start              /start.html              200
+/about              /about.html              200/start              /start.html              200
 /scoping            /scoping.html            200
 /articles           /articles.html           200
 /areas              /areas.html              200
