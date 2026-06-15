@@ -158,7 +158,9 @@ Root files:
 - **`SKILL.md`** — Agent-Skill front-matter so this folder can be used directly inside Claude Code.
 - **`assets/`** — `favicon.svg` (D-mark) and `og-image.png` (typographic brand card). The only brand raster/vector assets that exist.
 - **`preview/`** — the Design System tab cards (colour, type, spacing, components, brand). Small static HTML specimens.
-- **`01_Deployed website/`** — the imported production site (read-only reference; the source of truth for layout).
+- **`01_Deployed website/`** — the imported production site and **the canonical, latest source of truth** for the website. Deploy-ready (flat structure for Netlify) — do not restructure its contents.
+- **`source-documents/`** — the source material the brand and site were derived from (service one-pagers, website copy packs, regulatory research, the revenue model, slides). Reference only; not part of the deployed site.
+- **`_archive/`** — superseded or non-deployable artifacts, kept for reference only (an older homepage redesign draft and the About bundler export). See `_archive/README.md`.
 
 UI kits:
 - **`ui_kits/website/`** — high-fidelity, interactive recreation of the daftaradvisory.com marketing site and *The Daftar* research-brief reader. `index.html` is the runnable demo; the `.jsx` files are reusable components (topbar, hero, trust strip, services grid, case studies, process section, contact, article reader, brief-list rows, footer). See its own `README.md`.
