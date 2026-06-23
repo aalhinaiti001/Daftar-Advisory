@@ -1,0 +1,11 @@
+# Netlify clean URLs — drop the .html extension
+/start          /start.html                          200
+/areas          /areas.html                          200
+/scoping        /scoping.html                        200
+/capability     /capability-statement.html           200
+/capability/long /capability-statement-long.html     200
+/login          /login.html                          200
+/portal         /login.html                          200
+
+# Anything we didn't match → home (404 status, not rewrite)
+/*  /index.html  404
