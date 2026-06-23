@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar Advisory — Request a scoping call</title>
+<meta name="description" content="Request a scoping call with Daftar Advisory. Tell us what you need — we'll send a fixed quote within 48 hours.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Daftar Advisory — Request a scoping call">
+<meta property="og:description" content="One form. One practitioner. Fixed quote within 48 hours.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://daftaradvisory.com/scope">
+<meta property="og:image" content="https://daftaradvisory.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://daftaradvisory.com/og-image.png">
+<link rel="canonical" href="https://daftaradvisory.com/scope">
+<link rel="icon" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+<style>
+/* ============ BRAND TOKENS ============ */
+:root {
+  --paper:        #F4F1EA;
+  --paper-dark:   #EBE6DA;
+  --ink:          #1A1814;
+  --muted:        #78726A;
+  --rust:         #A8341F;
+  --rule-light:   rgba(26, 24, 20, 0.10);
+  --rule-mid:     rgba(26, 24, 20, 0.22);
+}
+
+/* ============ RESET ============ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.6;
+  font-variation-settings: "opsz" 14;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============ TOPBAR ============ */
+.topbar {
+  border-bottom: 1px solid var(--rule-light);
+  padding: 22px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(244, 241, 234, 0.96);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.wordmark {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+.wordmark em { color: var(--rust); font-style: italic; }
+.topbar-back {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.topbar-back:hover { color: var(--rust); }
+
+/* ============ MAIN LAYOUT ============ */
+main {
+  flex: 1;
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 72px 56px 100px;
+}
+
+/* ============ HEADER ============ */
+.page-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--rust);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.page-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--rust);
+}
+.page-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(40px, 7vw, 72px);
+  font-weight: 300;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  font-variation-settings: "opsz" 144;
+  margin-bottom: 28px;
+}
+.page-title em { color: var(--rust); font-style: italic; font-weight: 300; }
+.page-lede {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  color: var(--ink);
+  line-height: 1.65;
+  max-width: 600px;
+  margin-bottom: 64px;
+  font-variation-settings: "opsz" 14;
+}
+
+/* ============ FORM ============ */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 40px;
+  margin-bottom: 32px;
+}
+.field-full { grid-column: 1 / -1; }
+
+.field { display: flex; flex-direction: column; gap: 10px; }
+
+.field-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+.field-label .optional {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.text-input,
+.select-input,
+.textarea-input {
+  background: var(--paper-dark);
+  border: 1px solid var(--rule-mid);
+  border-radius: 2px;
+  padding: 14px 16px;
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  color: var(--ink);
+  font-variation-settings: "opsz" 14;
+  transition: border-color 0.2s, background 0.2s;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.text-input:focus,
+.select-input:focus,
+.textarea-input:focus {
+  outline: none;
+  border-color: var(--rust);
+  background: var(--paper);
+}
+.text-input::placeholder,
+.textarea-input::placeholder { color: var(--muted); font-style: italic; }
+
+.select-wrapper {
+  position: relative;
+}
+.select-wrapper::after {
+  content: '↓';
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.select-input option { font-family: Georgia, serif; font-size: 15px; }
+.select-input option:first-child { color: var(--muted); }
+
+.textarea-input {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+/* ============ DIVIDER ============ */
+.form-divider {
+  border: none;
+  border-top: 1px solid var(--rule-light);
+  margin: 8px 0 32px;
+  grid-column: 1 / -1;
+}
+
+/* ============ DISCLAIMER ============ */
+.form-note {
+  background: var(--paper-dark);
+  border-left: 2px solid var(--rust);
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.form-note p {
+  font-family: 'Fraunces', serif;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+  font-variation-settings: "opsz" 12;
+  font-style: italic;
+}
+
+/* ============ SUBMIT ROW ============ */
+.submit-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-top: 12px;
+}
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 32px;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  border-radius: 2px;
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.25s;
+  text-decoration: none;
+}
+.btn-submit:hover { background: var(--rust); }
+.btn-submit .arrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  color: #E07458;
+  transition: transform 0.25s, color 0.25s;
+}
+.btn-submit:hover .arrow { transform: translateX(5px); color: var(--paper); }
+
+.submit-note {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.7;
+}
+
+/* ============ CONFIRMATION (hidden by default) ============ */
+.confirm-block {
+  display: none;
+  padding: 64px 0 40px;
+}
+.confirm-block.visible { display: block; }
+.confirm-mark {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--rust);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.confirm-mark::before { content: ''; width: 28px; height: 1px; background: var(--rust); }
+.confirm-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(36px, 6vw, 60px);
+  font-weight: 300;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  font-variation-settings: "opsz" 144;
+  margin-bottom: 24px;
+}
+.confirm-title em { color: var(--rust); font-style: italic; }
+.confirm-body {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  color: var(--ink);
+  line-height: 1.65;
+  max-width: 580px;
+  font-variation-settings: "opsz" 14;
+  margin-bottom: 48px;
+}
+.confirm-back {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.confirm-back:hover { color: var(--rust); }
+
+/* ============ FOOTER ============ */
+footer {
+  border-top: 1px solid var(--rule-light);
+  padding: 32px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-links {
+  display: flex;
+  gap: 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.footer-links a { color: var(--ink); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--rust); }
+.footer-copy {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ============ FOCUS ============ */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--rust);
+  outline-offset: 3px;
+}
+
+/* ============ MOBILE ============ */
+@media (max-width: 720px) {
+  .topbar { padding: 16px 20px; }
+  main { padding: 48px 20px 72px; }
+  .form-grid { grid-template-columns: 1fr; gap: 24px; }
+  .field-full { grid-column: 1; }
+  .submit-row { flex-direction: column; align-items: flex-start; }
+  footer { flex-direction: column; gap: 14px; padding: 24px 20px; text-align: center; }
+  .footer-links { justify-content: center; flex-wrap: wrap; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ TOPBAR ============ -->
+<header class="topbar">
+  <a href="index.html" class="wordmark">Daftar <em>Advisory.</em></a>
+  <a href="index.html" class="topbar-back">← Back to home</a>
+</header>
+
+<!-- ============ MAIN ============ -->
+<main id="main">
+
+  <div class="page-eyebrow">Scoping request</div>
+  <h1 class="page-title">
+    Tell me about<br>
+    the work you <em>need.</em>
+  </h1>
+  <p class="page-lede">
+    Fill in what you can. I read every request personally and send a written quote within 48 hours. If the work is not a fit, I'll say so on the call.
+  </p>
+
+  <!-- ============ FORM ============ -->
+  <div id="form-wrapper">
+    <form
+      name="scoping-request"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      id="scope-form"
+      novalidate
+    >
+      <!-- Netlify hidden fields -->
+      <input type="hidden" name="form-name" value="scoping-request">
+      <p style="display:none;"><label>Don't fill this in: <input name="bot-field"></label></p>
+
+      <div class="form-grid">
+
+        <!-- Service dropdown -->
+        <div class="field field-full">
+          <label class="field-label" for="service">Service required</label>
+          <div class="select-wrapper">
+            <select class="select-input" id="service" name="service" required>
+              <option value="" disabled selected>Select the service that fits your situation</option>
+              <optgroup label="Technical Finance">
+                <option value="Independent Technical Review">Independent Technical Review — second opinion on an accounting position or FS</option>
+                <option value="IFRS Financial Statements">IFRS Financial Statements — full FS prepared from your trial balance</option>
+                <option value="Audit Readiness & Remediation">Audit Readiness &amp; Remediation — file preparation before the auditor arrives</option>
+              </optgroup>
+              <optgroup label="Transaction Support">
+                <option value="Investment Readiness">Investment Readiness — numbers prepared for investors, due diligence, or a sale</option>
+                <option value="Investment Case Preparation">Investment Case Preparation — financial model and narrative for a specific decision</option>
+                <option value="Nomu Pre-IPO Readiness">Nomu Pre-IPO Readiness — diagnostic ahead of a Nomu listing application</option>
+              </optgroup>
+              <optgroup label="Compliance">
+                <option value="ZATCA Phase 2 Integration">ZATCA Phase 2 Integration — e-invoicing readiness and implementation</option>
+                <option value="UAE Corporate Tax Advisory">UAE Corporate Tax Advisory — registration, filing, SBR eligibility</option>
+                <option value="KSA Transfer Pricing Documentation">KSA Transfer Pricing Documentation — CTDF, Local/Master File</option>
+              </optgroup>
+              <optgroup label="Ongoing Support">
+                <option value="Fractional Finance Support">Fractional Finance Support — senior technical resource, fixed scope</option>
+              </optgroup>
+              <option value="Not sure — I will describe my situation">Not sure yet — I'll describe my situation below</option>
+            </select>
+          </div>
+        </div>
+
+        <hr class="form-divider">
+
+        <!-- Name -->
+        <div class="field">
+          <label class="field-label" for="name">Contact name</label>
+          <input
+            class="text-input"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Full name"
+            autocomplete="name"
+            required
+          >
+        </div>
+
+        <!-- Email -->
+        <div class="field">
+          <label class="field-label" for="email">Email address</label>
+          <input
+            class="text-input"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="your@email.com"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <!-- Phone -->
+        <div class="field">
+          <label class="field-label" for="phone">Phone <span class="optional">(optional)</span></label>
+          <input
+            class="text-input"
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="+966 or +971 preferred"
+            autocomplete="tel"
+          >
+        </div>
+
+        <!-- Company -->
+        <div class="field">
+          <label class="field-label" for="company">Company name <span class="optional">(optional)</span></label>
+          <input
+            class="text-input"
+            type="text"
+            id="company"
+            name="company"
+            placeholder="Entity or trading name"
+            autocomplete="organization"
+          >
+        </div>
+
+        <!-- Message -->
+        <div class="field field-full">
+          <label class="field-label" for="message">Brief description of what you need <span class="optional">(optional)</span></label>
+          <textarea
+            class="textarea-input"
+            id="message"
+            name="message"
+            placeholder="A few lines on the situation — which market, what the deadline is, and the main technical question, if you know it. Nothing required before the call."
+            rows="5"
+          ></textarea>
+        </div>
+
+      </div><!-- /form-grid -->
+
+      <!-- Disclaimer -->
+      <div class="form-note">
+        <p>Daftar Advisory is a non-attest advisory practice. The principal does not hold a JACPA, SOCPA, or UAE Ministry of Economy audit licence and does not perform statutory audit, review, or agreed-upon-procedures engagements. Every engagement is governed by a written engagement letter with fixed scope, fixed fee, and a written non-attest disclaimer.</p>
+      </div>
+
+      <!-- Submit -->
+      <div class="submit-row">
+        <button type="submit" class="btn-submit">
+          Send request
+          <span class="arrow" aria-hidden="true">→</span>
+        </button>
+        <div class="submit-note">No obligation · Fixed quote within 48 hours</div>
+      </div>
+
+    </form>
+  </div><!-- /form-wrapper -->
+
+  <!-- ============ CONFIRMATION (shown after submit) ============ -->
+  <div class="confirm-block" id="confirm-block">
+    <div class="confirm-mark">Request received</div>
+    <h2 class="confirm-title">
+      Expect a reply<br>within <em>48 hours.</em>
+    </h2>
+    <p class="confirm-body">
+      I've received your request and will read it today. If the work is a fit, you'll get a written scope and fee. If it isn't, I'll say so clearly and point you somewhere better.
+    </p>
+    <a href="index.html" class="confirm-back">← Return to daftaradvisory.com</a>
+  </div>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wordmark">Daftar <em>Advisory.</em></div>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="founder-letter.html">Letter from the Founder</a>
+    <a href="articles.html">Articles</a>
+    <a href="ethics.html">Ethics &amp; Values</a>
+  </nav>
+  <div class="footer-copy">© 2026 · Amman, Jordan</div>
+</footer>
+
+<script>
+/* Handle Netlify Forms AJAX submission for clean UX */
+const form = document.getElementById('scope-form');
+if (form) {
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = form.querySelector('.btn-submit');
+    btn.textContent = 'Sending…';
+    btn.style.pointerEvents = 'none';
+
+    const data = new FormData(form);
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString()
+      });
+      document.getElementById('form-wrapper').style.display = 'none';
+      document.getElementById('confirm-block').classList.add('visible');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (err) {
+      btn.textContent = 'Send request';
+      btn.style.pointerEvents = '';
+      alert('There was a problem submitting the form. Please email ahmad@daftaradvisory.com directly.');
+    }
+  });
+}
+</script>
+
+</body>
+</html>

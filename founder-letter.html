@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar Advisory — Letter from the Founder</title>
+<meta name="description" content="Why Daftar Advisory exists, how the work is done, and what you can expect from every engagement. A letter from Ahmad Al Hinaiti.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Daftar Advisory — Letter from the Founder">
+<meta property="og:description" content="Why this practice exists, and how it works. In plain English, from the practitioner.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://daftaradvisory.com/founder-letter">
+<meta property="og:image" content="https://daftaradvisory.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://daftaradvisory.com/og-image.png">
+<link rel="canonical" href="https://daftaradvisory.com/founder-letter">
+<link rel="icon" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+<style>
+/* ============ BRAND TOKENS ============ */
+:root {
+  --paper:        #F4F1EA;
+  --paper-dark:   #EBE6DA;
+  --ink:          #1A1814;
+  --muted:        #78726A;
+  --rust:         #A8341F;
+  --rule-light:   rgba(26, 24, 20, 0.10);
+  --rule-mid:     rgba(26, 24, 20, 0.22);
+}
+
+/* ============ RESET ============ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.7;
+  font-variation-settings: "opsz" 14;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============ TOPBAR ============ */
+.topbar {
+  border-bottom: 1px solid var(--rule-light);
+  padding: 22px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wordmark {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+.wordmark em { color: var(--rust); font-style: italic; }
+.topbar-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* ============ MAIN ============ */
+main {
+  flex: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 80px 56px 100px;
+}
+
+/* ============ PAGE HEADER ============ */
+.page-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--rust);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.page-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--rust);
+}
+.page-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(44px, 7vw, 76px);
+  font-weight: 300;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  font-variation-settings: "opsz" 144;
+  margin-bottom: 20px;
+}
+.page-title em { color: var(--rust); font-style: italic; font-weight: 300; }
+.page-from {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 56px;
+}
+
+/* ============ RULE ============ */
+.rule { border: none; border-top: 2px solid var(--ink); margin-bottom: 56px; }
+
+/* ============ LETTER BODY ============ */
+.letter p {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  color: var(--ink);
+  line-height: 1.75;
+  margin-bottom: 28px;
+  font-variation-settings: "opsz" 14;
+}
+.letter p:last-of-type { margin-bottom: 0; }
+.letter em { color: var(--rust); font-style: italic; }
+.letter strong { font-weight: 500; }
+
+/* ============ CALLOUT ============ */
+.callout {
+  background: var(--ink);
+  padding: 36px 40px;
+  margin: 52px 0;
+}
+.callout p {
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--paper);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 48;
+}
+.callout p em { color: #E07458; font-style: italic; }
+
+/* ============ SIGNATURE ============ */
+.signature-block {
+  border-top: 1px solid var(--rule-light);
+  padding-top: 44px;
+  margin-top: 56px;
+}
+.signature-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.signature-name {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 36;
+  margin-bottom: 8px;
+}
+.signature-role {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 28px;
+  font-variation-settings: "opsz" 14;
+}
+.signature-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 28px;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  border-radius: 2px;
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  transition: background 0.25s;
+  margin-top: 8px;
+}
+.signature-cta:hover { background: var(--rust); }
+.signature-cta .arrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  color: #E07458;
+  transition: transform 0.25s, color 0.25s;
+}
+.signature-cta:hover .arrow { transform: translateX(5px); color: var(--paper); }
+
+/* ============ DISCLAIMER ============ */
+.disclaimer-block {
+  background: var(--paper-dark);
+  border: 1px solid var(--rule-mid);
+  padding: 24px 28px;
+  margin-top: 64px;
+}
+.disclaimer-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--rust);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.disclaimer-text {
+  font-family: 'Fraunces', serif;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.75;
+  font-variation-settings: "opsz" 12;
+}
+
+/* ============ FOOTER ============ */
+footer {
+  border-top: 1px solid var(--rule-light);
+  padding: 32px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-links {
+  display: flex;
+  gap: 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.footer-links a { color: var(--ink); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--rust); }
+.footer-copy {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ============ FOCUS ============ */
+a:focus-visible { outline: 2px solid var(--rust); outline-offset: 3px; }
+
+/* ============ MOBILE ============ */
+@media (max-width: 720px) {
+  .topbar { padding: 16px 20px; }
+  main { padding: 56px 20px 72px; }
+  .page-title { font-size: 44px; }
+  .callout { padding: 28px 24px; }
+  .callout p { font-size: 20px; }
+  footer { flex-direction: column; gap: 14px; padding: 24px 20px; text-align: center; }
+  .footer-links { justify-content: center; flex-wrap: wrap; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ TOPBAR ============ -->
+<header class="topbar">
+  <a href="index.html" class="wordmark">Daftar <em>Advisory.</em></a>
+  <span class="topbar-meta">Letter from the Founder · 01</span>
+</header>
+
+<main id="main">
+
+  <div class="page-eyebrow">From the founder</div>
+  <h1 class="page-title">Why this practice <em>exists.</em></h1>
+  <div class="page-from">Ahmad Al Hinaiti · Amman, 2026</div>
+
+  <hr class="rule">
+
+  <div class="letter">
+
+    <p>
+      Most mid-size businesses in KSA and the UAE cannot justify Big Four fees for the technical work they actually need — and they do not get senior attention from a Big Four firm even when they pay it. A partner takes the scoping call. A junior analyst does the work. The partner reviews a draft on the day of delivery. You speak to the partner; the work belongs to someone else.
+    </p>
+
+    <p>
+      Daftar Advisory is built around one answer to that problem: <em>one practitioner does the work and stands behind every number.</em> No pyramid. No handoff. The person on the scoping call is the same person who opens the Excel file, reads the contracts, writes the memo, and delivers the file.
+    </p>
+
+    <div class="callout">
+      <p>The Big Four sell you an audit file.<br><em>Daftar sells the judgement that produced it.</em></p>
+    </div>
+
+    <p>
+      I spent eight years inside PwC and EY before building this practice — PwC Amman, PwC Dubai, and EY Riyadh, across audit, IFRS advisory, and transaction support. That background gave me two things worth more than any credential: a working understanding of the file quality that sophisticated auditors actually expect, and a clear view of the gap between what a Big Four engagement promises and what it delivers to a mid-size client.
+    </p>
+
+    <p>
+      Every Daftar engagement is priced at a fixed fee, scoped to a written outcome, and delivered on a defined timeline — all named in the engagement letter before you commit. What the work covers and what it does not cover are both written down. The fee does not move unless the scope changes, and if the scope changes because I missed something at kick-off, I absorb the additional work. There are no surprises in the invoice.
+    </p>
+
+    <p>
+      The deliverable always ships with the working file: formulas intact, assumptions documented, sources cited. No proprietary models. No lock-in. What you receive at the end of an engagement is genuinely yours — to extend, audit, and hand to the next person without needing me in the room to explain it.
+    </p>
+
+    <p>
+      This practice does not take attest work. It does not sign audit opinions, file tax returns on behalf of clients, or provide CMA-licensed advisory. Where an engagement requires a licensed signature, I refer the work to a firm better placed to do it, and I usually provide a name. <strong>The boundaries are not a limitation — they are the honesty of knowing where competent advisory ends.</strong>
+    </p>
+
+    <p>
+      If there is a fit, a written scope and fee will be in your inbox within 48 hours of the scoping call. If there is not a fit, I will tell you on the call and point you somewhere useful. Neither outcome costs you anything.
+    </p>
+
+  </div>
+
+  <!-- Signature -->
+  <div class="signature-block">
+    <div class="signature-label">Principal</div>
+    <div class="signature-name">Ahmad Al Hinaiti</div>
+    <div class="signature-role">Founder, Daftar Advisory · Amman, Jordan</div>
+    <a href="scope.html" class="signature-cta">
+      Request a scoping call
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+
+  <!-- Disclaimer -->
+  <div class="disclaimer-block">
+    <div class="disclaimer-label">Non-attest disclaimer</div>
+    <p class="disclaimer-text">Daftar Advisory is a non-attest advisory practice. The principal does not hold a JACPA, SOCPA, or UAE Ministry of Economy audit licence and does not perform statutory audit, review, or agreed-upon-procedures engagements. All engagements are governed by a written engagement letter with fixed scope, fixed fee, and a written non-attest disclaimer. Where work requires an attest signature, the engagement is referred to a licensed firm.</p>
+  </div>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wordmark">Daftar <em>Advisory.</em></div>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="articles.html">Articles</a>
+    <a href="scope.html">Start a scoping call</a>
+    <a href="ethics.html">Ethics &amp; Values</a>
+  </nav>
+  <div class="footer-copy">© 2026 · Amman, Jordan</div>
+</footer>
+
+</body>
+</html>

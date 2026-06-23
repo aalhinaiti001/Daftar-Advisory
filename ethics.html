@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar Advisory — Ethics &amp; Values</title>
+<meta name="description" content="How Daftar Advisory handles client engagements: confidentiality, independence, integrity, and responsible advisory work. Plain English.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Daftar Advisory — Ethics &amp; Values">
+<meta property="og:description" content="Confidentiality, independence, and responsible advisory work. No ambiguity.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://daftaradvisory.com/ethics">
+<meta property="og:image" content="https://daftaradvisory.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://daftaradvisory.com/og-image.png">
+<link rel="canonical" href="https://daftaradvisory.com/ethics">
+<link rel="icon" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+<style>
+/* ============ BRAND TOKENS ============ */
+:root {
+  --paper:        #F4F1EA;
+  --paper-dark:   #EBE6DA;
+  --ink:          #1A1814;
+  --muted:        #78726A;
+  --rust:         #A8341F;
+  --rule-light:   rgba(26, 24, 20, 0.10);
+  --rule-mid:     rgba(26, 24, 20, 0.22);
+}
+
+/* ============ RESET ============ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.7;
+  font-variation-settings: "opsz" 14;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============ TOPBAR ============ */
+.topbar {
+  border-bottom: 1px solid var(--rule-light);
+  padding: 22px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wordmark {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+.wordmark em { color: var(--rust); font-style: italic; }
+.topbar-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* ============ MAIN ============ */
+main {
+  flex: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 80px 56px 100px;
+}
+
+/* ============ PAGE HEADER ============ */
+.page-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--rust);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.page-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--rust);
+}
+.page-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(44px, 7vw, 76px);
+  font-weight: 300;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  font-variation-settings: "opsz" 144;
+  margin-bottom: 48px;
+}
+.page-title em { color: var(--rust); font-style: italic; font-weight: 300; }
+
+/* ============ RULE LINE ============ */
+.rule { border: none; border-top: 2px solid var(--ink); margin-bottom: 56px; }
+
+/* ============ SECTION ============ */
+.ethics-section {
+  margin-bottom: 56px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid var(--rule-light);
+}
+.ethics-section:last-of-type { border-bottom: none; padding-bottom: 0; }
+
+.section-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--rust);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.section-heading {
+  font-family: 'Fraunces', serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 20px;
+  font-variation-settings: "opsz" 48;
+}
+.section-heading em { color: var(--rust); font-style: italic; }
+.section-body p {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  color: var(--ink);
+  line-height: 1.75;
+  margin-bottom: 18px;
+  font-variation-settings: "opsz" 14;
+}
+.section-body p:last-child { margin-bottom: 0; }
+.section-body a {
+  color: var(--rust);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rust);
+  transition: opacity 0.2s;
+}
+.section-body a:hover { opacity: 0.75; }
+
+/* ============ CALLOUT ============ */
+.callout {
+  background: var(--paper-dark);
+  border-left: 2px solid var(--rust);
+  padding: 22px 26px;
+  margin: 28px 0;
+}
+.callout p {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.65;
+  font-variation-settings: "opsz" 14;
+}
+
+/* ============ NON-ATTEST DISCLAIMER ============ */
+.disclaimer-block {
+  background: var(--paper-dark);
+  border: 1px solid var(--rule-mid);
+  padding: 28px 32px;
+  margin-top: 56px;
+}
+.disclaimer-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--rust);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.disclaimer-text {
+  font-family: 'Fraunces', serif;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.75;
+  font-variation-settings: "opsz" 12;
+}
+
+/* ============ FOOTER ============ */
+footer {
+  border-top: 1px solid var(--rule-light);
+  padding: 32px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-links {
+  display: flex;
+  gap: 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.footer-links a { color: var(--ink); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--rust); }
+.footer-copy {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ============ FOCUS ============ */
+a:focus-visible { outline: 2px solid var(--rust); outline-offset: 3px; }
+
+/* ============ MOBILE ============ */
+@media (max-width: 720px) {
+  .topbar { padding: 16px 20px; }
+  main { padding: 56px 20px 72px; }
+  .page-title { font-size: 44px; }
+  footer { flex-direction: column; gap: 14px; padding: 24px 20px; text-align: center; }
+  .footer-links { justify-content: center; flex-wrap: wrap; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ TOPBAR ============ -->
+<header class="topbar">
+  <a href="index.html" class="wordmark">Daftar <em>Advisory.</em></a>
+  <span class="topbar-meta">Ethics &amp; Values · 01</span>
+</header>
+
+<main id="main">
+
+  <div class="page-eyebrow">How this practice works</div>
+  <h1 class="page-title">Ethics &amp; <em>Values.</em></h1>
+
+  <hr class="rule">
+
+  <!-- 01 Confidentiality -->
+  <div class="ethics-section">
+    <div class="section-number">01 / Confidentiality</div>
+    <h2 class="section-heading">What you share stays <em>with me.</em></h2>
+    <div class="section-body">
+      <p>Every engagement begins with a written engagement letter that specifies the confidentiality terms. The standard is full confidentiality: nothing shared in the course of the engagement is disclosed to any third party without your explicit written consent. This applies to financial data, draft documents, accounting positions, business plans, and anything else you provide.</p>
+      <p>Referrals and introductions — where I point a client toward another firm or practitioner — are made only with your knowledge. I do not pass your information to other advisers, networks, or referral partners without your agreement.</p>
+      <div class="callout">
+        <p>The engagement letter governs confidentiality from the point of signature. Prospective conversations before an engagement letter is signed are treated with the same standard of discretion — nothing you share in a scoping call is passed on.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 Independence -->
+  <div class="ethics-section">
+    <div class="section-number">02 / Independence</div>
+    <h2 class="section-heading">The position follows the <em>evidence.</em></h2>
+    <div class="section-body">
+      <p>Technical work — accounting positions, earnings reviews, audit readiness assessments — is conducted without a predetermined conclusion. The memo goes where the evidence leads. If the position you need defended cannot be defended on the standards, that is the conclusion I will give you. A memo written to a pre-decided answer is not a technical memo; it is a liability.</p>
+      <p>Daftar does not accept engagements where the expected outcome of a review has been communicated in advance as a condition of instruction. If the situation is that you need a position documented rather than reviewed, that is a different engagement — and I will scope it that way.</p>
+    </div>
+  </div>
+
+  <!-- 03 Non-attest -->
+  <div class="ethics-section">
+    <div class="section-number">03 / Scope of practice</div>
+    <h2 class="section-heading">Attest work goes to a <em>licensed firm.</em></h2>
+    <div class="section-body">
+      <p>Daftar Advisory is a non-attest advisory practice. The principal does not hold a JACPA, SOCPA, or UAE Ministry of Economy audit licence and does not perform statutory audit, review, or agreed-upon-procedures engagements. Every engagement letter states this in plain terms.</p>
+      <p>Where an engagement scope grows to include work that requires a licensed attest signature — audit opinion, review opinion, filing signature — that work is referred to a licensed firm. A name and an introduction usually go with the referral.</p>
+      <p>The boundaries are not a limitation to work around. They are the honesty of knowing where competent advisory ends and licensed practice begins.</p>
+    </div>
+  </div>
+
+  <!-- 04 Integrity in delivery -->
+  <div class="ethics-section">
+    <div class="section-number">04 / Integrity in delivery</div>
+    <h2 class="section-heading">The working file is always <em>yours.</em></h2>
+    <div class="section-body">
+      <p>Every deliverable ships with the underlying working file — formulas intact, assumptions documented, sources cited. No proprietary models. No locked cells. No dependency on the practice to extend the work. What you receive at the end of an engagement is genuinely yours to use, audit, and continue.</p>
+      <p>Scope, fee, and timeline are written into the engagement letter before work begins. If the scope grows because I missed something at kick-off, the additional work is absorbed. If the scope changes because the facts changed, we discuss the adjustment before I bill for it. There are no surprises in the invoice.</p>
+    </div>
+  </div>
+
+  <!-- 05 Privacy -->
+  <div class="ethics-section">
+    <div class="section-number">05 / Personal data</div>
+    <h2 class="section-heading">Only what is needed, retained no longer than <em>required.</em></h2>
+    <div class="section-body">
+      <p>Visiting this site does not require any account, login, or form submission. The hosting provider (Netlify) records standard server logs — IP address, browser type, pages requested — per their own policy. The site does not use analytics cookies, advertising trackers, or third-party profiling scripts.</p>
+      <p>If you contact the practice by email, WhatsApp, LinkedIn, or through the scoping form on this site, your message and contact details are retained only for the purpose of responding and — if an engagement begins — managing the relationship. Contact information from prospective enquiries is retained for up to twelve months. Information from active engagements is retained for the duration of the engagement plus seven years, in line with professional record-keeping practice.</p>
+      <p>You can ask at any time to see what information is held, to have it corrected, or to have it deleted. Send the request to <a href="mailto:ahmad@daftaradvisory.com">ahmad@daftaradvisory.com</a> and it will be handled within fifteen working days. This policy is governed by Jordanian law. The practice operates in accordance with applicable professional and legal standards in KSA, UAE, and Jordan.</p>
+    </div>
+  </div>
+
+  <!-- Disclaimer block -->
+  <div class="disclaimer-block">
+    <div class="disclaimer-label">Non-attest disclaimer</div>
+    <p class="disclaimer-text">Daftar Advisory is a non-attest advisory practice. The principal does not hold a JACPA, SOCPA, or UAE Ministry of Economy audit licence and does not perform statutory audit, review, or agreed-upon-procedures engagements. All engagements are governed by a written engagement letter with fixed scope, fixed fee, and a written non-attest disclaimer. Where work requires an attest signature, the engagement is referred to a licensed firm.</p>
+  </div>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wordmark">Daftar <em>Advisory.</em></div>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="index.html">Home</a>
+    <a href="founder-letter.html">Letter from the Founder</a>
+    <a href="scope.html">Start a scoping call</a>
+  </nav>
+  <div class="footer-copy">© 2026 · Amman, Jordan</div>
+</footer>
+
+</body>
+</html>

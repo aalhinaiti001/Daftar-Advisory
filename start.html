@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar Advisory — Start here.</title>
+<meta name="description" content="Five ways to start a conversation with Daftar Advisory. Scoping call, capability statement, LinkedIn, email, WhatsApp.">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Daftar Advisory — Start here.">
+<meta property="og:description" content="Rigorous finance, without the overhead. Five ways to start a conversation.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://daftaradvisory.com/start">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+<style>
+  /* ============ BRAND HANDBOOK v1.0 — EXACT TOKENS ============ */
+  :root {
+    --paper:       #F4F1EA;
+    --paper-dark:  #EBE6DA;
+    --ink:         #1A1814;
+    --muted:       #6B655D;
+    --rust:        #A8341F;
+
+    --rule-light:  rgba(26, 24, 20, 0.10);
+    --rule-mid:    rgba(26, 24, 20, 0.22);
+    --rule-strong: rgba(26, 24, 20, 1.00);
+  }
+
+  /* ============ RESET ============ */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.55;
+    font-variation-settings: "opsz" 14;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mono {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-weight: 400;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+  }
+  .mono.rust { color: var(--rust); }
+
+  /* ============ TOP STRIP — wordmark left, post number right ============ */
+  .topstrip {
+    border-bottom: 1px solid var(--rule-light);
+    padding: 22px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .wordmark {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+  .wordmark em {
+    color: var(--rust);
+    font-style: italic;
+    font-weight: 400;
+  }
+  .topstrip .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  /* ============ MAIN CONTAINER ============ */
+  .page {
+    flex: 1;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 56px 32px 40px;
+  }
+
+  /* ============ HEADER BLOCK ============ */
+  .header {
+    margin-bottom: 56px;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--rust);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--rust);
+  }
+  .header h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 8vw, 52px);
+    font-weight: 300;
+    line-height: 1.02;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    font-variation-settings: "opsz" 144;
+    margin-bottom: 24px;
+  }
+  .header h1 em {
+    color: var(--rust);
+    font-style: italic;
+    font-weight: 300;
+  }
+  .header p {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.6;
+    font-variation-settings: "opsz" 14;
+    max-width: 440px;
+  }
+
+  /* ============ LINKS LIST ============ */
+  .links {
+    border-top: 2px solid var(--ink);
+    margin-bottom: 48px;
+  }
+
+  .link-row {
+    display: grid;
+    grid-template-columns: 56px 1fr 32px;
+    gap: 20px;
+    align-items: center;
+    padding: 24px 4px;
+    border-bottom: 1px solid var(--rule-light);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.18s ease, padding 0.18s ease;
+    position: relative;
+  }
+  .link-row:hover {
+    background: var(--paper-dark);
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .link-row:hover .arrow {
+    color: var(--rust);
+    transform: translateX(4px);
+  }
+  .link-row:hover .link-title {
+    color: var(--rust);
+  }
+
+  .link-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding-top: 2px;
+    align-self: start;
+  }
+
+  .link-body { min-width: 0; }
+
+  .link-title {
+    font-family: 'Fraunces', serif;
+    font-size: 21px;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+    line-height: 1.25;
+    margin-bottom: 4px;
+    font-variation-settings: "opsz" 24;
+    transition: color 0.18s ease;
+  }
+  .link-title em {
+    color: var(--rust);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .link-sub {
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.45;
+    font-variation-settings: "opsz" 12;
+  }
+
+  .arrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    color: var(--muted);
+    text-align: right;
+    transition: color 0.18s ease, transform 0.18s ease;
+    align-self: center;
+  }
+
+  /* ============ FOOTER NOTE ============ */
+  .note {
+    background: var(--paper-dark);
+    border-left: 2px solid var(--rust);
+    padding: 22px 24px;
+    margin-bottom: 32px;
+  }
+  .note .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--rust);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .note p {
+    font-family: 'Fraunces', serif;
+    font-size: 14.5px;
+    color: var(--ink);
+    line-height: 1.55;
+    font-variation-settings: "opsz" 12;
+  }
+  .note p em {
+    color: var(--rust);
+    font-style: italic;
+  }
+
+  /* ============ BOTTOM STRIP ============ */
+  .bottomstrip {
+    border-top: 1px solid var(--rule-light);
+    padding: 22px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .bottomstrip .left,
+  .bottomstrip .right {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .bottomstrip a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.18s ease;
+  }
+  .bottomstrip a:hover { color: var(--rust); }
+
+  /* ============ MOBILE ============ */
+  @media (max-width: 480px) {
+    .topstrip { padding: 18px 20px; }
+    .bottomstrip { padding: 18px 20px; }
+    .page { padding: 40px 20px 32px; }
+    .header { margin-bottom: 40px; }
+    .header h1 { font-size: 38px; }
+    .link-row {
+      grid-template-columns: 44px 1fr 24px;
+      gap: 14px;
+      padding: 20px 4px;
+    }
+    .link-row:hover {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+    .link-title { font-size: 19px; }
+    .link-sub { font-size: 13.5px; }
+    .arrow { font-size: 16px; }
+  }
+
+  /* ============ FOCUS STATES (a11y) ============ */
+  a:focus-visible {
+    outline: 2px solid var(--rust);
+    outline-offset: 3px;
+  }
+
+  /* ============ PRINT ============ */
+  @media print {
+    .topstrip, .bottomstrip { display: none; }
+  }
+
+  /* ============ REDUCED MOTION ============ */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ============ TOP STRIP ============ -->
+<div class="topstrip">
+  <a href="/" class="wordmark">Daftar <em>Advisory.</em></a>
+  <span class="meta">Start · 01</span>
+</div>
+
+<!-- ============ MAIN PAGE ============ -->
+<main class="page">
+
+  <!-- ============ HEADER ============ -->
+  <div class="header">
+    <div class="eyebrow">Five ways to start</div>
+    <h1>
+      Tell me about<br>
+      the problem<br>
+      you're trying<br>
+      to <em>solve.</em>
+    </h1>
+    <p>
+      A 30-minute scoping call is free. If there's a fit, we'll discuss scope and fee. If there isn't, I'll point you toward someone better positioned. Fixed quote within 48 hours.
+    </p>
+  </div>
+
+  <!-- ============ LINKS ============ -->
+  <nav class="links" aria-label="Contact and resources">
+
+    <a class="link-row" href="https://calendly.com/ahmad-daftar/scoping-call" target="_blank" rel="noopener">
+      <span class="link-num">01</span>
+      <span class="link-body">
+        <span class="link-title">Book a <em>scoping</em> call</span>
+        <span class="link-sub">30 minutes · no obligation · fixed quote in 48 hours</span>
+      </span>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="link-row" href="founder-letter.html">
+      <span class="link-num">02</span>
+      <span class="link-body">
+        <span class="link-title">Read the <em>letter</em> from the founder</span>
+        <span class="link-sub">Why this practice exists · how the work is done</span>
+      </span>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="link-row" href="https://wa.me/962798008835?text=Hi%20Ahmad%2C%20I%27d%20like%20to%20discuss%20a%20scope." target="_blank" rel="noopener">
+      <span class="link-num">03</span>
+      <span class="link-body">
+        <span class="link-title">WhatsApp</span>
+        <span class="link-sub">+962 798 008 835 · fastest reply</span>
+      </span>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="link-row" href="mailto:ahmad@daftaradvisory.com">
+      <span class="link-num">04</span>
+      <span class="link-body">
+        <span class="link-title">Email</span>
+        <span class="link-sub">ahmad@daftaradvisory.com</span>
+      </span>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="link-row" href="https://linkedin.com/in/ahmad-alhinaiti" target="_blank" rel="noopener">
+      <span class="link-num">05</span>
+      <span class="link-body">
+        <span class="link-title">Connect on LinkedIn</span>
+        <span class="link-sub">linkedin.com/in/ahmad-alhinaiti</span>
+      </span>
+      <span class="arrow">→</span>
+    </a>
+
+  </nav>
+
+  <!-- ============ NOTE ============ -->
+  <div class="note">
+    <div class="label">Note · DM "SCOPE"</div>
+    <p>
+      DM <em>SCOPE</em> on Instagram or LinkedIn and I'll send the capability statement and a scoping link straight back. One practitioner. Fixed scope. Fixed fee.
+    </p>
+  </div>
+
+</main>
+
+<!-- ============ BOTTOM STRIP ============ -->
+<div class="bottomstrip">
+  <span class="left">Amman · Riyadh · Dubai</span>
+  <span class="right"><a href="/">daftaradvisory.com</a></span>
+</div>
+
+</body>
+</html>

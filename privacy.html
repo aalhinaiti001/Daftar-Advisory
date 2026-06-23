@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar Advisory — Privacy.</title>
+<meta name="description" content="How Daftar Advisory handles personal data. A short, jurisdiction-honest policy.">
+<meta property="og:image" content="https://daftaradvisory.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Daftar Advisory — Rigorous finance, without the overhead.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://daftaradvisory.com/og-image.png">
+<link rel="canonical" href="https://daftaradvisory.com/privacy.html">
+<meta name="theme-color" content="#F4F1EA">
+<meta name="robots" content="noindex, follow">
+<meta http-equiv="refresh" content="0; url=/ethics">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #F4F1EA;
+    --paper-dark: #EBE6DA;
+    --ink: #1A1814;
+    --muted: #6B655D;
+    --rust: #A8341F;
+    --rule-light: rgba(26, 24, 20, 0.10);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .topstrip {
+    border-bottom: 1px solid var(--rule-light);
+    padding: 22px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .wordmark {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .wordmark em {
+    color: var(--rust);
+    font-style: italic;
+  }
+
+  .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  main {
+    flex: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 96px;
+    width: 100%;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--rust);
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(40px, 7vw, 60px);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin-bottom: 32px;
+  }
+
+  h1 em {
+    color: var(--rust);
+    font-style: italic;
+  }
+
+  .lede {
+    font-size: 19px;
+    color: var(--ink);
+    margin-bottom: 48px;
+    max-width: 640px;
+  }
+
+  h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    border-top: 1px solid var(--rule-light);
+    padding-top: 32px;
+  }
+
+  p {
+    margin-bottom: 18px;
+    color: var(--ink);
+  }
+
+  p.note {
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  a {
+    color: var(--rust);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rust);
+    transition: opacity 0.18s;
+  }
+
+  a:hover { opacity: 0.6; }
+
+  a:focus-visible {
+    outline: 2px solid var(--rust);
+    outline-offset: 3px;
+  }
+
+  footer {
+    border-top: 1px solid var(--rule-light);
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  footer .footer-links {
+    display: flex;
+    gap: 28px;
+  }
+
+  footer a {
+    color: var(--ink);
+    border-bottom: none;
+    transition: color 0.18s;
+  }
+
+  footer a:hover { color: var(--rust); opacity: 1; }
+
+  @media (max-width: 480px) {
+    .topstrip { padding: 18px 20px; }
+    main { padding: 40px 20px 64px; }
+    h1 { font-size: 36px; }
+    .lede { font-size: 17px; }
+    footer { flex-direction: column; gap: 12px; padding: 24px; text-align: center; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="topstrip">
+  <a href="/" class="wordmark">Daftar <em>Advisory.</em></a>
+  <span class="meta">Privacy · 01</span>
+</header>
+
+<main>
+
+  <div class="eyebrow">A short policy</div>
+
+  <h1>How your information <em>is handled.</em></h1>
+
+  <p class="lede">
+    This page describes how Daftar Advisory collects, uses, and retains personal information when you visit the site or contact the practice. The policy is short on purpose — the practice does not collect more than it needs.
+  </p>
+
+  <h2>What the site collects</h2>
+  <p>
+    Visiting <a href="/">daftaradvisory.com</a> does not require any account, login, or form submission. The hosting provider (Netlify) records standard server logs, including IP address, browser type, and pages requested. These logs are retained per Netlify's policy and are not used for tracking, profiling, or marketing.
+  </p>
+  <p>
+    The site does not use analytics cookies, advertising trackers, or third-party scripts that profile visitors. No personal information is collected by the website itself beyond what your browser sends to any web server.
+  </p>
+
+  <h2>When you contact the practice</h2>
+  <p>
+    If you reach out by email, WhatsApp, LinkedIn, or any other channel listed on the site, the message and your contact details are received and stored only for the purpose of responding to your enquiry and — if an engagement begins — managing the relationship.
+  </p>
+  <p>
+    Contact information from prospective enquiries is retained for up to twelve months. If you ask for it to be deleted earlier, it will be. Information from active engagements is retained for the duration of the engagement plus seven years, in line with professional record-keeping practice.
+  </p>
+
+  <h2>Confidentiality during engagements</h2>
+  <p>
+    Once an engagement letter is signed, confidentiality is governed by that letter — not by this page. Engagement letters specify how client information is handled, who has access to it, and the conditions under which it can be shared. The standard is full confidentiality unless explicitly waived in writing.
+  </p>
+
+  <h2>Sharing with third parties</h2>
+  <p>
+    Daftar Advisory does not sell, rent, or share personal information with third parties for marketing. Information may be shared only where required by law, where necessary to deliver the engagement (for example, with a referenced auditor or tax agent at your request), or with your explicit consent.
+  </p>
+
+  <h2>Your choices</h2>
+  <p>
+    You can ask at any time to see what information is held about you, ask for it to be corrected, or ask for it to be deleted. Send the request to <a href="mailto:ahmad@daftaradvisory.com">ahmad@daftaradvisory.com</a> and it will be handled within fifteen working days.
+  </p>
+
+  <h2>Governing law</h2>
+  <p>
+    Daftar Advisory is based in Amman, Jordan. This policy is governed by Jordanian law. The practice handles personal information in accordance with applicable professional and legal standards in the jurisdictions where engagements are accepted.
+  </p>
+
+  <h2>Updates</h2>
+  <p class="note">
+    This policy may be updated as the practice evolves. The current version was last reviewed in May 2026. Material changes will be reflected here; the policy date will update accordingly.
+  </p>
+
+</main>
+
+<footer>
+  <p class="footer-disclosure" style="font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.7;color:var(--muted);max-width:720px;margin:0 auto 16px;">
+    Daftar Advisory is a non-attest advisory practice. The principal does not hold a JACPA, SOCPA, or UAE Ministry of Economy audit licence and does not perform statutory audit, review, or agreed-upon-procedures engagements. All engagements are governed by a written engagement letter with fixed scope, fixed fee, and a written non-attest disclaimer.
+  </p>
+  <div>© 2026 · Amman, Jordan</div>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/capability">Capability statement</a>
+    <a href="/start">Start</a>
+  </div>
+  <div>Privacy</div>
+</footer>
+
+</body>
+</html>
