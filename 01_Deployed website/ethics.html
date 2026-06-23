@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar Advisory — Ethics &amp; Values.</title>
+<meta name="description" content="The standards Daftar Advisory holds itself to — confidentiality, independence, scope of practice, integrity in delivery, and the handling of personal data.">
+<meta property="og:title" content="Ethics &amp; Values — Daftar Advisory">
+<meta property="og:description" content="Confidentiality, independence, scope of practice, integrity in delivery, and personal data — the standards the practice holds itself to.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://daftaradvisory.com/ethics">
+<meta property="og:image" content="https://daftaradvisory.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Daftar Advisory — Rigorous finance, without the overhead.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://daftaradvisory.com/og-image.png">
+<link rel="canonical" href="https://daftaradvisory.com/ethics">
+<link rel="icon" href="favicon.svg">
+<meta name="theme-color" content="#F4F1EA">
+<meta name="robots" content="index, follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #F4F1EA;
+    --paper-dark: #EBE6DA;
+    --ink: #1A1814;
+    --muted: #6B655D;
+    --rust: #A8341F;
+    --rule-light: rgba(26, 24, 20, 0.10);
+    --rule-mid: rgba(26, 24, 20, 0.22);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .topstrip {
+    border-bottom: 1px solid var(--rule-light);
+    padding: 22px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .wordmark {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .wordmark em { color: var(--rust); font-style: italic; }
+
+  .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  main {
+    flex: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 96px;
+    width: 100%;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--rust);
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(40px, 7vw, 60px);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin-bottom: 32px;
+  }
+  h1 em { color: var(--rust); font-style: italic; }
+
+  .lede {
+    font-size: 19px;
+    color: var(--ink);
+    margin-bottom: 8px;
+    max-width: 640px;
+  }
+  .lede em { color: var(--rust); font-style: italic; }
+
+  .toc {
+    margin: 40px 0 8px;
+    padding: 22px 0;
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--rule-light);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+  }
+  .toc a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.18s, border-color 0.18s;
+  }
+  .toc a:hover { color: var(--rust); border-bottom-color: var(--rust); }
+
+  section.principle { scroll-margin-top: 24px; }
+
+  h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    border-top: 1px solid var(--rule-light);
+    padding-top: 32px;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+  h2 .num { color: var(--muted); }
+  h2 .h2-title {
+    font-family: 'Fraunces', serif;
+    font-size: 27px;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    text-transform: none;
+  }
+  h2 .h2-title em { color: var(--rust); font-style: italic; }
+
+  p {
+    margin-bottom: 18px;
+    color: var(--ink);
+  }
+  p em { color: var(--rust); font-style: italic; }
+
+  p.note {
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  a.inline {
+    color: var(--rust);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rust);
+    transition: opacity 0.18s;
+  }
+  a.inline:hover { opacity: 0.6; }
+
+  a:focus-visible {
+    outline: 2px solid var(--rust);
+    outline-offset: 3px;
+  }
+
+  footer {
+    border-top: 1px solid var(--rule-light);
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  footer .footer-disclosure {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 720px;
+    margin: 0 auto 16px;
+    letter-spacing: 0.02em;
+    text-transform: none;
+  }
+  footer .footer-links { display: flex; gap: 28px; }
+  footer a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: none;
+    transition: color 0.18s;
+  }
+  footer a:hover { color: var(--rust); }
+
+  @media (max-width: 480px) {
+    .topstrip { padding: 18px 20px; }
+    main { padding: 40px 20px 64px; }
+    h1 { font-size: 36px; }
+    .lede { font-size: 17px; }
+    h2 .h2-title { font-size: 23px; }
+    footer { flex-direction: column; gap: 12px; padding: 24px; text-align: center; }
+    footer .footer-links { flex-wrap: wrap; justify-content: center; gap: 18px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topstrip">
+  <a href="/" class="wordmark">Daftar <em>Advisory.</em></a>
+  <span class="meta">Ethics &amp; Values · 01</span>
+</header>
+
+<main>
+
+  <div class="eyebrow">The standards the practice holds</div>
+
+  <h1>Ethics &amp; <em>values.</em></h1>
+
+  <p class="lede">
+    A practice of one is only as good as the lines it refuses to cross. These are the standards Daftar Advisory holds itself to — written plainly, so a client can hold the practice to them.
+  </p>
+
+  <nav class="toc" aria-label="On this page">
+    <a href="#confidentiality">01 · Confidentiality</a>
+    <a href="#independence">02 · Independence</a>
+    <a href="#scope">03 · Scope of practice</a>
+    <a href="#integrity">04 · Integrity in delivery</a>
+    <a href="#personal-data">05 · Personal data</a>
+  </nav>
+
+  <!-- 01 -->
+  <section class="principle" id="confidentiality">
+    <h2><span class="num">01</span><span class="h2-title">Confidentiality</span></h2>
+    <p>
+      Everything a client shares is treated as confidential from the first conversation — before any engagement letter is signed, and long after it ends. Trial balances, contracts, board papers, and the judgements made around them stay between the client and the practice.
+    </p>
+    <p>
+      Once an engagement letter is signed, confidentiality is governed by that letter. It specifies how client information is handled, who may see it, and the narrow conditions under which it can be shared. The default is <em>full confidentiality</em> unless explicitly waived in writing. Client names are never used as marketing without consent; case studies are anonymised until permission is given.
+    </p>
+  </section>
+
+  <!-- 02 -->
+  <section class="principle" id="independence">
+    <h2><span class="num">02</span><span class="h2-title">Independence</span></h2>
+    <p>
+      The work is advisory, and it is kept deliberately separate from the assurance function so it never compromises an auditor's independence or its own. Daftar does not audit the same numbers it has prepared, and does not prepare numbers it has been engaged to review independently.
+    </p>
+    <p>
+      Where a relationship, a prior role, or a conflicting interest could colour the judgement, it is disclosed before the engagement begins — and the engagement is declined if disclosure is not enough. The practice would rather lose the work than deliver a conclusion it could not defend as its own.
+    </p>
+  </section>
+
+  <!-- 03 -->
+  <section class="principle" id="scope">
+    <h2><span class="num">03</span><span class="h2-title">Scope of practice</span></h2>
+    <p>
+      Daftar Advisory is a <em>non-attest</em> advisory practice. The principal does not hold a JACPA, SOCPA, or UAE Ministry of Economy audit licence and does not perform statutory audit, review, or agreed-upon-procedures engagements. No audit opinions are signed, and no tax returns are filed.
+    </p>
+    <p>
+      The practice wins by saying no to the wrong engagement. Attest work, statutory filings, large multi-person engagements, and pre-decided conclusions go to firms better placed — usually with a name and an introduction attached. Where work requires an attest signature, it is referred. What stays in scope is senior technical judgement on a defined question: statement preparation, technical review, audit readiness, and transaction support.
+    </p>
+  </section>
+
+  <!-- 04 -->
+  <section class="principle" id="integrity">
+    <h2><span class="num">04</span><span class="h2-title">Integrity in delivery</span></h2>
+    <p>
+      Every engagement is priced and bounded before work begins — fixed scope, fixed fee, named in the engagement letter, with no billable-hour drift. What the work covers, what it does not, and what it costs are all written down before a client commits.
+    </p>
+    <p>
+      The conclusion follows the evidence, not the client's preference. If the numbers do not support the position someone hoped for, the memo says so. Every deliverable ships with the editable working file — formulas visible, assumptions documented, sources cited — so the reasoning can be checked rather than taken on trust. The file is the client's to keep and extend; there is no proprietary model and no lock-in.
+    </p>
+  </section>
+
+  <!-- 05 -->
+  <section class="principle" id="personal-data">
+    <h2><span class="num">05</span><span class="h2-title">Personal data</span></h2>
+    <p>
+      The practice does not collect more personal information than it needs. Visiting <a class="inline" href="/">daftaradvisory.com</a> requires no account or login. The hosting provider (Netlify) records standard server logs; the site uses no analytics cookies, advertising trackers, or third-party profiling scripts.
+    </p>
+    <p>
+      When you contact the practice — by the scoping form, email, WhatsApp, or LinkedIn — your message and contact details are stored only to respond to your enquiry and, if an engagement begins, to manage the relationship. Prospective-enquiry details are retained for up to twelve months, or deleted sooner on request. Information from active engagements is retained for the engagement plus seven years, in line with professional record-keeping practice. Personal information is never sold or rented, and is shared only where required by law, where necessary to deliver the engagement at your request, or with your explicit consent.
+    </p>
+    <p>
+      You can ask at any time to see, correct, or delete the information held about you. Send the request to <a class="inline" href="mailto:ahmad@daftaradvisory.com">ahmad@daftaradvisory.com</a> and it will be handled within fifteen working days. Daftar Advisory is based in Amman, Jordan, and handles personal information under Jordanian law and the applicable professional standards of the jurisdictions where engagements are accepted.
+    </p>
+    <p class="note">
+      This page may be updated as the practice evolves. It was last reviewed in June 2026.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <p class="footer-disclosure">
+    Daftar Advisory is a non-attest advisory practice. The principal does not hold a JACPA, SOCPA, or UAE Ministry of Economy audit licence and does not perform statutory audit, review, or agreed-upon-procedures engagements. All engagements are governed by a written engagement letter with fixed scope, fixed fee, and a written non-attest disclaimer.
+  </p>
+  <div>© 2026 · Amman, Jordan</div>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/founder-letter">Letter from the Founder</a>
+    <a href="/start">Start</a>
+  </div>
+  <div>Ethics &amp; Values</div>
+</footer>
+
+</body>
+</html>
