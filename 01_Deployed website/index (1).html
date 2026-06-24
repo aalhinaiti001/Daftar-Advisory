@@ -1,0 +1,2110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar Advisory | Independent Financial Advisory · KSA · UAE · Jordan</title>
+<meta name="description" content="Independent IFRS financial advisory for founders and CFOs in KSA, UAE, and Jordan. Financial statements, technical reviews, audit readiness, and quality-of-earnings. One senior practitioner. Fixed scope.">
+<meta name="theme-color" content="#F4F1EA">
+<meta property="og:title" content="Daftar Advisory | Independent Financial Advisory">
+<meta property="og:description" content="Independent IFRS financial advisory for founders and CFOs in KSA, UAE, and Jordan. One senior practitioner. Fixed scope.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://daftaradvisory.com">
+<meta property="og:image" content="https://daftaradvisory.com/og-image.png">
+<link rel="canonical" href="https://daftaradvisory.com/">
+<link rel="alternate" hreflang="en" href="https://daftaradvisory.com/">
+<link rel="alternate" hreflang="ar" href="https://daftaradvisory.com/ar/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400&family=IBM+Plex+Sans+Arabic:wght@400&display=swap" rel="stylesheet">
+<style>
+  /* ============ BRAND TOKENS ============ */
+  :root {
+    --paper:       #F4F1EA;
+    --paper-soft:  #EFEBE0;
+    --paper-dark:  #EBE6DA;
+    --paper-warm:  #FAF8F1;
+    --ink:         #1A1814;
+    --ink-soft:    #2C2924;
+    --muted:       #78726A;
+    --muted-soft:  #ACA69B;
+    --rust:        #A8341F;
+    --rule-light:  rgba(26, 24, 20, 0.10);
+    --rule-mid:    rgba(26, 24, 20, 0.22);
+  }
+
+  /* ============ RESET ============ */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    font-variation-settings: "opsz" 14;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--rust); color: var(--paper); }
+
+  .mono {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-weight: 400;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+  }
+
+  /* ============ TOP BAR ============ */
+  .topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 90;
+    padding: 22px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease, padding 0.3s ease;
+    border-bottom: 1px solid transparent;
+  }
+  .topbar.scrolled {
+    background: rgba(244, 241, 234, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom-color: var(--rule-light);
+    padding: 14px 56px;
+  }
+  .wordmark {
+    font-family: 'Fraunces', serif;
+    font-size: 21px;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    line-height: 1;
+    text-decoration: none;
+  }
+  .wordmark em {
+    font-style: italic;
+    color: var(--rust);
+  }
+  .topbar nav {
+    display: flex;
+    gap: 36px;
+  }
+  .topbar nav a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .topbar nav a:hover { color: var(--rust); }
+  .topbar .cta-btn {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 12px 22px;
+    border-radius: 2px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .topbar .cta-btn:hover { background: var(--rust); }
+
+  /* ============ CHAPTER RAIL ============ */
+  .rail {
+    position: fixed;
+    left: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 80;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+  }
+  .rail.show { opacity: 1; pointer-events: auto; }
+  .rail a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted-soft);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    line-height: 1;
+  }
+  .rail a .r-dot {
+    width: 8px;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.35s ease, background 0.35s ease;
+  }
+  .rail a .r-label {
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .rail a:hover { color: var(--ink); }
+  .rail a:hover .r-label { opacity: 1; transform: translateX(0); }
+  .rail a:hover .r-dot { width: 20px; }
+  .rail a.active { color: var(--rust); }
+  .rail a.active .r-dot { width: 28px; background: var(--rust); }
+  .rail a.active .r-label { opacity: 1; transform: translateX(0); }
+
+  /* ============ HERO ============ */
+  .hero {
+    min-height: 100vh;
+    padding: 0 56px 0 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  .hero-kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 52px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .hero-kicker::before {
+    content: '';
+    width: 48px;
+    height: 1px;
+    background: var(--rust);
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(56px, 9vw, 152px);
+    font-weight: 300;
+    line-height: 0.92;
+    letter-spacing: -0.028em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144;
+    max-width: 1320px;
+  }
+  .hero h1 em {
+    color: var(--rust);
+    font-style: italic;
+    font-weight: 300;
+  }
+  .hero-foot {
+    position: absolute;
+    bottom: 56px;
+    left: 140px;
+    right: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 64px;
+  }
+  .hero-foot .lede {
+    max-width: 520px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  .hero-foot .lede strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .hero-scroll {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+  }
+  .hero-scroll .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-scroll .scroll-line::after {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: var(--rust);
+    animation: scrollPulse 2.4s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0% { top: -40px; }
+    100% { top: 40px; }
+  }
+
+  /* ============ CHAPTER MARKERS ============ */
+  .chapter-mark {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    padding: 24px 56px 24px 140px;
+    max-width: 1600px;
+    margin: 0 auto;
+    border-top: 1px solid var(--rule-light);
+    align-items: baseline;
+  }
+  .chapter-mark .ch-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .chapter-mark .ch-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  /* ============ § I — THESIS (sticky-left essay) ============ */
+  .thesis {
+    padding: 120px 56px 180px 140px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  .thesis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 120px;
+    align-items: start;
+  }
+  .thesis-sticky {
+    position: sticky;
+    top: 22vh;
+  }
+  .thesis-sticky .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .thesis-sticky .eyebrow::before {
+    content: '';
+    width: 36px;
+    height: 1px;
+    background: var(--rust);
+  }
+  .thesis-sticky h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 5.6vw, 92px);
+    font-weight: 300;
+    line-height: 0.96;
+    letter-spacing: -0.024em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144;
+  }
+  .thesis-sticky h2 em {
+    color: var(--rust);
+    font-style: italic;
+  }
+  .thesis-body p {
+    font-size: 22px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-bottom: 56px;
+    font-variation-settings: "opsz" 18;
+    max-width: 540px;
+  }
+  .thesis-body p:last-child { margin-bottom: 0; }
+  .thesis-body p .drop {
+    font-family: 'Fraunces', serif;
+    font-size: 96px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--rust);
+    float: left;
+    line-height: 0.85;
+    margin: 6px 14px 0 0;
+    font-variation-settings: "opsz" 144;
+  }
+  .thesis-body .pull {
+    font-size: 32px;
+    line-height: 1.3;
+    color: var(--ink);
+    border-left: 2px solid var(--rust);
+    padding-left: 24px;
+    font-weight: 300;
+    font-variation-settings: "opsz" 36;
+    letter-spacing: -0.01em;
+  }
+
+  /* ============ MARKETS BAND ============ */
+  .markets-strip {
+    background: var(--paper-dark);
+    border-top: 1px solid var(--rule-light);
+    border-bottom: 1px solid var(--rule-light);
+  }
+  .markets-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 100px 56px 100px 140px;
+  }
+  .markets-head {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    margin-bottom: 64px;
+    align-items: baseline;
+  }
+  .markets-head .ch-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .markets-head h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(40px, 4.4vw, 64px);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.022em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 96;
+    max-width: 900px;
+  }
+  .markets-head h2 em { color: var(--rust); font-style: italic; }
+  .markets-row {
+    display: grid;
+    grid-template-columns: 200px repeat(3, 1fr);
+    gap: 48px;
+    border-top: 1px solid var(--ink);
+    padding-top: 40px;
+  }
+  .markets-row > .ch-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding-top: 6px;
+  }
+  .market {
+    position: relative;
+  }
+  .market .m-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--rust);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .market h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--ink);
+    letter-spacing: -0.012em;
+    margin-bottom: 16px;
+    font-variation-settings: "opsz" 48;
+  }
+  .market p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    font-variation-settings: "opsz" 14;
+  }
+
+  /* ============ § II — PILLARS (pinned, one at a time) ============ */
+  .pillars {
+    position: relative;
+  }
+  .pillars-frame {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .pillars-stage {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 56px 0 140px;
+    max-width: 1600px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+  .pillars-header {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    margin-bottom: 80px;
+    align-items: baseline;
+  }
+  .pillars-header .ch-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .pillars-header h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 3.4vw, 52px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 72;
+    max-width: 760px;
+  }
+  .pillars-header h2 em { color: var(--rust); font-style: italic; }
+  .pillar-deck {
+    position: relative;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .pillar-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 12px;
+  }
+  .pillar-meta .meta-cur {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .pillar-meta .meta-of {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .pillar-slot {
+    position: relative;
+    min-height: 480px;
+  }
+  .pillar {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+    pointer-events: none;
+  }
+  .pillar.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .pillar .p-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 26px;
+  }
+  .pillar h3 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(56px, 6.8vw, 112px);
+    font-weight: 300;
+    line-height: 0.94;
+    letter-spacing: -0.026em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144;
+    margin-bottom: 40px;
+    max-width: 1100px;
+  }
+  .pillar h3 em { color: var(--rust); font-style: italic; }
+  .pillar .p-lede {
+    font-size: 22px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 620px;
+    margin-bottom: 48px;
+    font-variation-settings: "opsz" 18;
+  }
+  .pillar .p-outcomes {
+    display: flex;
+    gap: 56px;
+    border-top: 1px solid var(--rule-light);
+    padding-top: 28px;
+    max-width: 920px;
+  }
+  .pillar .p-outcome {
+    flex: 1;
+  }
+  .pillar .p-outcome .po-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--rust);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .pillar .p-outcome .po-title {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    line-height: 1.3;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+    font-variation-settings: "opsz" 18;
+  }
+
+  .pillars-progress {
+    position: absolute;
+    bottom: 56px;
+    left: 140px;
+    right: 56px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .pp-step {
+    border-top: 2px solid var(--rule-light);
+    padding-top: 14px;
+    transition: border-color 0.4s ease;
+  }
+  .pp-step.active { border-top-color: var(--rust); }
+  .pp-step .pp-lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: color 0.4s ease;
+  }
+  .pp-step.active .pp-lbl { color: var(--ink); }
+
+  .pillars-scroll {
+    height: 360vh; /* three slides */
+  }
+
+  /* ============ § III — OUTCOMES TABLE ============ */
+  .outcomes-section {
+    padding: 140px 56px 140px 140px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  .out-head {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    margin-bottom: 88px;
+    align-items: baseline;
+  }
+  .out-head .ch-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .out-head h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(40px, 4.4vw, 68px);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -0.022em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 96;
+    margin-bottom: 28px;
+    max-width: 1000px;
+  }
+  .out-head h2 em { color: var(--rust); font-style: italic; }
+  .out-head .out-lede {
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 620px;
+    line-height: 1.65;
+  }
+
+  .out-table {
+    border-top: 1px solid var(--ink);
+  }
+  .out-row {
+    border-bottom: 1px solid var(--rule-light);
+    transition: background 0.3s ease;
+  }
+  .out-row:hover { background: rgba(168, 52, 31, 0.025); }
+  .out-row.open { background: var(--paper-warm); }
+  .out-row-head {
+    display: grid;
+    grid-template-columns: 80px 1.2fr 1.8fr 180px 60px;
+    gap: 32px;
+    padding: 28px 0;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: padding 0.3s ease;
+  }
+  .out-row.open .out-row-head { padding: 36px 0 24px; }
+  .out-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .out-name {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    line-height: 1.2;
+    color: var(--ink);
+    letter-spacing: -0.012em;
+    font-variation-settings: "opsz" 24;
+    transition: font-size 0.3s ease;
+  }
+  .out-row.open .out-name {
+    font-size: 32px;
+    font-variation-settings: "opsz" 36;
+  }
+  .out-name em { font-style: italic; color: var(--rust); }
+  .out-summary {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    font-variation-settings: "opsz" 14;
+  }
+  .out-row.open .out-summary { opacity: 0; height: 0; overflow: hidden; }
+  .out-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-align: right;
+  }
+  .out-meta .out-fee { color: var(--rust); display: block; margin-bottom: 4px; }
+  .out-meta .out-time { color: var(--muted); }
+  .out-toggle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    color: var(--ink);
+    text-align: right;
+    transition: transform 0.4s cubic-bezier(.7,.1,.2,1), color 0.3s ease;
+    line-height: 1;
+  }
+  .out-row.open .out-toggle { transform: rotate(45deg); color: var(--rust); }
+
+  .out-body {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr;
+    gap: 32px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.55s cubic-bezier(.7,.1,.2,1), padding 0.4s ease;
+    padding: 0;
+  }
+  .out-row.open .out-body {
+    max-height: 600px;
+    padding: 0 0 44px 0;
+  }
+  .out-body .out-spacer {}
+  .out-body p {
+    grid-column: 2;
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--ink);
+    font-variation-settings: "opsz" 18;
+    max-width: 540px;
+  }
+  .out-body .out-side {
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .out-side .out-block {
+    border-top: 1px solid var(--rule-light);
+    padding-top: 14px;
+  }
+  .out-side .out-block .lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .out-side .out-block .val {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .out-side .out-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .out-side .out-tags span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-soft);
+    padding: 5px 10px;
+    background: var(--paper-dark);
+    border-radius: 2px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .area-divider {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 32px;
+    padding: 32px 0 16px;
+    border-bottom: 1px solid var(--rule-light);
+  }
+  .area-divider:first-of-type { padding-top: 0; }
+  .area-divider .ad-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .area-divider .ad-title {
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 400;
+  }
+
+  /* ============ § IV — METHOD (scrollytelling) ============ */
+  .method-wrap {
+    background: var(--ink);
+    color: var(--paper);
+    position: relative;
+  }
+  .method-head {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 140px 56px 80px 140px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    align-items: baseline;
+  }
+  .method-head .ch-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .method-head h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 5.6vw, 92px);
+    font-weight: 300;
+    line-height: 0.96;
+    letter-spacing: -0.024em;
+    color: var(--paper);
+    font-variation-settings: "opsz" 144;
+    max-width: 1100px;
+  }
+  .method-head h2 em { color: var(--rust); font-style: italic; }
+  .method-head .lede {
+    grid-column: 2;
+    margin-top: 24px;
+    font-size: 18px;
+    color: rgba(244, 241, 234, 0.7);
+    max-width: 580px;
+    line-height: 1.65;
+  }
+  .method-scroll {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 56px 0 140px;
+  }
+  .method-track {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 96px;
+    align-items: start;
+  }
+  .method-pin {
+    position: sticky;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 0;
+  }
+  .method-pin-inner {
+    transform: translateY(-50%);
+    padding-top: 50%;
+    padding-bottom: 50%;
+  }
+  .method-numeral {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--rust);
+    line-height: 0.85;
+    font-variation-settings: "opsz" 144;
+    letter-spacing: -0.04em;
+    font-size: clamp(160px, 24vw, 360px);
+    transition: opacity 0.5s ease;
+  }
+  .method-numeral .mn-rotate {
+    position: relative;
+    display: inline-block;
+    height: 1em;
+    overflow: hidden;
+    vertical-align: bottom;
+    width: 1ch;
+  }
+  .method-numeral .mn-rotate span {
+    position: absolute;
+    inset: 0;
+    transition: transform 0.55s cubic-bezier(.7,.05,.2,1), opacity 0.4s ease;
+  }
+  .method-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 30vh;
+    padding: 30vh 0;
+  }
+  .m-step {
+    opacity: 0.18;
+    transition: opacity 0.5s ease;
+  }
+  .m-step.in { opacity: 1; }
+  .m-step .ms-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .m-step .ms-tag::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--rust);
+  }
+  .m-step h3 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(40px, 4.4vw, 64px);
+    font-weight: 300;
+    color: var(--paper);
+    line-height: 1;
+    letter-spacing: -0.022em;
+    font-variation-settings: "opsz" 96;
+    margin-bottom: 28px;
+  }
+  .m-step p {
+    font-size: 19px;
+    color: rgba(244, 241, 234, 0.8);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 480px;
+  }
+  .m-step .ms-foot {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding-top: 14px;
+    border-top: 1px solid rgba(244, 241, 234, 0.15);
+    max-width: 360px;
+  }
+
+  /* ============ § V — RECORD (sticky stats + timeline) ============ */
+  .record-section {
+    padding: 160px 56px 140px 140px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  .record-head {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    margin-bottom: 96px;
+    align-items: baseline;
+  }
+  .record-head .ch-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .record-head h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 5.6vw, 92px);
+    font-weight: 300;
+    line-height: 0.96;
+    letter-spacing: -0.024em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144;
+    max-width: 1100px;
+  }
+  .record-head h2 em { color: var(--rust); font-style: italic; }
+  .record-head .lede {
+    grid-column: 2;
+    margin-top: 24px;
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 580px;
+    line-height: 1.65;
+  }
+
+  .record-body {
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+    gap: 120px;
+    align-items: start;
+  }
+  .record-stats {
+    position: sticky;
+    top: 18vh;
+  }
+  .rs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+  .rs-cell {
+    padding: 36px 28px 36px 0;
+    border-right: 1px solid var(--rule-light);
+    border-bottom: 1px solid var(--rule-light);
+  }
+  .rs-cell:nth-child(even) {
+    border-right: none;
+    padding-right: 0;
+    padding-left: 28px;
+  }
+  .rs-cell:nth-last-child(-n+2) { border-bottom: none; }
+  .rs-num {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 5vw, 76px);
+    font-weight: 300;
+    line-height: 0.9;
+    color: var(--ink);
+    letter-spacing: -0.03em;
+    font-variation-settings: "opsz" 144;
+    margin-bottom: 18px;
+  }
+  .rs-num em { font-style: italic; color: var(--rust); }
+  .rs-lbl {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    font-variation-settings: "opsz" 12;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 36px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 14px;
+    bottom: 14px;
+    width: 1px;
+    background: var(--rule-light);
+  }
+  .timeline-progress {
+    position: absolute;
+    left: 6px;
+    top: 14px;
+    width: 1px;
+    background: var(--rust);
+    height: 0;
+    transition: height 0.1s linear;
+    z-index: 1;
+  }
+  .t-item {
+    position: relative;
+    padding-bottom: 56px;
+  }
+  .t-item:last-child { padding-bottom: 0; }
+  .t-item::before {
+    content: '';
+    position: absolute;
+    left: -36px;
+    top: 12px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 1.5px solid var(--rust);
+    transition: background 0.4s ease, transform 0.4s ease;
+    z-index: 2;
+  }
+  .t-item.passed::before { background: var(--rust); transform: scale(1.15); }
+  .t-item .date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .t-item .firm {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.15;
+    letter-spacing: -0.012em;
+    font-variation-settings: "opsz" 36;
+  }
+  .t-item .role {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    font-variation-settings: "opsz" 14;
+  }
+
+  .cap-strip {
+    margin: 140px -56px 0 -140px;
+    background: var(--paper-dark);
+    border-top: 1px solid var(--rule-light);
+    border-bottom: 1px solid var(--rule-light);
+    padding: 36px 0;
+    overflow: hidden;
+  }
+  .cap-track {
+    display: flex;
+    gap: 56px;
+    white-space: nowrap;
+    animation: scroll 90s linear infinite;
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--ink);
+    font-variation-settings: "opsz" 36;
+  }
+  .cap-track span { flex-shrink: 0; display: flex; align-items: center; gap: 56px; }
+  .cap-track span::after {
+    content: '◆';
+    color: var(--rust);
+    font-size: 8px;
+  }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ============ § VI — WORK ============ */
+  .work-section {
+    background: var(--paper-warm);
+    border-top: 1px solid var(--rule-light);
+    border-bottom: 1px solid var(--rule-light);
+  }
+  .work-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 160px 56px 160px 140px;
+  }
+  .work-head {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    margin-bottom: 100px;
+    align-items: baseline;
+  }
+  .work-head .ch-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .work-head h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 5.6vw, 92px);
+    font-weight: 300;
+    line-height: 0.96;
+    letter-spacing: -0.024em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144;
+    max-width: 1100px;
+  }
+  .work-head h2 em { color: var(--rust); font-style: italic; }
+
+  .case {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    padding: 80px 0;
+    border-top: 1px solid var(--rule-light);
+    align-items: start;
+  }
+  .case-meta {
+    position: sticky;
+    top: 18vh;
+  }
+  .case-meta .cm-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .case-meta .cm-sector {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 8px;
+    font-variation-settings: "opsz" 18;
+  }
+  .case-meta .cm-size {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .case-body h3 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(32px, 3.6vw, 52px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 96;
+    margin-bottom: 36px;
+    max-width: 880px;
+  }
+  .case-body h3 em { color: var(--rust); font-style: italic; }
+  .case-body .narrative {
+    font-size: 22px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-bottom: 56px;
+    max-width: 720px;
+    font-variation-settings: "opsz" 18;
+  }
+  .case-body .narrative .accent { color: var(--rust); font-style: italic; }
+  .case-deliv {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
+    padding: 20px 0;
+    border-top: 1px solid var(--rule-light);
+  }
+  .case-deliv:last-of-type { border-bottom: 1px solid var(--rule-light); }
+  .case-deliv .cd-lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding-top: 4px;
+  }
+  .case-deliv .cd-val {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    color: var(--ink);
+    line-height: 1.5;
+    font-variation-settings: "opsz" 14;
+  }
+  .case-deliv:last-child .cd-val {
+    font-style: italic;
+    color: var(--rust);
+  }
+
+  /* ============ § VII — DAFTAR ============ */
+  .pubs-wrap {
+    padding: 160px 56px 160px 140px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  .pubs-head {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    margin-bottom: 80px;
+    align-items: baseline;
+  }
+  .pubs-head .ch-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .pubs-head h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 5.6vw, 92px);
+    font-weight: 300;
+    line-height: 0.96;
+    letter-spacing: -0.024em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144;
+    max-width: 1100px;
+  }
+  .pubs-head h2 em { color: var(--rust); font-style: italic; }
+  .pubs-head .lede {
+    grid-column: 2;
+    margin-top: 24px;
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 580px;
+    line-height: 1.65;
+  }
+  .pubs-list {
+    border-top: 1px solid var(--ink);
+  }
+  .pub-item {
+    display: grid;
+    grid-template-columns: 100px 1fr 200px 40px;
+    gap: 32px;
+    padding: 36px 0;
+    border-bottom: 1px solid var(--rule-light);
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    transition: padding 0.3s ease, background 0.3s ease;
+  }
+  .pub-item:hover { padding-left: 12px; background: rgba(168, 52, 31, 0.03); }
+  .pub-item:hover .pub-title { color: var(--rust); }
+  .pub-item:hover .pub-arrow { color: var(--rust); transform: translateX(6px); }
+  .pub-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .pub-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    color: var(--ink);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    transition: color 0.2s;
+    font-variation-settings: "opsz" 24;
+    max-width: 760px;
+  }
+  .pub-title em { font-style: italic; color: var(--rust); }
+  .pub-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-align: right;
+  }
+  .pub-meta .pub-status {
+    display: block;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .pub-arrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    color: var(--muted);
+    text-align: right;
+    transition: all 0.2s;
+  }
+  .pub-item.forthcoming { opacity: 0.55; }
+  .pub-item.forthcoming .pub-meta .pub-status { color: var(--muted); }
+
+  /* ============ CONTACT ============ */
+  .contact-wrap {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .contact-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 200px 56px 160px 140px;
+  }
+  .contact-head {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    margin-bottom: 100px;
+    align-items: baseline;
+  }
+  .contact-head .ch-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .contact-head h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(56px, 7vw, 128px);
+    font-weight: 300;
+    line-height: 0.92;
+    letter-spacing: -0.028em;
+    color: var(--paper);
+    font-variation-settings: "opsz" 144;
+    max-width: 1200px;
+  }
+  .contact-head h2 em { color: var(--rust); font-style: italic; }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .contact-note {
+    grid-column: 2;
+    font-size: 19px;
+    line-height: 1.6;
+    color: rgba(244, 241, 234, 0.75);
+    max-width: 480px;
+  }
+  .contact-methods {
+    border-top: 1px solid rgba(244, 241, 234, 0.2);
+  }
+  .contact-method {
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(244, 241, 234, 0.12);
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    gap: 20px;
+    align-items: center;
+    text-decoration: none;
+    color: var(--paper);
+    transition: padding 0.25s;
+  }
+  .contact-method:hover { padding-left: 10px; }
+  .contact-method:hover .method-value { color: var(--rust); }
+  .contact-method:hover .arrow { color: var(--rust); transform: translateX(6px); }
+  .method-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgba(244, 241, 234, 0.5);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .method-value {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    color: var(--paper);
+    letter-spacing: -0.008em;
+    font-variation-settings: "opsz" 24;
+    transition: color 0.2s;
+  }
+  .arrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    color: rgba(244, 241, 234, 0.45);
+    transition: all 0.2s;
+  }
+
+  footer {
+    background: var(--ink);
+    color: rgba(244, 241, 234, 0.55);
+    border-top: 1px solid rgba(244, 241, 234, 0.1);
+    padding: 40px 56px 40px 140px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  footer .wordmark {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--paper);
+    text-transform: none;
+    letter-spacing: -0.008em;
+  }
+  footer .wordmark em { font-style: italic; color: var(--rust); }
+
+  /* ============ REVEAL ============ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ============ MOBILE ============ */
+  @media (max-width: 960px) {
+    body { font-size: 16px; }
+    .rail { display: none; }
+    .topbar { padding: 14px 20px; }
+    .topbar.scrolled { padding: 10px 20px; }
+    .topbar nav { display: none; }
+    .hero { padding: 120px 24px 100px; min-height: 100vh; }
+    .hero-foot { position: static; flex-direction: column; align-items: flex-start; gap: 32px; left: auto; right: auto; bottom: auto; margin-top: 56px; }
+    .hero h1 { font-size: 48px; }
+    .chapter-mark, .thesis, .markets-inner, .outcomes-section, .method-head, .method-scroll, .record-section, .work-inner, .pubs-wrap, .contact-inner { padding-left: 24px; padding-right: 24px; }
+    .chapter-mark { grid-template-columns: 1fr; gap: 12px; padding-top: 20px; padding-bottom: 20px; }
+    .thesis-grid { grid-template-columns: 1fr; gap: 56px; }
+    .thesis-sticky { position: static; }
+    .thesis-body p { font-size: 17px; }
+    .thesis-body p .drop { font-size: 64px; }
+    .thesis-body .pull { font-size: 22px; }
+    .markets-head, .markets-row { grid-template-columns: 1fr; gap: 20px; }
+    .pillars-frame { position: static; height: auto; }
+    .pillars-stage { position: static; padding: 80px 24px; }
+    .pillars-scroll { height: auto; }
+    .pillars-header { grid-template-columns: 1fr; gap: 12px; margin-bottom: 40px; }
+    .pillar-deck { grid-template-columns: 1fr; gap: 16px; }
+    .pillar { position: relative; opacity: 1; transform: none; margin-bottom: 80px; }
+    .pillar:last-child { margin-bottom: 0; }
+    .pillar-slot { min-height: auto; }
+    .pillar h3 { font-size: 48px; }
+    .pillar .p-outcomes { flex-direction: column; gap: 24px; }
+    .pillars-progress { display: none; }
+    .out-head, .method-head, .record-head, .work-head, .pubs-head, .contact-head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 48px; }
+    .out-row-head { grid-template-columns: 60px 1fr 40px; gap: 16px; padding: 20px 0; }
+    .out-row.open .out-row-head { padding: 24px 0 16px; }
+    .out-name { font-size: 17px; }
+    .out-row.open .out-name { font-size: 22px; }
+    .out-summary, .out-meta { display: none; }
+    .out-body { grid-template-columns: 60px 1fr; gap: 16px; }
+    .out-row.open .out-body { padding-bottom: 28px; }
+    .out-body p { grid-column: 2; font-size: 16px; }
+    .out-body .out-side { grid-column: 2; }
+    .area-divider { grid-template-columns: 60px 1fr; gap: 16px; padding: 24px 0 12px; }
+    .method-track { grid-template-columns: 1fr; gap: 40px; }
+    .method-pin { position: static; height: auto; transform: none; }
+    .method-pin-inner { padding: 0; transform: none; }
+    .method-numeral { font-size: 120px; }
+    .method-steps { padding: 0; gap: 80px; }
+    .m-step { opacity: 1; }
+    .m-step h3 { font-size: 36px; }
+    .record-body { grid-template-columns: 1fr; gap: 80px; }
+    .record-stats { position: static; }
+    .rs-cell { padding: 24px 16px !important; }
+    .rs-num { font-size: 40px; }
+    .case { grid-template-columns: 1fr; gap: 24px; padding: 56px 0; }
+    .case-meta { position: static; }
+    .case-body h3 { font-size: 26px; }
+    .case-body .narrative { font-size: 17px; }
+    .pub-item { grid-template-columns: 1fr; gap: 8px; padding: 24px 0; }
+    .pub-title { font-size: 18px; }
+    .pub-meta { text-align: left; }
+    .pub-arrow { display: none; }
+    .contact-grid { grid-template-columns: 1fr; gap: 56px; }
+    .contact-note { grid-column: 1; }
+    .cap-strip { margin: 80px -24px 0; }
+    .cap-track { font-size: 18px; }
+    footer { flex-direction: column; gap: 12px; padding: 24px; text-align: center; }
+  }
+</style>
+<style>
+  /* ===== live-content additions (use v2 tokens) ===== */
+  .when-table { margin-top: 8px; margin-bottom: 72px; border: 1px solid var(--rule-mid); }
+  .when-header { display: grid; grid-template-columns: 1fr 1fr; background: var(--ink); padding: 14px 28px; gap: 32px; }
+  .when-col-hd { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--paper); letter-spacing: 0.14em; text-transform: uppercase; }
+  .when-row { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; padding: 20px 28px; border-top: 1px solid var(--rule-light); background: var(--paper); transition: background 0.15s; }
+  .when-row:hover { background: var(--paper-dark); }
+  .when-situation { font-family: 'Fraunces', serif; font-size: 16px; color: var(--ink); line-height: 1.5; font-variation-settings: "opsz" 14; }
+  .when-service { font-family: 'Fraunces', serif; font-size: 16px; color: var(--rust); line-height: 1.5; font-style: italic; font-variation-settings: "opsz" 14; }
+  .also-block { display: grid; grid-template-columns: 200px 1fr; gap: 48px; padding: 36px 0 0; }
+  .also-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.7; }
+  .also-list { font-family: 'Fraunces', serif; font-size: 17px; color: var(--ink-soft); line-height: 1.7; font-variation-settings: "opsz" 14; }
+  .also-list a { color: var(--rust); text-decoration: none; border-bottom: 1px solid currentColor; }
+  .also-list a:hover { color: var(--ink); }
+  .hero-actions { margin-top: 34px; display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+  .hero-actions .see {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--ink-soft); text-decoration: none;
+    border-bottom: 1px solid var(--rule-mid); padding-bottom: 3px; transition: color 0.2s;
+  }
+  .hero-actions .see:hover { color: var(--rust); }
+  .market h3.plain { font-size: 26px; }
+  .record-body.solo { display: block; }
+  .footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
+  .footer-links a { color: rgba(244,241,234,0.55); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--rust); }
+  @media (max-width: 960px) {
+    .when-header { display: none; }
+    .when-row { grid-template-columns: 1fr; gap: 6px; padding: 16px 20px; }
+    .also-block { grid-template-columns: 1fr; gap: 16px; }
+    .hero-actions { flex-direction: column; align-items: flex-start; gap: 18px; }
+    .footer-links { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<header class="topbar" id="topbar">
+  <a href="#top" class="wordmark">Daftar <em>Advisory.</em></a>
+  <nav>
+    <a href="#outcomes">Services</a>
+    <a href="#method">How It Works</a>
+    <a href="articles.html">Articles</a>
+    <a href="/ar/" lang="ar" hreflang="ar" style="font-family:'IBM Plex Sans Arabic',sans-serif;text-transform:none;letter-spacing:normal;font-size:13px;">العربية</a>
+  </nav>
+  <a href="scope.html" class="cta-btn">Book a free call</a>
+</header>
+
+<!-- ============ CHAPTER RAIL ============ -->
+<aside class="rail" id="rail">
+  <a href="#thesis" data-target="thesis"><span class="r-dot"></span><span class="r-label">I · What We Do</span></a>
+  <a href="#markets" data-target="markets"><span class="r-dot"></span><span class="r-label">II · Who It's For</span></a>
+  <a href="#pillars" data-target="pillars"><span class="r-dot"></span><span class="r-label">III · Why Daftar</span></a>
+  <a href="#outcomes" data-target="outcomes"><span class="r-dot"></span><span class="r-label">IV · Services</span></a>
+  <a href="#method" data-target="method"><span class="r-dot"></span><span class="r-label">V · How It Works</span></a>
+  <a href="#record" data-target="record"><span class="r-dot"></span><span class="r-label">VI · Proof</span></a>
+  <a href="#contact" data-target="contact"><span class="r-dot"></span><span class="r-label">VII · Contact</span></a>
+</aside>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-kicker">Independent Financial Advisory · KSA · UAE · Jordan</div>
+  <h1>Senior finance judgement,<br>without the <em>overhead.</em></h1>
+  <div class="hero-foot">
+    <div>
+      <p class="lede">Daftar Advisory helps founders and CFOs prepare reliable financial statements, audit files, and transaction-ready numbers across KSA, UAE, and Jordan. <strong>One senior practitioner does the work and stands behind the number.</strong></p>
+      <div class="hero-actions">
+        <a href="scope.html" class="cta-btn">Book a free 30-minute call</a>
+        <a href="#outcomes" class="see">See what we do</a>
+      </div>
+    </div>
+    <div class="hero-scroll"><span>Scroll</span><span class="scroll-line"></span></div>
+  </div>
+</section>
+
+<!-- ============ § I — WHAT WE DO (sticky-left essay) ============ -->
+<section class="thesis" id="thesis">
+  <div class="thesis-grid">
+    <div class="thesis-sticky">
+      <div class="eyebrow">§ I — What We Do</div>
+      <h2>The finance work that matters most — done by the person <em>who knows it.</em></h2>
+    </div>
+    <div class="thesis-body">
+      <p><span class="drop">M</span>ost mid-size businesses can't justify Big Four fees — and don't get senior attention from one even when they pay it. Daftar fills that gap.</p>
+      <p>One experienced practitioner. Fixed scope. Fixed fee. I open the Excel file, read the contracts, write the memo, and stand behind every number. No pyramid team. No junior analyst doing the work while a partner takes the call.</p>
+      <p class="pull">Every engagement ships with a written deliverable and the working file — formulas visible, assumptions documented, sources cited. Advisory work, not a regulated audit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ § II — WHO IT'S FOR ============ -->
+<div class="markets-strip" id="markets">
+  <div class="markets-inner">
+    <div class="markets-head">
+      <div class="ch-num">§ II — Who It's For</div>
+      <h2>Founders and CFOs who need a senior <em>specialist.</em></h2>
+    </div>
+    <div class="markets-row" style="grid-template-columns:200px repeat(2,1fr);">
+      <div class="ch-label">This is for</div>
+      <div class="market">
+        <div class="m-tag">— First audit</div>
+        <h3 class="plain">Heading into a first external audit.</h3>
+        <p>Businesses preparing for a first external audit and needing the financial statements and documentation built properly before the auditor arrives.</p>
+      </div>
+      <div class="market">
+        <div class="m-tag">— Second opinion</div>
+        <h3 class="plain">A position before it's signed off.</h3>
+        <p>CFOs or finance directors who need a second opinion on an IFRS position before it is signed off.</p>
+      </div>
+    </div>
+    <div class="markets-row" style="grid-template-columns:200px repeat(2,1fr); border-top:none; padding-top:8px;">
+      <div class="ch-label"></div>
+      <div class="market">
+        <div class="m-tag">— A transaction</div>
+        <h3 class="plain">Raising capital or selling.</h3>
+        <p>Founders raising capital or going through a transaction who need their numbers independently reviewed.</p>
+      </div>
+      <div class="market">
+        <div class="m-tag">— Senior support</div>
+        <h3 class="plain">Without a large retainer.</h3>
+        <p>Finance teams in KSA, UAE, and Jordan looking for senior technical support without a large retainer.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ § III — WHY DAFTAR (pinned, one at a time) ============ -->
+<div class="pillars" id="pillars">
+  <div class="pillars-scroll">
+    <div class="pillars-frame">
+      <div class="pillars-stage">
+        <div class="pillars-header">
+          <div class="ch-num">§ III — Why Daftar</div>
+          <h2>Three things that make this practice <em>different.</em></h2>
+        </div>
+        <div class="pillar-deck">
+          <div class="pillar-meta">
+            <span class="meta-cur" id="meta-cur">01</span>
+            <span class="meta-of">of 03</span>
+          </div>
+          <div class="pillar-slot">
+            <div class="pillar active" data-idx="0">
+              <div class="p-num">— 01</div>
+              <h3>You speak to the person doing the <em>work.</em></h3>
+              <p class="p-lede">The practitioner who takes the scoping call is the same person who builds the financial statements, writes the memo, and delivers the file. No handoff to a junior team.</p>
+            </div>
+            <div class="pillar" data-idx="1">
+              <div class="p-num">— 02</div>
+              <h3>Fixed scope. Fixed fee. No <em>surprises.</em></h3>
+              <p class="p-lede">Every engagement is priced and scoped before work begins. What the work covers, what it does not cover, and what it costs — all written in the engagement letter before you commit.</p>
+            </div>
+            <div class="pillar" data-idx="2">
+              <div class="p-num">— 03</div>
+              <h3>The working file is <em>yours.</em></h3>
+              <p class="p-lede">Every deliverable ships with the editable working file — formulas intact, assumptions documented, sources cited. No proprietary models. No lock-in. You can extend the work yourself.</p>
+            </div>
+          </div>
+        </div>
+        <div class="pillars-progress">
+          <div class="pp-step active"><div class="pp-lbl">01 — The practitioner</div></div>
+          <div class="pp-step"><div class="pp-lbl">02 — Fixed fee</div></div>
+          <div class="pp-step"><div class="pp-lbl">03 — Your working file</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ § IV — SERVICES (accordion) ============ -->
+<section class="outcomes-section" id="outcomes">
+  <div class="out-head">
+    <div class="ch-num">§ IV — Services</div>
+    <div>
+      <h2>Four services. Every one starts with a <em>free 30-minute call.</em></h2>
+      <p class="out-lede">These are the four engagements that produce the clearest outcomes — a written memo, a working file, and a position you can defend. Tap a row to open.</p>
+    </div>
+  </div>
+
+  <!-- When to call us -->
+  <div class="when-table">
+    <div class="when-header">
+      <div class="when-col-hd">When this happens</div>
+      <div class="when-col-hd">We help with</div>
+    </div>
+    <div class="when-row">
+      <div class="when-situation">Your first audit is coming up</div>
+      <div class="when-service">Prepare financial statements and organise audit files</div>
+    </div>
+    <div class="when-row">
+      <div class="when-situation">Your auditor is challenging a number</div>
+      <div class="when-service">Review the accounting treatment and prepare a clear response</div>
+    </div>
+    <div class="when-row">
+      <div class="when-situation">You are raising money or selling the business</div>
+      <div class="when-service">Independently review earnings and working capital</div>
+    </div>
+    <div class="when-row">
+      <div class="when-situation">Your board or investor needs confidence in the numbers</div>
+      <div class="when-service">Prepare a clear, independent technical memo</div>
+    </div>
+  </div>
+
+  <div class="out-table">
+    <div class="area-divider"><div class="ad-num">01</div><div class="ad-title">Technical Finance</div></div>
+
+    <div class="out-row" data-row>
+      <div class="out-row-head">
+        <div class="out-code">01</div>
+        <div class="out-name">Independent Technical <em>Review.</em></div>
+        <div class="out-summary">A second opinion before someone important relies on the numbers.</div>
+        <div class="out-meta"><span class="out-fee">Fixed scope</span><span class="out-time">Free 30-min call</span></div>
+        <div class="out-toggle">+</div>
+      </div>
+      <div class="out-body">
+        <div class="out-spacer"></div>
+        <p>An independent review of your financial statements, accounting choices, or supporting files before they go to your auditor, board, or counterparty. Identifies errors, inconsistencies, and choices that need stronger evidence behind them.</p>
+        <div class="out-side">
+          <div class="out-block"><div class="lbl">You receive</div><div class="val">Written technical memo · Marked-up working file · 1 revision pass</div></div>
+          <div class="out-tags"><span>Technical Finance</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="out-row" data-row>
+      <div class="out-row-head">
+        <div class="out-code">02</div>
+        <div class="out-name">IFRS Financial <em>Statements.</em></div>
+        <div class="out-summary">Full financial statements built from your trial balance.</div>
+        <div class="out-meta"><span class="out-fee">Fixed scope</span><span class="out-time">Free 30-min call</span></div>
+        <div class="out-toggle">+</div>
+      </div>
+      <div class="out-body">
+        <div class="out-spacer"></div>
+        <p>Full preparation of IFRS-compliant financial statements from your trial balance — balance sheet, income statement, cash flow, equity movements, and notes. Built with formula-driven working files so every number is traceable.</p>
+        <div class="out-side">
+          <div class="out-block"><div class="lbl">You receive</div><div class="val">Complete draft financial statements · Working Excel model · Policy memo</div></div>
+          <div class="out-tags"><span>Technical Finance</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="area-divider"><div class="ad-num">03</div><div class="ad-title">Audit Preparation</div></div>
+
+    <div class="out-row" data-row>
+      <div class="out-row-head">
+        <div class="out-code">03</div>
+        <div class="out-name">Audit Readiness &amp; <em>Remediation.</em></div>
+        <div class="out-summary">Fix the files before the auditor arrives.</div>
+        <div class="out-meta"><span class="out-fee">Fixed scope</span><span class="out-time">Free 30-min call</span></div>
+        <div class="out-toggle">+</div>
+      </div>
+      <div class="out-body">
+        <div class="out-spacer"></div>
+        <p>For businesses heading into a first audit or returning after a difficult one. I identify the gaps, fix what can be fixed, and organise everything the auditor will need before they arrive — so the audit runs faster and cleaner.</p>
+        <div class="out-side">
+          <div class="out-block"><div class="lbl">You receive</div><div class="val">Readiness report · Remediation plan · Auditor document pack</div></div>
+          <div class="out-tags"><span>Audit Preparation</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="area-divider"><div class="ad-num">04</div><div class="ad-title">Transaction Support</div></div>
+
+    <div class="out-row" data-row>
+      <div class="out-row-head">
+        <div class="out-code">04</div>
+        <div class="out-name">Investment <em>Readiness.</em></div>
+        <div class="out-summary">Find out what profit is real, recurring, and investor-ready.</div>
+        <div class="out-meta"><span class="out-fee">Fixed scope</span><span class="out-time">Free 30-min call</span></div>
+        <div class="out-toggle">+</div>
+      </div>
+      <div class="out-body">
+        <div class="out-spacer"></div>
+        <p>An independent analysis of reported earnings for buyers, sellers, or investors in a transaction. Separates recurring earnings from one-off items, identifies working capital patterns, and flags anything that changes the number.</p>
+        <div class="out-side">
+          <div class="out-block"><div class="lbl">You receive</div><div class="val">QoE memo · Earnings bridge · Working model</div></div>
+          <div class="out-tags"><span>Transaction Support</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secondary services -->
+  <div class="also-block">
+    <div class="also-label">Also available<br>on the same<br>fixed-scope basis</div>
+    <div class="also-list">
+      ZATCA Phase 2 integration &nbsp;·&nbsp; UAE Corporate Tax &nbsp;·&nbsp; KSA Transfer Pricing documentation &nbsp;·&nbsp; Nomu pre-IPO readiness &nbsp;·&nbsp; Investment case preparation &nbsp;·&nbsp; Fractional finance support
+      <br><br>
+      <a href="scope.html">Request a quote for any of these →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ § V — HOW IT WORKS (scrollytelling) ============ -->
+<div class="method-wrap" id="method">
+  <div class="method-head">
+    <div class="ch-num">§ V — How It Works</div>
+    <div>
+      <h2>Four steps. No hidden costs. No <em>surprises.</em></h2>
+      <p class="lede">Every engagement follows the same process. You know what happens at each stage before it begins.</p>
+    </div>
+  </div>
+  <div class="method-scroll">
+    <div class="method-track">
+      <div class="method-pin">
+        <div class="method-pin-inner">
+          <div class="method-numeral" id="m-numeral"><span class="mn-rotate" id="mn-rotate"><span class="mn-digit">1</span></span></div>
+        </div>
+      </div>
+      <div class="method-steps" id="method-steps">
+        <div class="m-step" data-num="1">
+          <div class="ms-tag">Step 01</div>
+          <h3>Scoping call.</h3>
+          <p>A 30-minute call to understand what you need. If the work is a fit, I'll say so. If it isn't, I'll tell you directly and point you somewhere better.</p>
+          <div class="ms-foot">Free · same week</div>
+        </div>
+        <div class="m-step" data-num="2">
+          <div class="ms-tag">Step 02</div>
+          <h3>Written proposal.</h3>
+          <p>A one-page engagement letter stating exactly what the work covers, what it does not cover, the timeline, and the fee. You know everything before you commit.</p>
+          <div class="ms-foot">Within 48 hours</div>
+        </div>
+        <div class="m-step" data-num="3">
+          <div class="ms-tag">Step 03</div>
+          <h3>The work.</h3>
+          <p>Work runs directly, without being handed off. Weekly check-ins with drafts shared as the work progresses — not held until a final reveal at the end.</p>
+          <div class="ms-foot">1–6 weeks · typical</div>
+        </div>
+        <div class="m-step" data-num="4">
+          <div class="ms-tag">Step 04</div>
+          <h3>Delivery.</h3>
+          <p>The final deliverable plus the working file — formulas, assumptions, sources all intact. One revision pass is included. Everything is yours to keep and extend.</p>
+          <div class="ms-foot">Includes 1 revision</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ § VI — PROOF (sticky stats + marquee) ============ -->
+<section class="record-section" id="record">
+  <div class="record-head">
+    <div class="ch-num">§ VI — Proof</div>
+    <div>
+      <h2>Eight years. Four <em>jurisdictions.</em></h2>
+      <p class="lede">Dual Big Four trained across PwC and EY. Active across KSA, UAE, Jordan, and the United States — working in IFRS, SOCPA, US GAAP, and Yellow Book.</p>
+    </div>
+  </div>
+
+  <div class="record-body solo">
+    <div class="rs-grid">
+      <div class="rs-cell">
+        <div class="rs-num"><em>8</em> yrs</div>
+        <div class="rs-lbl">Big Four trained — PwC &amp; EY</div>
+      </div>
+      <div class="rs-cell">
+        <div class="rs-num">SAR <em>3B+</em></div>
+        <div class="rs-lbl">Revenue experience audited at EY</div>
+      </div>
+      <div class="rs-cell">
+        <div class="rs-num"><em>4</em></div>
+        <div class="rs-lbl">Countries active — KSA · UAE · Jordan · USA</div>
+      </div>
+      <div class="rs-cell">
+        <div class="rs-num"><em>4</em></div>
+        <div class="rs-lbl">Standards — IFRS · SOCPA · US GAAP · Yellow Book</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cap-strip">
+    <div class="cap-track">
+      <span>IFRS Financial Statements</span><span>Independent Technical Review</span><span>Audit Readiness</span><span>Investment Readiness</span><span>ZATCA Phase 2</span><span>UAE Corporate Tax</span><span>KSA Transfer Pricing</span><span>Nomu Pre-IPO Readiness</span><span>SOCPA</span><span>US GAAP</span><span>Yellow Book</span>
+      <span>IFRS Financial Statements</span><span>Independent Technical Review</span><span>Audit Readiness</span><span>Investment Readiness</span><span>ZATCA Phase 2</span><span>UAE Corporate Tax</span><span>KSA Transfer Pricing</span><span>Nomu Pre-IPO Readiness</span><span>SOCPA</span><span>US GAAP</span><span>Yellow Book</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ § VII — CONTACT ============ -->
+<div class="contact-wrap" id="contact">
+  <div class="contact-inner">
+    <div class="contact-head">
+      <div class="ch-num">§ VII — Contact</div>
+      <h2>Start with a<br>30-minute <em>call.</em></h2>
+    </div>
+    <div class="contact-grid">
+      <div></div>
+      <p class="contact-note">The scoping call is free and takes 30 minutes. You will get a clear answer about whether the work is a fit — and if it is, a written quote within 48 hours. If it isn't, I will tell you on the call.</p>
+      <div class="contact-methods">
+        <a href="mailto:ahmad@daftaradvisory.com" class="contact-method">
+          <div class="method-label">Email</div>
+          <div class="method-value">ahmad@daftaradvisory.com</div>
+          <div class="arrow">→</div>
+        </a>
+        <a href="tel:+962798008835" class="contact-method">
+          <div class="method-label">Phone</div>
+          <div class="method-value">+962 798 008 835</div>
+          <div class="arrow">→</div>
+        </a>
+        <a href="https://linkedin.com/in/ahmad-alhinaiti" target="_blank" rel="noopener noreferrer" class="contact-method">
+          <div class="method-label">LinkedIn</div>
+          <div class="method-value">ahmad-alhinaiti</div>
+          <div class="arrow">→</div>
+        </a>
+        <a href="https://wa.me/962798008835" target="_blank" rel="noopener noreferrer" class="contact-method">
+          <div class="method-label">WhatsApp</div>
+          <div class="method-value">+962 798 008 835</div>
+          <div class="arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wordmark">Daftar <em>Advisory.</em></div>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="founder-letter.html">Letter from the Founder</a>
+    <a href="articles.html">Articles</a>
+    <a href="start.html">Start a scoping call</a>
+    <a href="ethics.html">Ethics &amp; Values</a>
+  </nav>
+  <div>© 2026 · Amman, Jordan</div>
+</footer>
+
+<script>
+  // ============ TOP BAR scroll state ============
+  const topbar = document.getElementById('topbar');
+  const rail = document.getElementById('rail');
+  function onScroll() {
+    const y = window.scrollY;
+    topbar.classList.toggle('scrolled', y > 80);
+    rail.classList.toggle('show', y > window.innerHeight * 0.7);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ============ CHAPTER RAIL active state ============
+  const railLinks = [...document.querySelectorAll('.rail a')];
+  const targets = railLinks.map(l => document.getElementById(l.dataset.target));
+  function updateRail() {
+    const y = window.scrollY + window.innerHeight * 0.35;
+    let activeIdx = -1;
+    targets.forEach((t, i) => {
+      if (t && t.offsetTop <= y) activeIdx = i;
+    });
+    railLinks.forEach((l, i) => l.classList.toggle('active', i === activeIdx));
+  }
+  window.addEventListener('scroll', updateRail, { passive: true });
+  updateRail();
+
+  // ============ PILLARS — pinned section, swap based on scroll ============
+  const pillarsSection = document.getElementById('pillars');
+  const pillars = [...document.querySelectorAll('.pillar')];
+  const ppSteps = [...document.querySelectorAll('.pp-step')];
+  const metaCur = document.getElementById('meta-cur');
+  function updatePillars() {
+    const rect = pillarsSection.getBoundingClientRect();
+    const total = pillarsSection.offsetHeight - window.innerHeight;
+    const scrolled = Math.min(Math.max(-rect.top, 0), total);
+    const ratio = total > 0 ? scrolled / total : 0;
+    // 3 pillars: 0..0.33, 0.33..0.66, 0.66..1
+    let idx = Math.min(2, Math.floor(ratio * 3));
+    if (ratio >= 0.99) idx = 2;
+    pillars.forEach((p, i) => p.classList.toggle('active', i === idx));
+    ppSteps.forEach((s, i) => s.classList.toggle('active', i <= idx));
+    if (metaCur) metaCur.textContent = String(idx + 1).padStart(2, '0');
+  }
+  window.addEventListener('scroll', updatePillars, { passive: true });
+  updatePillars();
+
+  // ============ OUTCOMES — accordion ============
+  document.querySelectorAll('[data-row]').forEach(row => {
+    row.querySelector('.out-row-head').addEventListener('click', () => {
+      const wasOpen = row.classList.contains('open');
+      document.querySelectorAll('.out-row.open').forEach(r => r.classList.remove('open'));
+      if (!wasOpen) row.classList.add('open');
+    });
+  });
+
+  // ============ METHOD — scrollytelling numeral ============
+  const mSteps = [...document.querySelectorAll('.m-step')];
+  const mnRotate = document.getElementById('mn-rotate');
+  let currentDigit = '1';
+  function updateMethod() {
+    let activeStep = null;
+    const mid = window.innerHeight / 2;
+    for (const s of mSteps) {
+      const r = s.getBoundingClientRect();
+      if (r.top <= mid && r.bottom >= mid) { activeStep = s; break; }
+    }
+    if (!activeStep) {
+      // pick closest
+      let closest = null;
+      let dist = Infinity;
+      mSteps.forEach(s => {
+        const r = s.getBoundingClientRect();
+        const c = r.top + r.height/2;
+        const d = Math.abs(c - mid);
+        if (d < dist) { dist = d; closest = s; }
+      });
+      activeStep = closest;
+    }
+    mSteps.forEach(s => s.classList.toggle('in', s === activeStep));
+    if (activeStep) {
+      const d = activeStep.dataset.num;
+      if (d !== currentDigit) {
+        // animate digit roll
+        const old = mnRotate.querySelector('.mn-digit');
+        const next = document.createElement('span');
+        next.className = 'mn-digit';
+        next.textContent = d;
+        next.style.transform = 'translateY(100%)';
+        next.style.opacity = '0';
+        mnRotate.appendChild(next);
+        requestAnimationFrame(() => {
+          old.style.transform = 'translateY(-100%)';
+          old.style.opacity = '0';
+          next.style.transform = 'translateY(0)';
+          next.style.opacity = '1';
+        });
+        setTimeout(() => { if (old.parentNode) old.parentNode.removeChild(old); }, 600);
+        currentDigit = d;
+      }
+    }
+  }
+  window.addEventListener('scroll', updateMethod, { passive: true });
+  updateMethod();
+
+  // ============ TIMELINE — progress bar + dot fill ============
+  const timeline = document.getElementById('timeline');
+  const tProgress = document.getElementById('t-progress');
+  const tItems = [...document.querySelectorAll('.t-item')];
+  function updateTimeline() {
+    if (!timeline) return;
+    const rect = timeline.getBoundingClientRect();
+    const tlTop = rect.top;
+    const tlH = rect.height;
+    const mid = window.innerHeight * 0.45;
+    // fill height = distance from timeline top to viewport-mid, clamped
+    const filled = Math.max(0, Math.min(tlH, mid - tlTop));
+    tProgress.style.height = filled + 'px';
+    tItems.forEach(it => {
+      const ir = it.getBoundingClientRect();
+      it.classList.toggle('passed', ir.top + 12 <= mid);
+    });
+  }
+  window.addEventListener('scroll', updateTimeline, { passive: true });
+  updateTimeline();
+
+  // ============ REVEAL ============
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.market, .case, .t-item, .rs-cell, .pub-item, .area-divider, .thesis-body p').forEach(el => {
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+</script>
+
+</body>
+</html>
