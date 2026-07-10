@@ -68,9 +68,28 @@ button {
   cursor: pointer;
 }
 
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 20px;
+  z-index: 60;
+  padding: 12px 18px;
+  border-radius: 0 0 14px 14px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 .shell {
   position: relative;
-  overflow: hidden;
+  overflow: clip;
 }
 
 .shell::before {
@@ -411,6 +430,17 @@ button {
   border-radius: 22px;
   background: rgba(235, 230, 218, 0.78);
   border: 1px solid var(--line);
+}
+
+.stat-block {
+  background-image: repeating-linear-gradient(
+    180deg,
+    transparent 0,
+    transparent 27px,
+    rgba(26, 24, 20, 0.055) 27px,
+    rgba(26, 24, 20, 0.055) 28px
+  );
+  background-position: 0 6px;
 }
 
 .stat-value {
@@ -806,15 +836,65 @@ button {
   color: var(--ink);
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+.practice-band {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  margin-top: 26px;
+  padding: 22px 26px;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
 }
 
-.reveal.in-view {
-  opacity: 1;
-  transform: translateY(0);
+.practice-copy p {
+  margin: 0;
+  max-width: 46rem;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.practice-label {
+  margin-bottom: 8px;
+  color: var(--rust);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.practice-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.practice-link:hover .arrow {
+  transform: translateX(3px);
+}
+
+.reveal {
+  --reveal-delay: 0ms;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.js .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    transition-delay: var(--reveal-delay);
+  }
+
+  html.js .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 1024px) {
@@ -880,6 +960,7 @@ button {
 
   .page-meta,
   .pager,
+  .practice-band,
   .site-footer-inner {
     flex-direction: column;
     align-items: start;
