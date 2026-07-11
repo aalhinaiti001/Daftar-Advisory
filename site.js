@@ -1,3 +1,5 @@
+document.documentElement.classList.add("js");
+
 const pageSequence = [
   "index.html",
   "services.html",
@@ -53,14 +55,21 @@ function bindReveal() {
   const items = [...document.querySelectorAll(".reveal")];
   if (!items.length) return;
 
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    items.forEach((item) => item.classList.add("in-view"));
+    return;
+  }
+
   const observer = new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+      entries
+        .filter((entry) => entry.isIntersecting)
+        .forEach((entry, i) => {
+          entry.target.style.setProperty("--reveal-delay", `${Math.min(i, 4) * 80}ms`);
           entry.target.classList.add("in-view");
           observer.unobserve(entry.target);
-        }
-      });
+        });
     },
     { threshold: 0.12 }
   );
