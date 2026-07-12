@@ -23,7 +23,6 @@
               <li><a data-nav href="services.html">Services</a></li>
               <li><a data-nav href="about.html">About</a></li>
               <li><a data-nav href="how-it-works.html">How it works</a></li>
-              <li><a data-nav href="scope-a-call.html">Scope a call</a></li>
               <li><a data-nav href="insights.html">Insights</a></li>
             </ul>
           </nav>
@@ -43,7 +42,6 @@
           <a data-nav href="services.html">Services</a>
           <a data-nav href="about.html">About</a>
           <a data-nav href="how-it-works.html">How it works</a>
-          <a data-nav href="scope-a-call.html">Scope a call</a>
           <a data-nav href="insights.html">Insights</a>
         </nav>
       </div>
@@ -66,23 +64,23 @@
         <div class="value-grid">
           <article class="value-card reveal">
             <div class="value-tag">Value 01</div>
-            <h3>Clarity</h3>
-            <p>We tell you what the work is, what it is not, and what comes next.</p>
+            <h3>Explicit boundaries</h3>
+            <p>We map out the limits of our work before starting, ensuring no hidden assumptions or unexpected fees.</p>
           </article>
           <article class="value-card reveal">
             <div class="value-tag">Value 02</div>
-            <h3>Honesty</h3>
-            <p>If you need a different specialist or a regulated opinion, we say so early.</p>
+            <h3>Technical candor</h3>
+            <p>If an accounting treatment or position is unlikely to survive audit scrutiny, we highlight it early and suggest defensible options.</p>
           </article>
           <article class="value-card reveal">
             <div class="value-tag">Value 03</div>
-            <h3>Respect for the file</h3>
-            <p>You keep a file your team can understand and reuse.</p>
+            <h3>Model transparency</h3>
+            <p>Spreadsheets are tools for calculation, not locking down client data. Our models are open, traceable, and built to be inherited.</p>
           </article>
           <article class="value-card reveal">
             <div class="value-tag">Value 04</div>
-            <h3>Practical judgment</h3>
-            <p>Fewer words. A better answer. A clear next step.</p>
+            <h3>Applied pragmatism</h3>
+            <p>Accounting should clarify business decisions, not exist in a theoretical silo. We prioritize functional answers over dense academic memos.</p>
           </article>
         </div>
       </section>
@@ -93,7 +91,10 @@
           <h2>A short note from Ahmad.</h2>
           <p>Daftar Advisory was built for clients who want serious finance work without extra layers around it. Many businesses do not need a large advisory machine. They need a clear answer, a strong file, and someone who will stand behind the work.</p>
           <p>This practice is meant to offer that kind of support: direct, thoughtful, and practical. If there is a fit, the work should feel straightforward. If there is not, the client should hear that quickly and clearly.</p>
-          <p class="letter-signoff">Ahmad Alhinaiti</p>
+          <div class="letter-sign" style="display:flex;align-items:center;gap:14px;margin-top:22px;">
+            <image-slot id="ahmad-avatar" style="width:60px;height:60px;flex:none;" shape="circle" fit="cover" placeholder="Photo"></image-slot>
+            <span class="letter-signoff" style="margin-top:0;">Ahmad Alhinaiti</span>
+          </div>
         </div>
 
         <div class="content-panel reveal">
@@ -154,5 +155,6 @@
     </footer>
   </div>
   <script src="site.js"></script>
+  <script src="image-slot.js"></script>
 </body>
 </html>
