@@ -1,0 +1,9 @@
+export const PageMeta = ({ pageNumber, totalPages, label }: { pageNumber: number, totalPages: number, label: string }) => (
+  <div className="flex items-center justify-between gap-4 mb-6 text-muted font-mono text-[11px] tracking-widest uppercase">
+    <div className="flex items-center gap-3">
+      <span className="w-8 h-[1px] bg-rust" />
+      Page {pageNumber} of {totalPages}
+    </div>
+    <div>{label}</div>
+  </div>
+);
