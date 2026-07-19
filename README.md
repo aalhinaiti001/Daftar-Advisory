@@ -1,22 +1,39 @@
-# CODING AGENTS: READ THIS FIRST
+# Daftar Advisory — website
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+The live site for **Daftar Advisory** and its product, **Calibre**. Static
+HTML/CSS/JS, deployed on **Netlify** from the `aalhin001` branch to
+[daftaradvisory.com](https://daftaradvisory.com). No build step.
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+## Pages
 
-## What you should do — IMPORTANT
+**Daftar Advisory** (Fraunces / JetBrains Mono, cream + rust):
 
-**Read `new-design/project/Daftar Advisory.dc.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+- `index.html` — Home
+- `services.html` — Services
+- `about.html` — About
+- `how-it-works.html` — How it works
+- `insights.html` — Insights
+- `scope-a-call.html` — Scope a call (inquiry form)
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+**Calibre** (Newsreader / IBM Plex Mono, white + green) — the hiring-decision
+diagnostic product:
 
-## About the design files
+- `calibre/index.html` — served at `/calibre/`
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+## Shared assets
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+- `site.css`, `site.js` — Daftar site styles and behavior
+- `image-slot.js` — image helpers used by the Daftar pages
+- `calibre/calibre.css` — self-contained Calibre styles
+- `assets/` — favicon and shared assets
 
-## Bundle contents
+## Deploying
 
-- `new-design/README.md` — this file
-- `new-design/project/` — the `New design` project files (HTML prototypes, assets, components)
+Netlify auto-deploys the `aalhin001` branch on every push. Pull requests get a
+Netlify **deploy preview**; merging to `aalhin001` publishes to production.
+
+## archive/
+
+`archive/` holds superseded design-session material — the original HTML design
+prototypes, the earlier Next.js implementation, and design notes. It is kept
+for reference only and is **not** part of the live site.
