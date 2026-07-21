@@ -1,39 +1,23 @@
-# Daftar Advisory — website
+# Calibre by Daftar
 
-The live site for **Daftar Advisory** and its product, **Calibre**. Static
-HTML/CSS/JS, deployed on **Netlify** from the `aalhin001` branch to
-[daftaradvisory.com](https://daftaradvisory.com). No build step.
+Responsive Next.js codebase recreated from the supplied Ledger design system.
 
 ## Pages
 
-**Daftar Advisory** (Fraunces / JetBrains Mono, cream + rust):
+- `/` — Calibre hiring-decision diagnostic
+- `/daftar` — Daftar Advisory firm page
 
-- `index.html` — Home
-- `services.html` — Services
-- `about.html` — About
-- `how-it-works.html` — How it works
-- `insights.html` — Insights
-- `scope-a-call.html` — Scope a call (inquiry form)
+## Run locally
 
-**Calibre** (Newsreader / IBM Plex Mono, white + green) — the hiring-decision
-diagnostic product:
+```bash
+npm install
+npm run dev
+```
 
-- `calibre/index.html` — served at `/calibre/`
+## Production
 
-## Shared assets
+```bash
+npm run build
+```
 
-- `site.css`, `site.js` — Daftar site styles and behavior
-- `image-slot.js` — image helpers used by the Daftar pages
-- `calibre/calibre.css` — self-contained Calibre styles
-- `assets/` — favicon and shared assets
-
-## Deploying
-
-Netlify auto-deploys the `aalhin001` branch on every push. Pull requests get a
-Netlify **deploy preview**; merging to `aalhin001` publishes to production.
-
-## archive/
-
-`archive/` holds superseded design-session material — the original HTML design
-prototypes, the earlier Next.js implementation, and design notes. It is kept
-for reference only and is **not** part of the live site.
+The project exports a static site to `out/`, suitable for Netlify. Booking links currently open an email to `ahmad@daftaradvisory.com` and can be replaced with a Calendly URL.
