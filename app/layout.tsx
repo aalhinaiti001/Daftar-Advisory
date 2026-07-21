@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Calibre by Daftar",
-  description: "A hiring-decision diagnostic that turns opinion into evidence.",
+  title: "Daftar Advisory",
+  description: "An independent advisory practice that leaves every engagement with a working artifact — a model, method, or memo.",
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}) {
