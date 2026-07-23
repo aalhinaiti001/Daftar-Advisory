@@ -37,7 +37,7 @@ const packages=[
   ["Signal","The system, installed","A four-to-six week build: role scorecards, the full question bank, a shortlisting rubric embedded in your ATS, and an HR playbook."],
 ];
 
-function Eyebrow({children}:{children:React.ReactNode}){return <div className="eyebrow"><i/>{children}</div>}
+function Eyebrow({children}:{children:React.ReactNode}){return <div className="eyebrow"><i/>§ {children}</div>}
 function Brand(){return <Link className="brand" href="/calibre"><b>C</b><span><em>Calibre</em><small>BY DAFTAR</small></span></Link>}
 
 export default function Calibre(){return <main className="calibre">
