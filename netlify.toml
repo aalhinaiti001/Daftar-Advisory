@@ -1,5 +1,7 @@
 [build]
-  command = "npm run build"
+  # Build the Next.js app, then serve the standalone Daftar design at "/"
+  # (Calibre and the Arabic pages stay on the Next app).
+  command = "npm run build && cp design/daftar-home.html out/index.html"
   publish = "out"
 
 [build.environment]
