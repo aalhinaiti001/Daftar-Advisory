@@ -1,9 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 
+const DESC = "مذكّرة قرار جاهزة لتوظيف دور مالي واحد. دور واحد، حُكم واحد، أسبوعان.";
 export const metadata: Metadata = {
   title: "حُكم كاليبر — من دفتر",
-  description: "مذكّرة قرار جاهزة لتوظيف دور مالي واحد. دور واحد، حُكم واحد، أسبوعان.",
+  description: DESC,
+  openGraph: { type: "website", siteName: "كاليبر من دفتر", locale: "ar_AR", title: "حُكم كاليبر — من دفتر", description: DESC, url: "/ar/calibre", images: ["/og-calibre.png"] },
+  twitter: { card: "summary_large_image", title: "حُكم كاليبر — من دفتر", description: DESC, images: ["/og-calibre.png"] },
 };
 
 const email="mailto:ahmad@daftaradvisory.com?subject=حُكم%20كاليبر";
