@@ -1,9 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 
+const DESC = "A done-for-you finance-hiring decision memo. One role, one ranked verdict, two weeks.";
 export const metadata: Metadata = {
   title: "The Calibre Verdict — by Daftar",
-  description: "A done-for-you finance-hiring decision memo. One role, one ranked verdict, two weeks.",
+  description: DESC,
+  openGraph: { type: "website", siteName: "Calibre by Daftar", title: "The Calibre Verdict — by Daftar", description: DESC, url: "/calibre", images: ["/og-calibre.png"] },
+  twitter: { card: "summary_large_image", title: "The Calibre Verdict — by Daftar", description: DESC, images: ["/og-calibre.png"] },
 };
 
 const email="mailto:ahmad@daftaradvisory.com?subject=Calibre%20Verdict";

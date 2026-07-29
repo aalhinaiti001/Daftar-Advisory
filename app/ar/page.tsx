@@ -1,9 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 
+const DESC = "عمل مالي بسيط، حتى حين لا تكون المسألة كذلك. قوائم مالية، استعداد للتدقيق، مراجعة فنية، ودعم صفقات.";
 export const metadata: Metadata = {
   title: "دفتر للاستشارات",
-  description: "عمل مالي بسيط، حتى حين لا تكون المسألة كذلك. قوائم مالية، استعداد للتدقيق، مراجعة فنية، ودعم صفقات.",
+  description: DESC,
+  openGraph: { type: "website", siteName: "دفتر للاستشارات", locale: "ar_AR", title: "دفتر للاستشارات", description: DESC, url: "/ar", images: ["/og-daftar.png"] },
+  twitter: { card: "summary_large_image", title: "دفتر للاستشارات", description: DESC, images: ["/og-daftar.png"] },
 };
 
 const email="mailto:ahmad@daftaradvisory.com?subject=محادثة%20مع%20دفتر";
