@@ -1,0 +1,46 @@
+# Daftar Advisory — routing map
+# Netlify _redirects. Publish-directory root, beside index.html.
+# Filename must be exactly "_redirects" — no extension, no suffix.
+# Evaluated top to bottom; first match wins.
+
+# --- Research briefs -------------------------------------------------------
+# /articles and /insights were indexed but have never been served.
+/articles            /#insights-briefs      301
+/insights            /#insights-briefs      301
+/briefs              /#insights-briefs      301
+/research            /#insights-briefs      301
+/blog                /#insights-briefs      301
+
+# --- Services --------------------------------------------------------------
+# REQUIRES id="services" on the services section before deploying.
+# EXPIRES when real service pages ship (A/02, A/01, A/03, C/03) — replace
+# these lines with direct routes at that point, do not leave them pointing
+# at an anchor that no longer holds the content.
+/services            /#services             301
+/what-we-do          /#services             301
+
+# --- Ethics ----------------------------------------------------------------
+/ethics              /#ethics-values        301
+/values              /#ethics-values        301
+
+# --- FAQ -------------------------------------------------------------------
+/faq                 /#daftar-faq           301
+/questions           /#daftar-faq           301
+
+# --- Booking ---------------------------------------------------------------
+# 302, not 301: the Daftar shortcut is ours, the Calendly URL is a vendor's.
+/book                https://calendly.com/ahmad-daftar/scoping-call   302
+/call                https://calendly.com/ahmad-daftar/scoping-call   302
+
+# --- Deliberately absent ---------------------------------------------------
+# /contact, /about   — no equivalent section exists; a homepage redirect here
+#                      would be a soft 404. Let them 404 honestly.
+# /articles/*, /services/*, /insights/*
+#                    — child paths redirect to a list, not a replacement.
+#                      Hold until the Search Console 404 export lands, then
+#                      map individually.
+# www / http apex    — Netlify already 301s both to the apex at the
+#                      primary-domain layer. Verified 4 Aug 2026.
+# /* -> /index.html 200
+#                    — no client-side router exists. A catch-all would serve
+#                      the same page under every URL.
