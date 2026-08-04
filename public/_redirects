@@ -23,6 +23,17 @@
 /ethics              /#ethics-values        301
 /values              /#ethics-values        301
 
+# --- About -----------------------------------------------------------------
+# The About view exists as a genuine destination, so this is a real
+# replacement (not a homepage dump).
+/about               /#about                301
+
+# --- Contact ---------------------------------------------------------------
+# No standalone contact page — the booking / "get in touch" view is the
+# genuine equivalent. Kept on-site rather than 404'd.
+/contact             /#scope                301
+/get-in-touch        /#scope                301
+
 # --- FAQ -------------------------------------------------------------------
 /faq                 /#daftar-faq           301
 /questions           /#daftar-faq           301
@@ -33,8 +44,6 @@
 /call                https://calendly.com/ahmad-daftar/scoping-call   302
 
 # --- Deliberately absent ---------------------------------------------------
-# /contact, /about   — no equivalent section exists; a homepage redirect here
-#                      would be a soft 404. Let them 404 honestly.
 # /articles/*, /services/*, /insights/*
 #                    — child paths redirect to a list, not a replacement.
 #                      Hold until the Search Console 404 export lands, then
