@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://daftaradvisory.com/sitemap.xml
