@@ -9,7 +9,7 @@ const LINKEDIN = "https://linkedin.com/in/ahmad-alhinaiti";
 const facts: [string, string][] = [
   ["What clients want", "To know what the issue is, what the work includes, and what happens next."],
   ["What you get", "Clear deliverables, direct communication, and files your team can keep using after the engagement ends."],
-  ["Where we work", "Jordan and the UAE — with regional, multi-country engagements on request."],
+  ["Where Daftar works", "Jordan and the UAE — with regional, multi-country engagements on request."],
 ];
 
 const services: [string, string, string, string[]][] = [
@@ -26,10 +26,10 @@ const reasons: [string, string][] = [
 ];
 
 const values: [string, string][] = [
-  ["Defined scope", "We define exactly what we’re solving, what we’re not, and what done looks like — before we bill an hour."],
-  ["Straight advice", "If the work needs a different specialist or a formal opinion, we say so early — we don’t stretch our scope past our expertise."],
-  ["Work you own", "We don’t just hand over reports. We build the models and files your own team can own and reuse."],
-  ["Practical judgment", "No 80-page decks. We cut the noise and give you sharp answers, clean models, and a clear next step."],
+  ["Defined scope", "Daftar defines exactly what it’s solving, what it isn’t, and what done looks like — before billing an hour."],
+  ["Straight advice", "If the work needs a different specialist or a formal opinion, Daftar says so early — and won’t stretch scope past its expertise."],
+  ["Work you own", "Daftar doesn’t just hand over reports — it builds the models and files your own team can own and reuse."],
+  ["Practical judgment", "No 80-page decks. Daftar cuts the noise and gives you sharp answers, clean models, and a clear next step."],
 ];
 
 const insights: [string, string][] = [
@@ -121,7 +121,7 @@ export default function Daftar() {
         <div className="sec-head">
           <Eye>About the practice</Eye>
           <h2>A finance practice built to stay direct, focused, and useful.</h2>
-          <p className="lead">We work best with a clearly defined problem and a client who wants a direct answer.</p>
+          <p className="lead">Daftar works best with a clearly defined problem and a client who wants a direct answer.</p>
         </div>
         <div className="cards">
           <article>
@@ -202,7 +202,7 @@ export default function Daftar() {
         <div className="scope-intro">
           <Eye>Get in touch</Eye>
           <h2>Book a call or send a short inquiry.</h2>
-          <p className="lead">Tell us what you need and we will come back with a clear scope, fee, and next step — usually within a couple of days.</p>
+          <p className="lead">Send a short note and Daftar will come back with a clear scope, fee, and next step — usually within a couple of days.</p>
           <div className="contact-methods" style={{ marginTop: 28 }}>
             <a href={CALENDLY} target="_blank" rel="noopener noreferrer"><span className="m-label">Book on Calendly</span><span className="arrow">→</span></a>
             <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"><span className="m-label">WhatsApp</span><span className="arrow">→</span></a>
@@ -250,7 +250,7 @@ export default function Daftar() {
           </div>
           <div className="form-actions">
             <button className="button" type="submit">Send this inquiry</button>
-            <p className="note">This opens a scoped conversation — a clear read on whether, and how, we can help.</p>
+            <p className="note">This opens a scoped conversation — a clear read on whether Daftar can help, and how.</p>
           </div>
         </form>
       </section>
@@ -264,6 +264,7 @@ export default function Daftar() {
           <a href="#daftar-faq">FAQ</a>
           <a href="#scope">GET IN TOUCH</a>
         </div>
+        <small className="disclaimer">Daftar Advisory is a non-attest advisory practice, not a registered statutory auditor.</small>
       </footer>
     </main>
   );

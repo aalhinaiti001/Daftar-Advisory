@@ -46,3 +46,5 @@
 .contact-methods .m-note{font-size:13px;color:var(--muted);text-align:right}
 .contact-methods .arrow{color:var(--accent)}
 @media(max-width:900px){.home-hero{grid-template-columns:1fr;gap:40px;padding-block:52px}.cards{grid-template-columns:1fr}.list-rows article{grid-template-columns:1fr;gap:10px}}
+.daftar footer{flex-wrap:wrap}
+.daftar footer .disclaimer{flex-basis:100%;order:5;margin-top:16px;padding-top:16px;border-top:1px solid #ffffff1f;font:11px/1.5 var(--mono);letter-spacing:.3px;color:#b8b0a4;text-transform:none}
