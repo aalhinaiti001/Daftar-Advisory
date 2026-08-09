@@ -1,7 +1,8 @@
 [build]
   # Build the Next.js app, then overlay the standalone design pages:
-  #   /  → Daftar design · /calibre + /ar/calibre → Calibre design (EN/AR).
-  # (The Arabic Daftar page /ar stays on the Next app.)
+  #   /  → Daftar home (final approved design, baked from the design-canvas export)
+  #   /calibre + /ar/calibre → Calibre design (EN/AR)
+  # /ar stays on the Next app.
   command = "npm run build && cp design/daftar-home.html out/index.html && cp design/calibre-home.html out/calibre.html && cp design/calibre-home-ar.html out/ar/calibre.html"
   publish = "out"
 
