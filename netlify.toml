@@ -1,8 +1,12 @@
 [build]
-  # Build the Next.js app, then overlay the standalone design pages:
-  #   /  → Daftar design · /calibre + /ar/calibre → Calibre design (EN/AR).
+  # Build the Next.js app, then overlay the standalone Calibre design pages:
+  #   /calibre + /ar/calibre → Calibre design (EN/AR).
+  #
+  # /, /about and /scope are now real Next.js routes (the Daftar redesign), so
+  # index.html is NO LONGER overwritten with design/daftar-home.html. Restoring
+  # that copy would clobber the new home page.
   # (The Arabic Daftar page /ar stays on the Next app.)
-  command = "npm run build && cp design/daftar-home.html out/index.html && cp design/calibre-home.html out/calibre.html && cp design/calibre-home-ar.html out/ar/calibre.html"
+  command = "npm run build && cp design/calibre-home.html out/calibre.html && cp design/calibre-home-ar.html out/ar/calibre.html"
   publish = "out"
 
 [build.environment]

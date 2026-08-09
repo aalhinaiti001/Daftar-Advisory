@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./daftar.css";
 
 const DESC = "Clear finance work for founders and finance teams — financial statements, audit readiness, technical review, transaction support.";
 

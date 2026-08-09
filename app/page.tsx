@@ -1,22 +1,208 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { SiteHeader, SiteFooter, Eyebrow } from "./_components/SiteChrome";
+import { SERVICE_ORDER, SERVICES, NOTES, FAQ } from "./_data/practice";
+
+const DESC =
+  "Daftar helps founders and finance teams with financial statements, audit preparation, technical review, and transaction support. One senior practitioner, a defined scope, and a file your team keeps using.";
 
 export const metadata: Metadata = {
   title: "Daftar Advisory",
-  description: "An independent advisory practice for leaders navigating decisions that carry financial, organisational, and reputational weight.",
+  description: DESC,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: "Daftar Advisory",
+    title: "Daftar Advisory — Rigorous finance, without the overhead.",
+    description: DESC,
+    url: "/",
+    images: ["/og-daftar.png"],
+  },
 };
 
-const email="mailto:ahmad@daftaradvisory.com?subject=Daftar%20Advisory%20conversation";
-const practices=[["01","Decision architecture","We make complex choices legible — defining the question, testing assumptions, and leaving a clear record of why the decision holds."],["02","Financial clarity","We translate numbers into a working view of the business, from investment readiness and capital decisions to reporting and control."],["03","Organisational judgment","We strengthen the systems through which teams assess people, allocate responsibility, and make consequential calls."]];
-const principles=[["Senior by default","Small teams, direct access, experienced judgment."],["Evidence before theatre","The work must survive scrutiny, not just presentation."],["Artifacts that remain","Every engagement leaves a model, method, or memo in your hands."],["Regional fluency","Built for Jordan, the GCC, and the wider MENA context."]];
-function Mark(){return <Link className="brand daftar-brand" href="/"><b>D</b><span><em>Daftar</em><small>ADVISORY</small></span></Link>}
-function Eye({children}:{children:React.ReactNode}){return <div className="eyebrow chapter"><i/>{children}</div>}
-export default function Daftar(){return <main className="daftar"><header><Mark/><nav><a href="#story">Firm story</a><a href="#practice">Practice</a><a href="#principles">Principles</a><Link href="/calibre">Calibre</Link><Link href="/ar" className="lang" aria-label="العربية">ع</Link><a className="button small" href="#scope">Start a conversation</a></nav><a className="menu" href="#story">☰</a></header>
-<section className="hero wrap daftar-hero"><div><Eye>§ 00 · The firm</Eye><h1>Good decisions deserve to be written down.</h1><p className="lead">Daftar is an independent advisory practice for leaders navigating decisions that carry financial, organisational, and reputational weight.</p><a className="text-link" href="#story">Read our story →</a></div></section>
-<section className="stats wrap">{[["2024","Established"],["MENA","Region"],["03","Practice lines"],["Calibre","First product"]].map(x=><article key={x[1]}><strong>{x[0]}</strong><code>{x[1]}</code></article>)}</section>
-<section id="story" className="section wrap split"><div><Eye>§ 01 · Firm story</Eye><h2>Advice should remain useful after the adviser leaves.</h2></div><div className="prose"><p>Daftar — <em>daf·tar</em>, the ledger or register — is named for the discipline at the heart of the practice: writing decisions down in a form that holds up.</p><p>We founded the firm to serve leaders across Jordan, the GCC, and the wider MENA region who are tired of advice that evaporates when the engagement ends. We work in small, senior teams. Every engagement leaves a working artifact — a model, a method, a memo — not a binder that goes on a shelf.</p><p>Our job is to make your reasoning legible: to you, to your board, and to whoever inherits the decision after you.</p></div></section>
-<section id="practice" className="section soft"><div className="wrap"><Eye>§ 02 · The practice</Eye><h2>Three lines of work. One discipline.</h2><div className="practice-list">{practices.map(x=><article key={x[0]}><code>{x[0]}</code><h3>{x[1]}</h3><p>{x[2]}</p></article>)}</div></div></section>
-<section id="principles" className="section wrap"><Eye>§ 03 · Principles</Eye><h2>How we choose to work.</h2><div className="grid four principles">{principles.map(x=><article key={x[0]}><h3>{x[0]}</h3><p>{x[1]}</p></article>)}</div></section>
-<section className="handoff"><div className="wrap split"><div><Eye>Calibre · by Daftar</Eye><h2>The same rigor, turned on hiring.</h2></div><div><p>Calibre is Daftar&apos;s hiring-decision diagnostic: a structured method that helps teams read, score, compare, and calibrate candidates against one shared standard.</p><Link className="button light" href="/calibre">Explore Calibre →</Link></div></div></section>
-<section id="scope" className="scope"><div className="wrap"><div className="scope-intro"><Eye>§ 04 · Start</Eye><h2>Make the next decision <em>legible</em>.</h2><p className="lead">Tell us what&apos;s on the table. We&apos;ll tell you, plainly, whether we can help — usually within two working days.</p><div className="contact"><a href={email}>ahmad@daftaradvisory.com</a> · Amman · MENA</div></div><form className="scope-form" name="daftar-scope" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?scoped=daftar"><input type="hidden" name="form-name" value="daftar-scope"/><p className="scope-hp"><label>Leave this empty <input name="bot-field"/></label></p><div className="row"><div className="field"><label htmlFor="d-name">Name</label><input id="d-name" name="name" required/></div><div className="field"><label htmlFor="d-email">Work email</label><input id="d-email" name="email" type="email" required/></div></div><div className="field"><label htmlFor="d-org">Organisation</label><input id="d-org" name="organisation"/></div><div className="field"><label htmlFor="d-decision">What decision is on the table?</label><textarea id="d-decision" name="decision"/></div><div className="field"><label htmlFor="d-time">Timeline</label><select id="d-time" name="timeline" defaultValue=""><option value="" disabled>Select…</option><option>Just exploring</option><option>This quarter</option><option>Urgent</option></select></div><div className="form-actions"><button className="button" type="submit">Start a conversation</button><p className="note">A senior read on whether — and how — we can help.</p></div></form></div></section>
-<footer><Mark/><em className="foot-tag">Rigorous finance, without the overhead.</em><div><Link href="/calibre">CALIBRE</Link><a href="mailto:ahmad@daftaradvisory.com">AHMAD@DAFTARADVISORY.COM</a><span>AMMAN · MENA</span></div></footer></main>}
+const REGISTER: [string, string][] = [
+  ["Established", "2024"],
+  ["Base", "Amman, Jordan"],
+  ["Reach", "Jordan, GCC, MENA"],
+  ["Team", "Senior only"],
+  ["Every job leaves", "A model, method, or memo"],
+];
+
+const WHO: [string, string][] = [
+  ["Founders", "Raising, reporting, or preparing for a first audit."],
+  ["Finance teams", "Carrying a close, a group, and a deadline at once."],
+  ["Investors", "Testing a target before the money moves."],
+];
+
+const COMMITMENTS: [string, string, string][] = [
+  ["01", "Defined scope", "What we solve, what we exclude, and what you receive. Written down, agreed, then followed."],
+  ["02", "Senior contact", "The person you speak with is the person doing the work. There is no layer between the two."],
+  ["03", "Straight advice", "If the work belongs with another specialist, or does not need doing, we say so early."],
+  ["04", "Work you own", "You keep the model and the workings, in a form your team can run again next year."],
+];
+
+export default function Home() {
+  return (
+    <div className="dft">
+      <SiteHeader active="home" />
+
+      <main className="dft-rise">
+        <section className="dft-wrap dft-hero">
+          <div>
+            <Eyebrow tone="rust">Clear advice. Senior work. Nothing extra.</Eyebrow>
+            <h1 className="dft-h1">
+              Finance work that feels <em>simple</em>, even when the issue is not.
+            </h1>
+            <p className="dft-lead">
+              Daftar helps founders and finance teams handle the work that carries weight: financial
+              statements, audit preparation, technical review, and transaction support. One senior
+              practitioner, a defined scope, and a file your team keeps using.
+            </p>
+            <div className="dft-actions">
+              <Link className="dft-btn" href="/scope">Scope a project</Link>
+              <Link className="dft-btn-ghost" href="/about">About the practice</Link>
+            </div>
+          </div>
+
+          <div className="dft-register">
+            <div className="dft-register-head">
+              <span>The register</span>
+              <span>§</span>
+            </div>
+            <dl className="dft-register-body">
+              {REGISTER.map(([term, value]) => (
+                <div className="dft-register-row" key={term}>
+                  <dt>{term}</dt>
+                  <dd>{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+
+        <section id="services" className="dft-section dft-section-soft">
+          <div className="dft-wrap">
+            <Eyebrow>§ 01 · Services</Eyebrow>
+            <div className="dft-section-head">
+              <h2 className="dft-h2">Four lines of work. Each one ends with a file you own.</h2>
+              <p>
+                The scope is written before the work begins, so you know what is included, what is
+                not, and what you receive at the end.
+              </p>
+            </div>
+            <div className="dft-ledger">
+              {SERVICE_ORDER.map((key, i) => (
+                <article key={key}>
+                  <code>{"0" + (i + 1)}</code>
+                  <h3>{SERVICES[key].label}</h3>
+                  <p>{SERVICES[key].blurb}</p>
+                  <Link className="dft-btn-sm" href={`/scope?service=${key}`}>Scope this</Link>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="dft-section">
+          <div className="dft-wrap dft-split">
+            <div>
+              <Eyebrow>§ 02 · Who we help</Eyebrow>
+              <h2 className="dft-h2">
+                Built for the point where the finance function runs out of room.
+              </h2>
+            </div>
+            <div>
+              <p className="dft-lead-sm" style={{ marginBottom: 22 }}>
+                Most of our clients have a capable finance team and a problem that sits above it: a
+                first reporting year under IFRS, an auditor asking questions nobody has time to
+                answer, a transaction that needs numbers to hold up under scrutiny.
+              </p>
+              <p style={{ marginBottom: 34 }}>
+                We come in for that problem, we solve it in the open, and we leave the working file
+                behind. No standing retainer unless you want one, no team you have never met, no
+                report that reads well and helps little.
+              </p>
+              <div className="dft-strip dft-strip-3">
+                {WHO.map(([title, body]) => (
+                  <div key={title}>
+                    <h3>{title}</h3>
+                    <p>{body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="ethics-values" className="dft-section dft-section-dark">
+          <div className="dft-wrap">
+            <Eyebrow tone="dark">§ 03 · How we work</Eyebrow>
+            <h2 className="dft-h2" style={{ margin: "0 0 50px", maxWidth: "22ch" }}>
+              Four commitments, made in writing before the work starts.
+            </h2>
+            <div className="dft-commitments">
+              {COMMITMENTS.map(([num, title, body]) => (
+                <div key={num}>
+                  <span>{num}</span>
+                  <h3>{title}</h3>
+                  <p>{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="insights-briefs" className="dft-section">
+          <div className="dft-wrap">
+            <Eyebrow>§ 04 · Notes</Eyebrow>
+            <h2 className="dft-h2" style={{ marginBottom: 40 }}>
+              What finance teams in the region are dealing with now.
+            </h2>
+            <div className="dft-notes">
+              {NOTES.map((n) => (
+                <article key={n.title}>
+                  <span>{n.tag}</span>
+                  <h3>{n.title}</h3>
+                  <p>{n.body}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="daftar-faq" className="dft-section dft-section-soft">
+          <div className="dft-wrap dft-split dft-split-faq">
+            <div>
+              <Eyebrow>§ 05 · Questions</Eyebrow>
+              <h2 className="dft-h2">Answered plainly.</h2>
+            </div>
+            <div className="dft-faq">
+              {FAQ.map((f) => (
+                <article key={f.num}>
+                  <code>{f.num}</code>
+                  <div>
+                    <h3>{f.q}</h3>
+                    <p>{f.a}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="dft-section">
+          <div className="dft-wrap dft-close">
+            <h2>Tell us what is on the table.</h2>
+            <p>
+              Build a draft scope in two minutes. We reply with a senior read on whether, and how, we
+              can help.
+            </p>
+            <Link className="dft-btn dft-btn-lg" href="/scope">Open the scope builder</Link>
+          </div>
+        </section>
+      </main>
+
+      <SiteFooter />
+    </div>
+  );
+}
