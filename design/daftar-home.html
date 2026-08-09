@@ -15,7 +15,9 @@
 <link rel="icon" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>if(window.matchMedia&&!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.className='reveal-on';</script>
 <style>
  *{box-sizing:border-box}
  body{margin:0; background:#f4f1ea; color:#1a1814; font-family:'Instrument Sans',Arial,sans-serif; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; overflow-x:hidden;}
@@ -41,7 +43,23 @@
   .desk-nav{display:none !important;}
  }
  @media (max-width:520px){ .who3,.commit4,.notes4{grid-template-columns:1fr !important;} }
- @media (prefers-reduced-motion:reduce){ .pg{animation:none !important} }
+ html.reveal-on #pg-home>section{opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease;}
+ html.reveal-on #pg-home>section.is-in{opacity:1; transform:none;}
+ .faq-a{display:grid; grid-template-rows:0fr; transition:grid-template-rows .3s ease;}
+ .faq-item.open .faq-a{grid-template-rows:1fr;}
+ .faq-item.open .faq-ico{transform:rotate(45deg);}
+ .faq-q:hover h3{color:#a8341f;}
+ .btn-primary,.btn-ghost,.btn-light,.btn-ghost-sm{transition:background .2s, border-color .2s, color .2s, transform .2s ease;}
+ .btn-primary:hover,.btn-ghost:hover,.btn-light:hover,.btn-ghost-sm:hover{transform:translateY(-1px);}
+ .mobile-cta{display:none;}
+ @media(max-width:880px){
+  .mobile-cta{display:block; position:fixed; left:0; right:0; bottom:0; z-index:50; padding:12px 16px calc(12px + env(safe-area-inset-bottom)); background:rgba(244,241,234,.97); backdrop-filter:blur(10px); border-top:1px solid #d8d2c4;}
+  .mobile-cta a{display:flex; align-items:center; justify-content:center; padding:14px; min-height:48px; border-radius:6px; background:#1a1814; color:#f4f1ea; font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.14em; text-transform:uppercase;}
+  body{padding-bottom:78px;}
+  .btn-primary,.btn-ghost,.btn-light,.btn-ghost-sm,.navbtn,.svc-opt,.chip,.chip-t,.faq-q{min-height:48px;}
+  .chip,.chip-t{display:inline-flex; align-items:center;}
+ }
+ @media (prefers-reduced-motion:reduce){ .pg,html.reveal-on #pg-home>section{animation:none !important; opacity:1 !important; transform:none !important; transition:none !important;} }
 </style>
 </head>
 <body>
@@ -50,7 +68,7 @@
  <div style="width:min(1120px, calc(100% - 48px)); margin:0 auto; min-height:82px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
   <button onclick="nav('home')" style="display:flex; align-items:center; gap:12px; background:none; border:0; padding:0; cursor:pointer; color:#1a1814;">
    <span style="width:34px; height:34px; border-radius:5px; background:#1a1814; color:#a8341f; display:grid; place-items:center; font:600 19px/1 'Fraunces',Georgia,serif;">D</span>
-   <span style="display:flex; flex-direction:column; align-items:flex-start;"><em style="font:italic 600 21px/1 'Fraunces',Georgia,serif; font-variation-settings:'opsz' 36,'wght' 600,'SOFT' 28;">Daftar</em><small style="font:10px/1 'JetBrains Mono',monospace; letter-spacing:.28em; color:#7a7168; margin-top:5px;">ADVISORY</small></span>
+   <span style="display:flex; flex-direction:column; align-items:flex-start;"><em style="font:italic 600 21px/1 'Fraunces',Georgia,serif; font-variation-settings:'opsz' 36,'wght' 600,'SOFT' 28;">Daftar</em><small style="font:10px/1 'JetBrains Mono',monospace; letter-spacing:.28em; color:#63594c; margin-top:5px;">ADVISORY</small></span>
   </button>
   <div style="display:flex; align-items:center; gap:8px;">
    <nav class="desk-nav" style="display:flex; align-items:center; gap:4px;"><button class="navbtn" data-p="home" onclick="nav('home')" style="">Practice</button><button class="navbtn" data-p="about" onclick="nav('about')" style="">About</button><button class="navbtn" data-p="scope" onclick="nav('scope')" style="">Scope builder</button><a class="navbtn" href="https://calibre.daftaradvisory.com" target="_blank" rel="noopener" title="Calibre, the practice's method productised" style="display:inline-flex; align-items:center; gap:5px; color:#514c45;">Calibre <span style="font-size:11px;">↗</span></a></nav>
@@ -71,15 +89,23 @@
    </div>
   </div>
   <div style="border:1px solid #d8d2c4; border-radius:6px; background:#faf7f1;">
-   <div style="display:flex; align-items:center; justify-content:space-between; padding:15px 22px; border-bottom:1px solid #d8d2c4; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#7a7168;"><span>The register</span><span style="color:#a8341f;">§</span></div>
+   <div style="display:flex; align-items:center; justify-content:space-between; padding:15px 22px; border-bottom:1px solid #d8d2c4; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#63594c;"><span>The register</span><span style="color:#a8341f;">§</span></div>
    <div style="display:flex; flex-direction:column; padding:6px 22px 14px;">
-    <div style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; padding:13px 0 12px; border-bottom:1px solid #e6e0d4;"><span style="flex:none; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#7a7168; white-space:nowrap;">Established</span><span style="font-family:'Fraunces',Georgia,serif; font-size:16px; text-align:right;">2024</span></div><div style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; padding:13px 0 12px; border-bottom:1px solid #e6e0d4;"><span style="flex:none; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#7a7168; white-space:nowrap;">Base</span><span style="font-family:'Fraunces',Georgia,serif; font-size:16px; text-align:right;">Amman, Jordan</span></div><div style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; padding:13px 0 12px; border-bottom:1px solid #e6e0d4;"><span style="flex:none; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#7a7168; white-space:nowrap;">Reach</span><span style="font-family:'Fraunces',Georgia,serif; font-size:16px; text-align:right;">Jordan, GCC, MENA</span></div><div style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; padding:13px 0 12px; border-bottom:1px solid #e6e0d4;"><span style="flex:none; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#7a7168; white-space:nowrap;">Team</span><span style="font-family:'Fraunces',Georgia,serif; font-size:16px; text-align:right;">Senior only</span></div><div style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; padding:13px 0 12px; "><span style="flex:none; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#7a7168; white-space:nowrap;">Every job leaves</span><span style="font-family:'Fraunces',Georgia,serif; font-size:16px; text-align:right; color:#a8341f;">A model, method, or memo</span></div>
+    <div style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; padding:13px 0 12px; border-bottom:1px solid #e6e0d4;"><span style="flex:none; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#63594c; white-space:nowrap;">Established</span><span style="font-family:'Fraunces',Georgia,serif; font-size:16px; text-align:right;">2024</span></div><div style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; padding:13px 0 12px; border-bottom:1px solid #e6e0d4;"><span style="flex:none; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#63594c; white-space:nowrap;">Base</span><span style="font-family:'Fraunces',Georgia,serif; font-size:16px; text-align:right;">Amman, Jordan</span></div><div style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; padding:13px 0 12px; border-bottom:1px solid #e6e0d4;"><span style="flex:none; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#63594c; white-space:nowrap;">Reach</span><span style="font-family:'Fraunces',Georgia,serif; font-size:16px; text-align:right;">Jordan, GCC, MENA</span></div><div style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; padding:13px 0 12px; border-bottom:1px solid #e6e0d4;"><span style="flex:none; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#63594c; white-space:nowrap;">Team</span><span style="font-family:'Fraunces',Georgia,serif; font-size:16px; text-align:right;">Senior only</span></div><div style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; padding:13px 0 12px; "><span style="flex:none; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#63594c; white-space:nowrap;">Every job leaves</span><span style="font-family:'Fraunces',Georgia,serif; font-size:16px; text-align:right; color:#a8341f;">A model, method, or memo</span></div>
    </div>
   </div>
  </section>
 
- <section style="border-top:1px solid #d8d2c4; background:#efebe1;"><div style="width:min(1120px, calc(100% - 48px)); margin:0 auto; padding:88px 0;">
-  <div style="display:flex; align-items:center; gap:12px; margin-bottom:26px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#7a7168;"><span style="width:34px; height:1px; background:#a8341f;"></span>§ 01 · Services</div>
+<section style="border-top:1px solid #d8d2c4;" data-reveal><div style="width:min(1120px, calc(100% - 48px)); margin:0 auto; padding:60px 0; display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.5fr); gap:56px; align-items:baseline;" class="two-col">
+  <div><div style="display:flex; align-items:center; gap:12px; margin-bottom:26px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#63594c;"><span style="width:34px; height:1px; background:#a8341f;"></span>The practitioner</div><h2 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:400; font-variation-settings:'opsz' 60,'wght' 420,'SOFT' 30; font-size:clamp(1.6rem,2.6vw,2.1rem); line-height:1.12; letter-spacing:-.02em;">One name on every file.</h2></div>
+  <div>
+   <p style="margin:0 0 16px; font-family:'Fraunces',Georgia,serif; font-variation-settings:'opsz' 20,'wght' 380,'SOFT' 20; font-size:18px; color:#403a33;"><strong style="font-weight:600;">Ahmad Al Hinaiti</strong>, Founder. Every engagement is opened, worked, and signed off by one senior practitioner — financial statements, audit preparation, IFRS technical questions, and the numbers behind a transaction, from first call to final file.</p>
+   <button onclick="nav('about')" style="background:none; border:0; padding:0; cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#a8341f; border-bottom:1px solid #d8d2c4; padding-bottom:3px;">More about the practice →</button>
+  </div>
+</div></section>
+
+ <section style="border-top:1px solid #d8d2c4; background:#efebe1;" data-reveal><div style="width:min(1120px, calc(100% - 48px)); margin:0 auto; padding:88px 0;">
+  <div style="display:flex; align-items:center; gap:12px; margin-bottom:26px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#63594c;"><span style="width:34px; height:1px; background:#a8341f;"></span>§ 01 · Services</div>
   <div style="display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:end; margin-bottom:44px;" class="two-col">
    <h2 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:400; font-variation-settings:'opsz' 84,'wght' 420,'SOFT' 34; font-size:clamp(2rem,3.4vw,2.7rem); line-height:1.08; letter-spacing:-.02em;">Four lines of work. Each one ends with a file you own.</h2>
    <p style="margin:0; max-width:32rem; color:#514c45;">The scope is written before the work begins, so you know what is included, what is not, and what you receive at the end.</p>
@@ -105,10 +131,11 @@
  <p style="margin:0; color:#514c45; font-size:15px;">Financial work around a deal: quality of earnings, working capital, and the numbers behind the model.</p>
  <button class="btn-ghost-sm" onclick="pickAndScope('transaction')" style="align-self:center; white-space:nowrap; padding:9px 16px; border-radius:5px; border:1px solid #d8d2c4; background:transparent; cursor:pointer; color:#1a1814; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; transition:border-color .2s ease, color .2s ease;">Scope this</button>
  </article></div>
+  <p style="margin:34px 0 0; text-align:center; color:#514c45; font-size:15px;">Not sure which applies? <button onclick="nav('scope')" style="background:none; border:0; padding:0; cursor:pointer; color:#a8341f; font-family:'Fraunces',Georgia,serif; font-weight:500; font-size:16px;">Build a scope in two minutes →</button></p>
  </div></section>
 
  <section style="border-top:1px solid #d8d2c4;"><div style="width:min(1120px, calc(100% - 48px)); margin:0 auto; padding:88px 0; display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr); gap:72px; align-items:start;" class="two-col">
-  <div><div style="display:flex; align-items:center; gap:12px; margin-bottom:26px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#7a7168;"><span style="width:34px; height:1px; background:#a8341f;"></span>§ 02 · Who we help</div><h2 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:400; font-variation-settings:'opsz' 84,'wght' 420,'SOFT' 34; font-size:clamp(2rem,3.4vw,2.7rem); line-height:1.08; letter-spacing:-.02em;">Built for the point where the finance function runs out of room.</h2></div>
+  <div><div style="display:flex; align-items:center; gap:12px; margin-bottom:26px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#63594c;"><span style="width:34px; height:1px; background:#a8341f;"></span>§ 02 · Who we help</div><h2 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:400; font-variation-settings:'opsz' 84,'wght' 420,'SOFT' 34; font-size:clamp(2rem,3.4vw,2.7rem); line-height:1.08; letter-spacing:-.02em;">Built for the point where the finance function runs out of room.</h2></div>
   <div>
    <p style="margin:0 0 22px; font-family:'Fraunces',Georgia,serif; font-variation-settings:'opsz' 20,'wght' 380,'SOFT' 20; font-size:18px; color:#403a33;">Most of our clients have a capable finance team and a problem that sits above it: a first reporting year under IFRS, an auditor asking questions nobody has time to answer, a transaction that needs numbers to hold up under scrutiny.</p>
    <p style="margin:0 0 34px; color:#514c45;">We come in for that problem, we solve it in the open, and we leave the working file behind. No standing retainer unless you want one, no team you have never met, no report that reads well and helps little.</p>
@@ -127,7 +154,7 @@
  </div></section>
 
  <section style="border-top:1px solid #d8d2c4;"><div style="width:min(1120px, calc(100% - 48px)); margin:0 auto; padding:88px 0;">
-  <div style="display:flex; align-items:center; gap:12px; margin-bottom:26px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#7a7168;"><span style="width:34px; height:1px; background:#a8341f;"></span>§ 04 · Notes</div><h2 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:400; font-variation-settings:'opsz' 84,'wght' 420,'SOFT' 34; font-size:clamp(2rem,3.4vw,2.7rem); line-height:1.08; letter-spacing:-.02em; margin-bottom:40px;">What finance teams in the region are dealing with now.</h2>
+  <div style="display:flex; align-items:center; gap:12px; margin-bottom:26px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#63594c;"><span style="width:34px; height:1px; background:#a8341f;"></span>§ 04 · Notes</div><h2 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:400; font-variation-settings:'opsz' 84,'wght' 420,'SOFT' 34; font-size:clamp(2rem,3.4vw,2.7rem); line-height:1.08; letter-spacing:-.02em; margin-bottom:40px;">What finance teams in the region are dealing with now.</h2>
   <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px;" class="notes4"><article class="card-note" style="border:1px solid #d8d2c4; border-radius:6px; background:#faf7f1; padding:24px; display:flex; flex-direction:column; gap:10px; transition:border-color .2s ease;">
  <span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#a8341f;">KSA</span>
  <h3 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:500; font-variation-settings:'opsz' 30,'wght' 520,'SOFT' 24; font-size:1.1rem; line-height:1.25;">Electronic invoicing waves</h3>
@@ -148,28 +175,43 @@
  </div></section>
 
  <section style="border-top:1px solid #d8d2c4; background:#efebe1;"><div style="width:min(1120px, calc(100% - 48px)); margin:0 auto; padding:88px 0; display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr); gap:72px; align-items:start;" class="two-col">
-  <div><div style="display:flex; align-items:center; gap:12px; margin-bottom:26px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#7a7168;"><span style="width:34px; height:1px; background:#a8341f;"></span>§ 05 · Questions</div><h2 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:400; font-variation-settings:'opsz' 84,'wght' 420,'SOFT' 34; font-size:clamp(2rem,3.4vw,2.7rem); line-height:1.08; letter-spacing:-.02em;">Answered plainly.</h2></div>
-  <div style="border-top:1px solid #d8d2c4;"><article style="display:grid; grid-template-columns:44px 1fr; gap:24px; padding:26px 0; border-bottom:1px solid #d8d2c4;">
- <code style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#a8341f; padding-top:4px;">01</code>
- <div><h3 style="margin:0 0 8px; font-family:'Fraunces',Georgia,serif; font-weight:500; font-variation-settings:'opsz' 34,'wght' 520,'SOFT' 26; font-size:1.2rem;">What does Daftar actually do?</h3>
- <p style="margin:0; color:#514c45; font-size:15px;">Finance work that carries weight: statements, audit preparation, technical review, and the numbers behind a transaction. We take the problem, not the whole function.</p></div>
- </article><article style="display:grid; grid-template-columns:44px 1fr; gap:24px; padding:26px 0; border-bottom:1px solid #d8d2c4;">
- <code style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#a8341f; padding-top:4px;">02</code>
- <div><h3 style="margin:0 0 8px; font-family:'Fraunces',Georgia,serif; font-weight:500; font-variation-settings:'opsz' 34,'wght' 520,'SOFT' 26; font-size:1.2rem;">How do engagements work?</h3>
- <p style="margin:0; color:#514c45; font-size:15px;">Scope, fee, and deliverable are agreed in writing first. Then the work runs against that document, and changes to it are agreed the same way.</p></div>
- </article><article style="display:grid; grid-template-columns:44px 1fr; gap:24px; padding:26px 0; border-bottom:1px solid #d8d2c4;">
- <code style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#a8341f; padding-top:4px;">03</code>
- <div><h3 style="margin:0 0 8px; font-family:'Fraunces',Georgia,serif; font-weight:500; font-variation-settings:'opsz' 34,'wght' 520,'SOFT' 26; font-size:1.2rem;">Who will I be working with?</h3>
- <p style="margin:0; color:#514c45; font-size:15px;">A senior practitioner, directly. There is no junior team behind the curtain and no account layer in front of it.</p></div>
- </article><article style="display:grid; grid-template-columns:44px 1fr; gap:24px; padding:26px 0; border-bottom:1px solid #d8d2c4;">
- <code style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#a8341f; padding-top:4px;">04</code>
- <div><h3 style="margin:0 0 8px; font-family:'Fraunces',Georgia,serif; font-weight:500; font-variation-settings:'opsz' 34,'wght' 520,'SOFT' 26; font-size:1.2rem;">When should we reach out?</h3>
- <p style="margin:0; color:#514c45; font-size:15px;">Before the deadline rather than during it. The earlier the read, the cheaper the fix. A short call costs nothing.</p></div>
- </article><article style="display:grid; grid-template-columns:44px 1fr; gap:24px; padding:26px 0; border-bottom:1px solid #d8d2c4;">
- <code style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#a8341f; padding-top:4px;">05</code>
- <div><h3 style="margin:0 0 8px; font-family:'Fraunces',Georgia,serif; font-weight:500; font-variation-settings:'opsz' 34,'wght' 520,'SOFT' 26; font-size:1.2rem;">What do we keep at the end?</h3>
- <p style="margin:0; color:#514c45; font-size:15px;">The deliverable and the working file behind it, built so your team can run it again next period without us.</p></div>
- </article></div>
+  <div><div style="display:flex; align-items:center; gap:12px; margin-bottom:26px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#63594c;"><span style="width:34px; height:1px; background:#a8341f;"></span>§ 05 · Questions</div><h2 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:400; font-variation-settings:'opsz' 84,'wght' 420,'SOFT' 34; font-size:clamp(2rem,3.4vw,2.7rem); line-height:1.08; letter-spacing:-.02em;">Answered plainly.</h2></div>
+  <div style="border-top:1px solid #d8d2c4;"><div class="faq-item" style="border-bottom:1px solid #d8d2c4;">
+ <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" style="width:100%; text-align:left; background:none; border:0; cursor:pointer; display:grid; grid-template-columns:44px 1fr 24px; gap:24px; align-items:center; padding:24px 0; min-height:48px; color:#1a1814;">
+  <code style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#a8341f;">01</code>
+  <h3 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:500; font-variation-settings:'opsz' 34,'wght' 520,'SOFT' 26; font-size:1.2rem;">What does Daftar actually do?</h3>
+  <span class="faq-ico" aria-hidden="true" style="font-family:'JetBrains Mono',monospace; font-size:20px; line-height:1; color:#a8341f; transition:transform .3s ease;">+</span>
+ </button>
+ <div class="faq-a"><div style="overflow:hidden;"><p style="margin:0 0 24px 68px; color:#514c45; font-size:15px;">Finance work that carries weight: statements, audit preparation, technical review, and the numbers behind a transaction. We take the problem, not the whole function.</p></div></div>
+ </div><div class="faq-item" style="border-bottom:1px solid #d8d2c4;">
+ <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" style="width:100%; text-align:left; background:none; border:0; cursor:pointer; display:grid; grid-template-columns:44px 1fr 24px; gap:24px; align-items:center; padding:24px 0; min-height:48px; color:#1a1814;">
+  <code style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#a8341f;">02</code>
+  <h3 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:500; font-variation-settings:'opsz' 34,'wght' 520,'SOFT' 26; font-size:1.2rem;">How do engagements work?</h3>
+  <span class="faq-ico" aria-hidden="true" style="font-family:'JetBrains Mono',monospace; font-size:20px; line-height:1; color:#a8341f; transition:transform .3s ease;">+</span>
+ </button>
+ <div class="faq-a"><div style="overflow:hidden;"><p style="margin:0 0 24px 68px; color:#514c45; font-size:15px;">Scope, fee, and deliverable are agreed in writing first. Then the work runs against that document, and changes to it are agreed the same way.</p></div></div>
+ </div><div class="faq-item" style="border-bottom:1px solid #d8d2c4;">
+ <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" style="width:100%; text-align:left; background:none; border:0; cursor:pointer; display:grid; grid-template-columns:44px 1fr 24px; gap:24px; align-items:center; padding:24px 0; min-height:48px; color:#1a1814;">
+  <code style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#a8341f;">03</code>
+  <h3 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:500; font-variation-settings:'opsz' 34,'wght' 520,'SOFT' 26; font-size:1.2rem;">Who will I be working with?</h3>
+  <span class="faq-ico" aria-hidden="true" style="font-family:'JetBrains Mono',monospace; font-size:20px; line-height:1; color:#a8341f; transition:transform .3s ease;">+</span>
+ </button>
+ <div class="faq-a"><div style="overflow:hidden;"><p style="margin:0 0 24px 68px; color:#514c45; font-size:15px;">A senior practitioner, directly. There is no junior team behind the curtain and no account layer in front of it.</p></div></div>
+ </div><div class="faq-item" style="border-bottom:1px solid #d8d2c4;">
+ <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" style="width:100%; text-align:left; background:none; border:0; cursor:pointer; display:grid; grid-template-columns:44px 1fr 24px; gap:24px; align-items:center; padding:24px 0; min-height:48px; color:#1a1814;">
+  <code style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#a8341f;">04</code>
+  <h3 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:500; font-variation-settings:'opsz' 34,'wght' 520,'SOFT' 26; font-size:1.2rem;">When should we reach out?</h3>
+  <span class="faq-ico" aria-hidden="true" style="font-family:'JetBrains Mono',monospace; font-size:20px; line-height:1; color:#a8341f; transition:transform .3s ease;">+</span>
+ </button>
+ <div class="faq-a"><div style="overflow:hidden;"><p style="margin:0 0 24px 68px; color:#514c45; font-size:15px;">Before the deadline rather than during it. The earlier the read, the cheaper the fix. A short call costs nothing.</p></div></div>
+ </div><div class="faq-item" style="border-bottom:1px solid #d8d2c4;">
+ <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" style="width:100%; text-align:left; background:none; border:0; cursor:pointer; display:grid; grid-template-columns:44px 1fr 24px; gap:24px; align-items:center; padding:24px 0; min-height:48px; color:#1a1814;">
+  <code style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#a8341f;">05</code>
+  <h3 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:500; font-variation-settings:'opsz' 34,'wght' 520,'SOFT' 26; font-size:1.2rem;">What do we keep at the end?</h3>
+  <span class="faq-ico" aria-hidden="true" style="font-family:'JetBrains Mono',monospace; font-size:20px; line-height:1; color:#a8341f; transition:transform .3s ease;">+</span>
+ </button>
+ <div class="faq-a"><div style="overflow:hidden;"><p style="margin:0 0 24px 68px; color:#514c45; font-size:15px;">The deliverable and the working file behind it, built so your team can run it again next period without us.</p></div></div>
+ </div></div>
  </div></section>
 
  <section style="border-top:1px solid #d8d2c4;"><div style="width:min(1120px, calc(100% - 48px)); margin:0 auto; padding:96px 0; text-align:center;">
@@ -184,7 +226,7 @@
   <h1 style="margin:0; max-width:17ch; font-family:'Fraunces',Georgia,serif; font-weight:400; font-variation-settings:'opsz' 144,'wght' 400,'SOFT' 40; font-size:clamp(2.6rem,5vw,4.2rem); line-height:1.03; letter-spacing:-.03em;">A small practice, held to one standard.</h1>
  </section>
  <section style="border-top:1px solid #d8d2c4;"><div style="width:min(1120px, calc(100% - 48px)); margin:0 auto; padding:84px 0; display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr); gap:72px; align-items:start;" class="two-col">
-  <div><div style="display:flex; align-items:center; gap:12px; margin-bottom:26px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#7a7168;"><span style="width:34px; height:1px; background:#a8341f;"></span>§ 01 · The name</div><h2 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:400; font-variation-settings:'opsz' 84,'wght' 420,'SOFT' 34; font-size:clamp(1.9rem,3.2vw,2.5rem); line-height:1.1; letter-spacing:-.02em;">Advice should stay useful after the adviser leaves.</h2></div>
+  <div><div style="display:flex; align-items:center; gap:12px; margin-bottom:26px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#63594c;"><span style="width:34px; height:1px; background:#a8341f;"></span>§ 01 · The name</div><h2 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:400; font-variation-settings:'opsz' 84,'wght' 420,'SOFT' 34; font-size:clamp(1.9rem,3.2vw,2.5rem); line-height:1.1; letter-spacing:-.02em;">Advice should stay useful after the adviser leaves.</h2></div>
   <div>
    <p style="margin:0 0 22px; font-family:'Fraunces',Georgia,serif; font-variation-settings:'opsz' 20,'wght' 380,'SOFT' 20; font-size:19px; color:#403a33;">Daftar is the ledger, the register, the book where things are written down and kept. We took the name because that is the discipline we sell: reasoning recorded in a form that survives the meeting it was made in.</p>
    <p style="margin:0 0 20px; color:#514c45;">The firm exists because too much advisory work evaporates on delivery. A team arrives, produces a document, and leaves nothing a client can operate. We work the other way. Every engagement ends with a working artifact: a model your team can rerun, a method they can repeat, or a memo that answers the question for the next reader too.</p>
@@ -192,19 +234,19 @@
   </div>
  </div></section>
  <section style="border-top:1px solid #d8d2c4; background:#efebe1;"><div style="width:min(1120px, calc(100% - 48px)); margin:0 auto; padding:84px 0;">
-  <div style="display:flex; align-items:center; gap:12px; margin-bottom:26px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#7a7168;"><span style="width:34px; height:1px; background:#a8341f;"></span>§ 02 · Who you work with</div>
+  <div style="display:flex; align-items:center; gap:12px; margin-bottom:26px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#63594c;"><span style="width:34px; height:1px; background:#a8341f;"></span>§ 02 · Who you work with</div>
   <div style="max-width:760px;">
    <h2 style="margin:0 0 6px; font-family:'Fraunces',Georgia,serif; font-weight:400; font-variation-settings:'opsz' 84,'wght' 440,'SOFT' 30; font-size:clamp(1.9rem,3.2vw,2.4rem); line-height:1.1; letter-spacing:-.02em;">Ahmad Al Hinaiti</h2>
    <p style="margin:0 0 24px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#a8341f;">Founder · Advisory and technical review · Amman, Jordan</p>
    <p style="margin:0 0 20px; font-family:'Fraunces',Georgia,serif; font-variation-settings:'opsz' 20,'wght' 380,'SOFT' 20; font-size:18px; color:#403a33;">Ahmad works on the problems clients bring, personally, from first call to final file. Financial statements, audit preparation, IFRS technical questions, and the numbers behind a transaction.</p>
    <p style="margin:0 0 30px; color:#514c45;">The practice is built around that arrangement on purpose. Small teams keep judgment close to the work, and keep the client talking to the person who actually formed the view.</p>
    <div style="display:grid; grid-template-columns:1fr 1fr; gap:0; border-top:1px solid #d8d2c4; max-width:560px;">
-    <div style="padding:18px 20px 16px 0; border-bottom:1px solid #d8d2c4; border-right:1px solid #d8d2c4;"><span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#7a7168; margin-bottom:6px;">Focus</span><span style="font-family:'Fraunces',Georgia,serif; font-size:16px;">IFRS reporting and technical review</span></div><div style="padding:18px 0 16px 20px; border-bottom:1px solid #d8d2c4;"><span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#7a7168; margin-bottom:6px;">Sectors</span><span style="font-family:'Fraunces',Georgia,serif; font-size:16px;">Construction, services, investment</span></div><div style="padding:18px 20px 16px 0; border-bottom:1px solid #d8d2c4; border-right:1px solid #d8d2c4;"><span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#7a7168; margin-bottom:6px;">Languages</span><span style="font-family:'Fraunces',Georgia,serif; font-size:16px;">Arabic and English</span></div><div style="padding:18px 0 16px 20px; border-bottom:1px solid #d8d2c4;"><span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#7a7168; margin-bottom:6px;">Contact</span><a href="mailto:ahmad@daftaradvisory.com" style="font-family:'Fraunces',Georgia,serif; font-size:16px; color:#a8341f;">ahmad@daftaradvisory.com</a></div>
+    <div style="padding:18px 20px 16px 0; border-bottom:1px solid #d8d2c4; border-right:1px solid #d8d2c4;"><span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#63594c; margin-bottom:6px;">Focus</span><span style="font-family:'Fraunces',Georgia,serif; font-size:16px;">IFRS reporting and technical review</span></div><div style="padding:18px 0 16px 20px; border-bottom:1px solid #d8d2c4;"><span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#63594c; margin-bottom:6px;">Sectors</span><span style="font-family:'Fraunces',Georgia,serif; font-size:16px;">Construction, services, investment</span></div><div style="padding:18px 20px 16px 0; border-bottom:1px solid #d8d2c4; border-right:1px solid #d8d2c4;"><span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#63594c; margin-bottom:6px;">Languages</span><span style="font-family:'Fraunces',Georgia,serif; font-size:16px;">Arabic and English</span></div><div style="padding:18px 0 16px 20px; border-bottom:1px solid #d8d2c4;"><span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#63594c; margin-bottom:6px;">Contact</span><a href="mailto:ahmad@daftaradvisory.com" style="font-family:'Fraunces',Georgia,serif; font-size:16px; color:#a8341f;">ahmad@daftaradvisory.com</a></div>
    </div>
   </div>
  </div></section>
  <section style="border-top:1px solid #d8d2c4;"><div style="width:min(1120px, calc(100% - 48px)); margin:0 auto; padding:84px 0;">
-  <div style="display:flex; align-items:center; gap:12px; margin-bottom:26px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#7a7168;"><span style="width:34px; height:1px; background:#a8341f;"></span>§ 03 · How an engagement runs</div>
+  <div style="display:flex; align-items:center; gap:12px; margin-bottom:26px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#63594c;"><span style="width:34px; height:1px; background:#a8341f;"></span>§ 03 · How an engagement runs</div>
   <h2 style="margin:0 0 44px; max-width:24ch; font-family:'Fraunces',Georgia,serif; font-weight:400; font-variation-settings:'opsz' 84,'wght' 420,'SOFT' 34; font-size:clamp(1.9rem,3.2vw,2.5rem); line-height:1.1; letter-spacing:-.02em;">Four steps, in the open, from first call to final file.</h2>
   <div style="border-top:1px solid #d8d2c4;"><article style="display:grid; grid-template-columns:64px minmax(0,1fr) minmax(0,1.35fr); gap:28px; align-items:start; padding:28px 0; border-bottom:1px solid #d8d2c4;">
  <code style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#a8341f; padding-top:5px;">01</code>
@@ -245,7 +287,7 @@
     </div>
     <div style="margin-bottom:38px;">
      <div style="display:flex; align-items:baseline; gap:14px; margin-bottom:8px;"><code style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#a8341f;">02</code><h2 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:500; font-variation-settings:'opsz' 34,'wght' 520,'SOFT' 26; font-size:1.3rem;">What makes it complicated?</h2></div>
-     <p style="margin:0 0 18px 26px; font-size:14px; color:#7a7168;">Choose any that apply. Each one changes the scope.</p>
+     <p style="margin:0 0 18px 26px; font-size:14px; color:#63594c;">Choose any that apply. Each one changes the scope.</p>
      <div style="display:flex; flex-wrap:wrap; gap:10px;"><button class="chip" data-k="first" onclick="toggleFocus('first')" style="">First year under IFRS</button><button class="chip" data-k="group" onclick="toggleFocus('group')" style="">Group with subsidiaries</button><button class="chip" data-k="open" onclick="toggleFocus('open')" style="">Auditor questions still open</button><button class="chip" data-k="board" onclick="toggleFocus('board')" style="">Board or investor deadline</button><button class="chip" data-k="thin" onclick="toggleFocus('thin')" style="">The team is stretched</button></div>
     </div>
     <div>
@@ -254,23 +296,23 @@
     </div>
    </div>
    <div style="position:sticky; top:110px; border:1px solid #d8d2c4; border-radius:6px; background:#faf7f1; overflow:hidden;" class="outline-panel">
-    <div style="display:flex; align-items:center; justify-content:space-between; padding:15px 24px; border-bottom:1px solid #d8d2c4; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#7a7168;"><span>Draft outline</span><span id="o-ref" style="color:#a8341f;"></span></div>
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:15px 24px; border-bottom:1px solid #d8d2c4; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#63594c;"><span>Draft outline</span><span id="o-ref" style="color:#a8341f;"></span></div>
     <div style="padding:26px 24px 28px;">
-     <span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#7a7168; margin-bottom:8px;">Engagement</span>
+     <span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#63594c; margin-bottom:8px;">Engagement</span>
      <h3 id="o-title" style="margin:0 0 18px; font-family:'Fraunces',Georgia,serif; font-weight:500; font-variation-settings:'opsz' 40,'wght' 500,'SOFT' 30; font-size:1.5rem; line-height:1.15;"></h3>
      <p id="o-outcome" style="margin:0 0 24px; font-size:15px; color:#403a33;"></p>
-     <span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#7a7168; padding-top:18px; border-top:1px solid #e6e0d4; margin-bottom:12px;">In scope</span>
+     <span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#63594c; padding-top:18px; border-top:1px solid #e6e0d4; margin-bottom:12px;">In scope</span>
      <ul id="o-incl" style="margin:0 0 22px; padding:0; list-style:none; display:grid; gap:9px;"></ul>
-     <span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#7a7168; padding-top:18px; border-top:1px solid #e6e0d4; margin-bottom:12px;">Not in scope</span>
+     <span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#63594c; padding-top:18px; border-top:1px solid #e6e0d4; margin-bottom:12px;">Not in scope</span>
      <ul id="o-excl" style="margin:0 0 22px; padding:0; list-style:none; display:grid; gap:9px;"></ul>
      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0; border-top:1px solid #e6e0d4;">
-      <div style="padding:16px 16px 14px 0; border-right:1px solid #e6e0d4;"><span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#7a7168; margin-bottom:6px;">You receive</span><span id="o-deliv" style="font-family:'Fraunces',Georgia,serif; font-size:15px; line-height:1.35; display:block;"></span></div>
-      <div style="padding:16px 0 14px 16px;"><span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#7a7168; margin-bottom:6px;">Indicative run</span><span id="o-dur" style="font-family:'Fraunces',Georgia,serif; font-size:15px; line-height:1.35; display:block;"></span></div>
+      <div style="padding:16px 16px 14px 0; border-right:1px solid #e6e0d4;"><span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#63594c; margin-bottom:6px;">You receive</span><span id="o-deliv" style="font-family:'Fraunces',Georgia,serif; font-size:15px; line-height:1.35; display:block;"></span></div>
+      <div style="padding:16px 0 14px 16px;"><span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#63594c; margin-bottom:6px;">Indicative run</span><span id="o-dur" style="font-family:'Fraunces',Georgia,serif; font-size:15px; line-height:1.35; display:block;"></span></div>
      </div>
      <div style="margin-top:22px; padding-top:20px; border-top:1px solid #e6e0d4;">
-      <p id="o-next" style="margin:0 0 16px; font-size:13px; color:#7a7168;"></p>
+      <p id="o-next" style="margin:0 0 16px; font-size:13px; color:#63594c;"></p>
       <a id="o-mail" href="#" style="display:block; text-align:center; padding:14px 20px; border-radius:6px; background:#1a1814; color:#f4f1ea; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; transition:background .2s ease;" class="btn-primary">Send this outline</a>
-      <button class="btn-ghost-sm" onclick="resetScope()" style="width:100%; margin-top:10px; padding:12px 20px; border-radius:6px; border:1px solid #d8d2c4; background:transparent; cursor:pointer; color:#7a7168; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; transition:border-color .2s ease, color .2s ease;">Start over</button>
+      <button class="btn-ghost-sm" onclick="resetScope()" style="width:100%; margin-top:10px; padding:12px 20px; border-radius:6px; border:1px solid #d8d2c4; background:transparent; cursor:pointer; color:#63594c; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; transition:border-color .2s ease, color .2s ease;">Start over</button>
      </div>
     </div>
    </div>
@@ -278,6 +320,7 @@
  </section>
 </div>
 </main>
+<div class="mobile-cta"><a href="#" onclick="nav('scope');return false;">Book a call</a></div>
 <footer style="background:#17150f; color:#f4f1ea;">
  <div style="width:min(1120px, calc(100% - 48px)); margin:0 auto; padding:44px 0; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap;">
   <div style="display:flex; align-items:center; gap:12px;">
@@ -317,7 +360,7 @@ function renderScope(){
   document.getElementById('o-title').textContent=svc.label;
   document.getElementById('o-outcome').textContent=svc.outcome;
   document.getElementById('o-incl').innerHTML=included.map(function(l){return '<li style="display:grid; grid-template-columns:14px 1fr; gap:10px; font-size:14px; color:#403a33;"><span style=\'color:#a8341f;\'>·</span><span>'+esc(l)+'</span></li>';}).join('');
-  document.getElementById('o-excl').innerHTML=svc.excluded.map(function(l){return '<li style="display:grid; grid-template-columns:14px 1fr; gap:10px; font-size:14px; color:#7a7168;"><span>·</span><span>'+esc(l)+'</span></li>';}).join('');
+  document.getElementById('o-excl').innerHTML=svc.excluded.map(function(l){return '<li style="display:grid; grid-template-columns:14px 1fr; gap:10px; font-size:14px; color:#63594c;"><span>·</span><span>'+esc(l)+'</span></li>';}).join('');
   document.getElementById('o-deliv').textContent=svc.deliverable;
   document.getElementById('o-dur').textContent=time.duration;
   document.getElementById('o-next').textContent=time.next;
@@ -325,7 +368,12 @@ function renderScope(){
   const body=encodeURIComponent('Engagement: '+svc.label+'\n\nOutcome\n'+svc.outcome+'\n\nIn scope\n'+included.map(function(l){return '- '+l;}).join('\n')+'\n\nNot in scope\n'+svc.excluded.map(function(l){return '- '+l;}).join('\n')+'\n\nDeliverable: '+svc.deliverable+'\nIndicative run: '+time.duration+'\nTiming: '+time.label+'\n');
   document.getElementById('o-mail').href='mailto:ahmad@daftaradvisory.com?subject='+subject+'&body='+body;
 }
+function toggleFaq(btn){var it=btn.closest('.faq-item'); var open=it.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false');}
 nav('home'); renderScope();
+if(document.documentElement.classList.contains('reveal-on') && 'IntersectionObserver' in window){
+ var ro=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('is-in'); ro.unobserve(en.target);}});},{threshold:.12});
+ document.querySelectorAll('#pg-home>section').forEach(function(s){ro.observe(s);});
+}
 </script>
 </body>
 </html>
