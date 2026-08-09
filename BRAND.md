@@ -85,14 +85,21 @@ record earns them.
 - **`#842815`** link-hover — re-derive a darker shade from `#B3502B`, or drop.
 - Title: **"Principal"** → "Founder".
 
-## Surfaces still on the retired stack
-1. **Live site** — `design/daftar-home.html` (compiled artifact; Netlify copies it over
-   `out/index.html`). Fonts are embedded as hashed bundler assets, so conforming type here
-   means swapping the `@font-face` sources (Google Fonts `<link>` + family rename), not a
-   text find-replace. Beyond fonts/accent, the page's **card drop-shadows and gradient
-   contradict "ruled, not shadowed / no gradients"** — full §06 compliance is a component
-   pass, not a recolour.
-2. **`daftar-engagement-letter` skill** — spec references the retired stack; same conform.
+## Approved exception — the live Daftar home (`daftaradvisory.com`)
+> Per Founder ruling, the shipped Daftar home/About/Scope-builder design (baked from the
+> design-canvas export to `design/daftar-home.html`, served over `out/index.html`) is kept
+> **as-is on its own stack** and **overrides the v1.5 Daftar spec** for that surface: it uses
+> **Fraunces** (display) + **Instrument Sans** (body) + **JetBrains Mono** (labels) and rust
+> **`#A8341F`** (with `#7d2415` hover), on cream `#F4F1EA` / ink `#1A1814`. It is ruled, not
+> shadowed, and uses no gradients. The v1.5 rows remain the handbook ideal; this is a recorded
+> exception, not a conformance target.
+> **Known inconsistency:** the Arabic page `/ar` (Next app) stays on the **v1.5 canon** stack
+> (Newsreader / IBM Plex Mono / `#B3502B`). EN-home and `/ar` therefore differ; left as-is per
+> the "no `/ar` expansion" ruling. Flag for a future unify decision.
+
+## Surface still on the retired stack (not yet ruled)
+- **`daftar-engagement-letter` skill** — spec references the retired stack; conform or record
+  as an exception when next touched.
 
 ## Calibre positioning (Canonical House Strategy, 21 Jul 2026)
 Canon reference is the **Canonical House Strategy**, which supersedes the House Strategy,
