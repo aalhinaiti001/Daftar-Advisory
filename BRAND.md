@@ -32,7 +32,18 @@ diverge only in colour.** A reader must always know which one is speaking.
 | Void/band   | `--cal-void`      | `#111214`  |
 | Card soft   | `--cal-card`      | `#F5F4F1`  |
 
-**Colour rules (§03):**
+> **Approved exception — the live Calibre product surface (`calibre.daftaradvisory.com`).**
+> Per Founder ruling, the shipped "Guesswork" design **overrides the v1.5 Calibre spec above**
+> for the live product site. It uses **Lora** (display/serif) + **Plus Jakarta Sans** (UI) — not
+> the shared Newsreader/Instrument/IBM Plex stack — and a themeable palette (default `ink`):
+> forest green `~#265147`/`#2B3A36` primary with a **clay `#B25B3C`** secondary accent and a
+> white/paper ground. The v1.5 rows above remain the *handbook ideal*; the live site is a
+> recorded exception, not a target to conform. (Daftar's own v1.5 stack is unaffected.)
+> **Open flag:** the hero's illustrative **"Δ 41 pts"** stat runs unsourced on the live site —
+> the Hiring-Decision Service Strategy v2's own evidence discipline requires naming the source
+> and never presenting it as settled fact. Sourcing is a content decision, left to the Founder.
+
+**Colour rules (§03) — apply to Daftar; Calibre live surface is the exception noted above:**
 - One accent + one ground per brand. **No third accent. No gradients.**
 - **Rust is reserved for large text, rules, icons, and emphasis — never body copy or
   small text on cream** (it sits near the 4.5:1 threshold).
@@ -83,12 +94,15 @@ record earns them.
    pass, not a recolour.
 2. **`daftar-engagement-letter` skill** — spec references the retired stack; same conform.
 
-## Calibre positioning (Strategy Amendment 01, 21 Jul 2026)
-Calibre stays the **hiring-decision product** (attachment-only, "by Daftar" kicker,
-white+green). The **buyable label "hiring diagnostic" is retired** in favour of the
-**Calibre Verdict** — a done-for-you finance-hiring decision memo for a defined shortlist.
-Any site/collateral copy calling Calibre a "hiring diagnostic" should move to "Calibre
-Verdict." (The handbook v1.5 and Business Overview predate this label change.)
+## Calibre positioning (Canonical House Strategy, 21 Jul 2026)
+Canon reference is the **Canonical House Strategy**, which supersedes the House Strategy,
+Amendment 01, and Daftar 2.0. Calibre stays the **hiring-decision product** (attachment-only,
+"by Daftar" kicker, pre-revenue). The buyable offer is the **Calibre Verdict** — a done-for-you
+**finance-role** hiring-decision memo for a defined shortlist; the label "hiring diagnostic" is
+retired. Per the Deep Research Assessment, scope is the **narrow finance-hiring advisory**
+(structured role definition, anchored scorecards, written memo) with **no psychometric or
+predictive-validity claims**; the broad talent service and work-style tool are deferred/removed.
+Any site/collateral copy calling Calibre a "hiring diagnostic" should move to "Calibre Verdict."
 
 ---
 
