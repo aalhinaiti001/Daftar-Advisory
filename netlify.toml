@@ -2,8 +2,15 @@
   # Build the Next.js app, then overlay the standalone design pages:
   #   /  → Daftar home (final approved design, baked from the design-canvas export)
   #   /calibre + /ar/calibre → Calibre design (EN/AR)
+  #   /knowledge/<slug> + /ar/knowledge/<slug> → Knowledge articles (EN/AR)
   # /ar stays on the Next app.
-  command = "npm run build && cp design/daftar-home.html out/index.html && cp design/calibre-home.html out/calibre.html && cp design/calibre-home-ar.html out/ar/calibre.html"
+  command = """npm run build && \
+cp design/daftar-home.html out/index.html && \
+cp design/calibre-home.html out/calibre.html && \
+cp design/calibre-home-ar.html out/ar/calibre.html && \
+mkdir -p out/knowledge/saudi-compliance-2026 out/ar/knowledge/saudi-compliance-2026 && \
+cp design/knowledge-saudi-compliance-2026.html out/knowledge/saudi-compliance-2026/index.html && \
+cp design/knowledge-saudi-compliance-2026-ar.html out/ar/knowledge/saudi-compliance-2026/index.html"""
   publish = "out"
 
 [build.environment]
