@@ -5,6 +5,10 @@ const DESC = "مذكّرة قرار جاهزة لتوظيف دور مالي وا
 export const metadata: Metadata = {
   title: "حُكم كاليبر — من دفتر",
   description: DESC,
+  alternates: {
+    canonical: "/ar/calibre",
+    languages: { en: "/calibre", ar: "/ar/calibre", "x-default": "/calibre" },
+  },
   openGraph: { type: "website", siteName: "كاليبر من دفتر", locale: "ar_AR", title: "حُكم كاليبر — من دفتر", description: DESC, url: "/ar/calibre", images: ["/og-calibre.png"] },
   twitter: { card: "summary_large_image", title: "حُكم كاليبر — من دفتر", description: DESC, images: ["/og-calibre.png"] },
 };

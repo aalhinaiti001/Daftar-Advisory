@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://daftaradvisory.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daftaradvisory.com/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://daftaradvisory.com/ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daftaradvisory.com/"/>
   </url>
   <url>
     <loc>https://daftaradvisory.com/about</loc>
   </url>
   <url>
     <loc>https://daftaradvisory.com/scope</loc>
+  </url>
+  <url>
+    <loc>https://daftaradvisory.com/calibre</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daftaradvisory.com/calibre"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://daftaradvisory.com/ar/calibre"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daftaradvisory.com/calibre"/>
+  </url>
+  <url>
+    <loc>https://daftaradvisory.com/ar</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daftaradvisory.com/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://daftaradvisory.com/ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daftaradvisory.com/"/>
+  </url>
+  <url>
+    <loc>https://daftaradvisory.com/ar/calibre</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daftaradvisory.com/calibre"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://daftaradvisory.com/ar/calibre"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daftaradvisory.com/calibre"/>
   </url>
 </urlset>

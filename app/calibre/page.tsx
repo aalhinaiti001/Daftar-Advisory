@@ -5,6 +5,10 @@ const DESC = "A done-for-you finance-hiring decision memo. One role, one ranked 
 export const metadata: Metadata = {
   title: "The Calibre Verdict — by Daftar",
   description: DESC,
+  alternates: {
+    canonical: "/calibre",
+    languages: { en: "/calibre", ar: "/ar/calibre", "x-default": "/calibre" },
+  },
   openGraph: { type: "website", siteName: "Calibre by Daftar", title: "The Calibre Verdict — by Daftar", description: DESC, url: "/calibre", images: ["/og-calibre.png"] },
   twitter: { card: "summary_large_image", title: "The Calibre Verdict — by Daftar", description: DESC, images: ["/og-calibre.png"] },
 };

@@ -9,7 +9,12 @@ const DESC =
 export const metadata: Metadata = {
   title: "Daftar Advisory",
   description: DESC,
-  alternates: { canonical: "/" },
+  /* /ar is the Arabic counterpart of this page; x-default points at the
+     English one. Without these the two rank as duplicates of each other. */
+  alternates: {
+    canonical: "/",
+    languages: { en: "/", ar: "/ar", "x-default": "/" },
+  },
   openGraph: {
     type: "website",
     siteName: "Daftar Advisory",
