@@ -188,6 +188,9 @@ body:has(.dft) { background: #f4f1ea; }
 
 /* --- Header -------------------------------------------------------------- */
 
+/* padding/height/display explicit: globals.css has an unscoped `header{}`
+   rule for the old site's plain <header> tag, and this component is also a
+   real <header> element, so it inherits that rule unless overridden here. */
 .dft-header {
   position: sticky;
   top: 0;
@@ -195,6 +198,9 @@ body:has(.dft) { background: #f4f1ea; }
   background: rgba(244, 241, 234, 0.94);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--rule);
+  padding: 0;
+  height: auto;
+  display: block;
 }
 .dft-header-inner {
   width: min(1120px, calc(100% - 48px));
@@ -231,7 +237,19 @@ body:has(.dft) { background: #f4f1ea; }
 }
 
 .dft-nav-wrap { display: flex; align-items: center; gap: 8px; }
-.dft-nav { display: flex; align-items: center; gap: 4px; }
+/* position/background/border/padding explicit: globals.css's unscoped
+   `nav{}` mobile rule (position: absolute; top: 100%; ...) targets any
+   <nav>, including this one, and would otherwise pull the link list out of
+   .dft-nav-wrap's flex flow and float it over the page below the header. */
+.dft-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: static;
+  background: transparent;
+  border-bottom: 0;
+  padding: 0;
+}
 .dft-nav a {
   padding: 10px 14px;
   border-radius: 5px;
@@ -676,7 +694,9 @@ body:has(.dft) { background: #f4f1ea; }
 
 /* --- Footer -------------------------------------------------------------- */
 
-.dft-footer { background: #17150f; color: var(--on-dark); }
+/* padding/display explicit: same globals.css `footer{}` leak as the header
+   above — it sets its own padding and flex layout on any <footer>. */
+.dft-footer { background: #17150f; color: var(--on-dark); padding: 0; display: block; }
 .dft-footer .dft-wrap {
   padding: 44px 0;
   display: flex;
