@@ -3,8 +3,9 @@
   #   /calibre + /ar/calibre → Calibre design (EN/AR).
   #
   # /, /about and /scope are now real Next.js routes (the Daftar redesign), so
-  # index.html is NO LONGER overwritten with design/daftar-home.html. Restoring
-  # that copy would clobber the new home page.
+  # index.html is NOT overwritten with design/daftar-home.html — an earlier
+  # revision of aalhin001 baked that static file as the home page before the
+  # redesign existed; restoring the copy now would clobber the new home page.
   # (The Arabic Daftar page /ar stays on the Next app.)
   command = "npm run build && cp design/calibre-home.html out/calibre.html && cp design/calibre-home-ar.html out/ar/calibre.html"
   publish = "out"
