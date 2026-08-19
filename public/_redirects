@@ -15,7 +15,8 @@
 # REQUIRES id="services" on the services section before deploying.
 # EXPIRES when real service pages ship (A/02, A/01, A/03, C/03) — replace
 # these lines with direct routes at that point, do not leave them pointing
-# at an anchor that no longer holds the content.
+# at an anchor that no longer holds the content. The scope builder takes a
+# preselected line via /scope?service=statements|audit|review|transaction.
 /services            /#services             301
 /what-we-do          /#services             301
 
@@ -24,15 +25,14 @@
 /values              /#ethics-values        301
 
 # --- About -----------------------------------------------------------------
-# The About view exists as a genuine destination, so this is a real
-# replacement (not a homepage dump).
-/about               /#about                301
+# /about is now a real route served by the Next app. No redirect: a rule here
+# would shadow the page itself.
 
 # --- Contact ---------------------------------------------------------------
-# No standalone contact page — the booking / "get in touch" view is the
-# genuine equivalent. Kept on-site rather than 404'd.
-/contact             /#scope                301
-/get-in-touch        /#scope                301
+# No standalone contact page — the scope builder at /scope is the genuine
+# equivalent. Kept on-site rather than 404'd.
+/contact             /scope                 301
+/get-in-touch        /scope                 301
 
 # --- FAQ -------------------------------------------------------------------
 /faq                 /#daftar-faq           301

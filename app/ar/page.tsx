@@ -5,6 +5,10 @@ const DESC = "عمل مالي بسيط، حتى حين لا تكون المسأ�
 export const metadata: Metadata = {
   title: "دفتر للاستشارات",
   description: DESC,
+  alternates: {
+    canonical: "/ar",
+    languages: { en: "/", ar: "/ar", "x-default": "/" },
+  },
   openGraph: { type: "website", siteName: "دفتر للاستشارات", locale: "ar_AR", title: "دفتر للاستشارات", description: DESC, url: "/ar", images: ["/og-daftar.png"] },
   twitter: { card: "summary_large_image", title: "دفتر للاستشارات", description: DESC, images: ["/og-daftar.png"] },
 };

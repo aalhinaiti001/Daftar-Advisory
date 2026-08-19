@@ -1,7 +1,28 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./daftar.css";
 
 const DESC = "Clear finance work for founders and finance teams — financial statements, audit readiness, technical review, transaction support.";
+
+/* Non-attest practice: the schema type is ProfessionalService, NOT
+   AccountingService/FinancialService. Those imply licensed attest work the
+   practice explicitly does not provide, and the site copy says so. */
+const ORG_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Daftar Advisory",
+  description: DESC,
+  url: "https://daftaradvisory.com",
+  email: "ahmad@daftaradvisory.com",
+  areaServed: ["Jordan", "Saudi Arabia", "United Arab Emirates", "Middle East"],
+  address: { "@type": "PostalAddress", addressLocality: "Amman", addressCountry: "JO" },
+  founder: {
+    "@type": "Person",
+    name: "Ahmad Al Hinaiti",
+    jobTitle: "Principal",
+    sameAs: ["https://linkedin.com/in/ahmad-alhinaiti"],
+  },
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://daftaradvisory.com"),
@@ -25,5 +46,20 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}) {
-  return <html lang="en"><body>{children}</body></html>;
+  return (
+    <html lang="en">
+      <head>
+        {/* globals.css pulls the webfonts in via @import, which the browser
+            cannot discover until the stylesheet itself has parsed. These warm
+            the connections up front so the fonts start downloading sooner. */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_SCHEMA) }}
+        />
+      </head>
+      <body>{children}</body>
+    </html>
+  );
 }
