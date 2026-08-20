@@ -111,10 +111,15 @@ export const TIMING = [
   },
 ] as const;
 
-export const NOTES = [
+export const NOTES: { tag: string; title: string; body: string; href?: string }[] = [
+  {
+    tag: "IFRS 18",
+    title: "The comparative year is 2026",
+    body: "Mandatory from 2027, which makes the year in progress the one being restated.",
+    href: "/knowledge/ifrs-18-transition-2026",
+  },
   { tag: "KSA", title: "Electronic invoicing waves", body: "What changes at each wave, and the parts finance teams usually discover late." },
   { tag: "UAE", title: "Corporate tax, first season", body: "Where the pressure lands in a first filing year, and what to fix beforehand." },
-  { tag: "IFRS 16", title: "Leases in construction", body: "Lease complexity, file quality, and the recomputation that settles the argument." },
   { tag: "Markets", title: "Listing readiness", body: "What a reporting file needs to look like well before anyone reads a prospectus." },
 ];
 

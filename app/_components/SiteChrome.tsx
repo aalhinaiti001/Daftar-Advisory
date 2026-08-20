@@ -4,7 +4,9 @@ import { EMAIL } from "../_data/practice";
 /* Header and footer for the Daftar pages. The active nav item is passed in
    rather than read from usePathname so these stay server components. */
 
-export type Page = "home" | "about" | "scope";
+/* "knowledge" has no nav entry (Knowledge articles are not in primary nav
+   yet), it only stops the header from wrongly underlining another item. */
+export type Page = "home" | "about" | "scope" | "knowledge";
 
 function Mark({ href = "/" }: { href?: string }) {
   return (

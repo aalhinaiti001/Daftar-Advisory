@@ -726,6 +726,36 @@ body:has(.dft) { background: #f4f1ea; }
 .dft-foot-links a { color: var(--on-dark-muted); transition: color 0.2s ease; }
 .dft-foot-links a:hover { color: var(--paper); }
 
+/* --- Article --------------------------------------------------------------
+   Long-form body copy (Knowledge). Reuses .dft-section/.dft-wrap for rhythm;
+   this just constrains prose to a readable measure and spaces paragraphs,
+   the same pattern as .dft-close p below rather than a blanket `.dft p`
+   margin (see the note on that rule near the top of this file). */
+
+.dft-article { max-width: 700px; }
+.dft-article p { margin: 0 0 20px; }
+.dft-article p:last-child { margin-bottom: 0; }
+.dft-article strong { color: var(--strong); font-weight: 600; }
+.dft-article-lede .dft-lead { margin-bottom: 22px; }
+.dft-article-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.dft-article-note {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px 0 64px;
+  font-size: 13px;
+  color: var(--muted);
+  border-top: 1px solid var(--rule);
+}
+
 /* --- Responsive ---------------------------------------------------------- */
 
 @media (max-width: 1040px) {

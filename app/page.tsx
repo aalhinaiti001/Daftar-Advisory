@@ -169,6 +169,7 @@ export default function Home() {
                   <span>{n.tag}</span>
                   <h3>{n.title}</h3>
                   <p>{n.body}</p>
+                  {n.href && <Link className="dft-btn-sm" href={n.href}>Read the note</Link>}
                 </article>
               ))}
             </div>
