@@ -118,7 +118,12 @@ export const NOTES: { tag: string; title: string; body: string; href?: string }[
     body: "Mandatory from 2027, which makes the year in progress the one being restated.",
     href: "/knowledge/ifrs-18-transition-2026",
   },
-  { tag: "KSA", title: "Electronic invoicing waves", body: "What changes at each wave, and the parts finance teams usually discover late." },
+  {
+    tag: "KSA",
+    title: "Electronic invoicing waves",
+    body: "What changes at each wave, and the parts finance teams usually discover late.",
+    href: "/knowledge/saudi-compliance-2026",
+  },
   { tag: "UAE", title: "Corporate tax, first season", body: "Where the pressure lands in a first filing year, and what to fix beforehand." },
   { tag: "Markets", title: "Listing readiness", body: "What a reporting file needs to look like well before anyone reads a prospectus." },
 ];

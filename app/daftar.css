@@ -755,6 +755,22 @@ body:has(.dft) { background: #f4f1ea; }
   color: var(--muted);
   border-top: 1px solid var(--rule);
 }
+.dft-article-table-wrap { max-width: 700px; overflow-x: auto; margin: 4px 0 20px; }
+.dft-article-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.dft-article-table th, .dft-article-table td {
+  text-align: start;
+  padding: 12px 16px 12px 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.dft-article-table th {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 400;
+}
+.dft-article-table td:first-child, .dft-article-table th:first-child { padding-inline-start: 0; }
 
 /* --- Responsive ---------------------------------------------------------- */
 
