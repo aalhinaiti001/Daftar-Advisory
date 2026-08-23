@@ -1,11 +1,16 @@
 /* NOT CURRENTLY DEPLOYED: netlify.toml copies design/calibre-home.html over
-   out/calibre.html at build time, so this route never actually reaches a
-   visitor. It reflects an earlier, narrower "Calibre Verdict" positioning
-   (Daftar evaluates a shortlist alone and hands back one memo) rather than
-   the calibration-pilot framing the live page uses now (Daftar runs the
-   scorecard method with the client's own panel). Kept as reference for its
-   FAQ, lead-gen form, and finance-specific framing, not as a route to wire
-   back up without a deliberate decision to do so. */
+   out/calibre.html at build time, so this route never reaches a visitor.
+
+   Note the positioning here is the CANONICAL one, not a superseded draft:
+   BRAND.md ("Calibre positioning", Canonical House Strategy, 21 Jul 2026)
+   defines the buyable offer as the Calibre Verdict, a done-for-you
+   finance-role hiring-decision memo for a defined shortlist, and retires
+   the "hiring diagnostic" label. This file matches that; the deployed
+   static page was drifting from it and its copy has now been brought back
+   in line. Kept as the reference implementation of the canonical framing.
+   Wiring it back up in place of the static file is a live option, but a
+   deliberate one: it would also swap the approved "Guesswork" visual
+   design (BRAND.md records that as a Founder-approved exception). */
 import Link from "next/link";
 import type { Metadata } from "next";
 
