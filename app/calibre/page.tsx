@@ -1,3 +1,11 @@
+/* NOT CURRENTLY DEPLOYED: netlify.toml copies design/calibre-home.html over
+   out/calibre.html at build time, so this route never actually reaches a
+   visitor. It reflects an earlier, narrower "Calibre Verdict" positioning
+   (Daftar evaluates a shortlist alone and hands back one memo) rather than
+   the calibration-pilot framing the live page uses now (Daftar runs the
+   scorecard method with the client's own panel). Kept as reference for its
+   FAQ, lead-gen form, and finance-specific framing, not as a route to wire
+   back up without a deliberate decision to do so. */
 import Link from "next/link";
 import type { Metadata } from "next";
 

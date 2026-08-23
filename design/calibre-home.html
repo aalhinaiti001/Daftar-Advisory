@@ -121,7 +121,7 @@
       @media (prefers-reduced-motion: reduce){#tweakToggle,.tw-seg button{transition:none;}}
     </style>
 </head>
-<body class="bg-paper-100 text-ink-950 font-sans antialiased selection:bg-forest-600 selection:text-white">
+<body class="bg-paper-100 text-ink-950 font-sans antialiased selection:bg-forest-600 selection:text-white pb-20 md:pb-0">
 
     <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-3 focus:left-3 focus:bg-ink-950 focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:text-sm focus:font-semibold">Skip to content</a>
 
@@ -138,6 +138,7 @@
                 <a href="#outputs" class="text-stone-600 hover:text-forest-600 transition-colors">Deliverables</a>
                 <a href="#who" class="text-stone-600 hover:text-forest-600 transition-colors">Who it&#39;s for</a>
                 <a href="#pilot" class="text-stone-600 hover:text-forest-600 transition-colors">Pilot</a>
+                <a href="#faq" class="text-stone-600 hover:text-forest-600 transition-colors">FAQ</a>
                 <a href="/" class="text-stone-600 hover:text-forest-600 transition-colors">Daftar</a>
             </nav>
 
@@ -158,6 +159,7 @@
                 <a href="#outputs" class="py-3 text-stone-700 hover:text-forest-600 transition-colors border-b border-stone-200/60">Deliverables</a>
                 <a href="#who" class="py-3 text-stone-700 hover:text-forest-600 transition-colors border-b border-stone-200/60">Who it&#39;s for</a>
                 <a href="#pilot" class="py-3 text-stone-700 hover:text-forest-600 transition-colors border-b border-stone-200/60">Pilot</a>
+                <a href="#faq" class="py-3 text-stone-700 hover:text-forest-600 transition-colors border-b border-stone-200/60">FAQ</a>
                 <a href="/" class="py-3 text-stone-700 hover:text-forest-600 transition-colors border-b border-stone-200/60">Daftar</a>
                 <a href="#contact" class="py-3 text-forest-600 font-semibold">Book a call</a>
             </nav>
@@ -474,6 +476,44 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section id="faq" class="py-20 lg:py-32 bg-paper-100 border-b border-stone-200/60">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-12 gap-16">
+                <div class="lg:col-span-4">
+                    <span class="text-xs uppercase tracking-widest font-bold text-clay-500">Questions</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-semibold tracking-tight mt-2">Before you ask.</h2>
+                </div>
+                <div class="lg:col-span-8 divide-y divide-stone-200">
+                    <div class="py-6 first:pt-0 space-y-2">
+                        <h3 class="text-sm font-bold text-ink-950">Is this software or a service?</h3>
+                        <p class="text-stone-600 text-sm font-serif leading-relaxed">A service, delivered as a working kit. We build the scorecard, reading guide, and question bank for your role, then run the calibration session with your panel. You keep every artifact afterward.</p>
+                    </div>
+                    <div class="py-6 space-y-2">
+                        <h3 class="text-sm font-bold text-ink-950">How long does a pilot take?</h3>
+                        <p class="text-stone-600 text-sm font-serif leading-relaxed">Two to three weeks for one role, from the scoping call to the findings memo. Fixed scope, so cost and timeline are clear before we start.</p>
+                    </div>
+                    <div class="py-6 space-y-2">
+                        <h3 class="text-sm font-bold text-ink-950">Does it replace our interviewers?</h3>
+                        <p class="text-stone-600 text-sm font-serif leading-relaxed">No. Your panel still interviews and scores. Calibre gives them a shared standard, so their judgments become comparable instead of conflicting.</p>
+                    </div>
+                    <div class="py-6 space-y-2">
+                        <h3 class="text-sm font-bold text-ink-950">What roles does this work for?</h3>
+                        <p class="text-stone-600 text-sm font-serif leading-relaxed">Any role where the decision matters and the panel disagrees, from senior individual contributors to leadership hires. Criteria are built fresh each time.</p>
+                    </div>
+                    <div class="py-6 space-y-2">
+                        <h3 class="text-sm font-bold text-ink-950">What do we need to bring?</h3>
+                        <p class="text-stone-600 text-sm font-serif leading-relaxed">One active or recent hire, and the panel who ran it. That is enough to run the method end to end and see the difference on your own pipeline.</p>
+                    </div>
+                    <div class="py-6 last:pb-0 space-y-2">
+                        <h3 class="text-sm font-bold text-ink-950">We already use psychometric tests.</h3>
+                        <p class="text-stone-600 text-sm font-serif leading-relaxed">Those read personality. Calibre reads the role: the specific evidence a candidate needs to show for this job. The two complement each other; neither replaces the other.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact -->
     <section id="contact" class="py-20 lg:py-32 bg-paper-100 border-b border-stone-200/60">
         <div class="max-w-5xl mx-auto px-6">
@@ -560,6 +600,7 @@
                     <li><a href="#method" class="hover:text-white transition-colors">Method</a></li>
                     <li><a href="#outputs" class="hover:text-white transition-colors">Deliverables</a></li>
                     <li><a href="#pilot" class="hover:text-white transition-colors">Pilot</a></li>
+                    <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
                 </ul>
             </div>
             <div>
@@ -579,6 +620,13 @@
             </div>
         </div>
     </footer>
+
+    <!-- Pinned mobile CTA -->
+    <div class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-paper-100/95 backdrop-blur-md border-t border-stone-200" style="padding-bottom:env(safe-area-inset-bottom)">
+        <a href="#contact" class="block w-full text-center bg-ink-950 hover:bg-forest-600 text-white font-semibold text-sm px-6 py-4 transition-colors">
+            Book a call
+        </a>
+    </div>
 
     <script>
         (function () {

@@ -1,3 +1,6 @@
+/* NOT CURRENTLY DEPLOYED: netlify.toml copies design/calibre-home-ar.html
+   over out/ar/calibre.html at build time, so this route never actually
+   reaches a visitor. See app/calibre/page.tsx for the full explanation. */
 import Link from "next/link";
 import type { Metadata } from "next";
 
