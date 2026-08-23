@@ -7,7 +7,12 @@
   # revision of aalhin001 baked that static file as the home page before the
   # redesign existed; restoring the copy now would clobber the new home page.
   # (The Arabic Daftar page /ar stays on the Next app.)
-  command = "npm run build && cp design/calibre-home.html out/calibre.html && cp design/calibre-home-ar.html out/ar/calibre.html"
+  #
+  # mkdir -p out/ar is load-bearing: the app no longer has an /ar/calibre
+  # route of its own, so out/ar/ only exists as a side effect of whatever
+  # other /ar/* routes happen to be present. Without it, dropping the last
+  # of those would make this cp fail and break the deploy.
+  command = "npm run build && mkdir -p out/ar && cp design/calibre-home.html out/calibre.html && cp design/calibre-home-ar.html out/ar/calibre.html"
   publish = "out"
 
 [build.environment]
