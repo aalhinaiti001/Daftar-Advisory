@@ -63,7 +63,9 @@ export function SiteHeader({ active }: { active: Page }) {
             <Link href="/calibre">Calibre</Link>
             <Link href="/ar" className="dft-lang" aria-label="العربية">ع</Link>
           </nav>
-          <Link className="dft-btn dft-cta" href="/scope">Book a call</Link>
+          {/* /book 302s to Calendly via public/_redirects; a CTA labelled
+              "Book a call" should book a call, not open the scope builder. */}
+          <a className="dft-btn dft-cta" href="/book">Book a call</a>
         </div>
       </div>
     </header>
@@ -80,6 +82,11 @@ export function SiteFooter() {
           <a href={`mailto:${EMAIL}`}>{EMAIL.toUpperCase()}</a>
           <span>AMMAN · MENA</span>
         </div>
+      </div>
+      <div className="dft-wrap">
+        <p className="dft-foot-note">
+          Daftar Advisory is a non-attest advisory practice, not a registered statutory auditor.
+        </p>
       </div>
     </footer>
   );

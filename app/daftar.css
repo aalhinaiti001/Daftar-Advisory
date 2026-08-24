@@ -19,7 +19,9 @@
   --rust-deep: #7d2415;
   --body: #514c45;
   --strong: #403a33;
-  --muted: #7a7168;
+  /* 4.99:1 on --paper. The previous #7a7168 measured 4.24:1, under the
+     WCAG AA 4.5:1 minimum for normal-size text. */
+  --muted: #6f665d;
   --on-dark: #f4f1ea;
   --on-dark-dim: #c4bcae;
   --on-dark-muted: #a09585;
@@ -275,7 +277,21 @@ body:has(.dft) { background: #f4f1ea; }
 
 .dft-cta { margin-left: 10px; padding: 12px 20px; }
 
-.dft-nav-toggle { display: none; }
+/* Visually hidden but still focusable: display:none would take the checkbox
+   out of the tab order entirely, leaving the CSS-only menu unreachable by
+   keyboard. This keeps Tab/Space working without adding JavaScript. */
+.dft-nav-toggle {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden; white-space: nowrap;
+  clip: rect(0 0 0 0); clip-path: inset(50%);
+}
+.dft-nav-toggle:focus-visible + .dft-menu {
+  outline: 2px solid var(--rust);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
 .dft-menu { display: none; font-size: 22px; cursor: pointer; user-select: none; -webkit-user-select: none; }
 
 /* --- Hero ---------------------------------------------------------------- */
@@ -515,18 +531,6 @@ body:has(.dft) { background: #f4f1ea; }
   display: block;
   background: var(--card);
 }
-.dft-portrait-empty {
-  border: 1px solid var(--rule);
-  display: grid;
-  place-items: center;
-  text-align: center;
-  padding: 24px;
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
 .dft-founder h2 {
   margin: 0 0 6px;
   font-weight: 400;
@@ -725,6 +729,13 @@ body:has(.dft) { background: #f4f1ea; }
 }
 .dft-foot-links a { color: var(--on-dark-muted); transition: color 0.2s ease; }
 .dft-foot-links a:hover { color: var(--paper); }
+.dft-foot-note {
+  margin: 22px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(244, 241, 234, 0.14);
+  font-size: 12px;
+  color: var(--on-dark-muted);
+}
 
 /* --- Article --------------------------------------------------------------
    Long-form body copy (Knowledge). Reuses .dft-section/.dft-wrap for rhythm;

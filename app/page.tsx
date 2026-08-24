@@ -7,7 +7,9 @@ const DESC =
   "Daftar helps founders and finance teams with financial statements, audit preparation, technical review, and transaction support. One senior practitioner, a defined scope, and a file your team keeps using.";
 
 export const metadata: Metadata = {
-  title: "Daftar Advisory",
+  /* Names the actual services, not just the firm: "Daftar Advisory" alone
+     tells a search result nothing about what the practice does. */
+  title: "Daftar Advisory — IFRS financial statements and audit readiness",
   description: DESC,
   /* /ar is the Arabic counterpart of this page; x-default points at the
      English one. Without these the two rank as duplicates of each other. */

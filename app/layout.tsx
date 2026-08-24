@@ -19,14 +19,14 @@ const ORG_SCHEMA = {
   founder: {
     "@type": "Person",
     name: "Ahmad Al Hinaiti",
-    jobTitle: "Principal",
+    jobTitle: "Founder",
     sameAs: ["https://linkedin.com/in/ahmad-alhinaiti"],
   },
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://daftaradvisory.com"),
-  title: "Daftar Advisory",
+  title: "Daftar Advisory — IFRS financial statements and audit readiness",
   description: DESC,
   icons: { icon: "/favicon.svg" },
   openGraph: {

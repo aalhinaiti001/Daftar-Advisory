@@ -84,13 +84,12 @@ export default function About() {
             <Eyebrow wide>§ 02 · Who you work with</Eyebrow>
             <div className="dft-founder">
               <div className="dft-founder-portrait">
-                {PORTRAIT_SRC ? (
+                {/* Renders nothing until a real portrait exists. An empty ruled
+                    box captioned "Portrait" reads as an unfinished site, which
+                    costs more credibility than having no photograph at all. */}
+                {PORTRAIT_SRC && (
                   /* eslint-disable-next-line @next/next/no-img-element */
                   <img className="dft-portrait" src={PORTRAIT_SRC} alt="Ahmad Al Hinaiti" width={300} height={376} />
-                ) : (
-                  <div className="dft-portrait dft-portrait-empty" role="img" aria-label="Portrait of Ahmad Al Hinaiti">
-                    Portrait
-                  </div>
                 )}
                 <span className="dft-label">Amman, Jordan</span>
               </div>
