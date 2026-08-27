@@ -53,7 +53,6 @@ function Mark() {
 function Eye({ children }: { children: React.ReactNode }) {
   return (
     <div className="eyebrow chapter">
-      <i />
       {children}
     </div>
   );

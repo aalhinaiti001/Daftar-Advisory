@@ -35,7 +35,6 @@ export function Eyebrow({
     (wide ? " dft-eyebrow-wide" : "");
   return (
     <div className={"dft-eyebrow" + cls}>
-      <i />
       {children}
     </div>
   );
