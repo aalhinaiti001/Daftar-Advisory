@@ -90,13 +90,7 @@ export default function Home() {
         <section id="services" className="dft-section dft-section-soft">
           <div className="dft-wrap">
             <Eyebrow>§ 01 · Services</Eyebrow>
-            <div className="dft-section-head">
-              <h2 className="dft-h2">Four lines of work. Each one ends with a file you own.</h2>
-              <p>
-                The scope is written before the work begins, so you know what is included, what is
-                not, and what you receive at the end.
-              </p>
-            </div>
+            <h2 className="dft-h2" style={{ marginBottom: 44 }}>Four lines of work. Each one ends with a file you own.</h2>
             <div className="dft-ledger">
               {SERVICE_ORDER.map((key, i) => (
                 <article key={key}>

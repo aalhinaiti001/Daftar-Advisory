@@ -360,14 +360,6 @@ body:has(.dft) { background: #f4f1ea; }
 .dft-section-dark p { color: var(--on-dark-dim); }
 .dft-section .dft-wrap { padding: 88px 0; }
 
-.dft-section-head {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 56px;
-  align-items: end;
-  margin-bottom: 44px;
-}
-.dft-section-head p { max-width: 32rem; }
 .dft-section .dft-eyebrow { margin-bottom: 26px; }
 .dft-section .dft-eyebrow-wide { margin-bottom: 40px; }
 

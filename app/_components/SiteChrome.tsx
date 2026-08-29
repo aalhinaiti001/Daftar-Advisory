@@ -64,7 +64,7 @@ export function SiteHeader({ active }: { active: Page }) {
           </nav>
           {/* /book 302s to Calendly via public/_redirects; a CTA labelled
               "Book a call" should book a call, not open the scope builder. */}
-          <a className="dft-btn dft-cta" href="/book">Book a call</a>
+          <a className="dft-btn-ghost dft-cta" href="/book">Book a call</a>
         </div>
       </div>
     </header>
