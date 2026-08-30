@@ -120,6 +120,11 @@ body:has(.dft) { background: #f4f1ea; }
 }
 .dft-eyebrow-rust { color: var(--rust); }
 .dft-eyebrow-dark { color: var(--on-dark-muted); }
+/* `.dft h1, .dft h2, .dft h3` sets the serif at (0,1,1) and would otherwise
+   outrank .dft-eyebrow, so an eyebrow rendered as a real heading needs the
+   mono restated here. */
+.dft h2.dft-eyebrow,
+.dft h3.dft-eyebrow { font-family: var(--mono); font-weight: 400; }
 
 .dft-label {
   display: block;
@@ -757,6 +762,46 @@ body:has(.dft) { background: #f4f1ea; }
   color: var(--muted);
   border-top: 1px solid var(--rule);
 }
+/* Diagrams. Ruled and captioned, never shadowed (BRAND.md §02). The SVG is
+   inline and sized in the flow, so it scales with the measure rather than
+   needing its own breakpoints. */
+.dft-figure { max-width: 700px; margin: 0 0 28px; overflow-x: auto; }
+/* min-width, not a media query: scaling a fixed viewBox down to a 360px
+   screen would take the labels to about 6px. Below that width the figure
+   scrolls instead, the same idiom as .dft-article-table-wrap. */
+.dft-figure svg { display: block; width: 100%; min-width: 520px; height: auto; }
+.dft-figure figcaption {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+/* Download block for the working file that ships with an article. */
+.dft-download {
+  max-width: 700px;
+  margin: 4px 0 24px;
+  padding: 22px 24px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--card);
+}
+.dft-download .dft-label { margin-bottom: 8px; }
+.dft-download h3 {
+  margin: 0 0 8px;
+  font-weight: 500;
+  font-variation-settings: "opsz" 30, "wght" 520, "SOFT" 24;
+  font-size: 1.15rem;
+}
+.dft-download p { font-size: 14px; margin: 0 0 16px; }
+
+/* The FAQ rows are shared with the home page, where they sit in a wide split
+   column. In an article they need to hold the prose measure. */
+.dft-faq-article { max-width: 700px; }
+
 .dft-article-table-wrap { max-width: 700px; overflow-x: auto; margin: 4px 0 20px; }
 .dft-article-table { width: 100%; border-collapse: collapse; font-size: 14px; }
 .dft-article-table th, .dft-article-table td {
@@ -764,13 +809,27 @@ body:has(.dft) { background: #f4f1ea; }
   padding: 12px 16px 12px 0;
   border-bottom: 1px solid var(--rule-soft);
 }
-.dft-article-table th {
+/* thead only. A `th scope="row"` is a row label, not a column label, and
+   reads as shouting in 10px uppercase mono. */
+.dft-article-table thead th {
   font-family: var(--mono);
   font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
   font-weight: 400;
+}
+.dft-article-table tbody th { color: var(--ink); font-weight: 500; }
+/* Not .dft-label here: that sets display:block, which takes the caption out
+   of table layout and drops it below the header row. */
+.dft-article-table caption {
+  text-align: start;
+  padding-bottom: 12px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 .dft-article-table td:first-child, .dft-article-table th:first-child { padding-inline-start: 0; }
 

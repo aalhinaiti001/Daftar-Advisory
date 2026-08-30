@@ -23,21 +23,22 @@ function Mark({ href = "/" }: { href?: string }) {
 export function Eyebrow({
   tone,
   wide,
+  as: Tag = "div",
   children,
 }: {
   tone?: "rust" | "dark";
   /** Wider gap below, for sections whose heading does not follow immediately. */
   wide?: boolean;
+  /* Where the eyebrow IS the section title rather than a label above one,
+     render it as a real heading. Long-form pages otherwise leave the document
+     outline with a single h2, which is unnavigable by screen reader. */
+  as?: "div" | "h2" | "h3";
   children: React.ReactNode;
 }) {
   const cls =
     (tone === "rust" ? " dft-eyebrow-rust" : tone === "dark" ? " dft-eyebrow-dark" : "") +
     (wide ? " dft-eyebrow-wide" : "");
-  return (
-    <div className={"dft-eyebrow" + cls}>
-      {children}
-    </div>
-  );
+  return <Tag className={"dft-eyebrow" + cls}>{children}</Tag>;
 }
 
 export function SiteHeader({ active }: { active: Page }) {
