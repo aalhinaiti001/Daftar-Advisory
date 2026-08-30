@@ -39,9 +39,13 @@
 /questions           /#daftar-faq           301
 
 # --- Booking ---------------------------------------------------------------
-# 302, not 301: the Daftar shortcut is ours, the Calendly URL is a vendor's.
-/book                https://calendly.com/ahmad-daftar/scoping-call   302
-/call                https://calendly.com/ahmad-daftar/scoping-call   302
+# No Calendly account; Ahmad runs on Microsoft 365. Until a Microsoft
+# Bookings page exists, both shortcuts open a scoping-call email instead of
+# 404ing on a vendor link nobody signed up for. 302, not 301: swap the
+# destination for the Bookings URL the day it exists, no need to keep this
+# redirect alive as a permanent alias once it does.
+/book                mailto:ahmad@daftaradvisory.com?subject=Scoping%20call   302
+/call                mailto:ahmad@daftaradvisory.com?subject=Scoping%20call   302
 
 # --- Deliberately absent ---------------------------------------------------
 # /articles/*, /services/*, /insights/*

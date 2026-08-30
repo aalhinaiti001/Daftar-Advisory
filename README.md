@@ -20,4 +20,4 @@ npm run dev
 npm run build
 ```
 
-The project exports a static site to `out/`, suitable for Netlify. Booking links currently open an email to `ahmad@daftaradvisory.com` and can be replaced with a Calendly URL.
+The project exports a static site to `out/`, suitable for Netlify. Booking links currently open an email to `ahmad@daftaradvisory.com`; swap the `/book` and `/call` targets in `public/_redirects` for a Microsoft Bookings URL once one exists.
