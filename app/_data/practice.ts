@@ -124,8 +124,13 @@ export const NOTES: { tag: string; title: string; body: string; href?: string }[
     body: "What changes at each wave, and the parts finance teams usually discover late.",
     href: "/knowledge/saudi-compliance-2026",
   },
+  {
+    tag: "Audit",
+    title: "The audit readiness checklist",
+    body: "Thirty six checks to work through before the auditor arrives, in the order we run them.",
+    href: "/knowledge/audit-readiness-checklist",
+  },
   { tag: "UAE", title: "Corporate tax, first season", body: "Where the pressure lands in a first filing year, and what to fix beforehand." },
-  { tag: "Markets", title: "Listing readiness", body: "What a reporting file needs to look like well before anyone reads a prospectus." },
 ];
 
 export const FAQ = [

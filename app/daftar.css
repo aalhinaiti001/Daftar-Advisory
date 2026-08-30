@@ -440,7 +440,9 @@ body:has(.dft) { background: #f4f1ea; }
 
 /* --- Notes --------------------------------------------------------------- */
 
-.dft-notes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+/* auto-fill, not repeat(4): the note count grows as articles ship, and a fixed
+   four-column track leaves an orphan row the moment there is a fifth. */
+.dft-notes { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 20px; }
 .dft-notes article {
   border: 1px solid var(--rule);
   border-radius: 6px;
@@ -801,6 +803,54 @@ body:has(.dft) { background: #f4f1ea; }
 /* The FAQ rows are shared with the home page, where they sit in a wide split
    column. In an article they need to hold the prose measure. */
 .dft-faq-article { max-width: 700px; }
+
+/* --- Checklist ----------------------------------------------------------- */
+
+.dft-check-group { max-width: 700px; margin: 0 0 44px; }
+.dft-check-group:last-child { margin-bottom: 0; }
+.dft-check-group > h3 {
+  margin: 0 0 8px;
+  font-weight: 500;
+  font-variation-settings: "opsz" 34, "wght" 520, "SOFT" 26;
+  font-size: 1.3rem;
+}
+.dft-check-group > p { font-size: 15px; margin: 0 0 20px; }
+
+/* Counter rather than <ol> numbering so the reference reads A/01, and so the
+   number keeps the mono/rust treatment used for references site-wide. */
+.dft-check { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.dft-check li {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule-soft);
+  font-size: 15px;
+  color: var(--body);
+}
+.dft-check li > span:first-child {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--rust);
+  padding-top: 4px;
+}
+
+@media (max-width: 620px) {
+  .dft-check li { grid-template-columns: 34px minmax(0, 1fr); gap: 10px; }
+}
+
+/* Printing is a real use for a checklist: drop the furniture, keep the list,
+   and let it break across pages at sensible points. */
+@media print {
+  .dft-header, .dft-footer, .dft-section-dark, .dft-download, .dft-rise { animation: none; }
+  .dft-header, .dft-footer, .dft-section-dark, .dft-download { display: none; }
+  .dft { background: #fff; }
+  .dft-section, .dft-section-soft { background: #fff; border-top: 0; }
+  .dft-section .dft-wrap, .dft-section-about .dft-wrap { padding: 12px 0; }
+  .dft-check-group { break-inside: avoid; margin-bottom: 20px; }
+  .dft-check li { break-inside: avoid; padding: 7px 0; font-size: 11pt; }
+  .dft-article-note { break-before: avoid; }
+}
 
 .dft-article-table-wrap { max-width: 700px; overflow-x: auto; margin: 4px 0 20px; }
 .dft-article-table { width: 100%; border-collapse: collapse; font-size: 14px; }

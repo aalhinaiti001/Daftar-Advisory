@@ -591,6 +591,12 @@ export default function Ifrs18Transition2026() {
                 straight through functions finance does not control. And book the classification
                 policy for a second read by someone who did not draft it.
               </p>
+              <p>
+                All of this runs on the same FY2026 file the auditor will ask for, so it is worth
+                sequencing against the close rather than beside it. Our{" "}
+                <Link href="/knowledge/audit-readiness-checklist">audit readiness checklist</Link>{" "}
+                covers that side of the year.
+              </p>
             </div>
           </div>
         </section>

@@ -1,0 +1,83 @@
+{
+  "note": "Single source of truth for /knowledge/audit-readiness-checklist and for public/audit-readiness-checklist.xlsx. The page imports this file; scripts/build-audit-checklist.py reads the same file to build the workbook. Edit here, then re-run the script so the two cannot drift.",
+  "groups": [
+    {
+      "ref": "A",
+      "title": "The close and the trial balance",
+      "blurb": "Nothing else on this list survives a trial balance that is still moving. Fix the base first.",
+      "items": [
+        "Final trial balance agreed to the general ledger, with a stated cut-off and no entries posted after it outside a documented log.",
+        "Opening balances agreed to the prior year signed financial statements, line by line, including any prior period adjustment.",
+        "Every bank account reconciled to statement, with reconciling items aged, explained, and cleared where they should be.",
+        "Suspense, clearing and holding accounts cleared to nil, or the residual explained and supported.",
+        "Intercompany balances agreed both ways and eliminated, with differences resolved rather than parked.",
+        "Cut-off tested either side of the reporting date for revenue, purchases, and accruals, with the sample retained.",
+        "Manual journal listing for the period, with the largest entries and anything posted outside normal hours ready to explain without being asked."
+      ]
+    },
+    {
+      "ref": "B",
+      "title": "Supporting schedules",
+      "blurb": "One schedule per balance that carries judgment, each agreeing to the ledger and each showing its own workings.",
+      "items": [
+        "Fixed asset register agreed to the ledger, with additions, disposals, and the depreciation charge reconciled to the movement.",
+        "Lease schedule recomputed under IFRS 16, with the incremental borrowing rate documented and the reasoning for it retained.",
+        "Inventory count sheets, the valuation basis, and the obsolescence provision with the data behind it.",
+        "Receivables ageing tied to the ledger, with the expected credit loss model, its inputs, and the evidence for the loss rates applied.",
+        "Payables listing and accruals schedule, with the basis for each accrual rather than a prior year figure rolled forward.",
+        "Provisions schedule showing opening, movement and closing, with the evidence supporting each estimate.",
+        "Borrowings schedule with maturity analysis, covenants, and the covenant position measured at the reporting date.",
+        "Equity movement covering share issues, dividends declared and paid, and every reserve."
+      ]
+    },
+    {
+      "ref": "C",
+      "title": "Judgments and estimates",
+      "blurb": "This is where audits slow down. Not because the number is wrong, but because the reasoning was never written down.",
+      "items": [
+        "A short memo for each significant judgment, stating the conclusion, the alternatives considered, and why they were set aside.",
+        "Going concern assessment covering at least twelve months from the expected date of approval, with the cash flow forecast and its assumptions attached.",
+        "Impairment indicators considered and documented, including where the conclusion was that no impairment was needed.",
+        "Revenue recognition policy tested against the actual contracts in the period, not against the policy as written last year.",
+        "Related party listing confirmed with those charged with governance, covering transactions, balances, and terms.",
+        "Contingent liabilities and legal matters listed, with the position confirmed in writing by counsel."
+      ]
+    },
+    {
+      "ref": "D",
+      "title": "Controls and process evidence",
+      "blurb": "The auditor is testing whether the control operated, not whether it exists on paper. Evidence of review is the part most often missing.",
+      "items": [
+        "Delegation of authority current, approved, and matching the approvals that actually happened during the period.",
+        "Bank mandates and payment approval limits reconciled to what the bank has on file.",
+        "Segregation of duties over payments, payroll and journal posting, with the conflicts that remain identified and compensated.",
+        "System access rights reviewed for leavers, joiners and role changes, with the review evidenced and dated.",
+        "Reconciliations showing evidence of review as well as preparation, by someone other than the preparer.",
+        "Change log for the accounting system covering the period, including configuration changes and who approved them."
+      ]
+    },
+    {
+      "ref": "E",
+      "title": "The request list",
+      "blurb": "The PBC list is the single biggest driver of how long fieldwork runs. Answering it in advance is the cheapest thing on this page.",
+      "items": [
+        "Request the PBC list before the fieldwork date rather than receiving it on the first morning.",
+        "One named owner and one date against every item, agreed with the owner rather than assigned to them.",
+        "Recurring items from last year answered and filed before the auditor asks for them again.",
+        "Evidence in a single indexed folder, named so an item can be found by its reference without a phone call.",
+        "An open items register with owner and status, updated daily during fieldwork and shared with the audit team."
+      ]
+    },
+    {
+      "ref": "F",
+      "title": "Group and reporting",
+      "blurb": "Where there is a group, the consolidation is usually the last thing ready and the first thing questioned.",
+      "items": [
+        "Consolidation working showing eliminations, non-controlling interests, and the translation of foreign components.",
+        "Uniform accounting policies confirmed across components, with any departures identified and adjusted.",
+        "Disclosure checklist run against the standards actually in issue for the reporting period.",
+        "Draft financial statements circulated to those charged with governance before fieldwork closes, not after."
+      ]
+    }
+  ]
+}
