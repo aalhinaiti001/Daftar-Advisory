@@ -135,6 +135,14 @@ export default function SaudiCompliance2026() {
                 or ERP systems, this makes e-invoicing an IT, finance, and controls project, rather
                 than a tax-only exercise.
               </p>
+              <p>
+                For the task level view of that project, our{" "}
+                <Link href="/knowledge/saudi-e-invoicing-phase-2-checklist">
+                  Phase 2 readiness checklist
+                </Link>{" "}
+                sets out the wave test, the two invoice flows, and the twenty six checks to work
+                through before the integration deadline.
+              </p>
             </div>
           </div>
         </section>

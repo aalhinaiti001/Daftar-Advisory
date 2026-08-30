@@ -11,3 +11,6 @@
 
 # local verification screenshots
 /shots
+
+# python bytecode from the scripts/ workbook builders
+__pycache__/

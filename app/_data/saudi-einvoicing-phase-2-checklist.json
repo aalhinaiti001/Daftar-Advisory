@@ -1,0 +1,66 @@
+{
+  "note": "Single source of truth for /knowledge/saudi-e-invoicing-phase-2-checklist and for public/saudi-e-invoicing-phase-2-checklist.xlsx. The page imports this file; scripts/build-saudi-phase2-checklist.py reads the same file. Edit here, then re-run the script. Content is deliberately task-level rather than a restatement of ZATCA's technical specification, which is versioned and changes.",
+  "groups": [
+    {
+      "ref": "A",
+      "title": "Scope and channels",
+      "blurb": "Most of the cost of getting this wrong is decided here, before a single technical change is made.",
+      "items": [
+        "Applicable wave confirmed from revenue subject to VAT in each of 2022, 2023, 2024 and 2025, with the working retained rather than the conclusion alone.",
+        "Any notification received from ZATCA filed with the compliance record, and the assessment done without waiting for one to arrive.",
+        "Every channel that issues an invoice listed: ERP, each POS terminal, e-commerce platforms, billing and subscription systems, and any manual or spreadsheet invoicing still in use.",
+        "Each channel identified as issuing standard invoices, simplified invoices, or both, because the two follow different models.",
+        "Each channel confirmed as running a compliant e-invoicing solution, rather than producing a PDF and stopping there.",
+        "Integration deadline for the applicable wave recorded, and the plan worked backwards from it with the go-live date fixed first."
+      ]
+    },
+    {
+      "ref": "B",
+      "title": "Invoice data and structure",
+      "blurb": "The invoice the customer reads is not the invoice ZATCA receives. Both have to be right.",
+      "items": [
+        "Structured invoice data generated in the required XML format, produced by the system rather than converted from a document.",
+        "Mandatory fields present and correctly populated for each invoice type, tested against real transactions and not only sample data.",
+        "A unique identifier generated for every invoice.",
+        "Hash chaining implemented so each invoice references the one before it, with the chain unbroken across restarts and channel outages.",
+        "QR code generated, and present on the invoice the customer actually receives where that is required.",
+        "Arabic present where required, and the invoice legible in the form it reaches the customer."
+      ]
+    },
+    {
+      "ref": "C",
+      "title": "Cryptography and connectivity",
+      "blurb": "This is where projects slip, because it is the part finance cannot complete without IT.",
+      "items": [
+        "Cryptographic stamp identifier obtained and installed for every solution unit and device that issues invoices.",
+        "Onboarding completed for every POS terminal and every unit, not only the primary system.",
+        "Cryptographic stamping applied as required for the invoice type.",
+        "Connectivity to ZATCA tested from each channel through the firewall and network restrictions that will apply in production, not from a developer machine.",
+        "Credential expiry and renewal tracked with a named owner and a date, because a lapsed credential stops invoicing."
+      ]
+    },
+    {
+      "ref": "D",
+      "title": "Clearance and reporting",
+      "blurb": "Two flows, two sets of behaviour, including when ZATCA cannot be reached.",
+      "items": [
+        "Standard invoices submitted for clearance before reaching the customer, with the cleared version being the one the customer receives.",
+        "Simplified invoices reported within the prescribed period after issuance.",
+        "Defined behaviour for a failed, delayed or rejected submission, agreed with the business before go-live rather than during an outage.",
+        "Credit and debit notes routed through the same flow as the invoice they relate to, carrying the reference and the reason."
+      ]
+    },
+    {
+      "ref": "E",
+      "title": "Process, controls and evidence",
+      "blurb": "Integration is the start of an ongoing control, not the end of a project.",
+      "items": [
+        "Reconciliation between invoices issued in the source system and invoices accepted by ZATCA, run on a schedule with someone owning the differences.",
+        "Rejected and warned invoices monitored and cleared rather than allowed to accumulate.",
+        "Structured invoice data archived and retained, not only the human readable copy.",
+        "A named owner in finance and a named owner in IT, because this stops being deliverable the moment it is treated as a tax-only exercise.",
+        "End to end tests run in ZATCA's sandbox before go-live, covering every channel and every invoice type the business actually issues."
+      ]
+    }
+  ]
+}
