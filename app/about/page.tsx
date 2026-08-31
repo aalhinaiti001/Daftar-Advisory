@@ -4,7 +4,7 @@ import { SiteHeader, SiteFooter, Eyebrow } from "../_components/SiteChrome";
 import { STEPS, EMAIL } from "../_data/practice";
 
 const DESC =
-  "Daftar is a small advisory practice in Amman working across Jordan, the GCC, and the wider MENA region. Every engagement ends with a working artifact you keep.";
+  "A small advisory practice in Amman, working across Jordan, the GCC and MENA. Every engagement ends with a working file you keep.";
 
 export const metadata: Metadata = {
   title: "About — Daftar Advisory",
@@ -53,28 +53,18 @@ export default function About() {
           <div className="dft-wrap dft-split">
             <div>
               <Eyebrow>§ 01 · The name</Eyebrow>
-              <h2 className="dft-h2-sm">
-                Advice should stay useful after the adviser leaves.
-              </h2>
+              <h2 className="dft-h2-sm">Advice should stay useful after the adviser leaves.</h2>
             </div>
             <div>
               <p className="dft-lead" style={{ marginBottom: 22 }}>
-                Daftar is the ledger, the register, the book where things are written down and kept.
-                We took the name because that is the discipline we sell: reasoning recorded in a form
-                that survives the meeting it was made in.
+                Daftar is the ledger, the book where things are written down and kept. That is what
+                we sell: reasoning recorded in a form that outlives the meeting.
               </p>
               <p style={{ marginBottom: 20 }}>
-                The firm exists because too much advisory work evaporates on delivery. A team
-                arrives, produces a document, and leaves nothing a client can operate. We work the
-                other way. Every engagement ends with a working artifact: a model your team can
-                rerun, a method they can repeat, or a memo that answers the question for the next
-                reader too.
+                Too much advisory work evaporates on delivery. Every engagement here ends with a
+                model you can rerun, a method you can repeat, or a memo that answers the question.
               </p>
-              <p>
-                We serve clients across Jordan, the GCC, and the wider MENA region, in English and in
-                Arabic, and we take the number of engagements we can staff properly. That limit is
-                the point, not a stage we plan to grow out of.
-              </p>
+              <p>We take only what we can staff properly. That limit is the point.</p>
             </div>
           </div>
         </section>
@@ -98,13 +88,10 @@ export default function About() {
                 <p className="dft-founder-role">Founder · Advisory and technical review</p>
                 <p className="dft-lead-sm" style={{ marginBottom: 20 }}>
                   Ahmad works on the problems clients bring, personally, from first call to final
-                  file. Financial statements, audit preparation, IFRS technical questions, and the
-                  numbers behind a transaction.
+                  file. Statements, audit preparation, IFRS questions, and the numbers behind a deal.
                 </p>
                 <p style={{ marginBottom: 30 }}>
-                  The practice is built around that arrangement on purpose. Small teams keep judgment
-                  close to the work, and keep the client talking to the person who actually formed
-                  the view.
+                  That is on purpose. It keeps you talking to the person who formed the view.
                 </p>
                 <div className="dft-facts">
                   {FACTS.map(([label, value], i) => (
@@ -123,7 +110,7 @@ export default function About() {
           <div className="dft-wrap">
             <Eyebrow>§ 03 · How an engagement runs</Eyebrow>
             <h2 className="dft-h2-sm" style={{ margin: "0 0 44px", maxWidth: "24ch" }}>
-              Four steps, in the open, from first call to final file.
+              Four steps, from first call to final file.
             </h2>
             <div className="dft-ledger">
               {STEPS.map((s) => (
@@ -141,10 +128,7 @@ export default function About() {
           <div className="dft-wrap dft-close-split">
             <h2 className="dft-h2-sm">If the work fits, we will say so in two days.</h2>
             <div>
-              <p>
-                Send the situation as you would describe it to a colleague. If it belongs elsewhere,
-                we will point you there instead.
-              </p>
+              <p>Describe it as you would to a colleague. If it belongs elsewhere, we say so.</p>
               <Link className="dft-btn dft-btn-light" href="/scope">Open the scope builder</Link>
             </div>
           </div>

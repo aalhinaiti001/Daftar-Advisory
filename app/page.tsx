@@ -4,7 +4,7 @@ import { SiteHeader, SiteFooter, Eyebrow } from "./_components/SiteChrome";
 import { SERVICE_ORDER, SERVICES, NOTES, FAQ } from "./_data/practice";
 
 const DESC =
-  "Daftar helps founders and finance teams with financial statements, audit preparation, technical review, and transaction support. One senior practitioner, a defined scope, and a file your team keeps using.";
+  "Financial statements, audit preparation, technical review and deal support for founders and finance teams. One senior practitioner, a defined scope, and a file you keep.";
 
 export const metadata: Metadata = {
   /* Names the actual services, not just the firm: "Daftar Advisory" alone
@@ -36,16 +36,16 @@ const REGISTER: [string, string][] = [
 ];
 
 const WHO: [string, string][] = [
-  ["Founders", "Raising, reporting, or preparing for a first audit."],
-  ["Finance teams", "Carrying a close, a group, and a deadline at once."],
+  ["Founders", "Raising, reporting, or facing a first audit."],
+  ["Finance teams", "Carrying a close, a group and a deadline at once."],
   ["Investors", "Testing a target before the money moves."],
 ];
 
 const COMMITMENTS: [string, string, string][] = [
-  ["01", "Defined scope", "What we solve, what we exclude, and what you receive. Written down, agreed, then followed."],
-  ["02", "Senior contact", "The person you speak with is the person doing the work. There is no layer between the two."],
-  ["03", "Straight advice", "If the work belongs with another specialist, or does not need doing, we say so early."],
-  ["04", "Work you own", "You keep the model and the workings, in a form your team can run again next year."],
+  ["01", "Defined scope", "What we solve, what we exclude, what you get. In writing, first."],
+  ["02", "Senior contact", "The person you speak to does the work."],
+  ["03", "Straight advice", "If it belongs elsewhere, or need not be done, we say so."],
+  ["04", "Work you own", "You keep the model and the workings, in a form you can rerun."],
 ];
 
 export default function Home() {
@@ -61,9 +61,8 @@ export default function Home() {
               Finance work that feels <em>simple</em>, even when the issue is not.
             </h1>
             <p className="dft-lead">
-              Daftar helps founders and finance teams handle the work that carries weight: financial
-              statements, audit preparation, technical review, and transaction support. One senior
-              practitioner, a defined scope, and a file your team keeps using.
+              Statements, audit preparation, technical review, deal support. One senior practitioner,
+              a defined scope, a file you keep.
             </p>
             <div className="dft-actions">
               <Link className="dft-btn" href="/scope">Scope a project</Link>
@@ -108,20 +107,16 @@ export default function Home() {
           <div className="dft-wrap dft-split">
             <div>
               <Eyebrow>§ 02 · Who we help</Eyebrow>
-              <h2 className="dft-h2">
-                Built for the point where the finance function runs out of room.
-              </h2>
+              <h2 className="dft-h2">Built for the point where finance runs out of room.</h2>
             </div>
             <div>
               <p className="dft-lead-sm" style={{ marginBottom: 22 }}>
-                Most of our clients have a capable finance team and a problem that sits above it: a
-                first reporting year under IFRS, an auditor asking questions nobody has time to
-                answer, a transaction that needs numbers to hold up under scrutiny.
+                Most clients have a capable finance team and a problem above it: a first year under
+                IFRS, an auditor&rsquo;s questions nobody has time to answer, a deal that needs
+                numbers to hold up.
               </p>
               <p style={{ marginBottom: 34 }}>
-                We come in for that problem, we solve it in the open, and we leave the working file
-                behind. No standing retainer unless you want one, no team you have never met, no
-                report that reads well and helps little.
+                We take the problem, solve it in the open, and leave the file behind.
               </p>
               <div className="dft-strip dft-strip-3">
                 {WHO.map(([title, body]) => (
@@ -139,7 +134,7 @@ export default function Home() {
           <div className="dft-wrap">
             <Eyebrow tone="dark">§ 03 · How we work</Eyebrow>
             <h2 className="dft-h2" style={{ margin: "0 0 50px", maxWidth: "22ch" }}>
-              Four commitments, made in writing before the work starts.
+              Four commitments, in writing, before the work starts.
             </h2>
             <div className="dft-commitments">
               {COMMITMENTS.map(([num, title, body]) => (
@@ -157,7 +152,7 @@ export default function Home() {
           <div className="dft-wrap">
             <Eyebrow>§ 04 · Notes</Eyebrow>
             <h2 className="dft-h2" style={{ marginBottom: 40 }}>
-              What finance teams in the region are dealing with now.
+              What finance teams here are dealing with now.
             </h2>
             <div className="dft-notes">
               {NOTES.map((n) => (
@@ -195,10 +190,7 @@ export default function Home() {
         <section className="dft-section">
           <div className="dft-wrap dft-close">
             <h2>Tell us what is on the table.</h2>
-            <p>
-              Build a draft scope in two minutes. We reply with a senior read on whether, and how, we
-              can help.
-            </p>
+            <p>Build a draft scope in two minutes. We reply with a senior read on fit.</p>
             <Link className="dft-btn dft-btn-lg" href="/scope">Open the scope builder</Link>
           </div>
         </section>
