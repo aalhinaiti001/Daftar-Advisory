@@ -401,21 +401,6 @@ body:has(.dft) { background: #f4f1ea; }
 }
 .dft-split-faq { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr); }
 
-/* --- Divided column strips ----------------------------------------------- */
-
-.dft-strip { display: grid; gap: 0; border-top: 1px solid var(--rule); }
-.dft-strip-3 { grid-template-columns: repeat(3, 1fr); }
-.dft-strip > div { padding: 24px 20px 22px; border-right: 1px solid var(--rule); }
-.dft-strip > div:first-child { padding-left: 0; }
-.dft-strip > div:last-child { padding-right: 0; border-right: 0; }
-.dft-strip h3 {
-  margin: 0 0 8px;
-  font-weight: 500;
-  font-variation-settings: "opsz" 30, "wght" 520, "SOFT" 24;
-  font-size: 1.05rem;
-}
-.dft-strip p { font-size: 14px; }
-
 /* --- Commitments (dark, four columns) ------------------------------------ */
 
 .dft-commitments { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
@@ -936,9 +921,6 @@ body:has(.dft) { background: #f4f1ea; }
   .dft-ledger article.dft-ledger-3 { grid-template-columns: 44px minmax(0, 1fr); gap: 12px 20px; }
   .dft-ledger article > p { grid-column: 2; }
   .dft-ledger .dft-btn-sm { grid-column: 2; justify-self: start; align-self: start; }
-  .dft-strip-3 { grid-template-columns: 1fr; }
-  .dft-strip > div { padding: 20px 0; border-right: 0; border-bottom: 1px solid var(--rule); }
-  .dft-strip > div:last-child { border-bottom: 0; }
   .dft-faq article { grid-template-columns: 32px 1fr; gap: 16px; }
 }
 

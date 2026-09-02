@@ -35,12 +35,6 @@ const REGISTER: [string, string][] = [
   ["Every job leaves", "A model, method, or memo"],
 ];
 
-const WHO: [string, string][] = [
-  ["Founders", "Raising, reporting, or facing a first audit."],
-  ["Finance teams", "Carrying a close, a group and a deadline at once."],
-  ["Investors", "Testing a target before the money moves."],
-];
-
 const COMMITMENTS: [string, string, string][] = [
   ["01", "Defined scope", "What we solve, what we exclude, what you get. In writing, first."],
   ["02", "Senior contact", "The person you speak to does the work."],
@@ -115,17 +109,7 @@ export default function Home() {
                 IFRS, an auditor&rsquo;s questions nobody has time to answer, a deal that needs
                 numbers to hold up.
               </p>
-              <p style={{ marginBottom: 34 }}>
-                We take the problem, solve it in the open, and leave the file behind.
-              </p>
-              <div className="dft-strip dft-strip-3">
-                {WHO.map(([title, body]) => (
-                  <div key={title}>
-                    <h3>{title}</h3>
-                    <p>{body}</p>
-                  </div>
-                ))}
-              </div>
+              <p>We take the problem, solve it in the open, and leave the file behind.</p>
             </div>
           </div>
         </section>
@@ -159,7 +143,6 @@ export default function Home() {
                 <article key={n.title}>
                   <span>{n.tag}</span>
                   <h3>{n.title}</h3>
-                  <p>{n.body}</p>
                   {n.href && <Link className="dft-btn-sm" href={n.href}>Read the note</Link>}
                 </article>
               ))}

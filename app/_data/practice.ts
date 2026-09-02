@@ -104,29 +104,25 @@ export const TIMING = [
   },
 ] as const;
 
-export const NOTES: { tag: string; title: string; body: string; href?: string }[] = [
+export const NOTES: { tag: string; title: string; href?: string }[] = [
   {
     tag: "IFRS 18",
     title: "The comparative year is 2026",
-    body: "Mandatory in 2027. The year restated is this one.",
     href: "/knowledge/ifrs-18-transition-2026",
   },
   {
     tag: "KSA",
     title: "Electronic invoicing waves",
-    body: "What changes at each wave, and what teams find late.",
     href: "/knowledge/saudi-compliance-2026",
   },
   {
     tag: "Audit",
     title: "The audit readiness checklist",
-    body: "Thirty six checks to run before the auditor arrives.",
     href: "/knowledge/audit-readiness-checklist",
   },
   {
     tag: "UAE",
     title: "Corporate tax, first season",
-    body: "Where the pressure lands in a first filing year.",
   },
 ];
 
