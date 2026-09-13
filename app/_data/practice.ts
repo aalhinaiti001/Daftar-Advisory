@@ -54,8 +54,10 @@ export const SERVICES: Record<ServiceKey, Service> = {
       "Reading the position and the evidence behind it",
       "A written conclusion with the standard references",
       "The alternatives, and why they were set aside",
+      "Journal entries and draft disclosures where relevant to the agreed question",
+      "Supporting workpapers, one revision and a senior walkthrough",
     ],
-    excluded: ["Preparing the underlying records", "Representing you to the regulator"],
+    excluded: ["Preparing the underlying records", "Representing you to the regulator", "An audit or assurance opinion"],
     deliverable: "A technical memo with references",
   },
   transaction: {

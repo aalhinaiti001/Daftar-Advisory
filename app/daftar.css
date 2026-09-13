@@ -58,6 +58,45 @@ body:has(.dft) { background: #f4f1ea; }
 }
 
 /* --- Type ---------------------------------------------------------------- */
+/* A/02 uses the existing house tokens and chrome. */
+.dft-a02 .dft-wrap { max-width: 1080px; }
+.dft-a02-hero { display:grid; grid-template-columns:1.35fr 1fr; gap:80px; padding-top:80px; padding-bottom:80px; align-items:start; }
+.dft-a02-caption { font-size:13px; margin-top:24px; }
+.dft-a02-file,.dft-a02-preview { border:1px solid var(--rule); background:var(--card); }
+.dft-a02-file-inner { padding:32px; }
+.dft-a02-file h2 { font-size:30px; line-height:1.15; margin:16px 0 24px; font-weight:400; }
+.dft-a02-file dl { margin:0 0 24px; }
+.dft-a02-file dl>div { display:flex; justify-content:space-between; gap:16px; border-top:1px solid var(--rule); padding:16px 0; }
+.dft-a02-file dt { color:var(--muted); font-size:14px; }
+.dft-a02-file dd { margin:0; font-weight:600; }
+.dft-a02-file-inner>p { font-size:14px; }
+.dft-a02-section { padding-top:80px; padding-bottom:80px; border-top:1px solid var(--rule); }
+.dft-a02-split { display:grid; grid-template-columns:1fr 1.4fr; gap:80px; }
+.dft-a02-rows article { display:flex; gap:24px; padding:24px 0; border-bottom:1px solid var(--rule); }
+.dft-a02-rows article:first-child { padding-top:0; }
+.dft-a02-rows article>span { font-family:var(--mono); font-size:12px; color:var(--muted); }
+.dft-a02 h3 { font-weight:400; font-size:25px; line-height:1.25; margin-bottom:8px; }
+.dft-a02-rows>p { margin-top:24px; }
+.dft-a02-deliverables { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin:48px 0; }
+.dft-a02-deliverables article { border-top:1px solid var(--rule); padding-top:24px; }
+.dft-a02-deliverables h3 { margin-top:16px; }
+.dft-a02-boundary { border-top:1px solid var(--rule); padding-top:24px; max-width:800px; }
+.dft-a02-intro { max-width:760px; margin-top:24px; }
+.dft-a02-brief { display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:48px; align-items:start; }
+.dft-a02-fields>label,.dft-a02-selects label { display:block; font-weight:600; margin-bottom:24px; }
+.dft-a02-fields textarea,.dft-a02-fields select { display:block; width:100%; margin-top:8px; border:1px solid var(--rule); background:var(--card); padding:12px; color:var(--ink); font:400 16px var(--sans); border-radius:0; }
+.dft-a02-fields textarea { min-height:112px; resize:vertical; }
+.dft-a02-selects { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.dft-a02-fields fieldset { border:0; padding:0; margin:0; }
+.dft-a02-fields legend { font-weight:600; margin-bottom:8px; }
+.dft-a02-check { display:flex; align-items:center; gap:12px; min-height:44px; cursor:pointer; }
+.dft-a02-check input { width:18px; height:18px; accent-color:var(--rust); }
+.dft-a02-preview pre { font:14px/1.65 var(--sans); white-space:pre-wrap; overflow-wrap:anywhere; border-top:1px solid var(--rule); padding-top:24px; margin-top:24px; color:var(--body); }
+.dft-a02 .dft-actions { flex-wrap:wrap; }
+.dft-a02 button { cursor:pointer; }
+.dft-a02 :focus-visible { outline:2px solid var(--rust); outline-offset:4px; }
+@media(max-width:900px) { .dft-a02-hero,.dft-a02-split { grid-template-columns:1fr; gap:48px; } .dft-a02-deliverables { grid-template-columns:1fr 1fr; } .dft-a02-brief { gap:24px; } }
+@media(max-width:620px) { .dft-a02-hero,.dft-a02-section { padding-top:48px; padding-bottom:48px; } .dft-a02-brief,.dft-a02-selects,.dft-a02-deliverables { grid-template-columns:1fr; } .dft-a02-file-inner { padding:24px; } }
 
 .dft h1, .dft h2, .dft h3 { font-family: var(--serif); margin: 0; }
 /* No `margin` reset here on purpose: globals.css already zeroes p margins at
