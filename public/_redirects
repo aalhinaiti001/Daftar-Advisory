@@ -3,6 +3,27 @@
 # Filename must be exactly "_redirects" — no extension, no suffix.
 # Evaluated top to bottom; first match wins.
 
+# --- Calibre subdomain -----------------------------------------------------
+# calibre.daftaradvisory.com is a leftover of the retired standalone Calibre
+# site. Its DNS still points at Netlify (CNAME -> calibre-by-daftar.netlify.app,
+# GoDaddy nameservers), so visitors get a bare Netlify "Not Found" — the edge
+# response for a host attached to no site. Calibre's canonical home is the
+# /calibre page built by netlify.toml from design/calibre-home.html.
+#
+# REQUIRES calibre.daftaradvisory.com to be added as a domain alias on THIS
+# site before these lines do anything; Netlify only consults _redirects for
+# hosts it serves. The trailing "!" is load-bearing: without it the automatic
+# alias-to-primary-domain redirect sends the subdomain to the home page rather
+# than to /calibre.
+#
+# These must stay ABOVE the path rules below. Those match on path alone, so an
+# unqualified rule would also claim requests arriving on this subdomain.
+#
+# RETIRE by deleting the CNAME at GoDaddy if the subdomain is ever dropped for
+# good — these lines are the only thing keeping the old address meaningful.
+https://calibre.daftaradvisory.com/*  https://daftaradvisory.com/calibre  301!
+http://calibre.daftaradvisory.com/*   https://daftaradvisory.com/calibre  301!
+
 # --- Research briefs -------------------------------------------------------
 # /articles and /insights were indexed but have never been served.
 /articles            /#insights-briefs      301

@@ -1,0 +1,124 @@
+/* ============================================================
+   LOGO MARKS — FOUNDATION
+
+   The subset of the Daftar brand foundation this page uses, kept
+   local so design/logo-marks/ opens standalone with no build step
+   and no dependency on the Next app.
+
+   Core values match app/daftar.css exactly: paper #F4F1EA,
+   ink #1A1814, rust #A8341F. Three tokens have no equivalent in
+   the app and are carried from the brand handbook — see the
+   divergence note in README.md before reusing them in the app.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=JetBrains+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap');
+
+:root {
+  /* ---- colour ---- */
+  --paper:       #F4F1EA;   /* the ground. warm offwhite, never pure white */
+  --ink:         #1A1814;   /* primary. near-black but warm, never pure black */
+  --muted:       #78726A;   /* labels, captions, metadata */
+  --rust:        #A8341F;   /* the one accent. italic words, rules, dots */
+  --rust-on-ink: #E07458;   /* rust lightened for legibility on ink only */
+
+  /* Hairlines are ink at low opacity, never a new grey. */
+  --rule-light:  rgba(26, 24, 20, 0.10);
+  --rule-mid:    rgba(26, 24, 20, 0.22);
+
+  /* ---- type ---- */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+  --font-arabic:  'IBM Plex Sans Arabic', sans-serif;
+
+  --fs-card:   28px;
+  --fs-body:   17px;
+  --fs-small:  15px;
+  --fs-label:  11px;
+  --fs-micro:  10px;
+
+  --w-light:   300;
+  --w-regular: 400;
+
+  --track-label: 0.14em;
+  --track-wide:  0.18em;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: var(--w-regular);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  font-variation-settings: "opsz" 14;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* The signature: one italic-rust accent word per headline. */
+em {
+  font-style: italic;
+  color: var(--rust);
+  font-weight: var(--w-light);
+}
+
+p {
+  font-family: var(--font-display);
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  font-variation-settings: "opsz" 14;
+}
+
+/* ============================================================
+   SHARED CLASSES
+   ============================================================ */
+
+/* Mono labels are always uppercase, small, tracked, weight 400. */
+.label {
+  font-family: var(--font-mono);
+  font-weight: var(--w-regular);
+  font-size: var(--fs-label);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  color: var(--muted);
+}
+.label--micro { font-size: var(--fs-micro); }
+
+/* The rust mono kicker with its leading rule. */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  color: var(--rust);
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+}
+.eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--rust);
+  flex: 0 0 auto;
+}
+
+/* Daftar upright in ink, Advisory. italic in rust. */
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: var(--w-regular);
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+.wordmark em {
+  font-style: italic;
+  color: var(--rust);
+  font-weight: var(--w-regular);
+}

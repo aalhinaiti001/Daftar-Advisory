@@ -1,0 +1,547 @@
+/* ============================================================
+   DAFTAR ADVISORY — LOGO MARKS
+   Implementation of "Daftar Logo Marks.dc.html".
+
+   Every colour, font and scale token comes from the official
+   design system (_ds/.../colors_and_type.css). Nothing is
+   redefined here — this file is layout and component rules only.
+   ============================================================ */
+
+/* ---------- page shell ---------- */
+
+.board {
+  padding: 72px 64px 96px;
+  font-family: var(--font-display);
+  color: var(--ink);
+}
+
+.board__intro {
+  max-width: 900px;
+}
+
+.board__title {
+  font-size: 64px;
+  font-weight: var(--w-light);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  font-variation-settings: "opsz" 144;
+  margin: 22px 0 0;
+}
+
+.board__lede {
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  max-width: 640px;
+  margin: 22px 0 0;
+  color: var(--ink);
+}
+
+.board__note {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 18px 0 0;
+  max-width: 640px;
+  line-height: 1.9;
+}
+
+/* ---------- section furniture ---------- */
+
+.rule-strong {
+  height: 2px;
+  background: var(--ink);
+  margin: 44px 0 0;
+}
+
+.section {
+  margin-top: 80px;
+}
+
+.section > .rule-strong {
+  margin: 0;
+}
+
+.section__eyebrow {
+  margin-top: 20px;
+}
+
+.section__lede {
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  max-width: 640px;
+  margin: 16px 0 0;
+}
+
+/* The eyebrow ships in the design system as .eyebrow; the wide
+   variant here only differs in the gap before its rule. */
+.eyebrow--wide {
+  gap: 16px;
+}
+.eyebrow--wide::before {
+  width: 40px;
+  height: 2px;
+}
+
+/* ---------- the 2px-gap card grid ---------- */
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-top: 2px;
+}
+
+.grid--spaced {
+  margin-top: 36px;
+}
+
+.card {
+  flex: 1 1 560px;
+  min-width: 480px;
+  border: 1px solid var(--rule-mid);
+  background: var(--paper);
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.card__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.card__code {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: var(--track-label);
+  color: var(--rust);
+}
+
+.card__title {
+  font-size: var(--fs-card);
+  font-weight: var(--w-regular);
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 48;
+  margin-top: 18px;
+}
+
+.card__desc {
+  font-size: var(--fs-small);
+  line-height: 1.65;
+  color: var(--muted);
+  margin: 8px 0 0;
+}
+
+/* ---------- the mark ---------- */
+
+/* Two ramps. Shell is the containing form, accent is the rust
+   incident. Every symbol reads both off these two variables, so a
+   knockout is a scope change and never a second copy of the art. */
+.mark {
+  --mark-shell: var(--ink);
+  --mark-accent: var(--rust);
+  display: block;
+  flex: 0 0 auto;
+}
+
+.mark--knockout {
+  --mark-shell: var(--paper);
+  --mark-accent: var(--rust-on-ink);
+}
+
+/* ---------- the wordmark ---------- */
+
+.wordmark--lg {
+  font-size: 38px;
+  letter-spacing: -0.015em;
+  font-variation-settings: "opsz" 72;
+}
+.wordmark--md {
+  font-size: 30px;
+  letter-spacing: -0.015em;
+}
+.wordmark--sm {
+  font-size: var(--fs-card);
+  letter-spacing: -0.015em;
+}
+.wordmark--xs {
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+
+.wordmark--knockout {
+  color: var(--paper);
+}
+.wordmark--knockout em {
+  color: var(--rust-on-ink);
+}
+
+/* ---------- lockups ---------- */
+
+.lockup {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+/* The primary presentation: mark, hairline, wordmark, held between
+   two light rules. */
+.lockup--primary {
+  margin-top: 40px;
+  padding: 36px 0;
+  border-top: 1px solid var(--rule-light);
+  border-bottom: 1px solid var(--rule-light);
+}
+
+.lockup__divider {
+  width: 1px;
+  align-self: stretch;
+  background: var(--rule-mid);
+}
+
+.lockup--knockout {
+  gap: 18px;
+  background: var(--ink);
+  padding: 28px 30px;
+  margin-top: 2px;
+}
+
+.lockup--tight {
+  gap: 16px;
+}
+
+.lockup--micro {
+  gap: 12px;
+}
+
+.lockup--stacked {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+/* Clear space is 1× the mark on every side. The dashed outline is
+   documentation, not part of the logo. */
+.lockup--clearspace {
+  display: inline-flex;
+  gap: 16px;
+  padding: 40px;
+  outline: 1px dashed rgba(168, 52, 31, 0.5);
+  align-self: flex-start;
+}
+
+.micro-strip {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+/* ---------- small-size proof row ---------- */
+
+.sizes {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 26px;
+}
+
+/* ---------- the line (mottos) ---------- */
+
+.motto-card {
+  flex: 1 1 560px;
+  min-width: 460px;
+  border: 1px solid var(--rule-mid);
+  background: var(--paper);
+  padding: 44px;
+  box-sizing: border-box;
+}
+
+.motto-list {
+  margin-top: 36px;
+  padding-top: 26px;
+  border-top: 1px solid var(--rule-mid);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.motto__label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+
+.motto--lead {
+  font-size: 34px;
+  font-weight: var(--w-light);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-variation-settings: "opsz" 72;
+  margin-top: 10px;
+}
+
+.motto--support {
+  font-size: 21px;
+  font-weight: var(--w-regular);
+  line-height: 1.45;
+  font-variation-settings: "opsz" 24;
+}
+
+.motto__strapline {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-top: 22px;
+}
+
+.rule-light {
+  height: 1px;
+  background: var(--rule-light);
+}
+
+/* The ink panel — how the line behaves on the reverse of a card. */
+.motto-panel {
+  flex: 1 1 420px;
+  min-width: 380px;
+  background: var(--ink);
+  padding: 44px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.motto-panel__line {
+  font-size: 32px;
+  font-weight: var(--w-light);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-variation-settings: "opsz" 72;
+  color: var(--paper);
+}
+.motto-panel__line em {
+  color: var(--rust-on-ink);
+}
+
+.motto-panel__mark {
+  width: 72px;
+  height: 2px;
+  background: var(--rust-on-ink);
+  margin-top: 26px;
+}
+
+.motto-panel__meta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--rust-on-ink);
+  margin-top: 24px;
+}
+
+/* ---------- lockup system cards ---------- */
+
+.spec {
+  flex: 1 1 340px;
+  min-width: 300px;
+  border: 1px solid var(--rule-mid);
+  padding: 34px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ---------- in situ ---------- */
+
+.situ-browser {
+  flex: 1 1 520px;
+  min-width: 420px;
+  border: 1px solid var(--rule-mid);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.situ-browser__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 20px 28px;
+  border-bottom: 1px solid var(--rule-light);
+  background: rgba(244, 241, 234, 0.95);
+  backdrop-filter: blur(12px);
+}
+
+.situ-browser__links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.nav-link--ar {
+  font-family: var(--font-arabic);
+  font-size: 14px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.nav-cta {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 11px 22px;
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.situ-browser__body {
+  padding: 56px 28px 64px;
+}
+
+.situ-browser__eyebrow {
+  margin-bottom: 40px;
+}
+
+.situ-browser__headline {
+  font-size: 48px;
+  font-weight: var(--w-light);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  font-variation-settings: "opsz" 144;
+}
+
+.situ-card {
+  flex: 1 1 340px;
+  min-width: 300px;
+  border: 1px solid var(--rule-mid);
+  background: var(--ink);
+  padding: 34px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.situ-card__name {
+  font-size: 20px;
+  color: var(--paper);
+  line-height: 1.3;
+}
+
+.situ-card__meta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 10px;
+  line-height: 2;
+}
+
+.situ-card__query {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--rust-on-ink);
+  margin-top: 16px;
+}
+
+.situ-icons {
+  flex: 1 1 200px;
+  min-width: 180px;
+  border: 1px solid var(--rule-mid);
+  padding: 34px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+}
+
+.app-tile {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+.app-tile--ink {
+  background: var(--ink);
+}
+.app-tile--paper {
+  border: 1px solid var(--rule-mid);
+}
+
+.caption {
+  text-align: center;
+}
+
+/* ---------- narrow viewports ----------
+   The prototype's min-widths are desktop board constraints. Below
+   the widest of them the cards have to be allowed to collapse, or
+   the board scrolls sideways. Nothing above this breakpoint moves. */
+
+@media (max-width: 620px) {
+  .board {
+    padding: 48px 20px 64px;
+  }
+  .board__title {
+    font-size: 40px;
+  }
+  .card,
+  .motto-card,
+  .motto-panel,
+  .spec,
+  .situ-browser,
+  .situ-card,
+  .situ-icons {
+    min-width: 0;
+    flex-basis: 100%;
+    padding: 28px;
+  }
+  .lockup--primary {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .lockup__divider {
+    display: none;
+  }
+  .wordmark--lg {
+    font-size: 30px;
+  }
+  .motto--lead,
+  .motto-panel__line {
+    font-size: 26px;
+  }
+  .situ-browser__headline {
+    font-size: 32px;
+  }
+}

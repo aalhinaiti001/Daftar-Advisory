@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daftar Advisory — Logo Marks</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="logo-marks.css">
+</head>
+<body>
+
+<!-- ============================================================
+     SYMBOL SPRITE
+     Four directions. Each has size-tuned cuts: the base cut for
+     30px and up, -md for roughly 22–28px, -sm for 20px and below.
+     Stroke weight grows as the mark shrinks so the rust incident
+     survives; the geometry never changes.
+     Colour comes from --mark-shell and --mark-accent, set by the
+     .mark and .mark--knockout classes.
+     ============================================================ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+
+    <!-- 1A · audit tick -->
+    <symbol id="mark-tick" viewBox="0 0 100 100">
+      <rect x="4" y="4" width="92" height="92" fill="none" stroke="var(--mark-shell)" stroke-width="7"/>
+      <path d="M24 52 L43 71 L78 29" fill="none" stroke="var(--mark-accent)" stroke-width="11" stroke-linecap="square"/>
+    </symbol>
+    <symbol id="mark-tick-md" viewBox="0 0 100 100">
+      <rect x="4" y="4" width="92" height="92" fill="none" stroke="var(--mark-shell)" stroke-width="8"/>
+      <path d="M24 52 L43 71 L78 29" fill="none" stroke="var(--mark-accent)" stroke-width="12" stroke-linecap="square"/>
+    </symbol>
+    <symbol id="mark-tick-sm" viewBox="0 0 100 100">
+      <rect x="4" y="4" width="92" height="92" fill="none" stroke="var(--mark-shell)" stroke-width="9"/>
+      <path d="M24 52 L43 71 L78 29" fill="none" stroke="var(--mark-accent)" stroke-width="13" stroke-linecap="square"/>
+    </symbol>
+
+    <!-- 1B · ledger total -->
+    <symbol id="mark-ledger" viewBox="0 0 100 100">
+      <rect x="30" y="6"  width="70" height="13" fill="var(--mark-shell)"/>
+      <rect x="14" y="29" width="86" height="13" fill="var(--mark-shell)"/>
+      <rect x="44" y="52" width="56" height="13" fill="var(--mark-shell)"/>
+      <rect x="0"  y="79" width="100" height="15" fill="var(--mark-accent)"/>
+    </symbol>
+    <symbol id="mark-ledger-md" viewBox="0 0 100 100">
+      <rect x="30" y="6"  width="70" height="14" fill="var(--mark-shell)"/>
+      <rect x="14" y="29" width="86" height="14" fill="var(--mark-shell)"/>
+      <rect x="44" y="53" width="56" height="14" fill="var(--mark-shell)"/>
+      <rect x="0"  y="79" width="100" height="16" fill="var(--mark-accent)"/>
+    </symbol>
+    <symbol id="mark-ledger-sm" viewBox="0 0 100 100">
+      <rect x="30" y="6"  width="70" height="15" fill="var(--mark-shell)"/>
+      <rect x="14" y="30" width="86" height="15" fill="var(--mark-shell)"/>
+      <rect x="44" y="54" width="56" height="15" fill="var(--mark-shell)"/>
+      <rect x="0"  y="79" width="100" height="17" fill="var(--mark-accent)"/>
+    </symbol>
+
+    <!-- 1C · D-mark -->
+    <symbol id="mark-d" viewBox="0 0 64 64">
+      <path d="M17 17h18c7.5 0 12 4 12 10.5 0 5.2-2.9 8.8-8.3 10.1L49 47H37.8l-9.1-8.5h-2.5V47H17V17zm9.2 7.5v6.8h7.4c2.8 0 4.2-1.2 4.2-3.4 0-2.2-1.5-3.4-4.3-3.4h-7.3z" fill="var(--mark-shell)"/>
+      <circle cx="47" cy="47" r="4" fill="var(--mark-accent)"/>
+    </symbol>
+    <symbol id="mark-d-sm" viewBox="0 0 64 64">
+      <path d="M17 17h18c7.5 0 12 4 12 10.5 0 5.2-2.9 8.8-8.3 10.1L49 47H37.8l-9.1-8.5h-2.5V47H17V17zm9.2 7.5v6.8h7.4c2.8 0 4.2-1.2 4.2-3.4 0-2.2-1.5-3.4-4.3-3.4h-7.3z" fill="var(--mark-shell)"/>
+      <circle cx="47" cy="47" r="4.5" fill="var(--mark-accent)"/>
+    </symbol>
+
+    <!-- 1D · folded file -->
+    <symbol id="mark-file" viewBox="0 0 100 100">
+      <path d="M4 4 H64 L96 36 V96 H4 Z" fill="var(--mark-shell)"/>
+      <path d="M64 4 L96 36 H64 Z" fill="var(--mark-accent)"/>
+    </symbol>
+
+  </defs>
+</svg>
+
+
+<main class="board">
+
+  <!-- ========== INTRO ========== -->
+  <header class="board__intro">
+    <p class="eyebrow">Turn 01 · Mark exploration</p>
+
+    <h1 class="board__title">Four symbol directions for <em>Daftar Advisory.</em></h1>
+
+    <p class="board__lede">PwC and EY both run a fixed symbol plus a flat wordmark, one accent colour, no gradient. Same construction here — ink mark, ink wordmark, rust as the 5%. Each direction below is a different argument for what the symbol should mean.</p>
+
+    <p class="board__note">Note — the handbook currently says the wordmark is the logo and there is no symbol. Adding one is a deliberate deviation.</p>
+  </header>
+
+  <div class="rule-strong"></div>
+
+
+  <!-- ========== THE FOUR DIRECTIONS ========== -->
+  <div class="grid">
+
+    <!-- 1A -->
+    <section class="card" id="mark-1a">
+      <div class="card__head">
+        <span class="card__code">1A</span>
+        <span class="label label--micro">The tie-out</span>
+      </div>
+      <h2 class="card__title">Audit tick</h2>
+      <p class="card__desc">The mark an auditor makes when a number agrees. It says the work was checked, not that the firm is big.</p>
+
+      <div class="lockup lockup--primary">
+        <svg class="mark" width="52" height="52" role="img" aria-label="Daftar tick mark"><use href="#mark-tick"/></svg>
+        <span class="lockup__divider"></span>
+        <span class="wordmark wordmark--lg">Daftar <em>Advisory.</em></span>
+      </div>
+
+      <div class="lockup lockup--knockout">
+        <svg class="mark mark--knockout" width="40" height="40" aria-hidden="true"><use href="#mark-tick"/></svg>
+        <span class="wordmark wordmark--sm wordmark--knockout">Daftar <em>Advisory.</em></span>
+      </div>
+
+      <div class="sizes">
+        <svg class="mark" width="18" height="18" aria-hidden="true"><use href="#mark-tick-sm"/></svg>
+        <svg class="mark" width="28" height="28" aria-hidden="true"><use href="#mark-tick-md"/></svg>
+        <span class="label label--micro">Holds at 18px · favicon safe</span>
+      </div>
+    </section>
+
+    <!-- 1B -->
+    <section class="card" id="mark-1b">
+      <div class="card__head">
+        <span class="card__code">1B</span>
+        <span class="label label--micro">The column</span>
+      </div>
+      <h2 class="card__title">Ledger total</h2>
+      <p class="card__desc">Three right-aligned figures and the rust total rule beneath them. Closest in build to the EY beam — one bold accent bar carrying the mark.</p>
+
+      <div class="lockup lockup--primary">
+        <svg class="mark" width="52" height="52" role="img" aria-label="Daftar ledger mark"><use href="#mark-ledger"/></svg>
+        <span class="lockup__divider"></span>
+        <span class="wordmark wordmark--lg">Daftar <em>Advisory.</em></span>
+      </div>
+
+      <div class="lockup lockup--knockout">
+        <svg class="mark mark--knockout" width="40" height="40" aria-hidden="true"><use href="#mark-ledger"/></svg>
+        <span class="wordmark wordmark--sm wordmark--knockout">Daftar <em>Advisory.</em></span>
+      </div>
+
+      <div class="sizes">
+        <svg class="mark" width="18" height="18" aria-hidden="true"><use href="#mark-ledger-sm"/></svg>
+        <svg class="mark" width="28" height="28" aria-hidden="true"><use href="#mark-ledger-md"/></svg>
+        <span class="label label--micro">Holds at 18px · favicon safe</span>
+      </div>
+    </section>
+
+    <!-- 1C -->
+    <section class="card" id="mark-1c">
+      <div class="card__head">
+        <span class="card__code">1C</span>
+        <span class="label label--micro">The lettermark</span>
+      </div>
+      <h2 class="card__title">D-mark</h2>
+      <p class="card__desc">The existing favicon promoted to a full symbol — solid ink D, rust dot at the baseline corner. Nothing new to explain to anyone.</p>
+
+      <div class="lockup lockup--primary">
+        <svg class="mark" width="52" height="52" role="img" aria-label="Daftar D mark"><use href="#mark-d"/></svg>
+        <span class="lockup__divider"></span>
+        <span class="wordmark wordmark--lg">Daftar <em>Advisory.</em></span>
+      </div>
+
+      <div class="lockup lockup--knockout">
+        <svg class="mark mark--knockout" width="40" height="40" aria-hidden="true"><use href="#mark-d"/></svg>
+        <span class="wordmark wordmark--sm wordmark--knockout">Daftar <em>Advisory.</em></span>
+      </div>
+
+      <div class="sizes">
+        <svg class="mark" width="18" height="18" aria-hidden="true"><use href="#mark-d-sm"/></svg>
+        <svg class="mark" width="28" height="28" aria-hidden="true"><use href="#mark-d"/></svg>
+        <span class="label label--micro">Dot thins below 20px</span>
+      </div>
+    </section>
+
+    <!-- 1D -->
+    <section class="card" id="mark-1d">
+      <div class="card__head">
+        <span class="card__code">1D</span>
+        <span class="label label--micro">The artefact</span>
+      </div>
+      <h2 class="card__title">Folded file</h2>
+      <p class="card__desc">Daftar means ledger, register, notebook. A page with a turned rust corner — the file, the working paper, the thing you hand over.</p>
+
+      <div class="lockup lockup--primary">
+        <svg class="mark" width="52" height="52" role="img" aria-label="Daftar file mark"><use href="#mark-file"/></svg>
+        <span class="lockup__divider"></span>
+        <span class="wordmark wordmark--lg">Daftar <em>Advisory.</em></span>
+      </div>
+
+      <div class="lockup lockup--knockout">
+        <svg class="mark mark--knockout" width="40" height="40" aria-hidden="true"><use href="#mark-file"/></svg>
+        <span class="wordmark wordmark--sm wordmark--knockout">Daftar <em>Advisory.</em></span>
+      </div>
+
+      <div class="sizes">
+        <svg class="mark" width="18" height="18" aria-hidden="true"><use href="#mark-file"/></svg>
+        <svg class="mark" width="28" height="28" aria-hidden="true"><use href="#mark-file"/></svg>
+        <span class="label label--micro">Holds at 18px · favicon safe</span>
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- ========== THE LINE ==========
+       Mottos carried over from the Calibre identity board, reset
+       into the official type and the official rust. The "Senior
+       finance judgement, without the overhead" lead is deliberately
+       not among them. -->
+  <section class="section">
+    <div class="rule-strong"></div>
+    <p class="eyebrow section__eyebrow">The line · what the mark has to carry</p>
+
+    <h2 class="board__title">The mark holds. The <em>line</em> does the talking.</h2>
+
+    <p class="section__lede">Whichever symbol lands, the voice is fixed: one italic accent word per line, never two. These are the lines the mark sits beside.</p>
+
+    <div class="grid grid--spaced">
+
+      <div class="motto-card">
+        <div class="card__head">
+          <span class="card__code">Daftar</span>
+          <span class="label label--micro">The firm speaks</span>
+        </div>
+
+        <div class="motto-list">
+          <div>
+            <p class="motto__label">Lead</p>
+            <p class="motto--lead">Every problem has a <em>solution.</em> Every number has a story.</p>
+          </div>
+          <div class="rule-light"></div>
+          <p class="motto--support">A clean tie-out is a love letter to the <em>auditor</em> who comes next.</p>
+          <div class="rule-light"></div>
+          <p class="motto--support">One senior practitioner does the work and stands behind the <em>number.</em></p>
+          <p class="motto__strapline">Resilient finance · Logical advisory</p>
+        </div>
+      </div>
+
+      <div class="motto-panel">
+        <div class="lockup lockup--tight">
+          <svg class="mark mark--knockout" width="40" height="40" aria-hidden="true"><use href="#mark-tick"/></svg>
+          <span class="wordmark wordmark--sm wordmark--knockout">Daftar <em>Advisory.</em></span>
+        </div>
+        <div>
+          <p class="motto-panel__line">A clean tie-out is a love letter to the <em>auditor</em> who comes next.</p>
+          <div class="motto-panel__mark"></div>
+          <p class="motto-panel__meta">Resilient finance · Logical advisory</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========== LOCKUP SYSTEM ========== -->
+  <section class="section">
+    <div class="rule-strong"></div>
+    <p class="eyebrow section__eyebrow">Lockup system · applied to 1A</p>
+
+    <p class="section__lede">However the symbol lands, the system around it is the same: four lockups, one clear space rule, no other variants.</p>
+
+    <div class="grid grid--spaced">
+
+      <div class="spec">
+        <span class="label label--micro">01 · Horizontal — default</span>
+        <div class="lockup lockup--tight">
+          <svg class="mark" width="40" height="40" aria-hidden="true"><use href="#mark-tick"/></svg>
+          <span class="wordmark wordmark--md">Daftar <em>Advisory.</em></span>
+        </div>
+      </div>
+
+      <div class="spec">
+        <span class="label label--micro">02 · Stacked — square formats</span>
+        <div class="lockup lockup--stacked">
+          <svg class="mark" width="46" height="46" aria-hidden="true"><use href="#mark-tick"/></svg>
+          <span class="wordmark wordmark--sm">Daftar <em>Advisory.</em></span>
+        </div>
+      </div>
+
+      <div class="spec">
+        <span class="label label--micro">03 · Micro strip — headers</span>
+        <div class="lockup lockup--micro">
+          <svg class="mark" width="20" height="20" aria-hidden="true"><use href="#mark-tick-sm"/></svg>
+          <span class="micro-strip">Daftar · Advisory</span>
+        </div>
+      </div>
+
+      <div class="spec">
+        <span class="label label--micro">04 · Clear space — 1× the mark</span>
+        <div class="lockup lockup--clearspace">
+          <svg class="mark" width="40" height="40" aria-hidden="true"><use href="#mark-tick"/></svg>
+          <span class="wordmark wordmark--md">Daftar <em>Advisory.</em></span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========== IN SITU ========== -->
+  <section class="section">
+    <div class="rule-strong"></div>
+    <p class="eyebrow section__eyebrow">In situ</p>
+
+    <div class="grid grid--spaced">
+
+      <div class="situ-browser">
+        <div class="situ-browser__nav">
+          <div class="lockup lockup--micro">
+            <svg class="mark" width="22" height="22" aria-hidden="true"><use href="#mark-tick-md"/></svg>
+            <span class="wordmark wordmark--xs">Daftar <em>Advisory.</em></span>
+          </div>
+          <div class="situ-browser__links">
+            <span class="nav-link">Services</span>
+            <span class="nav-link">Case Studies</span>
+            <span class="nav-link">Research</span>
+            <span class="nav-link nav-link--ar">العربية</span>
+            <span class="nav-cta">Book a free call</span>
+          </div>
+        </div>
+        <div class="situ-browser__body">
+          <p class="eyebrow eyebrow--wide situ-browser__eyebrow">Independent · KSA · UAE · Jordan</p>
+          <p class="situ-browser__headline">Every problem has a <em>solution.</em> Every number has a story.</p>
+        </div>
+      </div>
+
+      <div class="situ-card">
+        <div class="lockup lockup--tight">
+          <svg class="mark mark--knockout" width="34" height="34" aria-hidden="true"><use href="#mark-tick"/></svg>
+          <span class="wordmark wordmark--xs wordmark--knockout" style="font-size:24px">Daftar <em>Advisory.</em></span>
+        </div>
+        <div>
+          <p class="situ-card__name">Ahmad Al Hinaiti</p>
+          <p class="situ-card__meta">Principal · Amman, Jordan<br>ahmad@daftaradvisory.com</p>
+          <p class="situ-card__query">Title provisional — Principal or Founder?</p>
+        </div>
+      </div>
+
+      <div class="situ-icons">
+        <div class="lockup lockup--tight">
+          <span class="app-tile app-tile--ink">
+            <svg class="mark mark--knockout" width="20" height="20" aria-hidden="true"><use href="#mark-tick-sm"/></svg>
+          </span>
+          <span class="app-tile app-tile--paper">
+            <svg class="mark" width="20" height="20" aria-hidden="true"><use href="#mark-tick-sm"/></svg>
+          </span>
+        </div>
+        <span class="label label--micro caption">App icon · favicon</span>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>
