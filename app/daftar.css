@@ -17,6 +17,7 @@
   --rule-soft: #e6e0d4;
   --rust: #a8341f;
   --rust-deep: #7d2415;
+  --rust-on-ink: #e07458; /* rust text or marks on --ink only */
   --body: #514c45;
   --strong: #403a33;
   /* 4.99:1 on --paper. The previous #7a7168 measured 4.24:1, under the
@@ -26,14 +27,17 @@
   --on-dark-dim: #c4bcae;
   --on-dark-muted: #a09585;
   --serif: "Fraunces", Georgia, serif;
-  --sans: "Instrument Sans", Arial, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, monospace;
 
   min-height: 100vh;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--sans);
-  font-size: 16px;
+  /* Two Latin faces only: Fraunces for everything that reads, JetBrains Mono
+     for everything that labels or measures (House Brand Guide v1.6). */
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-variant-numeric: lining-nums;
+  font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -218,29 +222,31 @@ body:has(.dft) { background: #f4f1ea; }
   gap: 24px;
 }
 
-.dft-brand { display: flex; align-items: center; gap: 12px; color: var(--ink); }
-.dft-brand b {
-  width: 34px;
-  height: 34px;
-  border-radius: 5px;
-  background: var(--ink);
-  color: var(--rust);
-  display: grid;
-  place-items: center;
-  font: 600 19px/1 var(--serif);
-  flex: none;
+/* Brand lockup: Ledger mark, hairline, wordmark (House Brand Guide v1.6 §02).
+   These rules are global on purpose: the Arabic pages (globals.css) reuse
+   the same mark. */
+.dft-mark { display: block; flex: none; }
+.dft-mark-shell { fill: var(--mark-shell, #1a1814); }
+.dft-mark-total { fill: var(--mark-accent, #a8341f); }
+
+.dft-brand { display: flex; align-items: center; gap: 14px; color: var(--ink); }
+.dft-brand-rule { width: 1px; align-self: stretch; background: var(--rule); }
+.dft-wordmark {
+  font: 400 23px/1 var(--serif);
+  font-variation-settings: "opsz" 36;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  white-space: nowrap;
 }
-.dft-brand span { display: flex; flex-direction: column; align-items: flex-start; }
-.dft-brand em {
-  font: italic 600 21px/1 var(--serif);
-  font-variation-settings: "opsz" 36, "wght" 600, "SOFT" 28;
-}
-.dft-brand small {
-  font: 10px/1 var(--mono);
-  letter-spacing: 0.28em;
-  color: var(--muted);
-  margin-top: 5px;
-}
+.dft-wordmark em { font-style: italic; color: var(--rust); }
+/* Arabic lockup on the legacy stylesheet: Arabic has no italic, so the
+   accent word is colour and weight only. */
+.dft-brand-ar .dft-wordmark { font-size: 22px; }
+.dft-brand-ar .dft-wordmark em { font-style: normal; font-weight: 500; color: var(--accent); }
+footer .dft-brand-ar { --mark-shell: #f4f1ea; --mark-accent: #e07458; }
+footer .dft-brand-ar .dft-brand-rule { background: rgba(244, 241, 234, 0.22); }
+footer .dft-brand-ar .dft-wordmark { color: #f4f1ea; }
+footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
 
 .dft-nav-wrap { display: flex; align-items: center; gap: 8px; }
 /* position/background/border/padding explicit: globals.css's unscoped
@@ -692,9 +698,12 @@ body:has(.dft) { background: #f4f1ea; }
   gap: 32px;
   flex-wrap: wrap;
 }
-.dft-footer .dft-brand b { background: var(--paper); color: var(--rust); width: 32px; height: 32px; font-size: 18px; }
-.dft-footer .dft-brand em { color: var(--paper); font-size: 20px; }
-.dft-footer .dft-brand small { color: var(--on-dark-muted); font-size: 9px; }
+/* Knockout lockup on ink: paper entries, rust-on-ink total (#A8341F fails
+   on ink at 2.68:1; #E07458 passes at 5.75:1). */
+.dft-footer .dft-brand { --mark-shell: var(--paper); --mark-accent: var(--rust-on-ink); }
+.dft-footer .dft-brand-rule { background: rgba(244, 241, 234, 0.22); }
+.dft-footer .dft-wordmark { color: var(--paper); font-size: 21px; }
+.dft-footer .dft-wordmark em { color: var(--rust-on-ink); }
 .dft-foot-tag {
   font-family: var(--serif);
   font-style: italic;

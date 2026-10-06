@@ -21,24 +21,25 @@ All tokens are CSS custom properties scoped to the `.dft` class (not `:root`), s
 .dft {
   --paper: #f4f1ea;   --soft: #efebe1;    --card: #faf7f1;
   --ink: #1a1814;     --rule: #d8d2c4;    --rule-soft: #e6e0d4;
-  --rust: #a8341f;    --rust-deep: #7d2415;
+  --rust: #a8341f;    --rust-deep: #7d2415;  --rust-on-ink: #e07458;
   --body: #514c45;    --strong: #403a33;  --muted: #6f665d; /* 4.99:1 on --paper, WCAG AA */
   --on-dark: #f4f1ea; --on-dark-dim: #c4bcae; --on-dark-muted: #a09585;
-  --serif: "Fraunces", Georgia, serif;
-  --sans: "Instrument Sans", Arial, sans-serif;
+  --serif: "Fraunces", Georgia, serif;   /* body AND display */
   --mono: "JetBrains Mono", ui-monospace, monospace;
 }
 ```
 Spacing/radii/type scale are **not** tokenized as custom properties — they're literal values repeated per rule (radii are consistently `5px`–`6px`; measure is `min(1120px, calc(100% - 48px))` via `.dft-wrap`). Font sizes mostly use `clamp()` for fluid scaling (e.g. `.dft-h1 { font-size: clamp(2.8rem, 5.4vw, 4.6rem); }`).
 
-Rust is `#A8341F` (hover `#7d2415`) on every Daftar surface per the 6 October 2026
-consolidation; `#B3502B` is retired. Fraunces and JetBrains Mono are canonical across
-Daftar surfaces as of 12 September 2026.
+**Two Latin faces only (Brand Guide v1.6):** Fraunces for everything that reads — body,
+headings, nav, buttons, wordmark — and JetBrains Mono for everything that labels or
+measures. Instrument Sans is retired; there is no `--sans` token. Arabic script uses IBM
+Plex Sans Arabic. Rust is `#A8341F` (hover `#7d2415`) on every Daftar surface; use
+`--rust-on-ink` (`#e07458`) whenever rust sits on ink.
 
 ### 1b. Daftar legacy / Arabic — `app/globals.css` (single-line, ~11 lines total)
 Tokens on bare `:root`, overridden by a `.daftar` class for the cream variant:
 ```css
-:root{--ink:#17181b;--green:#2c3a31;--paper:#fff;--soft:#f5f4f1;--muted:#6e7175;--dim:#4a4c50;--rule:#e3e0d8;--accent:#2c3a31;--serif:'Fraunces',Georgia,serif;--sans:'Instrument Sans',Arial,sans-serif;--mono:'JetBrains Mono',monospace}
+:root{--ink:#17181b;--green:#2c3a31;--paper:#fff;--soft:#f5f4f1;--muted:#6e7175;--dim:#4a4c50;--rule:#e3e0d8;--accent:#2c3a31;--serif:'Fraunces',Georgia,serif;--sans:'Fraunces',Georgia,serif;--mono:'JetBrains Mono',monospace}
 .daftar{--paper:#f4f1ea;--soft:#efebe1;--rule:#d8d2c4;--accent:#a8341f;--ink:#1a1814;--dim:#514c45;--muted:#6f665d;--serif:'Fraunces',Georgia,serif}
 ```
 This is the file `/ar` and `/ar/knowledge/*` still run on. It now uses Fraunces and
@@ -57,11 +58,12 @@ tailwind.config = { theme: { extend: {
   fontFamily: { serif: ['Lora','serif'], sans: ['"Plus Jakarta Sans"','sans-serif'] },
 }}}
 ```
-Four themes exist (`ink` default, `clay`, `midnight`, plus base) toggled via `data-theme` on `<html>`, live-switchable through a dev-only `#tweakPanel` (strip before shipping a "final" design if asked). Per BRAND.md, this Lora/Plus-Jakarta/forest-green stack is an **approved exception** to the shared Fraunces/Instrument/JetBrains house system — don't reconcile the two without an explicit ask.
+Four themes exist (`ink` default, `clay`, `midnight`, plus base) toggled via `data-theme` on `<html>`, live-switchable through a dev-only `#tweakPanel` (strip before shipping a "final" design if asked). Per BRAND.md, this Lora/Plus-Jakarta/forest-green stack is an **approved exception** to the Daftar Fraunces/JetBrains system — don't reconcile the two without an explicit ask.
 
 **Tokens BRAND.md flags as retired — do not reintroduce on Daftar surfaces:**
-Newsreader, IBM Plex Mono, any `#A8341F → #D07B59` gradient, `#842815` link-hover,
-and the job title "Principal". Fraunces, JetBrains Mono, and "Founder" are canonical.
+Instrument Sans, Newsreader, IBM Plex Mono, rust `#B3502B`, the "D" monogram tile, any
+`#A8341F → #D07B59` gradient, `#842815` link-hover, and the job title "Principal".
+Fraunces, JetBrains Mono, the Ledger total mark, and "Founder" are canonical.
 
 ---
 
@@ -69,7 +71,7 @@ and the job title "Principal". Fraunces, JetBrains Mono, and "Founder" are canon
 
 **There is no component library or Storybook.** Component-like reuse happens two ways:
 
-1. **One shared chrome file**: `app/_components/SiteChrome.tsx` exports `SiteHeader`, `SiteFooter`, and `Eyebrow` (a section-label component with an `as` prop — `"div" | "h2" | "h3"` — used to give long-form pages a real heading outline instead of an all-`div` label). These three are the only shared React components in the app; every page imports them directly, e.g.:
+1. **One shared chrome file**: `app/_components/SiteChrome.tsx` exports `SiteHeader`, `SiteFooter`, `Eyebrow`, and `LedgerMark` (the Daftar logo as inline SVG with three size cuts; the Arabic pages import it too) (a section-label component with an `as` prop — `"div" | "h2" | "h3"` — used to give long-form pages a real heading outline instead of an all-`div` label). These three are the only shared React components in the app; every page imports them directly, e.g.:
    ```tsx
    import { SiteHeader, SiteFooter, Eyebrow } from "../_components/SiteChrome";
    <Eyebrow as="h2" tone="rust">§ 01 · Services</Eyebrow>
@@ -103,7 +105,7 @@ Content is separated from markup in `app/_data/`:
 ## 4. Asset management
 
 - **Images:** `public/og-daftar.png`, `public/og-calibre.png` (Open Graph only — there are no in-page photographic/illustrative images anywhere on the Daftar canon pages by design; see §7). Referenced as root-relative paths (`images: ["/og-daftar.png"]` in each page's `metadata`).
-- **Favicon:** a single inline SVG monogram, `public/favicon.svg` (32×32, ink tile + rust "D"), referenced via `metadata.icons.icon` in `app/layout.tsx`. Calibre's HTML files instead embed a **data-URI SVG favicon** directly in `<link rel="icon" href="data:image/svg+xml,...">` — same monogram concept, different color (forest green), duplicated inline rather than as a file. If Figma exports a new mark, update both places.
+- **Logo and favicon:** the Ledger total mark. `scripts/build-brand-assets.py` generates `public/favicon.svg` (small cut on a cream tile) and `public/brand/daftar-mark*.svg` from one geometry that matches `LedgerMark`; change both together. `design/brand/og-daftar.html` is the source of `public/og-daftar.png` (render at 1200×630). Calibre's HTML files embed their own **data-URI SVG favicon** (the forest C tile) inline; that is Calibre's mark and does not change with the Daftar logo.
 - **Downloadable working files:** `public/*.xlsx` (checklists/trackers) — generated artifacts, not hand-edited; see §2.
 - **No CDN/image-optimization config** — `output: "export"` means no `next/image` remote patterns are configured or usable for optimization; treat all images as plain static files served as-is.
 - **No `/public/images` or asset directory convention exists yet** — if Figma exports name a bunch of image assets, you're establishing the convention, not following one. Prefer `public/` root or a new `public/images/` folder, matching the flat structure already there.

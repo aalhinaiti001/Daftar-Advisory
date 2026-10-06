@@ -8,13 +8,52 @@ import { EMAIL } from "../_data/practice";
    yet), it only stops the header from wrongly underlining another item. */
 export type Page = "home" | "about" | "scope" | "knowledge";
 
+/* The Daftar mark: "Ledger total" — three right-aligned entries and the rust
+   total rule beneath them (House Brand Guide v1.6, §02). One geometry, three
+   size cuts: stroke weight grows as the mark shrinks so the total survives at
+   small sizes. Colours come from --mark-shell / --mark-accent (daftar.css), so
+   the knockout on ink is a scope change, never a second drawing. */
+const LEDGER_CUTS = {
+  base: { h: 13, y2: 29, y3: 52, total: 15 }, // 30px and up
+  md: { h: 14, y2: 29, y3: 53, total: 16 }, // 22–28px
+  sm: { h: 15, y2: 30, y3: 54, total: 17 }, // 20px and below
+} as const;
+
+export function LedgerMark({
+  size = 30,
+  title,
+}: {
+  size?: number;
+  /** Omit when the mark sits beside the wordmark; the link carries the name. */
+  title?: string;
+}) {
+  const c = size <= 20 ? LEDGER_CUTS.sm : size <= 28 ? LEDGER_CUTS.md : LEDGER_CUTS.base;
+  return (
+    <svg
+      className="dft-mark"
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      role={title ? "img" : undefined}
+      aria-label={title}
+      aria-hidden={title ? undefined : true}
+      focusable="false"
+    >
+      <rect className="dft-mark-shell" x="30" y="6" width="70" height={c.h} />
+      <rect className="dft-mark-shell" x="14" y={c.y2} width="86" height={c.h} />
+      <rect className="dft-mark-shell" x="44" y={c.y3} width="56" height={c.h} />
+      <rect className="dft-mark-total" x="0" y="79" width="100" height={c.total} />
+    </svg>
+  );
+}
+
 function Mark({ href = "/" }: { href?: string }) {
   return (
-    <Link className="dft-brand" href={href}>
-      <b>D</b>
-      <span>
-        <em>Daftar</em>
-        <small>ADVISORY</small>
+    <Link className="dft-brand" href={href} aria-label="Daftar Advisory, home">
+      <LedgerMark size={30} />
+      <span className="dft-brand-rule" aria-hidden="true" />
+      <span className="dft-wordmark" aria-hidden="true">
+        Daftar <em>Advisory.</em>
       </span>
     </Link>
   );

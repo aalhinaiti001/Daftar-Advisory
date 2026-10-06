@@ -130,3 +130,20 @@ offer and claim copy that needs the method owner's approval, so they are tracked
 
 **Local folder:** not reachable directly; the four documents above were supplied by
 upload instead. Any other files in `Daftar and (claibre)` remain uncompared.
+
+## Brand Guide v1.6 — 6 October 2026
+
+Founder instruction: two typefaces for Daftar, and the Ledger design icon as the logo.
+
+- **Type:** Fraunces + JetBrains Mono. Chosen over Fraunces + Instrument Sans because
+  it is the pair the Founder's own v1.3 handbook and the engagement-letter skill already
+  specify, and the mono "register" voice is what the § eyebrows, service codes and
+  figures rely on. Instrument Sans was used only for body and navigation; both now set
+  in Fraunces. Its loader is removed from `app/globals.css`. Arabic script stays on IBM
+  Plex Sans Arabic. Calibre keeps its Lora / Plus Jakarta Sans exception.
+- **Mark:** direction 1B "Ledger total" from the 13 September logo-marks exploration
+  (branch `design/logo-marks`, commit `a68736f`) replaces the D monogram on the header,
+  footer, Arabic pages, favicon and OG image. Geometry lives once in
+  `scripts/build-brand-assets.py` and `LedgerMark`.
+- `BRAND.md` rewritten as the final guide with the reconstructed version history; a
+  designed edition is at `design/brand/house-brand-guide.html`.

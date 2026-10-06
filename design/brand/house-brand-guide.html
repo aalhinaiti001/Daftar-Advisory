@@ -1,0 +1,415 @@
+<title>Daftar House Brand Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=JetBrains+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Lora:ital,wght@0,500;1,500&family=Plus+Jakarta+Sans:wght@500&display=swap">
+<style>
+/* Layout: a ledger page — one reading column, § chapters on hairline rules,
+   specimens set inline as the real thing. Single deliberate look: the brand's own
+   paper ground, so no dark theme by design. */
+:root {
+  color-scheme: light;
+  --paper: #F4F1EA; --soft: #EFEBE1; --card: #FAF7F1;
+  --ink: #1A1814;   --body: #514C45; --muted: #6F665D; --rule: #D8D2C4;
+  --rust: #A8341F;  --rust-deep: #7D2415; --rust-on-ink: #E07458;
+  --forest: #265147; --cal-rule: #D5E3DE;
+  --serif: "Fraunces", Georgia, serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --arabic: "IBM Plex Sans Arabic", "Geeza Pro", Tahoma, sans-serif;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font: 400 17px/1.6 var(--serif);
+  font-optical-sizing: auto; -webkit-font-smoothing: antialiased; margin: 0;
+  padding-inline: 24px; padding-block: 0 80px; }
+.wrap { max-width: 1040px; margin: 0 auto; }
+a { color: var(--rust); }
+a:focus-visible { outline: 2px solid var(--rust); outline-offset: 3px; }
+
+.mono { font-family: var(--mono); font-weight: 400; text-transform: uppercase;
+  letter-spacing: 0.22em; font-size: 11px; color: var(--muted); }
+.mono.rust { color: var(--rust); }
+
+/* Masthead */
+.top { display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  flex-wrap: wrap; padding-block: 28px; border-bottom: 1px solid var(--rule); }
+.lock { display: flex; align-items: center; gap: 14px; }
+.lock .hair { width: 1px; align-self: stretch; background: var(--rule); }
+.wm { font: 400 23px/1 var(--serif); font-variation-settings: "opsz" 36;
+  letter-spacing: -0.01em; white-space: nowrap; }
+.wm em { color: var(--rust); }
+
+.hero { padding-block: 72px 56px; border-bottom: 1px solid var(--rule);
+  display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 48px; align-items: end; }
+h1 { font: 400 clamp(2.6rem, 6vw, 4.6rem)/1.02 var(--serif);
+  font-variation-settings: "opsz" 144, "SOFT" 40; letter-spacing: -0.03em;
+  margin: 18px 0 0; text-wrap: balance; }
+h1 em, h2 em { color: var(--rust); }
+.lede { color: var(--body); max-width: 60ch; margin: 22px 0 0; }
+.register { border: 1px solid var(--rule); border-radius: 6px; background: var(--card); }
+.register div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 18px;
+  border-top: 1px solid var(--rule); align-items: baseline; }
+.register div:first-child { border-top: 0; }
+.register dd { margin: 0; text-align: end; }
+
+/* Chapters */
+section { padding-block: 64px; border-bottom: 1px solid var(--rule); }
+h2 { font: 400 clamp(1.9rem, 3.6vw, 2.7rem)/1.08 var(--serif); letter-spacing: -0.02em;
+  margin: 14px 0 0; text-wrap: balance; }
+.intro { color: var(--body); max-width: 62ch; margin: 16px 0 0; }
+.grid { display: grid; gap: 16px; margin-top: 36px; }
+.g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.panel { border: 1px solid var(--rule); border-radius: 6px; padding: 24px; background: var(--card);
+  display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.panel.inked { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.panel.inked .wm em { color: var(--rust-on-ink); }
+.panel.inked .hair { background: rgba(244, 241, 234, 0.22); }
+.panel.inked .mono { color: #A09585; }
+.stage { min-height: 120px; display: grid; place-items: center start; }
+.note { color: var(--body); font-size: 15px; margin: 0; }
+
+/* Mark specimen */
+.mark-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 40px;
+  align-items: center; margin-top: 36px; }
+.mark-big { background: var(--card); border: 1px solid var(--rule); border-radius: 6px;
+  padding: 48px; display: grid; place-items: center; position: relative; }
+.mark-big svg { width: min(220px, 100%); height: auto; }
+.cuts { display: flex; align-items: end; gap: 28px; flex-wrap: wrap; }
+.cuts figure { margin: 0; display: grid; gap: 8px; justify-items: center; }
+
+table { width: 100%; border-collapse: collapse; font-size: 15px; font-variant-numeric: tabular-nums lining-nums; }
+th { font: 400 10px/1.4 var(--mono); letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+  text-align: start; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--ink); }
+td { padding: 12px 12px 12px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+td code, .code { font-family: var(--mono); font-size: 13px; }
+.scroll { overflow-x: auto; margin-top: 32px; }
+
+/* Colour */
+.swatch { border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; background: var(--card); }
+.swatch .chip { height: 96px; }
+.swatch .meta { padding: 12px 14px; display: grid; gap: 4px; }
+.swatch b { font-weight: 500; }
+.ratio { display: flex; height: 18px; border-radius: 3px; overflow: hidden; margin-top: 28px; border: 1px solid var(--rule); }
+.ratio span { display: block; }
+
+/* Type */
+.spec { border-top: 1px solid var(--rule); padding-block: 22px; display: grid;
+  grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: baseline; }
+.spec:first-of-type { margin-top: 32px; }
+.s-display { font: 400 clamp(2.4rem, 5vw, 3.8rem)/1 var(--serif); font-variation-settings: "opsz" 144, "SOFT" 40; letter-spacing: -0.03em; }
+.s-head { font: 400 30px/1.1 var(--serif); letter-spacing: -0.01em; }
+.s-body { font: 400 17px/1.6 var(--serif); color: var(--body); max-width: 56ch; }
+.s-label { font: 400 12px/1 var(--mono); letter-spacing: 0.26em; text-transform: uppercase; }
+.s-ar { font: 600 34px/1.3 var(--arabic); direction: rtl; text-align: end; }
+.faces { margin-top: 36px; }
+.face { font-size: clamp(4rem, 10vw, 7rem); line-height: 1; }
+
+/* Lists */
+.rules { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 0; }
+.rules li { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 16px; padding-block: 16px;
+  border-top: 1px solid var(--rule); }
+.rules li > span:first-child { padding-top: 5px; }
+.rules strong { font-weight: 500; }
+.retired td:first-child { text-decoration: line-through; text-decoration-color: var(--rust); color: var(--muted); }
+
+/* Calibre */
+.cal { background: #fff; border: 1px solid var(--cal-rule); border-radius: 10px; padding: 24px;
+  display: flex; flex-direction: column; gap: 14px; }
+.ctile { width: 36px; height: 36px; border-radius: 8px; background: var(--forest); color: #fff;
+  display: grid; place-items: center; font: 500 20px/1 "Lora", Georgia, serif; }
+.cwm { font: italic 500 22px/1 "Lora", Georgia, serif; color: #0E211B; }
+.ckick { font: 500 10px/1 "Plus Jakarta Sans", Arial, sans-serif; letter-spacing: 0.24em; text-transform: uppercase; color: #596B66; }
+
+/* Timeline */
+.tl { margin-top: 32px; display: grid; }
+.tl div { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 20px; padding-block: 14px;
+  border-top: 1px solid var(--rule); }
+.tl div.now { border-top: 2px solid var(--rust); }
+.tl p { margin: 0; color: var(--body); font-size: 15px; }
+.tl b { font-weight: 500; color: var(--ink); }
+
+footer.end { padding-block: 40px 0; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+@media (max-width: 860px) {
+  .hero, .mark-hero { grid-template-columns: minmax(0, 1fr); }
+  .g3, .g4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  body { padding-inline: 16px; }
+  .g2, .g3, .g4 { grid-template-columns: minmax(0, 1fr); }
+  .spec { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .tl div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .rules li { grid-template-columns: 40px minmax(0, 1fr); }
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ledger" viewBox="0 0 100 100">
+    <rect x="30" y="6" width="70" height="13" style="fill:var(--shell,#1A1814)"/>
+    <rect x="14" y="29" width="86" height="13" style="fill:var(--shell,#1A1814)"/>
+    <rect x="44" y="52" width="56" height="13" style="fill:var(--shell,#1A1814)"/>
+    <rect x="0" y="79" width="100" height="15" style="fill:var(--total,#A8341F)"/>
+  </symbol>
+  <symbol id="ledger-md" viewBox="0 0 100 100">
+    <rect x="30" y="6" width="70" height="14" style="fill:var(--shell,#1A1814)"/>
+    <rect x="14" y="29" width="86" height="14" style="fill:var(--shell,#1A1814)"/>
+    <rect x="44" y="53" width="56" height="14" style="fill:var(--shell,#1A1814)"/>
+    <rect x="0" y="79" width="100" height="16" style="fill:var(--total,#A8341F)"/>
+  </symbol>
+  <symbol id="ledger-sm" viewBox="0 0 100 100">
+    <rect x="30" y="6" width="70" height="15" style="fill:var(--shell,#1A1814)"/>
+    <rect x="14" y="30" width="86" height="15" style="fill:var(--shell,#1A1814)"/>
+    <rect x="44" y="54" width="56" height="15" style="fill:var(--shell,#1A1814)"/>
+    <rect x="0" y="79" width="100" height="17" style="fill:var(--total,#A8341F)"/>
+  </symbol>
+</svg>
+
+<div class="wrap">
+  <header class="top">
+    <div class="lock">
+      <svg width="30" height="30" role="img" aria-label="Daftar Advisory"><use href="#ledger"/></svg>
+      <span class="hair"></span>
+      <span class="wm">Daftar <em>Advisory.</em></span>
+    </div>
+    <span class="mono">House Brand Guide · v1.6</span>
+  </header>
+
+  <div class="hero">
+    <div>
+      <span class="mono rust">§ 00 · The house</span>
+      <h1>One ledger, closed and <em>signed.</em></h1>
+      <p class="lede">The final identity for Daftar Advisory and the rules for Calibre beside it. Two typefaces, one accent, one mark. Every earlier handbook, bundle and brand line is folded into this edition.</p>
+    </div>
+    <dl class="register" aria-label="Edition details">
+      <div><dt class="mono">Edition</dt><dd>v1.6 · final</dd></div>
+      <div><dt class="mono">Issued</dt><dd>6 October 2026</dd></div>
+      <div><dt class="mono">Founder</dt><dd>Ahmad Al Hinaiti</dd></div>
+      <div><dt class="mono">Base</dt><dd>Amman · MENA</dd></div>
+      <div><dt class="mono">Source of record</dt><dd><span class="code">BRAND.md</span></dd></div>
+    </dl>
+  </div>
+
+  <!-- § 01 -->
+  <section aria-labelledby="h-idea">
+    <span class="mono">§ 01 · The idea</span>
+    <h2 id="h-idea">Rigorous finance, without the <em>overhead.</em></h2>
+    <p class="intro">Daftar means the ledger or register. The firm does the work properly, writes it down in a form that holds up, and hands it over so the client can run it again. Calibre is that discipline made into a product, and always carries the <i>by Daftar</i> kicker.</p>
+    <ol class="rules">
+      <li><span class="mono rust">01</span><span><strong>Write it down.</strong> If a decision can't be written in a form that holds up, it isn't finished.</span></li>
+      <li><span class="mono rust">02</span><span><strong>Evidence over opinion.</strong> Show the working rather than defend a verdict on authority.</span></li>
+      <li><span class="mono rust">03</span><span><strong>One title, everywhere.</strong> Ahmad is Founder on every surface.</span></li>
+      <li><span class="mono rust">04</span><span><strong>Leave a tool behind.</strong> Every engagement ends with something the client can run themselves.</span></li>
+    </ol>
+  </section>
+
+  <!-- § 02 -->
+  <section aria-labelledby="h-mark">
+    <span class="mono">§ 02 · The mark</span>
+    <h2 id="h-mark">Three entries and a <em>total.</em></h2>
+    <p class="intro">The Ledger total: three right-aligned figures and the rust rule beneath them, the column of a ledger closed and signed off. It replaces the D monogram tile on every Daftar surface.</p>
+    <div class="mark-hero">
+      <div class="mark-big"><svg viewBox="0 0 100 100" role="img" aria-label="Ledger total mark"><use href="#ledger"/></svg></div>
+      <div>
+        <div class="scroll" style="margin-top:0">
+          <table>
+            <thead><tr><th>Element</th><th>x</th><th>Width</th><th>Colour</th></tr></thead>
+            <tbody>
+              <tr><td>Entry 1</td><td>30</td><td>70</td><td>Ink</td></tr>
+              <tr><td>Entry 2</td><td>14</td><td>86</td><td>Ink</td></tr>
+              <tr><td>Entry 3</td><td>44</td><td>56</td><td>Ink</td></tr>
+              <tr><td>Total</td><td>0</td><td>100</td><td>Rust, heavier than the entries</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note" style="margin-top:20px">100-unit square. Clear space is one mark-width on every side. Never stretch, rotate, outline, recolour the entries, or set the mark on a busy image.</p>
+      </div>
+    </div>
+
+    <div class="grid g3">
+      <div class="panel">
+        <span class="mono">Size cuts</span>
+        <div class="cuts">
+          <figure><svg width="64" height="64" aria-hidden="true"><use href="#ledger"/></svg><figcaption class="mono">Base · 30+</figcaption></figure>
+          <figure><svg width="26" height="26" aria-hidden="true"><use href="#ledger-md"/></svg><figcaption class="mono">md · 22–28</figcaption></figure>
+          <figure><svg width="16" height="16" aria-hidden="true"><use href="#ledger-sm"/></svg><figcaption class="mono">sm · ≤20</figcaption></figure>
+        </div>
+        <p class="note">Entries thicken as the mark shrinks so the total survives at favicon size. Geometry never moves.</p>
+      </div>
+      <div class="panel inked" style="--shell:#F4F1EA;--total:#E07458">
+        <span class="mono">Knockout on ink</span>
+        <div class="stage"><svg width="64" height="64" aria-hidden="true"><use href="#ledger"/></svg></div>
+        <p class="note" style="color:#C4BCAE">Cream entries, rust-on-ink total. Rust #A8341F fails on ink.</p>
+      </div>
+      <div class="panel">
+        <span class="mono">App icon · favicon</span>
+        <div class="stage" style="gap:16px;display:flex;align-items:center">
+          <svg width="64" height="64" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="14" fill="#F4F1EA" stroke="#D8D2C4"/><g transform="translate(18 18) scale(.64)"><use href="#ledger"/></g></svg>
+          <svg width="20" height="20" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="16" fill="#F4F1EA" stroke="#D8D2C4" stroke-width="3"/><g transform="translate(14 14) scale(.72)"><use href="#ledger-sm"/></g></svg>
+        </div>
+        <p class="note">The mark on a cream tile for avatars, profiles and browser tabs.</p>
+      </div>
+    </div>
+
+    <div class="grid g2">
+      <div class="panel">
+        <span class="mono">01 · Horizontal — default</span>
+        <div class="stage"><div class="lock"><svg width="34" height="34" aria-hidden="true"><use href="#ledger"/></svg><span class="hair"></span><span class="wm" style="font-size:26px">Daftar <em>Advisory.</em></span></div></div>
+      </div>
+      <div class="panel">
+        <span class="mono">02 · Stacked — square formats</span>
+        <div class="stage"><div style="display:grid;gap:12px"><svg width="40" height="40" aria-hidden="true"><use href="#ledger"/></svg><span class="wm" style="font-size:26px">Daftar <em>Advisory.</em></span></div></div>
+      </div>
+      <div class="panel">
+        <span class="mono">03 · Micro strip — post headers</span>
+        <div class="stage"><span class="mono" style="color:var(--ink);font-size:12px;letter-spacing:.32em">Daftar · Advisory</span></div>
+      </div>
+      <div class="panel">
+        <span class="mono">04 · Arabic</span>
+        <div class="stage" style="place-items:center end"><div class="lock" dir="rtl"><svg width="34" height="34" aria-hidden="true"><use href="#ledger"/></svg><span class="hair"></span><span style="font:400 25px/1.2 var(--arabic)">دفتر <span style="color:var(--rust);font-weight:500">للاستشارات.</span></span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- § 03 -->
+  <section aria-labelledby="h-colour">
+    <span class="mono">§ 03 · Colour</span>
+    <h2 id="h-colour">Paper, ink, and five per cent <em>rust.</em></h2>
+    <p class="intro">Paper 70 · Ink 25 · Rust 5. Never invert the ratio. One accent, one ground, no third accent and no gradients.</p>
+    <div class="ratio" role="img" aria-label="Paper 70 percent, ink 25 percent, rust 5 percent">
+      <span style="width:70%;background:var(--paper)"></span><span style="width:25%;background:var(--ink)"></span><span style="width:5%;background:var(--rust)"></span>
+    </div>
+    <div class="grid g4">
+      <div class="swatch"><div class="chip" style="background:#F4F1EA;border-bottom:1px solid var(--rule)"></div><div class="meta"><b>Paper</b><span class="code">#F4F1EA</span><span class="mono">The ground</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#1A1814"></div><div class="meta"><b>Ink</b><span class="code">#1A1814</span><span class="mono">Text · marks</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#A8341F"></div><div class="meta"><b>Rust</b><span class="code">#A8341F</span><span class="mono">The 5%</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#E07458"></div><div class="meta"><b>Rust on ink</b><span class="code">#E07458</span><span class="mono">Only on ink</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#EFEBE1;border-bottom:1px solid var(--rule)"></div><div class="meta"><b>Soft band</b><span class="code">#EFEBE1</span><span class="mono">Alternate sections</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#514C45"></div><div class="meta"><b>Body</b><span class="code">#514C45</span><span class="mono">Running text</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#6F665D"></div><div class="meta"><b>Muted</b><span class="code">#6F665D</span><span class="mono">Labels · captions</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#D8D2C4"></div><div class="meta"><b>Rule</b><span class="code">#D8D2C4</span><span class="mono">1px hairlines</span></div></div>
+    </div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Pairing</th><th>Contrast</th><th>Verdict</th></tr></thead>
+        <tbody>
+          <tr><td>Rust on paper</td><td>5.86 : 1</td><td>Passes at every size</td></tr>
+          <tr><td>Rust on ink</td><td>2.68 : 1</td><td><strong style="color:var(--rust);font-weight:500">Fails.</strong> Switch to rust on ink, 5.75 : 1</td></tr>
+          <tr><td>Muted on paper</td><td>4.99 : 1</td><td>Body and captions</td></tr>
+          <tr><td>Ink on paper</td><td>15.7 : 1</td><td>All text</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note" style="margin-top:18px">WCAG AA is the floor. Rust carries large text, rules and the single accent word, never body copy. At most one ink section per page.</p>
+  </section>
+
+  <!-- § 04 -->
+  <section aria-labelledby="h-type">
+    <span class="mono">§ 04 · Type</span>
+    <h2 id="h-type">Two faces. One to read, one to <em>measure.</em></h2>
+    <p class="intro">Fraunces sets everything that reads. JetBrains Mono sets everything that labels or measures. A third Latin face in a Daftar design means the design is wrong.</p>
+    <div class="grid g2 faces">
+      <div class="panel"><span class="face" style="font-family:var(--serif);font-variation-settings:'opsz' 144,'SOFT' 40">Aa</span><b style="font-weight:500">Fraunces</b><p class="note">Display, headings, body, buttons, navigation and the wordmark. Weights 300–700. The italic is the accent voice.</p></div>
+      <div class="panel"><span class="face" style="font-family:var(--mono);letter-spacing:-0.04em">Aa</span><b style="font-weight:500">JetBrains Mono</b><p class="note">Eyebrows, § chapter marks, service codes, register figures, footers. Weight 400, uppercase, tracked.</p></div>
+    </div>
+    <div class="spec"><span class="s-display">Finance that <em style="color:var(--rust)">holds.</em></span><span class="mono">Display · 400 · opsz 144</span></div>
+    <div class="spec"><span class="s-head">A memo your auditor will accept</span><span class="mono">Heading · 400 · 30</span></div>
+    <div class="spec"><span class="s-body">One position, read against the standard, written up with the working shown and the file handed over. Body sits at 17 pixels on the web and 10.5 to 11 points in print.</span><span class="mono">Body · 400 · 17 / 1.6</span></div>
+    <div class="spec"><span class="s-label">§ 02 · A/01 · IFRS financial statements</span><span class="mono">Label · mono · +0.26em</span></div>
+    <div class="spec"><span class="s-ar">قوائم مالية <span style="color:var(--rust)">واضحة.</span></span><span class="mono">Arabic · Plex Sans Arabic 600</span></div>
+    <p class="note" style="margin-top:16px">Arabic script is set in IBM Plex Sans Arabic, the counterpart of the pair for a script neither face covers. Arabic has no italic: the accent word takes colour and weight 500.</p>
+  </section>
+
+  <!-- § 05 -->
+  <section aria-labelledby="h-voice">
+    <span class="mono">§ 05 · Voice</span>
+    <h2 id="h-voice">Say the thing others <em>hedge.</em></h2>
+    <p class="intro">Plainly, with the working shown. If a sentence wouldn't sound natural from a senior auditor explaining it over coffee, rewrite it.</p>
+    <div class="grid g2">
+      <div class="panel"><span class="mono rust">We are</span><p class="note">Direct · specific ("SAR 3B portfolio") · technical when it matters · honest about trade-offs · bilingual when useful. "We" is the firm, never a headcount; no invented team.</p></div>
+      <div class="panel"><span class="mono">We avoid</span><p class="note">Leverage · synergy · cutting-edge · world-class · unlock · empower · disrupt · best-in-class · journey. Outcome promises. Superlatives the record hasn't earned. The same words in Arabic.</p></div>
+    </div>
+  </section>
+
+  <!-- § 06 -->
+  <section aria-labelledby="h-layout">
+    <span class="mono">§ 06 · Layout, icons, motion</span>
+    <h2 id="h-layout">Ruled, not <em>shadowed.</em></h2>
+    <div class="grid g3">
+      <div class="panel"><span class="mono">Layout</span><p class="note">1px rules divide sections. Base-8 spacing: 8 · 16 · 24 · 48 · 80. Content to 1120px. Radii 5–6px. Eyebrows lead with § in mono. Left-align Latin, right-align Arabic.</p></div>
+      <div class="panel"><span class="mono">Icons</span><p class="note">24px grid, 1.5px stroke at every size, round caps, no fills. Ink, with the accent on one active mark. Always paired with a mono label. Optional on the web.</p></div>
+      <div class="panel"><span class="mono">Motion</span><p class="note">One ease, Settle <span class="code">cubic-bezier(.2,.8,.2,1)</span>. 120 tap · 200 hover · 320 reveal · 560 page. Fade and 8px rise. No bounce, no spinners. Respect reduced motion.</p></div>
+    </div>
+  </section>
+
+  <!-- § 07 -->
+  <section aria-labelledby="h-surfaces">
+    <span class="mono">§ 07 · Surfaces</span>
+    <h2 id="h-surfaces">The same page, at every <em>size.</em></h2>
+    <div class="grid g3">
+      <div class="panel"><span class="mono">Web</span><p class="note">One language switch: "العربية" on English pages, "EN" in mono on Arabic pages, never a flag. hreflang on both versions, each with its own og:url. OG card 1200×630, paper, ink and rust.</p></div>
+      <div class="panel"><span class="mono">Social</span><p class="note">1080 square, 1350 portrait, 1920 story, 72px margin. № series kicker top-left, one accent word, lockup bottom-left. Three posts a week. Never both brands' marks on one post.</p></div>
+      <div class="panel"><span class="mono">Print</span><p class="note">Fraunces body at 10.5–11pt, mono labels, paper ground, rust as rules and the single accent word. Letters, statements and brochures carry the horizontal lockup.</p></div>
+    </div>
+  </section>
+
+  <!-- § 08 -->
+  <section aria-labelledby="h-calibre">
+    <span class="mono">§ 08 · Calibre</span>
+    <h2 id="h-calibre">The product keeps its own <em>ground.</em></h2>
+    <p class="intro">Calibre keeps its approved white-and-forest system with Lora and Plus Jakarta Sans; the two-face rule is Daftar's. The two grounds never meet on one surface.</p>
+    <div class="grid g2">
+      <div class="cal">
+        <div style="display:flex;align-items:center;gap:12px"><span class="ctile" aria-hidden="true">C</span><span class="cwm">Calibre</span><span class="ckick">by Daftar</span></div>
+        <p class="note">The offer is the Calibre Verdict: a written finance-hiring decision memo for a defined shortlist. Read, Score, Compare, Calibrate. Never a ranking, a fit score or a prediction.</p>
+      </div>
+      <div class="panel">
+        <span class="mono">Use statement · verbatim</span>
+        <p style="margin:0;font-style:italic">Structured hiring advisory for finance roles. Not a psychometric assessment. Does not predict performance. The decision, and its consequences, rest with the employer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- § 09 -->
+  <section aria-labelledby="h-retired">
+    <span class="mono">§ 09 · Retired</span>
+    <h2 id="h-retired">Purge on <em>sight.</em></h2>
+    <div class="scroll">
+      <table class="retired">
+        <thead><tr><th>Retired</th><th>Use instead</th></tr></thead>
+        <tbody>
+          <tr><td>D monogram tile</td><td>Ledger total mark</td></tr>
+          <tr><td>Instrument Sans · Newsreader · IBM Plex Mono · Amiri</td><td>Fraunces + JetBrains Mono; Plex Sans Arabic for Arabic</td></tr>
+          <tr><td>Rust #B3502B · hover #842815 · rust gradient</td><td>#A8341F · #7D2415 · no gradients</td></tr>
+          <tr><td>Muted #78726A · Paper Dark #EBE6DA</td><td>#6F665D · #EFEBE1</td></tr>
+          <tr><td>"Principal"</td><td>"Founder"</td></tr>
+          <tr><td>"Practice of one" · "small senior teams"</td><td>"We" as the firm</td></tr>
+          <tr><td>"Hiring diagnostic" · two-week fixed-fee pilot</td><td>Calibre Verdict, terms agreed at scoping</td></tr>
+          <tr><td>"Ranked" · "role-fit" · "Δ 41 pts"</td><td>Evidence notes and a written recommendation</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- § 10 -->
+  <section aria-labelledby="h-history">
+    <span class="mono">§ 10 · Version history</span>
+    <h2 id="h-history">How the system got <em>here.</em></h2>
+    <p class="intro">Reconstructed from every branch of the repository and the documents on file. Later lines win.</p>
+    <div class="tl">
+      <div><span class="mono">Early 2026</span><p><b>Handbook v1.0–1.1.</b> Wordmark only. Amiri for Arabic, then IBM Plex Sans Arabic.</p></div>
+      <div><span class="mono">May 2026</span><p><b>Handbook v1.2–1.3.</b> Fraunces + JetBrains Mono, rust #A8341F, the 70/25/5 ratio, rust on ink, accessibility, web and social rules.</p></div>
+      <div><span class="mono">20–23 Jul 2026</span><p><b>Ledger design system, handbook v1.4–1.5.</b> Daftar × Calibre house; D and C monograms; Newsreader, Instrument Sans, Plex Mono; rust #B3502B; brochures, icons, motion, Arabic chapter.</p></div>
+      <div><span class="mono">9 Aug 2026</span><p><b>Site rebuilt.</b> Live site kept Fraunces, JetBrains Mono and #A8341F as a recorded exception.</p></div>
+      <div><span class="mono">12 Aug 2026</span><p><b>Profile Playbook v1.4.</b> LinkedIn and Instagram on the four-lane catalogue; Calibre off cold channels.</p></div>
+      <div><span class="mono">10–12 Sep 2026</span><p><b>Reconciliation and Founder rulings.</b> Calibre claims aligned to its method; Fraunces canonical; "we" is the firm.</p></div>
+      <div><span class="mono">13 Sep 2026</span><p><b>Logo marks exploration.</b> Tick, ledger total, D and folded file explored side by side.</p></div>
+      <div><span class="mono">23–27 Sep 2026</span><p><b>Calibre playbook v2 and audit.</b> Restraint rules, release audit, final-site copy contract.</p></div>
+      <div class="now"><span class="mono rust">6 Oct 2026</span><p><b>Guide v1.6, final.</b> Rust unified on #A8341F. Two faces only. Ledger total adopted as the Daftar mark.</p></div>
+    </div>
+  </section>
+
+  <footer class="end">
+    <div class="lock"><svg width="22" height="22" aria-hidden="true"><use href="#ledger-md"/></svg><span class="hair"></span><span class="wm" style="font-size:18px">Daftar <em>Advisory.</em></span></div>
+    <span class="mono">Ahmad Al Hinaiti · Founder · ahmad@daftaradvisory.com</span>
+  </footer>
+</div>
