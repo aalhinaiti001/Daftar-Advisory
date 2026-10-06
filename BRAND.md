@@ -3,8 +3,10 @@
 Canonical brand stack for all house surfaces. When a surface disagrees with this file,
 this file wins and the surface gets conformed — not the other way around.
 
-- **Base authority:** House Brand Handbook **v1.5** (§00–§09), as amended by the Founder
-  rulings listed below. Where a ruling and the handbook disagree, the ruling wins.
+- **Base authority:** House Brand Handbook **v1.5** (§00–§12, the issue that includes
+  §11 Arabic & bilingual), as amended by the Founder rulings listed below. Where a ruling
+  and the handbook disagree, the ruling wins. Older documents and what they still govern
+  are listed under *Source register* at the end of this file.
 - **Calibre visual authority:** Calibre Brand Playbook **v2** (working edition 02,
   23 Sep 2026), within the Lora / Plus Jakarta Sans exception below.
 - **Strategy overlay:** Canonical House Strategy (21 Jul 2026) governs *positioning*,
@@ -35,6 +37,8 @@ One house, two marks. A reader must always know which one is speaking.
 | Rust hover  | `--rust-deep` | `#7D2415`  |
 | Ink         | `--ink`       | `#1A1814`  |
 | Soft band   | `--soft-band` | `#EFEBE1`  |
+| Rust on ink | `--rust-on-ink` | `#E07458` | contextual variant only, for rust text or icons on ink |
+| Muted text  | `--muted`     | `#6F665D`  | replaces the v1.3 `#78726A`, which fails AA on cream |
 
 Implemented in `app/daftar.css` (`.dft`, English) and `app/globals.css` (`.daftar`, Arabic).
 
@@ -77,6 +81,17 @@ The v1.5 handbook values (`#FFFFFF` / `#2C3A31` / `#111214` / `#F5F4F1`) are the
 - Website quality filter: no decorative gradients, generic icons, repeated card grids,
   excessive pills, shadows, giant headings, over-tracked capitals, or stock imagery.
 
+### Accessibility (WCAG AA is the floor)
+| Pairing | Ratio | Use |
+|---|---|---|
+| `#A8341F` on cream `#F4F1EA` | 5.86:1 | passes for all text sizes |
+| `#A8341F` on ink `#1A1814` | 2.68:1 | **fails — never use**; use `#E07458` (5.75:1) |
+| `#6F665D` on cream | 4.99:1 | body and captions |
+| `#78726A` on cream | 4.22:1 | **fails for body — retired** |
+
+Body text 4.5:1 minimum; large headlines and non-text marks (rules, icons, focus rings)
+3:1 minimum. If a contrast check needs a second opinion, the design isn't ready.
+
 ### Colour rules (§03, both brands)
 - One accent + one ground per brand. **No third accent. No gradients.**
 - **Rust is reserved for large text, rules, icons, and emphasis — never body copy or
@@ -105,11 +120,56 @@ The v1.5 handbook values (`#FFFFFF` / `#2C3A31` / `#111214` / `#F5F4F1`) are the
 ## Layout & marks (§02, §06)
 - Monogram: single knockout letter in a solid tile (Daftar: rust **D** on ink, Fraunces;
   Calibre: white **C** on forest, Lora); same corner radius and clearspace; **the kicker
-  is never set in the serif.**
+  is never set in the serif.** The monogram supersedes the v1.3 "the name is the logo,
+  no mark" rule. The wordmark stays: "Daftar" upright in ink, "Advisory" as the kicker.
 - **Ruled, not shadowed** — sections divided by 1px rules, never drop shadow.
 - Base-8 spacing (8 · 16 · 24 · 48 · 80). Max content width 1080–1120px.
 - One accent italic phrase per composition (normally a single word).
 - At most one dark section per page.
+
+## Iconography (§08)
+Thin line marks on a 24px grid, 1.5px stroke at every size, round caps and joins, no
+fills, gradients or duotone. Ink by default; accent on the single active mark only.
+Always paired with a mono label. **On Daftar web pages, icons remain optional** — the
+canon site currently uses none; add them only in this style.
+
+## Motion (§10)
+One ease, *Settle*: `cubic-bezier(0.2, 0.8, 0.2, 1)`. Durations 120ms tap · 200ms hover ·
+320ms reveal · 560ms page, nothing longer. Fade + 8px rise for entrances; stagger lists
+by 40ms at most. No bounce, elastic or spinning loaders. Respect `prefers-reduced-motion`.
+
+## Arabic & bilingual (§11)
+- Arabic text is **IBM Plex Sans Arabic**, weights 400–600; Arabic display in SemiBold.
+  No faux-italic, faux-bold or faux-serif.
+- Names: **دفتر** (never a transliteration), **كاليبر** for Calibre, kicker **من دفتر**.
+- The Latin monograms are fixed marks and are never redrawn; everything around them
+  mirrors for RTL — rules, gutters and alignment flip with the text.
+- Arabic has no italic: the one accent word is colour-only (or weight 500).
+- One numeral system per piece — Arabic-Indic for Arabic-first, Western for mixed.
+- Write each language natively; never machine-translate. Never centre-mix scripts on one
+  line — stack them, leading with the primary audience's script.
+
+## Web anatomy
+- One language switch in the primary nav: "العربية" in Plex Sans Arabic (no uppercase,
+  no tracking) on English pages; "EN" in JetBrains Mono on Arabic pages. Never a flag.
+- Every bilingual page declares `hreflang` `en`, `ar` and `x-default` on both versions.
+- Every shareable page has a 1200×630 OG image (Paper ground, Ink and Rust only) with
+  `og:image`, width, height and alt. Arabic pages carry their own `og:url`.
+- `sitemap.xml` lists every public page including the Arabic mirror; update it and
+  `robots.txt` whenever a page is added.
+- Retiring a font means removing it from every CSS loader and asset the same week.
+
+## Social (§09, and v1.3 §07–§14 where not superseded)
+- 1080×1080 feed, 1080×1350 portrait, 1080×1920 story; 72px margin.
+- Numbered mono kicker (№ 001…) and pillar tag on the top row; one serif line with one
+  accent word; wordmark locked bottom-left. Daftar posts on cream, Calibre on white.
+  **Never both brands' marks on one post** — Calibre credits Daftar in the caption only.
+- Captions: Hook → Context → Takeaway → one Call; 40–180 words, 80–120 ideal.
+- Cadence three feed posts a week; 5–8 hashtags; no client names without written
+  permission, no outcome promises, no AI imagery presented as real, no political or
+  religious takes, no naming-and-shaming of firms.
+- **Calibre has no cold-channel presence.** No Calibre mark, name or link on Daftar's
+  LinkedIn or Instagram (Profile Playbook v1.4).
 
 ## Voice (§05)
 Plainly, with the working shown. Confidence without decoration. "We" is the firm; copy
@@ -120,6 +180,11 @@ cadence/superlative claims until the record earns them.
 ---
 
 ## Retired — purge on sight
+- Positioning: "practice of one" / "small senior teams" / "senior hands only" — both
+  overclaim or underclaim against the 12 Sep "we is the firm" ruling
+- Colour: muted `#78726A` → `#6F665D`; "Paper Dark" `#EBE6DA` → soft band `#EFEBE1`
+- Calibre collateral: "hiring diagnostic", "pilot · one role · two weeks · fixed fee",
+  `hello@calibre.daftaradvisory.com` (not a verified route)
 - Font: **Newsreader** → Fraunces
 - Font: **IBM Plex Mono** → JetBrains Mono
 - Rust **`#B3502B`** on Daftar surfaces → `#A8341F` (superseded 6 Oct 2026)
@@ -167,3 +232,17 @@ method never sorts, ranks, or labels finalists and never produces a "fit" score.
   --cal-sans: "Plus Jakarta Sans", system-ui, sans-serif;
 }
 ```
+
+---
+
+## Source register
+Every brand document on file, newest first, and what still governs. Reviewed 6 Oct 2026.
+
+| Document | Issued | Status |
+|---|---|---|
+| This file + Founder rulings | 6 Oct 2026 | **Canonical** |
+| Calibre Brand Playbook v2 | 23 Sep 2026 | Canonical for Calibre visuals |
+| House Brand Handbook v1.5 — `brand_handbook-v.5.pdf` (15 pp, includes §11 Arabic) | 23 Jul 2026 | Base authority for structure, marks, layout, icons, social, motion, Arabic. **Type and rust superseded** (Newsreader / Plex Mono / `#B3502B`). Its spacing chart still shows 44/76 against its own 48/80 rule — use 48/80. |
+| `Brand_Bundle.pdf` (v1.5 + Daftar & Calibre tri-folds) | Jul 2026 | Earlier v1.5 issue without §11. **Both brochures need re-issue**: retired stack, "small senior teams", "EST 2024", three practice lines instead of the four-lane catalogue, and Calibre "hiring diagnostic" / pilot-fee / unverified email. |
+| Daftar Profile Playbook v1.4 | 12 Aug 2026 | Canonical for LinkedIn / Instagram field copy and the four-lane catalogue. **Its brand line is superseded** — it names the retired stack and wrongly flags `#A8341F` assets as off-brand. |
+| `Daftar_Brand_Handbook_v1_2.docx` (content is **v1.3**) | May 2026 | Superseded on type (Fraunces-only body), "Principal", "practice of one", no-mark rule, muted `#78726A`. Still the source for rust-on-ink, accessibility, web anatomy and the social posting rules carried above. |

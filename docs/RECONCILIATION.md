@@ -114,9 +114,19 @@ self-consistent statement of current canon.
 7. **`daftar-engagement-letter` flag closed.** Its spec (Fraunces, JetBrains Mono,
    `#A8341F`, paper `#F4F1EA`) matches current canon.
 
+8. **Four local brand documents reviewed** (Brand Handbook "v1.2" file whose content is
+   v1.3, Profile Playbook v1.4, the v1.5 Brand Bundle, and the later v1.5 handbook PDF with
+   §11 Arabic). Their still-valid rules that `BRAND.md` lacked are now in it: rust-on-ink
+   `#E07458`, contrast minimums, iconography, motion, Arabic & bilingual, web anatomy and
+   social posting. Superseded points are listed in `BRAND.md`'s source register, which
+   also names the collateral that needs re-issue (both tri-fold brochures).
+   Contrast check: `#A8341F` on cream is 5.86:1, better than the handbook's `#B3502B`
+   (4.54:1), which supports the rust decision in item 1. The v1.3 muted `#78726A` fails
+   AA at 4.22:1; the site's `#6F665D` (4.99:1) is kept.
+
 Still open: audit findings F1–F3 and F5–F8 on the shipped Calibre pages. They involve
 offer and claim copy that needs the method owner's approval, so they are tracked in
 `BRAND.md` rather than changed here.
 
-**Not yet compared:** the local working folder (`Daftar and (claibre)`) was unreachable
-during this pass. Anything newer there needs a follow-up diff against this file.
+**Local folder:** not reachable directly; the four documents above were supplied by
+upload instead. Any other files in `Daftar and (claibre)` remain uncompared.
