@@ -222,12 +222,14 @@ body:has(.dft) { background: #f4f1ea; }
   gap: 24px;
 }
 
-/* Brand lockup: Ledger mark, hairline, wordmark (House Brand Guide v1.6 §02).
+/* Brand lockup: folded-file mark, hairline, wordmark (House Brand Guide v1.6 §02).
    These rules are global on purpose: the Arabic pages (globals.css) reuse
    the same mark. */
 .dft-mark { display: block; flex: none; }
-.dft-mark-shell { fill: var(--mark-shell, #1a1814); }
-.dft-mark-total { fill: var(--mark-accent, #a8341f); }
+.dft-mark-page { fill: var(--mark-shell, #1a1814); }
+/* The corner sits on the page, never on the ground, so it stays #A8341F on
+   every surface (5.86:1 against the paper page on ink). */
+.dft-mark-corner { fill: #a8341f; }
 
 .dft-brand { display: flex; align-items: center; gap: 14px; color: var(--ink); }
 .dft-brand-rule { width: 1px; align-self: stretch; background: var(--rule); }
@@ -243,7 +245,7 @@ body:has(.dft) { background: #f4f1ea; }
    accent word is colour and weight only. */
 .dft-brand-ar .dft-wordmark { font-size: 22px; }
 .dft-brand-ar .dft-wordmark em { font-style: normal; font-weight: 500; color: var(--accent); }
-footer .dft-brand-ar { --mark-shell: #f4f1ea; --mark-accent: #e07458; }
+footer .dft-brand-ar { --mark-shell: #f4f1ea; }
 footer .dft-brand-ar .dft-brand-rule { background: rgba(244, 241, 234, 0.22); }
 footer .dft-brand-ar .dft-wordmark { color: #f4f1ea; }
 footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
@@ -698,9 +700,9 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
   gap: 32px;
   flex-wrap: wrap;
 }
-/* Knockout lockup on ink: paper entries, rust-on-ink total (#A8341F fails
-   on ink at 2.68:1; #E07458 passes at 5.75:1). */
-.dft-footer .dft-brand { --mark-shell: var(--paper); --mark-accent: var(--rust-on-ink); }
+/* Knockout lockup on ink: paper page, rust corner. The rust *word* switches
+   to rust-on-ink, because #A8341F text on ink fails at 2.68:1. */
+.dft-footer .dft-brand { --mark-shell: var(--paper); }
 .dft-footer .dft-brand-rule { background: rgba(244, 241, 234, 0.22); }
 .dft-footer .dft-wordmark { color: var(--paper); font-size: 21px; }
 .dft-footer .dft-wordmark em { color: var(--rust-on-ink); }

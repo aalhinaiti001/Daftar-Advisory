@@ -147,3 +147,14 @@ Founder instruction: two typefaces for Daftar, and the Ledger design icon as the
   `scripts/build-brand-assets.py` and `LedgerMark`.
 - `BRAND.md` rewritten as the final guide with the reconstructed version history; a
   designed edition is at `design/brand/house-brand-guide.html`.
+
+### Mark changed to the folded file (1D) — 6 October 2026, before merge
+
+Founder decision after comparing 1B and 1D side by side. The Ledger total bars read close
+to Clipkit's three-bar logo at small sizes; the folded file argues from the name and
+the handover instead. Adopted with the 1D adoption sheet's corrections: a small cut
+below 24px (fold 54/46), clear space = the fold height, Calibre keeps its C monogram.
+One correction was refined against v1.6: the *corner* stays `#A8341F` on ink because it
+sits on the paper page, but rust *text* on ink keeps `#E07458`, since `#A8341F` text on
+ink fails AA at 2.68:1. The component is now `DaftarMark`; the Ledger cuts were removed
+from `public/brand/`.

@@ -63,7 +63,7 @@ Four themes exist (`ink` default, `clay`, `midnight`, plus base) toggled via `da
 **Tokens BRAND.md flags as retired — do not reintroduce on Daftar surfaces:**
 Instrument Sans, Newsreader, IBM Plex Mono, rust `#B3502B`, the "D" monogram tile, any
 `#A8341F → #D07B59` gradient, `#842815` link-hover, and the job title "Principal".
-Fraunces, JetBrains Mono, the Ledger total mark, and "Founder" are canonical.
+Fraunces, JetBrains Mono, the folded-file mark, and "Founder" are canonical.
 
 ---
 
@@ -71,7 +71,7 @@ Fraunces, JetBrains Mono, the Ledger total mark, and "Founder" are canonical.
 
 **There is no component library or Storybook.** Component-like reuse happens two ways:
 
-1. **One shared chrome file**: `app/_components/SiteChrome.tsx` exports `SiteHeader`, `SiteFooter`, `Eyebrow`, and `LedgerMark` (the Daftar logo as inline SVG with three size cuts; the Arabic pages import it too) (a section-label component with an `as` prop — `"div" | "h2" | "h3"` — used to give long-form pages a real heading outline instead of an all-`div` label). These three are the only shared React components in the app; every page imports them directly, e.g.:
+1. **One shared chrome file**: `app/_components/SiteChrome.tsx` exports `SiteHeader`, `SiteFooter`, `Eyebrow`, and `DaftarMark` (the folded-file logo as inline SVG with two size cuts; the Arabic pages import it too) (a section-label component with an `as` prop — `"div" | "h2" | "h3"` — used to give long-form pages a real heading outline instead of an all-`div` label). These three are the only shared React components in the app; every page imports them directly, e.g.:
    ```tsx
    import { SiteHeader, SiteFooter, Eyebrow } from "../_components/SiteChrome";
    <Eyebrow as="h2" tone="rust">§ 01 · Services</Eyebrow>
@@ -105,7 +105,7 @@ Content is separated from markup in `app/_data/`:
 ## 4. Asset management
 
 - **Images:** `public/og-daftar.png`, `public/og-calibre.png` (Open Graph only — there are no in-page photographic/illustrative images anywhere on the Daftar canon pages by design; see §7). Referenced as root-relative paths (`images: ["/og-daftar.png"]` in each page's `metadata`).
-- **Logo and favicon:** the Ledger total mark. `scripts/build-brand-assets.py` generates `public/favicon.svg` (small cut on a cream tile) and `public/brand/daftar-mark*.svg` from one geometry that matches `LedgerMark`; change both together. `design/brand/og-daftar.html` is the source of `public/og-daftar.png` (render at 1200×630). Calibre's HTML files embed their own **data-URI SVG favicon** (the forest C tile) inline; that is Calibre's mark and does not change with the Daftar logo.
+- **Logo and favicon:** the folded-file mark (1D). `scripts/build-brand-assets.py` generates `public/favicon.svg` (small cut on a cream tile) and `public/brand/daftar-mark*.svg` from one geometry that matches `DaftarMark`; change both together. `design/brand/og-daftar.html` is the source of `public/og-daftar.png` (render at 1200×630). Calibre's HTML files embed their own **data-URI SVG favicon** (the forest C tile) inline; that is Calibre's mark and does not change with the Daftar logo.
 - **Downloadable working files:** `public/*.xlsx` (checklists/trackers) — generated artifacts, not hand-edited; see §2.
 - **No CDN/image-optimization config** — `output: "export"` means no `next/image` remote patterns are configured or usable for optimization; treat all images as plain static files served as-is.
 - **No `/public/images` or asset directory convention exists yet** — if Figma exports name a bunch of image assets, you're establishing the convention, not following one. Prefer `public/` root or a new `public/images/` folder, matching the flat structure already there.

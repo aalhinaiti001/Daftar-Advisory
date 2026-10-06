@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LedgerMark } from "../../../_components/SiteChrome";
+import { DaftarMark } from "../../../_components/SiteChrome";
 import type { Metadata } from "next";
 
 const TITLE = "الالتزام الضريبي في السعودية 2026";
@@ -43,7 +43,7 @@ const ARTICLE_SCHEMA = {
 function Mark() {
   return (
     <Link className="dft-brand dft-brand-ar" href="/ar" aria-label="دفتر للاستشارات، الرئيسية">
-      <LedgerMark size={30} />
+      <DaftarMark size={30} />
       <span className="dft-brand-rule" aria-hidden="true" />
       <span className="dft-wordmark" aria-hidden="true">
         دفتر <em>للاستشارات.</em>

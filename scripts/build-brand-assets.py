@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Emit the Daftar Ledger mark as standalone SVGs into public/brand/ and the
-favicon into public/favicon.svg.
+"""Emit the Daftar mark (the folded file, mark 1D) as standalone SVGs into
+public/brand/ and the favicon into public/favicon.svg.
 
-The geometry is defined once here and matches LedgerMark in
-app/_components/SiteChrome.tsx. Colour is substituted per variant, so the
-knockout is never a hand-edited second copy. Run from the repo root:
+The geometry is defined once here and matches DaftarMark in
+app/_components/SiteChrome.tsx. The page colour is substituted per variant;
+the corner is rust #A8341F on every variant, because it sits on the page and
+never on the ground. Run from the repo root:
 
     python3 scripts/build-brand-assets.py
 """
@@ -14,28 +15,24 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "public" / "brand"
 OUT.mkdir(parents=True, exist_ok=True)
 
-INK, RUST = "#1A1814", "#A8341F"
-PAPER, RUST_ON_INK = "#F4F1EA", "#E07458"
+INK, PAPER, RUST = "#1A1814", "#F4F1EA", "#A8341F"
 
-# Size cuts: entries thicken as the mark shrinks so the rust total survives.
-CUTS = {
-    "base": dict(h=13, y2=29, y3=52, total=15),  # 30px and up
-    "md": dict(h=14, y2=29, y3=53, total=16),    # 22-28px
-    "sm": dict(h=15, y2=30, y3=54, total=17),    # 20px and below
-}
+# Two cuts. The fold moves from 64/36 to 54/46 below 24px so the rust corner
+# still registers at favicon size. Nothing else changes.
+CUTS = {"standard": (64, 36), "small": (54, 46)}
 
 
-def rects(cut, shell, accent, inset=0.0, scale=1.0):
-    c = CUTS[cut]
-    rows = [(30, 6, 70, c["h"], shell), (14, c["y2"], 86, c["h"], shell),
-            (44, c["y3"], 56, c["h"], shell), (0, 79, 100, c["total"], accent)]
-    out = []
-    for x, y, w, h, fill in rows:
-        out.append(
-            f'  <rect x="{inset + x * scale:g}" y="{inset + y * scale:g}" '
-            f'width="{w * scale:g}" height="{h * scale:g}" fill="{fill}"/>'
-        )
-    return "\n".join(out)
+def mark(cut, page, inset=0.0, scale=1.0):
+    fold, drop = CUTS[cut]
+
+    def pt(x, y):
+        return f"{inset + x * scale:g} {inset + y * scale:g}"
+
+    return (
+        f'  <path d="M{pt(4, 4)} L{pt(fold, 4)} L{pt(96, drop)} L{pt(96, 96)} '
+        f'L{pt(4, 96)} Z" fill="{page}"/>\n'
+        f'  <path d="M{pt(fold, 4)} L{pt(96, drop)} L{pt(fold, drop)} Z" fill="{RUST}"/>'
+    )
 
 
 def svg(body, label="Daftar Advisory"):
@@ -46,20 +43,26 @@ def svg(body, label="Daftar Advisory"):
 
 
 files = {
-    OUT / "daftar-mark.svg": svg(rects("base", INK, RUST)),
-    OUT / "daftar-mark-small.svg": svg(rects("sm", INK, RUST)),
-    OUT / "daftar-mark-knockout.svg": svg(rects("base", PAPER, RUST_ON_INK)),
-    # App-icon form: the mark on a paper tile, for avatars and social profiles.
+    OUT / "daftar-mark.svg": svg(mark("standard", INK)),
+    OUT / "daftar-mark-small.svg": svg(mark("small", INK)),
+    OUT / "daftar-mark-knockout.svg": svg(mark("standard", PAPER)),
+    # Avatar / app icon: the mark on a paper tile.
     OUT / "daftar-mark-tile.svg": svg(
         f'  <rect width="100" height="100" rx="14" fill="{PAPER}"/>\n'
-        + rects("base", INK, RUST, inset=18, scale=0.64)
+        + mark("standard", INK, inset=18, scale=0.64)
     ),
-    # Favicon: small cut on a paper tile so the ink entries survive dark tab bars.
+    # Favicon: small cut on a paper tile, so the ink page survives dark tab bars.
     ROOT / "public" / "favicon.svg": svg(
         f'  <rect width="100" height="100" rx="16" fill="{PAPER}"/>\n'
-        + rects("sm", INK, RUST, inset=14, scale=0.72)
+        + mark("small", INK, inset=12, scale=0.76)
     ),
 }
+
+# The Ledger total cuts from the earlier proposal are superseded; remove any
+# leftover files so nothing stale ships.
+for stale in OUT.glob("daftar-mark-*.svg"):
+    if stale not in files:
+        stale.unlink()
 
 for path, text in files.items():
     path.write_text(text)

@@ -21,52 +21,62 @@ finance without Big Four overhead: the work done properly, written down in a for
 holds up, and handed over so the client can run it again. Calibre is that discipline
 turned into a product, and always carries the *by Daftar* kicker.
 
-## 02 · The mark — Ledger total
+## 02 · The mark — the folded file
 
-![Ledger mark](public/brand/daftar-mark.svg)
+![Daftar mark](public/brand/daftar-mark.svg)
 
-Three right-aligned entries and the rust **total** rule beneath them: the column of a
-ledger, closed and signed off. It replaces the "D" monogram tile on every Daftar surface.
+An ink page with its top-right corner turned down in rust. Daftar means the ledger;
+every engagement ends with a file the client keeps. It is the only mark of the four
+explored that argues from the name and from what the firm hands over. It replaces the
+"D" monogram tile on every Daftar surface. Adopted 6 October 2026 from the mark 1D
+adoption sheet, with its three corrections.
+
+**The risk, stated plainly.** A page with a cut corner is the universal file icon. What
+makes it Daftar's is the rust corner, so every rule below protects the corner.
 
 **Construction** (100-unit square, one geometry, set in `scripts/build-brand-assets.py`
-and `LedgerMark` in `app/_components/SiteChrome.tsx`):
+and `DaftarMark` in `app/_components/SiteChrome.tsx`):
 
-| Element | x | width | Notes |
+| Cut | Use at | Page path | Corner path |
 |---|---|---|---|
-| Entry 1 | 30 | 70 | ink |
-| Entry 2 | 14 | 86 | ink |
-| Entry 3 | 44 | 56 | ink |
-| Total | 0 | 100 | rust, slightly heavier than the entries |
+| Standard | 24px and up | `M4 4 H64 L96 36 V96 H4 Z` | `M64 4 L96 36 H64 Z` |
+| Small | below 24px, favicon | `M4 4 H54 L96 46 V96 H4 Z` | `M54 4 L96 46 H54 Z` |
 
-**Size cuts** — the mark is not one drawing scaled; entries thicken as it shrinks so the
-total survives at favicon size. Geometry is identical; only weight moves.
+The small cut moves the fold so the corner is just under half the width; at 16–18px the
+standard corner falls under six pixels and stops reading. Two cuts, no other variants.
+Minimum size 16px; below that, the wordmark alone.
 
-| Cut | Use at | Entry height | Total height |
+**Colour** — the corner is rust `#A8341F` on every variant. It sits against the page,
+never against the ground, so it never needs the rust-on-ink tint.
+
+| Ground | Page | Corner | File |
 |---|---|---|---|
-| base | 30px and up | 13 | 15 |
-| md | 22–28px | 14 | 16 |
-| sm | 20px and below | 15 | 17 |
+| Paper | ink `#1A1814` | rust `#A8341F` | `public/brand/daftar-mark.svg` |
+| Ink | paper `#F4F1EA` | rust `#A8341F` | `public/brand/daftar-mark-knockout.svg` |
+| Avatar / app icon | ink, on a paper tile | rust | `public/brand/daftar-mark-tile.svg` |
+| Favicon | small cut, on a paper tile | rust | `public/favicon.svg` |
 
-**Colourways**
+The rust *word* in the wordmark is text, not part of the mark: on ink it switches to
+rust-on-ink `#E07458` (`#A8341F` text on ink fails at 2.68:1).
 
-| Ground | Entries | Total | File |
-|---|---|---|---|
-| Cream / white | ink `#1A1814` | rust `#A8341F` | `public/brand/daftar-mark.svg` |
-| Ink | cream `#F4F1EA` | rust-on-ink `#E07458` | `public/brand/daftar-mark-knockout.svg` |
-| App icon / avatar | ink on a cream tile | rust | `public/brand/daftar-mark-tile.svg` |
-| Favicon | small cut on a cream tile | rust | `public/favicon.svg` |
-| Mono | all ink (or all cream) | same | any — the shape alone carries it |
-
-**Lockups** — one system, no other variants:
+**Lockups** — four, each with an Arabic form; nothing else:
 1. **Horizontal (default):** mark · 1px hairline · wordmark **Daftar *Advisory.*** —
-   "Daftar" upright ink, "*Advisory.*" italic rust with the full stop.
-2. **Stacked (square formats):** mark above the wordmark, left-aligned.
-3. **Micro strip (post headers):** `DAFTAR · ADVISORY` in JetBrains Mono, tracked.
-4. **Arabic:** mark · hairline · **دفتر *للاستشارات.*** — دفتر ink, للاستشارات. rust,
-   weight 500, no slant. The mark never mirrors; the lockup does.
+   "Daftar" upright ink, "*Advisory.*" italic rust with the full stop. The only lockup
+   in the site header.
+2. **Stacked:** mark above the wordmark. Cards, avatars, covers.
+3. **Mark alone:** favicon, avatar, a stamp on a working file. Small cut below 24px.
+4. **Wordmark alone:** where the mark already appears on the same surface; and the micro
+   strip `DAFTAR · ADVISORY` in JetBrains Mono for post headers.
+**Arabic form:** mark · hairline · **دفتر *للاستشارات.*** — للاستشارات. rust, weight 500, no
+   slant. The mark never mirrors; the lockup does.
 
-**Clear space** is one mark-width on every side. Never stretch, rotate, outline, add
-effects, recolour the entries rust, or place the mark on a busy image.
+**Clear space** is the height of the corner fold on all four sides.
+
+**Misuse** — no outline or single-colour version (the rust corner *is* the mark); no
+rotation, fold shading or page-curl illustration; never a rust page with a paper corner;
+never on a white ground (white is Calibre's). Calibre keeps its letter monogram, the
+white **C** in a forest tile: the parent carries an artefact, the product a letterform,
+which keeps the two separable at favicon size.
 
 ## 03 · Colour
 
@@ -187,7 +197,7 @@ marks on one post; Calibre has no cold-channel presence on Daftar's profiles.**
 
 **Print and documents** — Fraunces body 10.5–11pt, JetBrains Mono labels, paper ground,
 rust used as rules and the single accent word. Engagement letters, capability
-statements and brochures use the same two faces and the Ledger lockup.
+statements and brochures use the same two faces and the folded-file lockup.
 
 ## 10 · Calibre (product)
 
@@ -216,7 +226,7 @@ Calibre keeps its approved exception and does **not** take the two-face Daftar r
 
 | Retired | Replaced by |
 |---|---|
-| "D" monogram tile (rust D on ink) | Ledger total mark (§02) |
+| "D" monogram tile (rust D on ink); the "Ledger total" bars, proposed 6 Oct and withdrawn before merge | The folded-file mark (§02) |
 | Instrument Sans, Newsreader, IBM Plex Mono, Amiri | Fraunces + JetBrains Mono; Plex Sans Arabic for Arabic |
 | Rust `#B3502B`; `#842815` hover; the `#A8341F → #D07B59` gradient | `#A8341F`; `#7D2415`; no gradients |
 | Muted `#78726A`; Paper Dark `#EBE6DA` | `#6F665D`; `#EFEBE1` |
@@ -261,18 +271,18 @@ Each line records what that version introduced; later lines win.
 | Profile Playbook v1.4 | 12 Aug 2026 | LinkedIn / Instagram copy on the four-lane catalogue; Calibre off cold channels | playbook docx |
 | Three-repo reconciliation | 9–10 Sep 2026 | Calibre claims aligned to METHOD / GUARDRAILS; `calibre-by-daftar` archived | `docs/RECONCILIATION.md` |
 | Founder rulings | 12 Sep 2026 | Fraunces canonical everywhere; "we" is the firm | commit `7622548` |
-| Logo marks exploration | 13 Sep 2026 | Four candidate symbols: tick, **ledger total**, D, folded file | commit `a68736f` (branch `design/logo-marks`) |
+| Logo marks exploration | 13 Sep 2026 | Four candidate symbols: tick, ledger total, D, **folded file**; 1D adoption sheet with three corrections | commit `a68736f` (branch `design/logo-marks`) |
 | Calibre playbook v2, audit, final-site spec | 23–27 Sep 2026 | Calibre restraint rules; release audit; proposed copy contract | `docs/` |
 | Consolidation | 6 Oct 2026 | Rust unified on `#A8341F` (EN + AR); playbook v2 recorded | PR #41 |
-| **Guide v1.6 (this)** | **6 Oct 2026** | **Two faces only (Fraunces + JetBrains Mono); Ledger total adopted as the Daftar mark; final guide** | PR #41 |
+| **Guide v1.6 (this)** | **6 Oct 2026** | **Two faces only (Fraunces + JetBrains Mono); folded file (1D) adopted as the Daftar mark; final guide** | PR #41 |
 
 ### Documents still to re-issue against v1.6
 - Both tri-fold brochures (`Brand_Bundle.pdf`) — retired stack, D monogram, "small senior
   teams", three practice lines instead of the four-lane catalogue, Calibre pilot copy.
 - Profile Playbook — update its brand line; rebuild the avatar and LinkedIn banner on the
-  Ledger mark (`public/brand/daftar-mark-tile.svg`).
+  folded-file mark (`public/brand/daftar-mark-tile.svg`).
 - `daftar-engagement-letter` skill and capability statement — swap the monogram for the
-  Ledger lockup; fonts already match.
+  folded-file lockup; fonts already match.
 - "Established 2024" appears on the site and brochure; the playbook asks for it to be
   anchored to the entity registration date — confirm before reprinting.
 

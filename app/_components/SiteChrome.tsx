@@ -8,18 +8,18 @@ import { EMAIL } from "../_data/practice";
    yet), it only stops the header from wrongly underlining another item. */
 export type Page = "home" | "about" | "scope" | "knowledge";
 
-/* The Daftar mark: "Ledger total" — three right-aligned entries and the rust
-   total rule beneath them (House Brand Guide v1.6, §02). One geometry, three
-   size cuts: stroke weight grows as the mark shrinks so the total survives at
-   small sizes. Colours come from --mark-shell / --mark-accent (daftar.css), so
-   the knockout on ink is a scope change, never a second drawing. */
-const LEDGER_CUTS = {
-  base: { h: 13, y2: 29, y3: 52, total: 15 }, // 30px and up
-  md: { h: 14, y2: 29, y3: 53, total: 16 }, // 22–28px
-  sm: { h: 15, y2: 30, y3: 54, total: 17 }, // 20px and below
+/* The Daftar mark: the folded file — an ink page with a rust corner turned
+   down (House Brand Guide v1.6, §02). Daftar means the ledger; every
+   engagement ends with a file the client keeps. Two cuts: the corner grows
+   below 24px so the rust still registers in a browser tab. Page colour comes
+   from --mark-shell (daftar.css); the corner is always rust #A8341F, because it
+   sits on the page, never on the ground. */
+const FILE_CUTS = {
+  standard: { fold: 64, drop: 36 }, // 24px and up
+  small: { fold: 54, drop: 46 }, // below 24px
 } as const;
 
-export function LedgerMark({
+export function DaftarMark({
   size = 30,
   title,
 }: {
@@ -27,7 +27,7 @@ export function LedgerMark({
   /** Omit when the mark sits beside the wordmark; the link carries the name. */
   title?: string;
 }) {
-  const c = size <= 20 ? LEDGER_CUTS.sm : size <= 28 ? LEDGER_CUTS.md : LEDGER_CUTS.base;
+  const { fold, drop } = size < 24 ? FILE_CUTS.small : FILE_CUTS.standard;
   return (
     <svg
       className="dft-mark"
@@ -39,10 +39,8 @@ export function LedgerMark({
       aria-hidden={title ? undefined : true}
       focusable="false"
     >
-      <rect className="dft-mark-shell" x="30" y="6" width="70" height={c.h} />
-      <rect className="dft-mark-shell" x="14" y={c.y2} width="86" height={c.h} />
-      <rect className="dft-mark-shell" x="44" y={c.y3} width="56" height={c.h} />
-      <rect className="dft-mark-total" x="0" y="79" width="100" height={c.total} />
+      <path className="dft-mark-page" d={`M4 4H${fold}L96 ${drop}V96H4Z`} />
+      <path className="dft-mark-corner" d={`M${fold} 4L96 ${drop}H${fold}Z`} />
     </svg>
   );
 }
@@ -50,7 +48,7 @@ export function LedgerMark({
 function Mark({ href = "/" }: { href?: string }) {
   return (
     <Link className="dft-brand" href={href} aria-label="Daftar Advisory, home">
-      <LedgerMark size={30} />
+      <DaftarMark size={30} />
       <span className="dft-brand-rule" aria-hidden="true" />
       <span className="dft-wordmark" aria-hidden="true">
         Daftar <em>Advisory.</em>

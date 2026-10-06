@@ -144,30 +144,20 @@ footer.end { padding-block: 40px 0; display: flex; justify-content: space-betwee
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="ledger" viewBox="0 0 100 100">
-    <rect x="30" y="6" width="70" height="13" style="fill:var(--shell,#1A1814)"/>
-    <rect x="14" y="29" width="86" height="13" style="fill:var(--shell,#1A1814)"/>
-    <rect x="44" y="52" width="56" height="13" style="fill:var(--shell,#1A1814)"/>
-    <rect x="0" y="79" width="100" height="15" style="fill:var(--total,#A8341F)"/>
+  <symbol id="file" viewBox="0 0 100 100">
+    <path d="M4 4H64L96 36V96H4Z" style="fill:var(--shell,#1A1814)"/>
+    <path d="M64 4L96 36H64Z" fill="#A8341F"/>
   </symbol>
-  <symbol id="ledger-md" viewBox="0 0 100 100">
-    <rect x="30" y="6" width="70" height="14" style="fill:var(--shell,#1A1814)"/>
-    <rect x="14" y="29" width="86" height="14" style="fill:var(--shell,#1A1814)"/>
-    <rect x="44" y="53" width="56" height="14" style="fill:var(--shell,#1A1814)"/>
-    <rect x="0" y="79" width="100" height="16" style="fill:var(--total,#A8341F)"/>
-  </symbol>
-  <symbol id="ledger-sm" viewBox="0 0 100 100">
-    <rect x="30" y="6" width="70" height="15" style="fill:var(--shell,#1A1814)"/>
-    <rect x="14" y="30" width="86" height="15" style="fill:var(--shell,#1A1814)"/>
-    <rect x="44" y="54" width="56" height="15" style="fill:var(--shell,#1A1814)"/>
-    <rect x="0" y="79" width="100" height="17" style="fill:var(--total,#A8341F)"/>
+  <symbol id="file-sm" viewBox="0 0 100 100">
+    <path d="M4 4H54L96 46V96H4Z" style="fill:var(--shell,#1A1814)"/>
+    <path d="M54 4L96 46H54Z" fill="#A8341F"/>
   </symbol>
 </svg>
 
 <div class="wrap">
   <header class="top">
     <div class="lock">
-      <svg width="30" height="30" role="img" aria-label="Daftar Advisory"><use href="#ledger"/></svg>
+      <svg width="30" height="30" role="img" aria-label="Daftar Advisory"><use href="#file"/></svg>
       <span class="hair"></span>
       <span class="wm">Daftar <em>Advisory.</em></span>
     </div>
@@ -177,8 +167,8 @@ footer.end { padding-block: 40px 0; display: flex; justify-content: space-betwee
   <div class="hero">
     <div>
       <span class="mono rust">§ 00 · The house</span>
-      <h1>One ledger, closed and <em>signed.</em></h1>
-      <p class="lede">The final identity for Daftar Advisory and the rules for Calibre beside it. Two typefaces, one accent, one mark. Every earlier handbook, bundle and brand line is folded into this edition.</p>
+      <h1>One file, kept and <em>signed.</em></h1>
+      <p class="lede">The final identity for Daftar Advisory and the rules for Calibre beside it. Two typefaces, one accent, one mark: the folded file. Every earlier handbook, bundle and brand line is folded into this edition.</p>
     </div>
     <dl class="register" aria-label="Edition details">
       <div><dt class="mono">Edition</dt><dd>v1.6 · final</dd></div>
@@ -205,23 +195,21 @@ footer.end { padding-block: 40px 0; display: flex; justify-content: space-betwee
   <!-- § 02 -->
   <section aria-labelledby="h-mark">
     <span class="mono">§ 02 · The mark</span>
-    <h2 id="h-mark">Three entries and a <em>total.</em></h2>
-    <p class="intro">The Ledger total: three right-aligned figures and the rust rule beneath them, the column of a ledger closed and signed off. It replaces the D monogram tile on every Daftar surface.</p>
+    <h2 id="h-mark">The file the client <em>keeps.</em></h2>
+    <p class="intro">An ink page with its corner turned down in rust. Daftar means the ledger, and every engagement ends with a file the client keeps. The mark replaces the D monogram tile on every Daftar surface.</p>
     <div class="mark-hero">
-      <div class="mark-big"><svg viewBox="0 0 100 100" role="img" aria-label="Ledger total mark"><use href="#ledger"/></svg></div>
+      <div class="mark-big"><svg viewBox="0 0 100 100" role="img" aria-label="Folded file mark"><use href="#file"/></svg></div>
       <div>
         <div class="scroll" style="margin-top:0">
           <table>
-            <thead><tr><th>Element</th><th>x</th><th>Width</th><th>Colour</th></tr></thead>
+            <thead><tr><th>Cut</th><th>Use at</th><th>Fold</th><th>Corner</th></tr></thead>
             <tbody>
-              <tr><td>Entry 1</td><td>30</td><td>70</td><td>Ink</td></tr>
-              <tr><td>Entry 2</td><td>14</td><td>86</td><td>Ink</td></tr>
-              <tr><td>Entry 3</td><td>44</td><td>56</td><td>Ink</td></tr>
-              <tr><td>Total</td><td>0</td><td>100</td><td>Rust, heavier than the entries</td></tr>
+              <tr><td>Standard</td><td>24px and up</td><td>64 / 36</td><td>About a third of the width</td></tr>
+              <tr><td>Small</td><td>Below 24px</td><td>54 / 46</td><td>Just under half, so the rust still reads</td></tr>
             </tbody>
           </table>
         </div>
-        <p class="note" style="margin-top:20px">100-unit square. Clear space is one mark-width on every side. Never stretch, rotate, outline, recolour the entries, or set the mark on a busy image.</p>
+        <p class="note" style="margin-top:20px">100-unit square. A page with a cut corner is the universal file icon; the rust corner is what makes it Daftar's, so every rule protects it. Clear space is the height of the fold on every side. Minimum 16px.</p>
       </div>
     </div>
 
@@ -229,35 +217,36 @@ footer.end { padding-block: 40px 0; display: flex; justify-content: space-betwee
       <div class="panel">
         <span class="mono">Size cuts</span>
         <div class="cuts">
-          <figure><svg width="64" height="64" aria-hidden="true"><use href="#ledger"/></svg><figcaption class="mono">Base · 30+</figcaption></figure>
-          <figure><svg width="26" height="26" aria-hidden="true"><use href="#ledger-md"/></svg><figcaption class="mono">md · 22–28</figcaption></figure>
-          <figure><svg width="16" height="16" aria-hidden="true"><use href="#ledger-sm"/></svg><figcaption class="mono">sm · ≤20</figcaption></figure>
+          <figure><svg width="64" height="64" aria-hidden="true"><use href="#file"/></svg><figcaption class="mono">Standard</figcaption></figure>
+          <figure><svg width="24" height="24" aria-hidden="true"><use href="#file"/></svg><figcaption class="mono">24</figcaption></figure>
+          <figure><svg width="18" height="18" aria-hidden="true"><use href="#file-sm"/></svg><figcaption class="mono">Small · 18</figcaption></figure>
+          <figure><svg width="16" height="16" aria-hidden="true"><use href="#file-sm"/></svg><figcaption class="mono">16</figcaption></figure>
         </div>
-        <p class="note">Entries thicken as the mark shrinks so the total survives at favicon size. Geometry never moves.</p>
+        <p class="note">Below 24px the fold moves to 54/46 so the corner is not lost. Two cuts, no other variants.</p>
       </div>
-      <div class="panel inked" style="--shell:#F4F1EA;--total:#E07458">
+      <div class="panel inked" style="--shell:#F4F1EA">
         <span class="mono">Knockout on ink</span>
-        <div class="stage"><svg width="64" height="64" aria-hidden="true"><use href="#ledger"/></svg></div>
-        <p class="note" style="color:#C4BCAE">Cream entries, rust-on-ink total. Rust #A8341F fails on ink.</p>
+        <div class="stage"><svg width="64" height="64" aria-hidden="true"><use href="#file"/></svg></div>
+        <p class="note" style="color:#C4BCAE">Paper page, rust corner. The corner sits on the page, never on the ink, so it stays #A8341F.</p>
       </div>
       <div class="panel">
         <span class="mono">App icon · favicon</span>
         <div class="stage" style="gap:16px;display:flex;align-items:center">
-          <svg width="64" height="64" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="14" fill="#F4F1EA" stroke="#D8D2C4"/><g transform="translate(18 18) scale(.64)"><use href="#ledger"/></g></svg>
-          <svg width="20" height="20" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="16" fill="#F4F1EA" stroke="#D8D2C4" stroke-width="3"/><g transform="translate(14 14) scale(.72)"><use href="#ledger-sm"/></g></svg>
+          <svg width="64" height="64" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="14" fill="#F4F1EA" stroke="#D8D2C4"/><g transform="translate(18 18) scale(.64)"><use href="#file"/></g></svg>
+          <svg width="20" height="20" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="16" fill="#F4F1EA" stroke="#D8D2C4" stroke-width="3"/><g transform="translate(12 12) scale(.76)"><use href="#file-sm"/></g></svg>
         </div>
-        <p class="note">The mark on a cream tile for avatars, profiles and browser tabs.</p>
+        <p class="note">The mark on a paper tile for avatars, profiles and browser tabs.</p>
       </div>
     </div>
 
     <div class="grid g2">
       <div class="panel">
         <span class="mono">01 · Horizontal — default</span>
-        <div class="stage"><div class="lock"><svg width="34" height="34" aria-hidden="true"><use href="#ledger"/></svg><span class="hair"></span><span class="wm" style="font-size:26px">Daftar <em>Advisory.</em></span></div></div>
+        <div class="stage"><div class="lock"><svg width="34" height="34" aria-hidden="true"><use href="#file"/></svg><span class="hair"></span><span class="wm" style="font-size:26px">Daftar <em>Advisory.</em></span></div></div>
       </div>
       <div class="panel">
         <span class="mono">02 · Stacked — square formats</span>
-        <div class="stage"><div style="display:grid;gap:12px"><svg width="40" height="40" aria-hidden="true"><use href="#ledger"/></svg><span class="wm" style="font-size:26px">Daftar <em>Advisory.</em></span></div></div>
+        <div class="stage"><div style="display:grid;gap:12px"><svg width="40" height="40" aria-hidden="true"><use href="#file"/></svg><span class="wm" style="font-size:26px">Daftar <em>Advisory.</em></span></div></div>
       </div>
       <div class="panel">
         <span class="mono">03 · Micro strip — post headers</span>
@@ -265,7 +254,7 @@ footer.end { padding-block: 40px 0; display: flex; justify-content: space-betwee
       </div>
       <div class="panel">
         <span class="mono">04 · Arabic</span>
-        <div class="stage" style="place-items:center end"><div class="lock" dir="rtl"><svg width="34" height="34" aria-hidden="true"><use href="#ledger"/></svg><span class="hair"></span><span style="font:400 25px/1.2 var(--arabic)">دفتر <span style="color:var(--rust);font-weight:500">للاستشارات.</span></span></div></div>
+        <div class="stage" style="place-items:center end"><div class="lock" dir="rtl"><svg width="34" height="34" aria-hidden="true"><use href="#file"/></svg><span class="hair"></span><span style="font:400 25px/1.2 var(--arabic)">دفتر <span style="color:var(--rust);font-weight:500">للاستشارات.</span></span></div></div>
       </div>
     </div>
   </section>
@@ -377,7 +366,7 @@ footer.end { padding-block: 40px 0; display: flex; justify-content: space-betwee
       <table class="retired">
         <thead><tr><th>Retired</th><th>Use instead</th></tr></thead>
         <tbody>
-          <tr><td>D monogram tile</td><td>Ledger total mark</td></tr>
+          <tr><td>D monogram tile</td><td>The folded-file mark</td></tr>
           <tr><td>Instrument Sans · Newsreader · IBM Plex Mono · Amiri</td><td>Fraunces + JetBrains Mono; Plex Sans Arabic for Arabic</td></tr>
           <tr><td>Rust #B3502B · hover #842815 · rust gradient</td><td>#A8341F · #7D2415 · no gradients</td></tr>
           <tr><td>Muted #78726A · Paper Dark #EBE6DA</td><td>#6F665D · #EFEBE1</td></tr>
@@ -402,14 +391,14 @@ footer.end { padding-block: 40px 0; display: flex; justify-content: space-betwee
       <div><span class="mono">9 Aug 2026</span><p><b>Site rebuilt.</b> Live site kept Fraunces, JetBrains Mono and #A8341F as a recorded exception.</p></div>
       <div><span class="mono">12 Aug 2026</span><p><b>Profile Playbook v1.4.</b> LinkedIn and Instagram on the four-lane catalogue; Calibre off cold channels.</p></div>
       <div><span class="mono">10–12 Sep 2026</span><p><b>Reconciliation and Founder rulings.</b> Calibre claims aligned to its method; Fraunces canonical; "we" is the firm.</p></div>
-      <div><span class="mono">13 Sep 2026</span><p><b>Logo marks exploration.</b> Tick, ledger total, D and folded file explored side by side.</p></div>
+      <div><span class="mono">13 Sep 2026</span><p><b>Logo marks exploration.</b> Tick, ledger total, D and folded file explored side by side; the folded file is chosen.</p></div>
       <div><span class="mono">23–27 Sep 2026</span><p><b>Calibre playbook v2 and audit.</b> Restraint rules, release audit, final-site copy contract.</p></div>
-      <div class="now"><span class="mono rust">6 Oct 2026</span><p><b>Guide v1.6, final.</b> Rust unified on #A8341F. Two faces only. Ledger total adopted as the Daftar mark.</p></div>
+      <div class="now"><span class="mono rust">6 Oct 2026</span><p><b>Guide v1.6, final.</b> Rust unified on #A8341F. Two faces only. The folded file adopted as the Daftar mark.</p></div>
     </div>
   </section>
 
   <footer class="end">
-    <div class="lock"><svg width="22" height="22" aria-hidden="true"><use href="#ledger-md"/></svg><span class="hair"></span><span class="wm" style="font-size:18px">Daftar <em>Advisory.</em></span></div>
+    <div class="lock"><svg width="22" height="22" aria-hidden="true"><use href="#file-sm"/></svg><span class="hair"></span><span class="wm" style="font-size:18px">Daftar <em>Advisory.</em></span></div>
     <span class="mono">Ahmad Al Hinaiti · Founder · ahmad@daftaradvisory.com</span>
   </footer>
 </div>

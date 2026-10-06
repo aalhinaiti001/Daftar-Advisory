@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LedgerMark } from "../_components/SiteChrome";
+import { DaftarMark } from "../_components/SiteChrome";
 import type { Metadata } from "next";
 
 const DESC = "عمل مالي بسيط، حتى حين لا تكون المسألة كذلك. قوائم مالية، استعداد للتدقيق، مراجعة فنية، ودعم صفقات.";
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const email="mailto:ahmad@daftaradvisory.com?subject=محادثة%20مع%20دفتر";
 const services=[["٠١","القوائم المالية","إعدادها أو تنظيفها، مع ملفّاتها الداعمة."],["٠٢","الاستعداد للتدقيق","قبل وصول المدقّق: فجوات، مستندات، خطة."],["٠٣","المراجعة الفنية","رأي ثانٍ في رقم أو معالجة أو موقف محاسبي."],["٠٤","دعم الصفقات","مهمّات محدّدة حول الصفقات والمشاريع الخاصة."]];
 const fit=[["تتحدّث إلى من ينجز العمل","وصول مباشر، بلا وسطاء."],["تعرف النطاق قبل البدء","لا مفاجآت."],["تحصل على ملفّ عملي","لا مجرّد تعليقات."],["تخرج بشيء يبقى","أداة يستمرّ فريقك في استخدامها."]];
-function Mark(){return <Link className="dft-brand dft-brand-ar" href="/ar" aria-label="دفتر للاستشارات، الرئيسية"><LedgerMark size={30}/><span className="dft-brand-rule" aria-hidden="true"/><span className="dft-wordmark" aria-hidden="true">دفتر <em>للاستشارات.</em></span></Link>}
+function Mark(){return <Link className="dft-brand dft-brand-ar" href="/ar" aria-label="دفتر للاستشارات، الرئيسية"><DaftarMark size={30}/><span className="dft-brand-rule" aria-hidden="true"/><span className="dft-wordmark" aria-hidden="true">دفتر <em>للاستشارات.</em></span></Link>}
 function Eye({children}:{children:React.ReactNode}){return <div className="eyebrow chapter">{children}</div>}
 export default function DaftarAr(){return <main className="daftar ar" dir="rtl" lang="ar"><header><Mark/><input type="checkbox" id="nav-toggle" className="nav-toggle" aria-hidden="true"/><label className="menu" htmlFor="nav-toggle" aria-label="القائمة">☰</label><nav><a href="#services">الخدمات</a><a href="#plain">بعبارة بسيطة</a><a href="#fit">المناسب</a><Link href="/ar/knowledge/saudi-compliance-2026">المعرفة</Link><Link href="/ar/calibre">كاليبر</Link><Link href="/" className="lang" aria-label="English">EN</Link><a className="button small" href="#scope">ابدأ محادثة</a></nav></header>
 <section className="hero wrap daftar-hero"><div><Eye>§ ٠٠ · الشركة</Eye><h1>مشورة واضحة. عمل أقدم. بلا طبقات.</h1><p className="lead">دفتر يساعد المؤسّسين والفِرق المالية في أهمّ الأعمال: القوائم المالية، والاستعداد للتدقيق، والمراجعة الفنية، ودعم الصفقات.</p><a className="text-link" href="#services">اطّلع على الخدمات ←</a></div></section>
