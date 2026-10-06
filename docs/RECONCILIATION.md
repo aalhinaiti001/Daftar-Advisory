@@ -83,11 +83,35 @@ domain URLs.
 - **`design/daftar-home.html` stays.** It is superseded and not deployed, and `netlify.toml`
   explains why it must not be copied over `index.html`. It is also the export the recorded
   brand exception was baked from, so deleting it would lose the provenance.
-- **The Fraunces / JetBrains Mono / `#A8341F` stack stays on the Daftar canon surface.**
-  Retired per the handbook, approved per Founder ruling. Recorded exception, not drift.
-- **The Calibre Lora / Plus Jakarta Sans / forest-green stack stays.** Same reason.
-- **`/ar` still runs the v1.5 canon stack while the English home runs the exception.**
-  A real inconsistency, already flagged in `BRAND.md`, and out of scope for a copy pass.
+- **The Calibre Lora / Plus Jakarta Sans / forest-green stack stays.** Approved exception.
 - **The hero's "Reader A 82 / Reader B 41" panel stays.** It depicts the problem, two
   readers with no shared standard, and is labelled illustrative. It is not the product's
   output, so the no-labels rule does not reach it.
+
+## Consolidation — 6 October 2026
+
+Review of every brand and playbook rule in this repo, so that `BRAND.md` is a single,
+self-consistent statement of current canon.
+
+1. **Rust unified on `#A8341F`.** The English site, favicon, engagement-letter skill and
+   house-style documents already used it; only `/ar` (`app/globals.css` `.daftar`) still
+   ran the handbook's `#B3502B`. Arabic is now conformed, and `#B3502B` moves to the
+   retired list. This closes the EN/AR colour split previously listed as open.
+2. **Stale lines above retired.** The 10 September notes described Fraunces / JetBrains
+   Mono as a retired-but-excepted stack and said `/ar` ran a different type system. The
+   12 September ruling made both canonical everywhere; those lines are removed.
+3. **`BRAND.md` no longer contradicts its own CSS block.** It previously set
+   `--rust: #B3502B` as canonical while approving `#A8341F` as the live value.
+4. **Calibre playbook v2 recorded as normative visual rules** (no gradients or heavy
+   shadows, C-tile lockup, one contact route, terms held until approved). Previously
+   these existed only as citations in the 27 September audit.
+5. **Arabic Calibre `og:url` fixed** to `/ar/calibre` (audit finding F4, first half).
+6. **`daftar-engagement-letter` flag closed.** Its spec (Fraunces, JetBrains Mono,
+   `#A8341F`, paper `#F4F1EA`) matches current canon.
+
+Still open: audit findings F1–F3 and F5–F8 on the shipped Calibre pages. They involve
+offer and claim copy that needs the method owner's approval, so they are tracked in
+`BRAND.md` rather than changed here.
+
+**Not yet compared:** the local working folder (`Daftar and (claibre)`) was unreachable
+during this pass. Anything newer there needs a follow-up diff against this file.
