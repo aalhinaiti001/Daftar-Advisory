@@ -64,6 +64,19 @@ The v1.5 handbook values (`#FFFFFF` / `#2C3A31` / `#111214` / `#F5F4F1`) are the
   selection, fit measurement or performance prediction.
 - EN / AR claim parity is a release requirement.
 
+**Calibre site copy contract** (proposed 27 Sep 2026, `docs/superpowers/specs/2026-09-27-calibre-final-website-design.md`):
+- Lead line: *"Make a finance hiring decision you can explain."* Finance roles only; the
+  client brings the shortlist; Calibre does not source candidates.
+- Method names are **Read, Score, Compare, Calibrate**. "Score" names the human panel step;
+  never a leaderboard, ranking, coloured candidate label, or role-fit measure.
+- Use statement, verbatim: *"Structured hiring advisory for finance roles. Not a
+  psychometric assessment. Does not predict performance. The decision, and its
+  consequences, rest with the employer."*
+- Single contact route: `ahmad@daftaradvisory.com`, subject "Calibre Verdict enquiry",
+  with *"Please don't send candidate CVs until terms are agreed."*
+- Website quality filter: no decorative gradients, generic icons, repeated card grids,
+  excessive pills, shadows, giant headings, over-tracked capitals, or stock imagery.
+
 ### Colour rules (§03, both brands)
 - One accent + one ground per brand. **No third accent. No gradients.**
 - **Rust is reserved for large text, rules, icons, and emphasis — never body copy or

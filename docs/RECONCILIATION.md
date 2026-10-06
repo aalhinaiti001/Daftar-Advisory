@@ -106,7 +106,12 @@ self-consistent statement of current canon.
    shadows, C-tile lockup, one contact route, terms held until approved). Previously
    these existed only as citations in the 27 September audit.
 5. **Arabic Calibre `og:url` fixed** to `/ar/calibre` (audit finding F4, first half).
-6. **`daftar-engagement-letter` flag closed.** Its spec (Fraunces, JetBrains Mono,
+6. **Calibre final-site spec brought onto the default branch.** The 27 September
+   proposal (`docs/superpowers/specs/2026-09-27-calibre-final-website-design.md`) lived
+   only on `codex/calibre-final-site`. It is the newest Calibre copy contract in the repo,
+   so its lead line, method names, use statement and single contact route are now in
+   `BRAND.md`. It remains *proposed*; implementation still needs approval.
+7. **`daftar-engagement-letter` flag closed.** Its spec (Fraunces, JetBrains Mono,
    `#A8341F`, paper `#F4F1EA`) matches current canon.
 
 Still open: audit findings F1–F3 and F5–F8 on the shipped Calibre pages. They involve
