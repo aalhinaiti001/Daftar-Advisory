@@ -8,13 +8,50 @@ import { EMAIL } from "../_data/practice";
    yet), it only stops the header from wrongly underlining another item. */
 export type Page = "home" | "about" | "scope" | "knowledge";
 
+/* The Daftar mark: the folded file — an ink page with a rust corner turned
+   down (House Brand Guide v1.6, §02). Daftar means the ledger; every
+   engagement ends with a file the client keeps. Two cuts: the corner grows
+   below 24px so the rust still registers in a browser tab. Page colour comes
+   from --mark-shell (daftar.css); the corner is always rust #A8341F, because it
+   sits on the page, never on the ground. */
+const FILE_CUTS = {
+  standard: { fold: 64, drop: 36 }, // 24px and up
+  small: { fold: 54, drop: 46 }, // below 24px
+} as const;
+
+export function DaftarMark({
+  size = 30,
+  title,
+}: {
+  size?: number;
+  /** Omit when the mark sits beside the wordmark; the link carries the name. */
+  title?: string;
+}) {
+  const { fold, drop } = size < 24 ? FILE_CUTS.small : FILE_CUTS.standard;
+  return (
+    <svg
+      className="dft-mark"
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      role={title ? "img" : undefined}
+      aria-label={title}
+      aria-hidden={title ? undefined : true}
+      focusable="false"
+    >
+      <path className="dft-mark-page" d={`M4 4H${fold}L96 ${drop}V96H4Z`} />
+      <path className="dft-mark-corner" d={`M${fold} 4L96 ${drop}H${fold}Z`} />
+    </svg>
+  );
+}
+
 function Mark({ href = "/" }: { href?: string }) {
   return (
-    <Link className="dft-brand" href={href}>
-      <b>D</b>
-      <span>
-        <em>Daftar</em>
-        <small>ADVISORY</small>
+    <Link className="dft-brand" href={href} aria-label="Daftar Advisory, home">
+      <DaftarMark size={30} />
+      <span className="dft-brand-rule" aria-hidden="true" />
+      <span className="dft-wordmark" aria-hidden="true">
+        Daftar <em>Advisory.</em>
       </span>
     </Link>
   );

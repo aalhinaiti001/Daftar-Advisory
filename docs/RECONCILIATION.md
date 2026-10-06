@@ -83,11 +83,78 @@ domain URLs.
 - **`design/daftar-home.html` stays.** It is superseded and not deployed, and `netlify.toml`
   explains why it must not be copied over `index.html`. It is also the export the recorded
   brand exception was baked from, so deleting it would lose the provenance.
-- **The Fraunces / JetBrains Mono / `#A8341F` stack stays on the Daftar canon surface.**
-  Retired per the handbook, approved per Founder ruling. Recorded exception, not drift.
-- **The Calibre Lora / Plus Jakarta Sans / forest-green stack stays.** Same reason.
-- **`/ar` still runs the v1.5 canon stack while the English home runs the exception.**
-  A real inconsistency, already flagged in `BRAND.md`, and out of scope for a copy pass.
+- **The Calibre Lora / Plus Jakarta Sans / forest-green stack stays.** Approved exception.
 - **The hero's "Reader A 82 / Reader B 41" panel stays.** It depicts the problem, two
   readers with no shared standard, and is labelled illustrative. It is not the product's
   output, so the no-labels rule does not reach it.
+
+## Consolidation — 6 October 2026
+
+Review of every brand and playbook rule in this repo, so that `BRAND.md` is a single,
+self-consistent statement of current canon.
+
+1. **Rust unified on `#A8341F`.** The English site, favicon, engagement-letter skill and
+   house-style documents already used it; only `/ar` (`app/globals.css` `.daftar`) still
+   ran the handbook's `#B3502B`. Arabic is now conformed, and `#B3502B` moves to the
+   retired list. This closes the EN/AR colour split previously listed as open.
+2. **Stale lines above retired.** The 10 September notes described Fraunces / JetBrains
+   Mono as a retired-but-excepted stack and said `/ar` ran a different type system. The
+   12 September ruling made both canonical everywhere; those lines are removed.
+3. **`BRAND.md` no longer contradicts its own CSS block.** It previously set
+   `--rust: #B3502B` as canonical while approving `#A8341F` as the live value.
+4. **Calibre playbook v2 recorded as normative visual rules** (no gradients or heavy
+   shadows, C-tile lockup, one contact route, terms held until approved). Previously
+   these existed only as citations in the 27 September audit.
+5. **Arabic Calibre `og:url` fixed** to `/ar/calibre` (audit finding F4, first half).
+6. **Calibre final-site spec brought onto the default branch.** The 27 September
+   proposal (`docs/superpowers/specs/2026-09-27-calibre-final-website-design.md`) lived
+   only on `codex/calibre-final-site`. It is the newest Calibre copy contract in the repo,
+   so its lead line, method names, use statement and single contact route are now in
+   `BRAND.md`. It remains *proposed*; implementation still needs approval.
+7. **`daftar-engagement-letter` flag closed.** Its spec (Fraunces, JetBrains Mono,
+   `#A8341F`, paper `#F4F1EA`) matches current canon.
+
+8. **Four local brand documents reviewed** (Brand Handbook "v1.2" file whose content is
+   v1.3, Profile Playbook v1.4, the v1.5 Brand Bundle, and the later v1.5 handbook PDF with
+   §11 Arabic). Their still-valid rules that `BRAND.md` lacked are now in it: rust-on-ink
+   `#E07458`, contrast minimums, iconography, motion, Arabic & bilingual, web anatomy and
+   social posting. Superseded points are listed in `BRAND.md`'s source register, which
+   also names the collateral that needs re-issue (both tri-fold brochures).
+   Contrast check: `#A8341F` on cream is 5.86:1, better than the handbook's `#B3502B`
+   (4.54:1), which supports the rust decision in item 1. The v1.3 muted `#78726A` fails
+   AA at 4.22:1; the site's `#6F665D` (4.99:1) is kept.
+
+Still open: audit findings F1–F3 and F5–F8 on the shipped Calibre pages. They involve
+offer and claim copy that needs the method owner's approval, so they are tracked in
+`BRAND.md` rather than changed here.
+
+**Local folder:** not reachable directly; the four documents above were supplied by
+upload instead. Any other files in `Daftar and (claibre)` remain uncompared.
+
+## Brand Guide v1.6 — 6 October 2026
+
+Founder instruction: two typefaces for Daftar, and the Ledger design icon as the logo.
+
+- **Type:** Fraunces + JetBrains Mono. Chosen over Fraunces + Instrument Sans because
+  it is the pair the Founder's own v1.3 handbook and the engagement-letter skill already
+  specify, and the mono "register" voice is what the § eyebrows, service codes and
+  figures rely on. Instrument Sans was used only for body and navigation; both now set
+  in Fraunces. Its loader is removed from `app/globals.css`. Arabic script stays on IBM
+  Plex Sans Arabic. Calibre keeps its Lora / Plus Jakarta Sans exception.
+- **Mark:** direction 1B "Ledger total" from the 13 September logo-marks exploration
+  (branch `design/logo-marks`, commit `a68736f`) replaces the D monogram on the header,
+  footer, Arabic pages, favicon and OG image. Geometry lives once in
+  `scripts/build-brand-assets.py` and `LedgerMark`.
+- `BRAND.md` rewritten as the final guide with the reconstructed version history; a
+  designed edition is at `design/brand/house-brand-guide.html`.
+
+### Mark changed to the folded file (1D) — 6 October 2026, before merge
+
+Founder decision after comparing 1B and 1D side by side. The Ledger total bars read close
+to Clipkit's three-bar logo at small sizes; the folded file argues from the name and
+the handover instead. Adopted with the 1D adoption sheet's corrections: a small cut
+below 24px (fold 54/46), clear space = the fold height, Calibre keeps its C monogram.
+One correction was refined against v1.6: the *corner* stays `#A8341F` on ink because it
+sits on the paper page, but rust *text* on ink keeps `#E07458`, since `#A8341F` text on
+ink fails AA at 2.68:1. The component is now `DaftarMark`; the Ledger cuts were removed
+from `public/brand/`.
