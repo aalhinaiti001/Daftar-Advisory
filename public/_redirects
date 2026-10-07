@@ -4,21 +4,21 @@
 # Evaluated top to bottom; first match wins.
 
 # --- Research briefs -------------------------------------------------------
-# /articles and /insights were indexed but have never been served.
-/articles            /#insights-briefs      301
-/insights            /#insights-briefs      301
-/briefs              /#insights-briefs      301
-/research            /#insights-briefs      301
-/blog                /#insights-briefs      301
+# /articles and /insights were indexed but have never been served. /knowledge
+# is now a real index route, so these land on it rather than a home anchor.
+/articles            /knowledge             301
+/insights            /knowledge             301
+/briefs              /knowledge             301
+/research            /knowledge             301
+/blog                /knowledge             301
 
 # --- Services --------------------------------------------------------------
-# REQUIRES id="services" on the services section before deploying.
-# EXPIRES when real service pages ship (A/02, A/01, A/03, C/03) — replace
-# these lines with direct routes at that point, do not leave them pointing
-# at an anchor that no longer holds the content. The scope builder takes a
-# preselected line via /scope?service=statements|audit|review|transaction.
-/services            /#services             301
-/what-we-do          /#services             301
+# /services and /services/<slug> are real routes served by the Next app
+# (A/01 ifrs-financial-statements, A/02 technical-accounting-review,
+# A/03 audit-readiness, C/03 quality-of-earnings). No rule for /services: it
+# would shadow the page. The scope builder still takes a preselected line via
+# /scope?service=statements|audit|review|transaction.
+/what-we-do          /services              301
 
 # --- Ethics ----------------------------------------------------------------
 /ethics              /#ethics-values        301
@@ -46,10 +46,11 @@
 /call                /scope                302
 
 # --- Deliberately absent ---------------------------------------------------
-# /articles/*, /services/*, /insights/*
+# /articles/*, /insights/*
 #                    — child paths redirect to a list, not a replacement.
 #                      Hold until the Search Console 404 export lands, then
-#                      map individually.
+#                      map individually. (/services/* now resolves to the
+#                      real service pages; unknown children 404.)
 # www / http apex    — Netlify already 301s both to the apex at the
 #                      primary-domain layer. Verified 4 Aug 2026.
 # /* -> /index.html 200

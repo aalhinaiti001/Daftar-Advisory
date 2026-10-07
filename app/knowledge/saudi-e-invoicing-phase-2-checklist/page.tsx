@@ -14,7 +14,7 @@ const PARENT = "/knowledge/saudi-compliance-2026";
 const COUNT = checklist.groups.reduce((n, g) => n + g.items.length, 0);
 
 export const metadata: Metadata = {
-  title: `${TITLE} — Daftar Advisory`,
+  title: `${TITLE} | Daftar Advisory`,
   description: DESC,
   /* No languages map: unlike the parent overview this has no Arabic
      counterpart, per the standing no /ar expansion ruling. */
@@ -60,7 +60,8 @@ const BREADCRUMB_SCHEMA = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Daftar Advisory", item: "https://daftaradvisory.com" },
-    { "@type": "ListItem", position: 2, name: TITLE, item: `https://daftaradvisory.com${URL}` },
+    { "@type": "ListItem", position: 2, name: "Knowledge", item: "https://daftaradvisory.com/knowledge" },
+    { "@type": "ListItem", position: 3, name: TITLE, item: `https://daftaradvisory.com${URL}` },
   ],
 };
 

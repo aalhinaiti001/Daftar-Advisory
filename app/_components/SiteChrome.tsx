@@ -1,12 +1,14 @@
 import Link from "next/link";
-import { EMAIL } from "../_data/practice";
+import { EMAIL, SERVICE_ORDER, SERVICES } from "../_data/practice";
+import { SERVICE_SLUG } from "../_data/services";
+import { LINKEDIN } from "../_data/site";
 
 /* Header and footer for the Daftar pages. The active nav item is passed in
    rather than read from usePathname so these stay server components. */
 
-/* "knowledge" has no nav entry (Knowledge articles are not in primary nav
-   yet), it only stops the header from wrongly underlining another item. */
-export type Page = "home" | "about" | "scope" | "knowledge";
+/* "legal" (privacy, terms) has no nav entry; it only stops the header from
+   wrongly underlining another item. */
+export type Page = "home" | "services" | "knowledge" | "about" | "scope" | "legal";
 
 /* The Daftar mark: the folded file — an ink page with a rust corner turned
    down (House Brand Guide v1.6, §02). Daftar means the ledger; every
@@ -93,6 +95,8 @@ export function SiteHeader({ active }: { active: Page }) {
         <div className="dft-nav-wrap">
           <nav className="dft-nav">
             <Link href="/" aria-current={current("home")}>Practice</Link>
+            <Link href="/services" aria-current={current("services")}>Services</Link>
+            <Link href="/knowledge" aria-current={current("knowledge")}>Knowledge</Link>
             <Link href="/about" aria-current={current("about")}>About</Link>
             <Link href="/scope" aria-current={current("scope")}>Scope builder</Link>
             {/* Not in the design comp. Kept so the Calibre product page and the
@@ -118,12 +122,60 @@ export function SiteFooter() {
         <em className="dft-foot-tag">Rigorous finance, without the overhead.</em>
         <div className="dft-foot-links">
           <a href={`mailto:${EMAIL}`}>{EMAIL.toUpperCase()}</a>
-          <span>AMMAN · MENA</span>
+          <span>AMMAN · JORDAN</span>
+        </div>
+      </div>
+      {/* Sitemap and contact block. Every page links the four service pages,
+          the knowledge index and the legal pages from here, so a crawler (or a
+          reader) can reach all of them from any page. The practice has no
+          public phone number or registration number on the site yet; add them
+          to the Contact column when they are ready to publish. */}
+      {/* A div with the navigation role, not a <nav>: globals.css still
+          styles bare nav{} (display:none, position:absolute on small screens),
+          which would lift this block out of the footer. */}
+      <div className="dft-wrap dft-foot-grid" role="navigation" aria-label="Site">
+        <div>
+          <span className="dft-label">Services</span>
+          <ul>
+            {SERVICE_ORDER.map((key) => (
+              <li key={key}>
+                <Link href={`/services/${SERVICE_SLUG[key]}`}>{SERVICES[key].label}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <span className="dft-label">Practice</span>
+          <ul>
+            <li><Link href="/about">About the practice</Link></li>
+            <li><Link href="/knowledge">Knowledge</Link></li>
+            <li><Link href="/scope">Scope builder</Link></li>
+            <li><Link href="/calibre">Calibre by Daftar</Link></li>
+            <li><Link href="/ar" lang="ar">العربية</Link></li>
+          </ul>
+        </div>
+        <div>
+          <span className="dft-label">Contact</span>
+          <ul>
+            <li><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
+            <li><a href={LINKEDIN} rel="me noopener" target="_blank">Ahmad Al Hinaiti on LinkedIn</a></li>
+            <li>Amman, Jordan</li>
+            <li>Jordan · Saudi Arabia · United Arab Emirates</li>
+          </ul>
+        </div>
+        <div>
+          <span className="dft-label">Legal</span>
+          <ul>
+            <li><Link href="/privacy">Privacy policy</Link></li>
+            <li><Link href="/terms">Terms of use</Link></li>
+            <li><Link href="/terms#disclaimer">Professional disclaimer</Link></li>
+          </ul>
         </div>
       </div>
       <div className="dft-wrap">
         <p className="dft-foot-note">
           Daftar Advisory is a non-attest advisory practice, not a registered statutory auditor.
+          Content on this site is general information, not advice on your situation.
         </p>
       </div>
     </footer>

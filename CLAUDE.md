@@ -4,7 +4,7 @@ This repo runs **three separate, deliberately un-unified styling systems** under
 
 | Surface | Routes | Stylesheet | Framework |
 |---|---|---|---|
-| **Daftar (canon)** | `/`, `/about`, `/scope`, `/knowledge/*` | `app/daftar.css`, namespaced `.dft` | Next.js (React), plain CSS |
+| **Daftar (canon)** | `/`, `/services`, `/services/*`, `/about`, `/scope`, `/knowledge`, `/knowledge/*`, `/privacy`, `/terms` | `app/daftar.css`, namespaced `.dft` | Next.js (React), plain CSS |
 | **Daftar (legacy) / Arabic** | `/ar`, `/ar/knowledge/*` | `app/globals.css`, namespaced `.daftar` / `.ar` | Next.js (React), plain CSS |
 | **Calibre** | `/calibre`, `/ar/calibre` | inline `<style>` + Tailwind Play CDN | Static HTML, copied in at build |
 
@@ -80,6 +80,9 @@ Fraunces, JetBrains Mono, the folded-file mark, and "Founder" are canonical.
 
 Content is separated from markup in `app/_data/`:
 - `practice.ts` — services, FAQ, steps, notes, timing/focus options (typed with `as const` / small interfaces), shared by the home page and the scope builder so copy can't drift between the two.
+- `services.ts` — long-form content for the four `/services/<slug>` pages (scope, deliverables, sectors, FAQ), rendered by the one template at `app/services/[slug]/page.tsx`; `SERVICE_SLUG` maps a `practice.ts` key to its page.
+- `knowledge.ts` — the article index for `/knowledge` (title, dates, tag); mirrors the constants at the top of each article's `page.tsx`, so change both together.
+- `site.ts` — the JSON-LD `@id`s and the LinkedIn URL shared by `layout.tsx` (the `@graph` of ProfessionalService + Person + WebSite) and the pages that reference those nodes.
 - `audit-readiness-checklist.json`, `saudi-einvoicing-phase-2-checklist.json` — checklist content, each imported by **both** a page component and a Python script (`scripts/build-*.py`) that generates a matching downloadable `.xlsx`. If a Figma design changes a checklist's structure, the JSON schema (`{ note, groups: [{ ref, title, blurb, items[] }] }`) needs to keep working for the Python generator too.
 
 **When implementing a new Figma component:** add markup to the relevant `page.tsx` and new rules to `daftar.css` (canon) — don't invent a components folder or a CSS-in-JS system; it would be inconsistent with everything else here.
@@ -147,6 +150,9 @@ app/
   _components/SiteChrome.tsx     # only shared React components (header/footer/eyebrow)
   _data/                         # content, separated from markup
     practice.ts                    # services/FAQ/steps/notes — typed, shared by home + scope builder
+    services.ts                    # long-form service page content, one template renders four slugs
+    knowledge.ts                   # article index for /knowledge (keep in step with each article)
+    site.ts                        # JSON-LD ids + LinkedIn URL shared by layout and pages
     audit-readiness-checklist.json # checklist content, also consumed by scripts/build-*.py
     saudi-einvoicing-phase-2-checklist.json
   daftar.css                     # canon stylesheet (.dft namespace) — most active development happens here
@@ -157,7 +163,10 @@ app/
   scope/page.tsx + ScopeBuilder.tsx  # canon; ScopeBuilder is a "use client" component (only one in the app)
   ar/page.tsx                    # Arabic home (legacy stylesheet)
   ar/knowledge/saudi-compliance-2026/page.tsx
+  services/page.tsx + [slug]/    # service index + the four service pages (SEO landing pages)
+  knowledge/page.tsx             # article index
   knowledge/*/page.tsx           # long-form articles + checklists, all canon
+  privacy/, terms/               # legal pages linked from the footer
 design/
   daftar-home.html               # OLD static home page — superseded, NOT deployed (see netlify.toml comment)
   calibre-home.html               # Calibre EN — static, Tailwind CDN, copied into /calibre at build

@@ -10,7 +10,7 @@ which stylesheet governs which route; `BRAND.md` is the brand source of truth.
 
 | Surface | Routes | Source |
 |---|---|---|
-| Daftar (canon) | `/`, `/about`, `/scope`, `/knowledge/*` | `app/`, styled by `app/daftar.css` |
+| Daftar (canon) | `/`, `/services/*`, `/about`, `/scope`, `/knowledge/*`, `/privacy`, `/terms` | `app/`, styled by `app/daftar.css` |
 | Daftar (Arabic) | `/ar`, `/ar/knowledge/*` | `app/ar/`, styled by `app/globals.css` |
 | Calibre | `/calibre`, `/ar/calibre` | `design/calibre-home.html`, `design/calibre-home-ar.html` |
 

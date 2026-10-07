@@ -2,28 +2,65 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteHeader, SiteFooter, Eyebrow } from "../_components/SiteChrome";
 import { STEPS, EMAIL } from "../_data/practice";
+import { ORG_ID, PERSON_ID, LINKEDIN } from "../_data/site";
 
 const DESC =
-  "A founder led finance advisory boutique in Amman, working across Jordan, the GCC and MENA. Every engagement ends with a working file you keep.";
+  "Ahmad Al Hinaiti founded Daftar Advisory, a finance advisory boutique in Amman working across Saudi Arabia, Jordan and the UAE. See how an engagement runs.";
+const TITLE = "About Ahmad Al Hinaiti, Founder | Daftar Advisory";
 
 export const metadata: Metadata = {
-  title: "About — Daftar Advisory",
+  title: TITLE,
   description: DESC,
   alternates: { canonical: "/about" },
   openGraph: {
-    type: "website",
+    type: "profile",
     siteName: "Daftar Advisory",
-    title: "About — Daftar Advisory",
+    title: TITLE,
     description: DESC,
     url: "/about",
     images: ["/og-daftar.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About — Daftar Advisory",
+    title: TITLE,
     description: DESC,
     images: ["/og-daftar.png"],
   },
+};
+
+/* The founder node is defined once, in layout.tsx; this page is its home, so
+   it says so (mainEntity) and adds the page level detail. Credentials and
+   prior firms belong here when they are ready to publish; nothing is listed
+   that is not on the page. */
+const ABOUT_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "@id": "https://daftaradvisory.com/about",
+  name: "About Daftar Advisory",
+  description: DESC,
+  isPartOf: { "@id": "https://daftaradvisory.com/#website" },
+  about: { "@id": ORG_ID },
+  mainEntity: {
+    "@type": "Person",
+    "@id": PERSON_ID,
+    name: "Ahmad Al Hinaiti",
+    jobTitle: "Founder",
+    description:
+      "Founder of Daftar Advisory. Works personally on IFRS financial statements, technical accounting review, audit readiness and quality of earnings, from first call to final file, in Arabic and English.",
+    worksFor: { "@id": ORG_ID },
+    sameAs: [LINKEDIN],
+    knowsLanguage: ["en", "ar"],
+    workLocation: { "@type": "Place", address: { "@type": "PostalAddress", addressLocality: "Amman", addressCountry: "JO" } },
+  },
+};
+
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Daftar Advisory", item: "https://daftaradvisory.com" },
+    { "@type": "ListItem", position: 2, name: "About", item: "https://daftaradvisory.com/about" },
+  ],
 };
 
 /* Drop a portrait at public/founder.jpg and set this to "/founder.jpg".
@@ -34,19 +71,23 @@ const PORTRAIT_SRC = "";
 const FACTS: [string, React.ReactNode][] = [
   ["Focus", "IFRS reporting and technical review"],
   ["Sectors", "Construction, services, investment"],
+  ["Markets", "Saudi Arabia, Jordan, the UAE"],
   ["Languages", "Arabic and English"],
   ["Contact", <a key="mail" href={`mailto:${EMAIL}`}>{EMAIL}</a>],
+  ["Profile", <a key="in" href={LINKEDIN} rel="me noopener" target="_blank">LinkedIn</a>],
 ];
 
 export default function About() {
   return (
     <div className="dft">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ABOUT_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }} />
       <SiteHeader active="about" />
 
       <main className="dft-rise">
         <section className="dft-wrap dft-page-head">
           <Eyebrow tone="rust">§ 00 · About</Eyebrow>
-          <h1 className="dft-h1">A finance advisory boutique, held to one standard.</h1>
+          <h1 className="dft-h1">A finance advisory boutique in Amman, held to one standard.</h1>
         </section>
 
         <section className="dft-section dft-section-about">
@@ -69,7 +110,7 @@ export default function About() {
           </div>
         </section>
 
-        <section className="dft-section dft-section-about dft-section-soft">
+        <section id="ahmad-al-hinaiti" className="dft-section dft-section-about dft-section-soft">
           <div className="dft-wrap">
             <Eyebrow wide>§ 02 · Who you work with</Eyebrow>
             <div className="dft-founder">

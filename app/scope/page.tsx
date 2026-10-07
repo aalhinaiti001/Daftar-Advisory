@@ -3,23 +3,24 @@ import { SiteHeader, SiteFooter, Eyebrow } from "../_components/SiteChrome";
 import ScopeBuilder from "./ScopeBuilder";
 
 const DESC =
-  "Answer three questions. We assemble a draft engagement outline you can send to us, or hand to whoever approves the budget.";
+  "Three questions, one draft engagement outline for IFRS statements, technical review, audit readiness or quality of earnings. We reply within two working days.";
+const TITLE = "Scope an IFRS or Audit Readiness Engagement | Daftar Advisory";
 
 export const metadata: Metadata = {
-  title: "Scope builder — Daftar Advisory",
+  title: TITLE,
   description: DESC,
   alternates: { canonical: "/scope" },
   openGraph: {
     type: "website",
     siteName: "Daftar Advisory",
-    title: "Scope builder — Daftar Advisory",
+    title: TITLE,
     description: DESC,
     url: "/scope",
     images: ["/og-daftar.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Scope builder — Daftar Advisory",
+    title: TITLE,
     description: DESC,
     images: ["/og-daftar.png"],
   },

@@ -9,7 +9,7 @@ const URL = "/knowledge/saudi-compliance-2026";
 const PUBLISHED = "2026-08-11";
 
 export const metadata: Metadata = {
-  title: `${TITLE} — Daftar Advisory`,
+  title: `${TITLE} | Daftar Advisory`,
   description: DESC,
   alternates: {
     canonical: URL,

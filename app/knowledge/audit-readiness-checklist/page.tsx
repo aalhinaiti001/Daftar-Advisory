@@ -13,7 +13,7 @@ const FILE = "/audit-readiness-checklist.xlsx";
 const COUNT = checklist.groups.reduce((n, g) => n + g.items.length, 0);
 
 export const metadata: Metadata = {
-  title: `${TITLE} — Daftar Advisory`,
+  title: `${TITLE} | Daftar Advisory`,
   description: DESC,
   alternates: { canonical: URL },
   openGraph: {
@@ -51,13 +51,13 @@ const ARTICLE_SCHEMA = {
   image: "https://daftaradvisory.com/og-daftar.png",
 };
 
-/* Two levels: there is no /knowledge index route to point the middle at. */
 const BREADCRUMB_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Daftar Advisory", item: "https://daftaradvisory.com" },
-    { "@type": "ListItem", position: 2, name: TITLE, item: `https://daftaradvisory.com${URL}` },
+    { "@type": "ListItem", position: 2, name: "Knowledge", item: "https://daftaradvisory.com/knowledge" },
+    { "@type": "ListItem", position: 3, name: TITLE, item: `https://daftaradvisory.com${URL}` },
   ],
 };
 
