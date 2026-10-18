@@ -33,6 +33,7 @@ export default function ScopeBuilder() {
 
   const svc = SERVICES[service];
   const time = TIMING.find((t) => t.key === timing) ?? TIMING[0];
+  const duration = service === "review" ? "Typically 2–4 weeks from scope lock; urgent availability confirmed separately" : time.duration;
 
   const included = useMemo(
     () =>
@@ -59,13 +60,13 @@ export default function ScopeBuilder() {
         "\n\nDeliverable: " +
         svc.deliverable +
         "\nIndicative run: " +
-        time.duration +
+        duration +
         "\nTiming: " +
         time.label +
         "\n",
     );
     return `mailto:${EMAIL}?subject=${subject}&body=${body}`;
-  }, [svc, included, time]);
+  }, [svc, included, time, duration]);
 
   const toggleFocus = (key: string) =>
     setFocus((f) => (f.includes(key) ? f.filter((x) => x !== key) : f.concat(key)));
@@ -184,7 +185,7 @@ export default function ScopeBuilder() {
             </div>
             <div>
               <span className="dft-label">Indicative run</span>
-              <b>{time.duration}</b>
+              <b>{duration}</b>
             </div>
           </div>
 

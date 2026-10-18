@@ -90,7 +90,7 @@ export default function Home() {
                   <code>{"0" + (i + 1)}</code>
                   <h3>{SERVICES[key].label}</h3>
                   <p>{SERVICES[key].blurb}</p>
-                  <Link className="dft-btn-sm" href={`/scope?service=${key}`}>Scope this</Link>
+                  <Link className="dft-btn-sm" href={key === "review" ? "/scope/a02" : `/scope?service=${key}`}>{key === "review" ? "Explore this review" : "Scope this"}</Link>
                 </article>
               ))}
             </div>
