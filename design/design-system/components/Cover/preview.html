@@ -1,0 +1,25 @@
+<!-- @dsCard height=288 -->
+<!doctype html><html><head><meta charset="utf-8"><style>
+html,body{margin:0;background:var(--paper)}
+svg{display:block;width:960px;height:288px}
+.gr{fill:var(--paper)} .ink{fill:var(--ink)} .rust{fill:var(--rust)} .soft{fill:var(--soft);stroke:var(--rule);stroke-width:var(--hairline)}
+.ln{stroke:var(--rule);stroke-width:var(--hairline)}
+.nm{font:400 80px/1 var(--font-serif);font-variation-settings:"opsz" 144,"SOFT" 40,"WONK" 0;letter-spacing:-0.03em;fill:var(--ink)}
+.nm .it{font-style:italic;fill:var(--rust)}
+.tg{font:400 13px var(--font-serif);fill:var(--muted)}
+</style></head><body>
+<svg viewBox="0 0 960 288" role="img" aria-label="Daftar Advisory">
+<!-- Derivation
+ Blocks: ink slab 240x240 (space-5 x3) at 100% value, rust fold triangle 77x77 (the 5%), soft slab 144x240 (space-3 x6).
+ Arrangement: the slab and soft slab sit in the right box (x 480-960) on a 24px (space-3) margin, flush to a shared baseline; the rust corner turns down off the slab's top right.
+ Pattern: editorial hairline rules (3, at 24px multiples) behind the blocks, because the system rules by hairline and never by shadow; the fold is the brand's own mark geometry (64/36).
+ Steps and radii: space-3, space-5; square corners as in the mark; hairline 1px. -->
+<rect class="gr" width="960" height="288"/>
+<line class="ln" x1="480" y1="72" x2="960" y2="72"/><line class="ln" x1="480" y1="144" x2="960" y2="144"/><line class="ln" x1="480" y1="216" x2="960" y2="216"/>
+<path class="ink" d="M528 24H691L768 101V264H528Z"/>
+<path class="rust" d="M691 24L768 101H691Z"/>
+<rect class="soft" x="792" y="24" width="144" height="240"/>
+<text class="nm" x="48" y="140">Daftar</text>
+<text class="nm" x="48" y="216"><tspan class="it">Advisory.</tspan></text>
+<text class="tg" x="48" y="262">Rigorous finance, without the overhead.</text>
+</svg></body></html>

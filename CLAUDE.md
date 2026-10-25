@@ -159,6 +159,7 @@ app/
   ar/knowledge/saudi-compliance-2026/page.tsx
   knowledge/*/page.tsx           # long-form articles + checklists, all canon
 design/
+  design-system/                 # Design System artifact export: README (brand book), tokens.json, component previews, fonts, marks
   daftar-home.html               # OLD static home page — superseded, NOT deployed (see netlify.toml comment)
   calibre-home.html               # Calibre EN — static, Tailwind CDN, copied into /calibre at build
   calibre-home-ar.html            # Calibre AR — static, copied into /ar/calibre at build

@@ -1,0 +1,70 @@
+{
+ "v": 3,
+ "layout": "files",
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-10-10T18:22:35Z"
+ },
+ "title": "Daftar Advisory",
+ "namespace": "Daftar",
+ "libraries": [],
+ "sections": {},
+ "groups": [
+  "Marks"
+ ],
+ "assetGroups": {
+  "Marks": {
+   "name": "Marks",
+   "tile": "l",
+   "order": [
+    "daftar-mark.svg",
+    "daftar-mark-small.svg",
+    "daftar-mark-on-ink.svg",
+    "daftar-lockup-horizontal.svg",
+    "daftar-lockup-horizontal-on-ink.svg"
+   ],
+   "files": {
+    "daftar-mark.svg": {
+     "name": "daftar-mark.svg",
+     "blob": "2729a8e85597327f37ac3487cb2bd957",
+     "size": 233,
+     "type": "image/svg+xml"
+    },
+    "daftar-mark-small.svg": {
+     "name": "daftar-mark-small.svg",
+     "blob": "913eda3d522f5375fb2e3718af62af79",
+     "size": 233,
+     "type": "image/svg+xml"
+    },
+    "daftar-mark-on-ink.svg": {
+     "name": "daftar-mark-on-ink.svg",
+     "blob": "1a9f76b1917b57e7e6624de1881dd91b",
+     "size": 350,
+     "type": "image/svg+xml"
+    },
+    "daftar-lockup-horizontal.svg": {
+     "name": "daftar-lockup-horizontal.svg",
+     "blob": "aa520ccdefb002a40038a291a4afd900",
+     "size": 15506,
+     "type": "image/svg+xml"
+    },
+    "daftar-lockup-horizontal-on-ink.svg": {
+     "name": "daftar-lockup-horizontal-on-ink.svg",
+     "blob": "c048593285c87e2e8b8a376bc66b73d5",
+     "size": 15509,
+     "type": "image/svg+xml"
+    }
+   }
+  }
+ },
+ "blobs": {},
+ "docs": {
+  "sections": []
+ },
+ "lastChange": {
+  "by": "Claude",
+  "at": "2026-10-10T18:22:35Z",
+  "via": "Claude Code",
+  "note": "Built from Daftar House Brand Guide v1.6"
+ }
+}
