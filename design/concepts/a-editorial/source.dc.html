@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Daftar Advisory. Senior IFRS, audit and compliance work for companies in Saudi Arabia, the UAE and Jordan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=JetBrains+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,500&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f4f1ea;color:#1a1814;font-family:'Fraunces',Georgia,serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:#a8341f;text-decoration:none}
+a:hover{color:#7d2415}
+::selection{background:rgba(168,52,31,.16)}
+input,select,textarea,button{font:inherit}
+@keyframes riseIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#f4f1ea; color:#1a1814;">
+
+<header>
+  <div style="border-bottom:1px solid #d8d2c4;">
+    <div style="width:min(1120px, calc(100% - 64px)); margin:0 auto; display:flex; justify-content:space-between; gap:24px; padding:10px 0; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d;">
+      <span>Amman · Serving KSA, UAE and Jordan</span>
+      <a href="mailto:ahmad@daftaradvisory.com" style="color:#6f665d;" style-hover="color:#a8341f;">ahmad@daftaradvisory.com</a>
+    </div>
+  </div>
+  <div style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:30px 0 24px; display:flex; justify-content:center;">
+    <button onClick="{{ goHome }}" aria-label="Daftar Advisory" style="background:none; border:0; padding:0; cursor:pointer;"><span style="display:flex; align-items:center; gap:16px;"><svg width="42" height="42" viewBox="0 0 100 100" aria-hidden="true"><path d="M4 4H64L96 36V96H4Z" fill="#1a1814"></path><path d="M64 4L96 36H64Z" fill="#a8341f"></path></svg><span style="width:1px; align-self:stretch; background:#d8d2c4;"></span><span style="font:400 34px/1 'Fraunces',Georgia,serif; font-variation-settings:'opsz' 36; letter-spacing:-.01em; white-space:nowrap; color:#1a1814;">Daftar <em style="color:#a8341f;">Advisory.</em></span></span></button>
+  </div>
+</header>
+<nav style="position:sticky; top:0; z-index:40; background:rgba(244,241,234,.96); backdrop-filter:blur(8px); border-top:1px solid #1a1814; border-bottom:1px solid #d8d2c4;">
+  <div style="width:min(1120px, calc(100% - 64px)); margin:0 auto; display:flex; justify-content:center; align-items:center; gap:6px; flex-wrap:wrap; padding:6px 0;">
+    <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="4">
+      <button onClick="{{ item.onClick }}" style="{{ item.style }}" style-hover="color:#1a1814;">{{ item.label }}</button>
+    </sc-for>
+    <a href="#" lang="ar" dir="rtl" style="font-family:'IBM Plex Sans Arabic',Tahoma,sans-serif; font-size:15px; color:#514c45; padding:8px 4px;" style-hover="color:#a8341f;">العربية</a>
+    <span style="width:1px; height:18px; background:#d8d2c4; margin:0 10px;"></span>
+    <button onClick="{{ goScope }}" style="padding:10px 14px; border:0; background:transparent; cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#a8341f;" style-hover="color:#7d2415;">Scope a project →</button>
+  </div>
+</nav>
+
+<main>
+
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+<div style="animation:riseIn .56s cubic-bezier(.2,.8,.2,1) both;">
+
+  <section style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:80px 0 88px; display:grid; grid-template-columns:minmax(0,1.3fr) minmax(320px,.9fr); gap:72px; align-items:start;">
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#a8341f; margin-bottom:26px;">§ 00 · Finance advisory · KSA · UAE · Jordan</div>
+      <h1 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:350; font-variation-settings:'opsz' 144,'wght' 350,'SOFT' 30; font-size:clamp(3.2rem,6.6vw,6rem); line-height:.98; letter-spacing:-.035em; text-wrap:balance;">Numbers your auditor, investor and tax authority <em style="font-style:italic; color:#a8341f; font-variation-settings:'opsz' 144,'wght' 350,'SOFT' 80;">accept</em>.</h1>
+      <p style="margin:30px 0 0; max-width:36rem; font-family:'Fraunces',Georgia,serif; font-variation-settings:'opsz' 20,'wght' 370,'SOFT' 20; font-size:20px; line-height:1.55; color:#514c45; text-wrap:pretty;">We fix the reporting, audit and tax problems that hold a company back. Senior people, fixed fees, and work your team can run again.</p>
+      <dl style="margin:40px 0 0; border-top:1px solid #1a1814;">
+        <div style="display:grid; grid-template-columns:120px 1fr; gap:24px; padding:14px 0; border-bottom:1px solid #d8d2c4;"><dt style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:#6f665d; padding-top:3px;">What</dt><dd style="margin:0; font-size:15px;">Financial statements, audits, fundraising, profit, month end, and tax.</dd></div>
+        <div style="display:grid; grid-template-columns:120px 1fr; gap:24px; padding:14px 0; border-bottom:1px solid #d8d2c4;"><dt style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:#6f665d; padding-top:3px;">For</dt><dd style="margin:0; font-size:15px;">CEOs, founders and CFOs facing a finance deadline the team cannot cover.</dd></div>
+        <div style="display:grid; grid-template-columns:120px 1fr; gap:24px; padding:14px 0; border-bottom:1px solid #d8d2c4;"><dt style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:#a8341f; padding-top:3px;">Different</dt><dd style="margin:0; font-size:15px;">A senior person on every job. A fixed fee agreed up front. You keep the files.</dd></div>
+      </dl>
+      <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:34px;">
+        <button onClick="{{ goScope }}" style="padding:15px 24px; border-radius:5px; border:0; cursor:pointer; background:#1a1814; color:#f4f1ea; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; transition:background .2s;" style-hover="background:#a8341f;">Get a fixed scope</button>
+        <button onClick="{{ goServices }}" style="padding:15px 24px; border-radius:5px; border:1px solid #1a1814; cursor:pointer; background:transparent; color:#1a1814; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; transition:all .2s;" style-hover="border-color:#a8341f; color:#a8341f;">See what we solve</button>
+      </div>
+    </div>
+
+    <figure style="margin:0; padding-top:6px;">
+      <div style="background:#faf7f1; border:1px solid #d8d2c4; border-radius:6px; padding:30px 32px 26px;">
+        <div style="display:flex; justify-content:space-between; gap:16px; font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d; padding-bottom:14px; border-bottom:2px solid #1a1814;"><span>Daftar Advisory · Technical memo</span><span style="color:#a8341f;">A/02 · p. 1 of 4</span></div>
+        <div style="display:grid; grid-template-columns:44px 1fr; gap:6px 14px; padding:14px 0; border-bottom:1px solid #d8d2c4; font-size:13px;">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:10px; color:#6f665d;">TO</span><span>Group Finance Director</span>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:10px; color:#6f665d;">RE</span><span>Discount rate applied to the lease portfolio</span>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:10px; color:#6f665d;">DATE</span><span>14 September 2026</span>
+        </div>
+        <h4 style="margin:18px 0 6px; font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; color:#6f665d;">1 · Question</h4>
+        <p style="margin:0; font-family:'Fraunces',Georgia,serif; font-variation-settings:'opsz' 14,'wght' 380; font-size:14.5px; line-height:1.55; color:#514c45;">Whether one incremental borrowing rate can be applied across 38 property leases with terms from three to twenty years.</p>
+        <h4 style="margin:16px 0 6px; font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; color:#a8341f;">2 · Conclusion</h4>
+        <p style="margin:0; font-family:'Fraunces',Georgia,serif; font-variation-settings:'opsz' 14,'wght' 380; font-size:14.5px; line-height:1.55; color:#1a1814;">It cannot. The single rate understates the liability on the longer leases. We recommend a rate built by term band, recomputed in Schedule 3.</p>
+        <div style="display:flex; justify-content:space-between; align-items:end; gap:16px; margin-top:20px; padding-top:14px; border-top:1px solid #d8d2c4;">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.06em; color:#6f665d;">IFRS 16.26 · 16.BC160 · 16.C8</span>
+          <em style="font-family:'Fraunces',Georgia,serif; font-size:17px; color:#1a1814; font-variation-settings:'opsz' 36,'wght' 420,'SOFT' 80;">A. Al Hinaiti</em>
+        </div>
+      </div>
+      <figcaption style="margin-top:20px; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#6f665d;">Fig. 1 · What you receive: a one page answer, signed. Details changed.</figcaption>
+    </figure>
+  </section>
+
+  <section style="border-top:1px solid #1a1814; background:#efebe1;">
+    <div style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:72px 0 80px;">
+      <div style="display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:64px; align-items:end; margin-bottom:48px;">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#6f665d; margin-bottom:18px;">§ 01 · What we solve</div>
+          <h2 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:400; font-variation-settings:'opsz' 96,'wght' 400,'SOFT' 30; font-size:clamp(2.2rem,3.8vw,3.2rem); line-height:1.04; letter-spacing:-.025em; text-wrap:balance;">Eight problems we solve. Pick the one that sounds like yours.</h2>
+        </div>
+        <p style="margin:0; max-width:30rem; color:#514c45; text-wrap:pretty;">Each comes with a fixed scope, a fixed fee and a clear deliverable, agreed before we start.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:40px;">
+        <sc-for list="{{ lanes }}" as="lane" hint-placeholder-count="3">
+          <div style="border-top:2px solid #1a1814;">
+            <div style="display:flex; align-items:baseline; gap:12px; padding:16px 0 10px;">
+              <span style="font-family:'Fraunces',Georgia,serif; font-style:italic; font-size:30px; line-height:1; color:#a8341f;">{{ lane.code }}</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:#1a1814;">{{ lane.name }}</span>
+            </div>
+            <sc-for list="{{ lane.items }}" as="s" hint-placeholder-count="3">
+              <button onClick="{{ s.onClick }}" style="display:block; width:100%; text-align:left; background:none; border:0; border-top:1px solid #d8d2c4; padding:18px 0 18px; cursor:pointer; color:#1a1814;" style-hover="color:#a8341f;">
+                <span style="display:flex; justify-content:space-between; gap:12px; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.12em; color:#a8341f; margin-bottom:6px;"><span>{{ s.code }}</span><span style="color:#6f665d;">{{ s.run }}</span></span>
+                <span style="display:block; font-family:'Fraunces',Georgia,serif; font-variation-settings:'opsz' 30,'wght' 480,'SOFT' 20; font-size:19px; line-height:1.22;">{{ s.title }}</span>
+                <span style="display:block; margin-top:6px; font-size:14px; line-height:1.5; color:#514c45;">{{ s.outcome }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#ffffff; border-top:1px solid #d5e3de; border-bottom:1px solid #d5e3de;">
+    <div style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:48px 0; display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr) auto; gap:48px; align-items:center;">
+      <div style="display:flex; flex-direction:column; gap:14px;"><span style="font:600 11px/1 'Plus Jakarta Sans',Arial,sans-serif; letter-spacing:.2em; text-transform:uppercase; color:#265147;">Also from Daftar</span><span style="display:flex; align-items:center; gap:10px;"><span style="width:38px; height:38px; border-radius:8px; background:#265147; color:#ffffff; display:grid; place-items:center; font:500 21px/1 'Lora',Georgia,serif;">C</span><span style="font:italic 500 26px/1 'Lora',Georgia,serif; color:#0e211b;">Calibre</span><span style="font:600 10px/1 'Plus Jakarta Sans',Arial,sans-serif; letter-spacing:.24em; text-transform:uppercase; color:#596b66;">by Daftar</span></span></div>
+      <div style="display:flex; flex-direction:column; gap:10px;"><p style="margin:0; font:400 17px/1.55 'Plus Jakarta Sans',Arial,sans-serif; color:#0e211b;">Hiring a finance lead? Calibre gives you a written recommendation on your shortlist before you make the offer.</p><p style="margin:0; font:italic 400 13.5px/1.5 'Lora',Georgia,serif; color:#596b66;">Structured hiring advisory for finance roles. Not a psychometric assessment. Does not predict performance. The decision, and its consequences, rest with the employer.</p></div>
+      <a href="#" style="align-self:flex-start; padding:12px 18px; border-radius:8px; background:#265147; color:#ffffff; font:600 14px/1 'Plus Jakarta Sans',Arial,sans-serif; white-space:nowrap; transition:background .2s;" style-hover="background:#1b3d35; color:#ffffff;">Visit Calibre ↗</a>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid #d8d2c4;">
+    <div style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:84px 0;">
+      <div style="display:flex; justify-content:space-between; align-items:end; gap:40px; margin-bottom:44px; flex-wrap:wrap;">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#6f665d; margin-bottom:18px;">§ 02 · On the record</div>
+          <h2 style="margin:0; max-width:20ch; font-family:'Fraunces',Georgia,serif; font-weight:400; font-variation-settings:'opsz' 96,'wght' 400,'SOFT' 30; font-size:clamp(2.2rem,3.8vw,3.2rem); line-height:1.04; letter-spacing:-.025em;">Results, with the names removed.</h2>
+        </div>
+        <span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#6f665d;">Sample cases · replace before launch</span>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:0; border-top:1px solid #1a1814;">
+        <sc-for list="{{ homeCases }}" as="c" hint-placeholder-count="3">
+          <article style="{{ c.style }}">
+            <div style="display:flex; justify-content:space-between; gap:12px; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#6f665d; margin-bottom:22px;"><span>{{ c.sector }}</span><span style="color:#a8341f;">{{ c.code }}</span></div>
+            <p style="margin:0; font-family:'Fraunces',Georgia,serif; font-variation-settings:'opsz' 36,'wght' 400,'SOFT' 30; font-size:22px; line-height:1.3; letter-spacing:-.01em; text-wrap:pretty;">{{ c.result }}</p>
+            <p style="margin:16px 0 0; font-size:14px; color:#514c45;">{{ c.context }}</p>
+          </article>
+        </sc-for>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 28px; margin-top:40px; padding-top:20px; border-top:1px solid #d8d2c4;">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:#6f665d;">Sectors served</span>
+        <sc-for list="{{ sectors }}" as="sec" hint-placeholder-count="6">
+          <span style="font-family:'Fraunces',Georgia,serif; font-style:italic; font-size:18px; color:#514c45;">{{ sec }}</span>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid #d8d2c4; background:#1a1814; color:#f4f1ea;">
+    <div style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:84px 0;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#a09585; margin-bottom:18px;">§ 03 · Terms of practice</div>
+      <h2 style="margin:0 0 52px; max-width:22ch; font-family:'Fraunces',Georgia,serif; font-weight:400; font-variation-settings:'opsz' 96,'wght' 400,'SOFT' 30; font-size:clamp(2.2rem,3.8vw,3.2rem); line-height:1.04; letter-spacing:-.025em;">How we work, in four lines.</h2>
+      <div style="display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:32px;">
+        <sc-for list="{{ commitments }}" as="cm" hint-placeholder-count="4">
+          <div style="border-top:1px solid rgba(244,241,234,.25); padding-top:20px;">
+            <span style="font-family:'Fraunces',Georgia,serif; font-style:italic; font-size:34px; line-height:1; color:#e07458;">{{ cm.num }}</span>
+            <h3 style="margin:16px 0 8px; font-family:'Fraunces',Georgia,serif; font-weight:500; font-size:19px;">{{ cm.title }}</h3>
+            <p style="margin:0; font-size:14px; color:#c4bcae;">{{ cm.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid #d8d2c4;">
+    <div style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:84px 0; display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:64px; align-items:start;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#6f665d; margin-bottom:18px;">§ 04 · Notes</div>
+        <button onClick="{{ goInsights }}" style="display:block; text-align:left; background:none; border:0; padding:0; cursor:pointer; color:#1a1814;" style-hover="color:#a8341f;">
+          <span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#a8341f; margin-bottom:14px;">{{ featured.tag }} · {{ featured.date }}</span>
+          <span style="display:block; font-family:'Fraunces',Georgia,serif; font-weight:400; font-variation-settings:'opsz' 96,'wght' 400,'SOFT' 30; font-size:clamp(2rem,3.4vw,2.8rem); line-height:1.06; letter-spacing:-.025em; text-wrap:balance;">{{ featured.title }}</span>
+          <span style="display:block; margin-top:16px; max-width:34rem; font-family:'Fraunces',Georgia,serif; font-size:18px; color:#514c45;">{{ featured.body }}</span>
+        </button>
+      </div>
+      <div style="border-top:1px solid #1a1814;">
+        <sc-for list="{{ moreNotes }}" as="n" hint-placeholder-count="3">
+          <button onClick="{{ goInsights }}" style="display:grid; grid-template-columns:90px 1fr; gap:18px; width:100%; text-align:left; background:none; border:0; border-bottom:1px solid #d8d2c4; padding:20px 0; cursor:pointer; color:#1a1814;" style-hover="color:#a8341f;">
+            <span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#6f665d; padding-top:4px;">{{ n.tag }}</span>
+            <span style="font-family:'Fraunces',Georgia,serif; font-variation-settings:'opsz' 30,'wght' 460; font-size:19px; line-height:1.25;">{{ n.title }}</span>
+          </button>
+        </sc-for>
+        <button onClick="{{ goInsights }}" style="margin-top:20px; background:none; border:0; padding:0; cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#a8341f;">All notes →</button>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid #1a1814;">
+    <div style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:96px 0; display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:64px; align-items:end;">
+      <h2 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:350; font-variation-settings:'opsz' 144,'wght' 350,'SOFT' 30; font-size:clamp(2.6rem,5vw,4.4rem); line-height:1; letter-spacing:-.035em;">Ten minutes is <em style="color:#a8341f;">enough</em> to start.</h2>
+      <div>
+        <p style="margin:0 0 24px; color:#514c45; font-size:17px;">Describe the problem in two minutes. A senior reply within two working days, with a straight answer on whether we can help.</p>
+        <div style="display:flex; gap:14px; flex-wrap:wrap;">
+          <button onClick="{{ goScope }}" style="padding:15px 24px; border-radius:5px; border:0; cursor:pointer; background:#1a1814; color:#f4f1ea; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase;" style-hover="background:#a8341f;">Get a fixed scope</button>
+          <button onClick="{{ goContact }}" style="padding:15px 24px; border-radius:5px; border:1px solid #1a1814; cursor:pointer; background:transparent; color:#1a1814; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase;" style-hover="border-color:#a8341f; color:#a8341f;">Book a call</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</sc-if>
+
+<sc-if value="{{ isServices }}" hint-placeholder-val="{{ false }}">
+<div style="animation:riseIn .56s cubic-bezier(.2,.8,.2,1) both;">
+  <section style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:72px 0 56px; display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); gap:64px; align-items:end;">
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#a8341f; margin-bottom:22px;">§ Services</div>
+      <h1 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:350; font-variation-settings:'opsz' 144,'wght' 350,'SOFT' 30; font-size:clamp(3rem,5.6vw,5rem); line-height:1; letter-spacing:-.035em; text-wrap:balance;">Eight problems we solve.</h1>
+    </div>
+    <p style="margin:0; font-family:'Fraunces',Georgia,serif; font-size:19px; color:#514c45; text-wrap:pretty;">Find the one that sounds like yours. Each shows what is included, what you get, and how long it takes.</p>
+  </section>
+
+  <sc-for list="{{ lanes }}" as="lane" hint-placeholder-count="3">
+    <section style="border-top:1px solid #1a1814;">
+      <div style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:48px 0 56px; display:grid; grid-template-columns:260px minmax(0,1fr); gap:48px; align-items:start;">
+        <div style="position:sticky; top:80px;">
+          <span style="display:block; font-family:'Fraunces',Georgia,serif; font-style:italic; font-weight:300; font-size:96px; line-height:.9; color:#a8341f;">{{ lane.code }}</span>
+          <h2 style="margin:14px 0 10px; font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:500; letter-spacing:.18em; text-transform:uppercase;">{{ lane.name }}</h2>
+          <p style="margin:0; font-size:14px; color:#514c45;">{{ lane.blurb }}</p>
+        </div>
+        <div>
+          <div style="display:grid; grid-template-columns:70px minmax(0,1.5fr) minmax(0,1fr) 120px; gap:24px; padding:0 0 10px; border-bottom:1px solid #d8d2c4; font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d;"><span>Ref</span><span>Problem solved</span><span>You get</span><span>Typical time</span></div>
+          <sc-for list="{{ lane.items }}" as="s" hint-placeholder-count="3">
+            <button onClick="{{ s.onClick }}" style="display:grid; grid-template-columns:70px minmax(0,1.5fr) minmax(0,1fr) 120px; gap:24px; width:100%; text-align:left; background:none; border:0; border-bottom:1px solid #d8d2c4; padding:26px 0; cursor:pointer; color:#1a1814; transition:background .2s;" style-hover="background:#efebe1;">
+              <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#a8341f; padding-top:4px;">{{ s.code }}</span>
+              <span>
+                <span style="display:block; font-family:'Fraunces',Georgia,serif; font-variation-settings:'opsz' 36,'wght' 480,'SOFT' 20; font-size:22px; line-height:1.2;">{{ s.title }}</span>
+                <span style="display:block; margin-top:8px; font-size:15px; color:#514c45; text-wrap:pretty;">{{ s.outcome }}</span>
+              </span>
+              <span style="font-size:14px; color:#514c45; padding-top:5px;">{{ s.deliverable }}</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#514c45; padding-top:6px;">{{ s.run }}</span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </sc-for>
+
+  <section style="border-top:1px solid #1a1814; background:#efebe1;">
+    <div style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:40px 0; display:grid; grid-template-columns:260px minmax(0,1fr) auto; gap:48px; align-items:center;">
+      <span style="font-family:'Fraunces',Georgia,serif; font-style:italic; font-weight:300; font-size:56px; line-height:1; color:#a8341f;">D</span>
+      <div>
+        <h3 style="margin:0 0 6px; font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:500; letter-spacing:.18em; text-transform:uppercase;">Lane D · Retainer</h3>
+        <p style="margin:0; font-family:'Fraunces',Georgia,serif; font-size:18px; color:#514c45;">A fixed monthly fee for senior finance help on any of the above, reviewed each quarter.</p>
+      </div>
+      <button onClick="{{ goContact }}" style="padding:13px 20px; border-radius:5px; border:1px solid #1a1814; background:transparent; cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#1a1814;" style-hover="border-color:#a8341f; color:#a8341f;">Ask about a retainer</button>
+    </div>
+  </section>
+
+  <section style="background:#ffffff; border-top:1px solid #d5e3de; border-bottom:1px solid #d5e3de;">
+    <div style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:48px 0; display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr) auto; gap:48px; align-items:center;">
+      <div style="display:flex; flex-direction:column; gap:14px;"><span style="font:600 11px/1 'Plus Jakarta Sans',Arial,sans-serif; letter-spacing:.2em; text-transform:uppercase; color:#265147;">Also from Daftar</span><span style="display:flex; align-items:center; gap:10px;"><span style="width:38px; height:38px; border-radius:8px; background:#265147; color:#ffffff; display:grid; place-items:center; font:500 21px/1 'Lora',Georgia,serif;">C</span><span style="font:italic 500 26px/1 'Lora',Georgia,serif; color:#0e211b;">Calibre</span><span style="font:600 10px/1 'Plus Jakarta Sans',Arial,sans-serif; letter-spacing:.24em; text-transform:uppercase; color:#596b66;">by Daftar</span></span></div>
+      <div style="display:flex; flex-direction:column; gap:10px;"><p style="margin:0; font:400 17px/1.55 'Plus Jakarta Sans',Arial,sans-serif; color:#0e211b;">Hiring a finance lead? Calibre gives you a written recommendation on your shortlist before you make the offer.</p><p style="margin:0; font:italic 400 13.5px/1.5 'Lora',Georgia,serif; color:#596b66;">Structured hiring advisory for finance roles. Not a psychometric assessment. Does not predict performance. The decision, and its consequences, rest with the employer.</p></div>
+      <a href="#" style="align-self:flex-start; padding:12px 18px; border-radius:8px; background:#265147; color:#ffffff; font:600 14px/1 'Plus Jakarta Sans',Arial,sans-serif; white-space:nowrap; transition:background .2s;" style-hover="background:#1b3d35; color:#ffffff;">Visit Calibre ↗</a>
+    </div>
+  </section>
+</div>
+</sc-if>
+
+<sc-if value="{{ isService }}" hint-placeholder-val="{{ false }}">
+<div style="animation:riseIn .56s cubic-bezier(.2,.8,.2,1) both;">
+  <section style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:48px 0 64px;">
+    <div style="display:flex; gap:10px; align-items:center; font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d; margin-bottom:48px;">
+      <button onClick="{{ goServices }}" style="background:none; border:0; padding:0; cursor:pointer; font:inherit; letter-spacing:inherit; text-transform:inherit; color:#6f665d;" style-hover="color:#a8341f;">Services</button><span>/</span><span>Lane {{ d.lane }}</span><span>/</span><span style="color:#a8341f;">{{ d.code }}</span>
+    </div>
+    <div style="display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); gap:64px; align-items:end;">
+      <div>
+        <span style="display:block; font-family:'Fraunces',Georgia,serif; font-style:italic; font-weight:300; font-size:28px; color:#a8341f; margin-bottom:12px;">{{ d.code }}</span>
+        <h1 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:350; font-variation-settings:'opsz' 144,'wght' 350,'SOFT' 30; font-size:clamp(2.8rem,5vw,4.6rem); line-height:1; letter-spacing:-.035em; text-wrap:balance;">{{ d.title }}</h1>
+      </div>
+      <p style="margin:0; font-family:'Fraunces',Georgia,serif; font-size:20px; line-height:1.5; color:#514c45; text-wrap:pretty;">{{ d.outcome }}</p>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid #1a1814;">
+    <div style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:56px 0 80px; display:grid; grid-template-columns:minmax(0,1.4fr) 340px; gap:72px; align-items:start;">
+      <div>
+        <h2 style="margin:0 0 12px; font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:#6f665d;">§1 · Is this you?</h2>
+        <p style="margin:0 0 44px; font-family:'Fraunces',Georgia,serif; font-size:22px; line-height:1.45; color:#1a1814; text-wrap:pretty;">{{ d.who }}</p>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-bottom:48px;">
+          <div>
+            <h2 style="margin:0 0 14px; padding-bottom:10px; border-bottom:1px solid #1a1814; font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:500; letter-spacing:.18em; text-transform:uppercase;">§2 · In scope</h2>
+            <sc-for list="{{ d.included }}" as="line" hint-placeholder-count="3">
+              <p style="margin:0; padding:12px 0; border-bottom:1px solid #d8d2c4; font-size:15px; display:grid; grid-template-columns:20px 1fr; gap:8px;"><span style="color:#a8341f;">+</span><span>{{ line }}</span></p>
+            </sc-for>
+          </div>
+          <div>
+            <h2 style="margin:0 0 14px; padding-bottom:10px; border-bottom:1px solid #d8d2c4; font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:#6f665d;">§3 · Not in scope</h2>
+            <sc-for list="{{ d.excluded }}" as="line" hint-placeholder-count="2">
+              <p style="margin:0; padding:12px 0; border-bottom:1px solid #d8d2c4; font-size:15px; color:#6f665d; display:grid; grid-template-columns:20px 1fr; gap:8px;"><span>×</span><span>{{ line }}</span></p>
+            </sc-for>
+          </div>
+        </div>
+
+        <h2 style="margin:0 0 6px; font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:#6f665d;">§4 · How it runs</h2>
+        <div style="border-top:1px solid #d8d2c4; margin-bottom:48px;">
+          <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+            <div style="display:grid; grid-template-columns:56px 200px 1fr; gap:20px; padding:18px 0; border-bottom:1px solid #d8d2c4;">
+              <span style="font-family:'Fraunces',Georgia,serif; font-style:italic; font-size:22px; color:#a8341f; line-height:1.1;">{{ st.num }}</span>
+              <span style="font-family:'Fraunces',Georgia,serif; font-weight:500; font-size:17px;">{{ st.title }}</span>
+              <span style="font-size:14px; color:#514c45;">{{ st.body }}</span>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="background:#efebe1; border-top:2px solid #1a1814; padding:28px 30px;">
+          <div style="display:flex; justify-content:space-between; gap:16px; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#6f665d; margin-bottom:14px;"><span>§5 · A recent result · {{ d.case.sector }}</span><span>Sample</span></div>
+          <p style="margin:0; font-family:'Fraunces',Georgia,serif; font-size:24px; line-height:1.3; letter-spacing:-.01em;">{{ d.case.result }}</p>
+          <p style="margin:12px 0 0; font-size:14px; color:#514c45;">{{ d.case.context }}</p>
+        </div>
+      </div>
+
+      <aside style="position:sticky; top:80px; border:1px solid #1a1814; background:#faf7f1;">
+        <div style="padding:14px 20px; border-bottom:1px solid #1a1814; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; display:flex; justify-content:space-between;"><span>Specification</span><span style="color:#a8341f;">{{ d.code }}</span></div>
+        <div style="padding:6px 20px 20px;">
+          <div style="padding:14px 0; border-bottom:1px solid #d8d2c4;"><span style="display:block; font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d; margin-bottom:4px;">You get</span><span style="font-family:'Fraunces',Georgia,serif; font-size:17px;">{{ d.deliverable }}</span></div>
+          <div style="padding:14px 0; border-bottom:1px solid #d8d2c4;"><span style="display:block; font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d; margin-bottom:4px;">Typical time</span><span style="font-family:'Fraunces',Georgia,serif; font-size:17px;">{{ d.run }}</span></div>
+          <div style="padding:14px 0; border-bottom:1px solid #d8d2c4;"><span style="display:block; font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d; margin-bottom:4px;">Fee</span><span style="font-family:'Fraunces',Georgia,serif; font-size:17px;">Fixed, agreed before we start</span></div>
+          <div style="padding:14px 0 20px;"><span style="display:block; font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d; margin-bottom:4px;">Standards</span><span style="font-family:'JetBrains Mono',monospace; font-size:12px;">{{ d.refs }}</span></div>
+          <button onClick="{{ scopeThis }}" style="width:100%; padding:14px 20px; border-radius:5px; border:0; cursor:pointer; background:#1a1814; color:#f4f1ea; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase;" style-hover="background:#a8341f;">Get a fixed scope for this</button>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid #1a1814;">
+    <div style="width:min(1120px, calc(100% - 64px)); margin:0 auto; display:grid; grid-template-columns:1fr 1fr;">
+      <button onClick="{{ goPrev }}" style="text-align:left; background:none; border:0; border-right:1px solid #d8d2c4; padding:32px 32px 32px 0; cursor:pointer; color:#1a1814;" style-hover="color:#a8341f;"><span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d; margin-bottom:8px;">← Previous · {{ prev.code }}</span><span style="font-family:'Fraunces',Georgia,serif; font-size:20px;">{{ prev.title }}</span></button>
+      <button onClick="{{ goNext }}" style="text-align:right; background:none; border:0; padding:32px 0 32px 32px; cursor:pointer; color:#1a1814;" style-hover="color:#a8341f;"><span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d; margin-bottom:8px;">Next · {{ next.code }} →</span><span style="font-family:'Fraunces',Georgia,serif; font-size:20px;">{{ next.title }}</span></button>
+    </div>
+  </section>
+</div>
+</sc-if>
+
+<sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+<div style="animation:riseIn .56s cubic-bezier(.2,.8,.2,1) both;">
+  <section style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:72px 0 64px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#a8341f; margin-bottom:22px;">§ About</div>
+    <h1 style="margin:0; max-width:16ch; font-family:'Fraunces',Georgia,serif; font-weight:350; font-variation-settings:'opsz' 144,'wght' 350,'SOFT' 30; font-size:clamp(3rem,5.6vw,5rem); line-height:1; letter-spacing:-.035em; text-wrap:balance;">One standard, <em style="color:#a8341f;">written down.</em></h1>
+  </section>
+
+  <section style="border-top:1px solid #1a1814;">
+    <div style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:64px 0 80px; display:grid; grid-template-columns:260px minmax(0,1fr); gap:64px;">
+      <div>
+        <span style="display:block; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#6f665d;">The name</span>
+        <span style="display:block; margin-top:12px; font-family:'Fraunces',Georgia,serif; font-style:italic; font-size:30px; color:#a8341f;">daftar, n.</span>
+        <span style="display:block; margin-top:4px; font-size:14px; color:#514c45;">A ledger; a register; the book where things are written down and kept.</span>
+      </div>
+      <div style="columns:2 280px; column-gap:44px;">
+        <p style="margin:0 0 18px; font-family:'Fraunces',Georgia,serif; font-size:19px; line-height:1.6; color:#1a1814;"><span style="float:left; font-family:'Fraunces',Georgia,serif; font-size:68px; line-height:.82; padding:6px 10px 0 0; color:#a8341f;">W</span>e write the work down so it holds up, and hand it over so your team can run it again.</p>
+        <p style="margin:0 0 18px; color:#514c45;">Most advisory work leaves a report and little else. Ours ends with something your team can use: a model they can rerun, a method they can repeat, or a memo that answers the question for good.</p>
+        <p style="margin:0; color:#514c45;">We work in Arabic and English across Saudi Arabia, the UAE and Jordan, and take on only the work we can staff with senior people.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid #d8d2c4; background:#efebe1;">
+    <div style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:72px 0; display:grid; grid-template-columns:260px minmax(0,1fr); gap:64px; align-items:start;">
+      <image-slot id="daftar-founder-a" shape="rect" style="width:260px; height:320px;" placeholder="Optional portrait"></image-slot>
+      <div>
+        <span style="display:block; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#6f665d; margin-bottom:16px;">Who you work with</span>
+        <h2 style="margin:0 0 6px; font-family:'Fraunces',Georgia,serif; font-weight:400; font-size:clamp(2rem,3.4vw,2.8rem); line-height:1.05; letter-spacing:-.02em;">Ahmad Al Hinaiti</h2>
+        <p style="margin:0 0 22px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#a8341f;">Founder · Advisory and technical review</p>
+        <p style="margin:0 0 30px; max-width:40rem; font-family:'Fraunces',Georgia,serif; font-size:19px; line-height:1.55; color:#514c45;">Ahmad leads every engagement himself, from the first call to the final file. You always speak to the person who formed the view.</p>
+        <dl style="margin:0; display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); border-top:1px solid #1a1814;">
+          <div style="padding:16px 16px 0 0;"><dt style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d; margin-bottom:6px;">Focus</dt><dd style="margin:0; font-family:'Fraunces',Georgia,serif; font-size:16px;">IFRS reporting and technical review</dd></div>
+          <div style="padding:16px 16px 0;"><dt style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d; margin-bottom:6px;">Sectors</dt><dd style="margin:0; font-family:'Fraunces',Georgia,serif; font-size:16px;">Construction, real estate, services, investment</dd></div>
+          <div style="padding:16px 16px 0;"><dt style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d; margin-bottom:6px;">Languages</dt><dd style="margin:0; font-family:'Fraunces',Georgia,serif; font-size:16px;">Arabic and English</dd></div>
+          <div style="padding:16px 0 0 16px;"><dt style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d; margin-bottom:6px;">Qualifications</dt><dd style="margin:0; font-family:'Fraunces',Georgia,serif; font-size:16px; color:#6f665d;">[ To confirm ]</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid #1a1814; background:#1a1814; color:#f4f1ea;">
+    <div style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:72px 0;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#a09585; margin-bottom:40px;">How an engagement runs</div>
+      <div style="display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:32px;">
+        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+          <div style="border-top:1px solid rgba(244,241,234,.25); padding-top:20px;">
+            <span style="font-family:'Fraunces',Georgia,serif; font-style:italic; font-size:34px; line-height:1; color:#e07458;">{{ st.num }}</span>
+            <h3 style="margin:16px 0 8px; font-family:'Fraunces',Georgia,serif; font-weight:500; font-size:19px;">{{ st.title }}</h3>
+            <p style="margin:0; font-size:14px; color:#c4bcae;">{{ st.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+</div>
+</sc-if>
+
+<sc-if value="{{ isScope }}" hint-placeholder-val="{{ false }}">
+<div style="animation:riseIn .56s cubic-bezier(.2,.8,.2,1) both;">
+  <section style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:64px 0 96px;">
+    <div style="display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:64px; align-items:end; margin-bottom:56px;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#a8341f; margin-bottom:22px;">§ Scope builder</div>
+        <h1 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:350; font-variation-settings:'opsz' 144,'wght' 350,'SOFT' 30; font-size:clamp(2.8rem,5vw,4.4rem); line-height:1; letter-spacing:-.035em;">Get a draft scope in two minutes.</h1>
+      </div>
+      <p style="margin:0; font-family:'Fraunces',Georgia,serif; font-size:19px; color:#514c45;">Answer three questions. The outline on the right fills in as you go. Send it to us, or to whoever approves the budget.</p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:minmax(0,1fr) minmax(380px,.9fr); gap:64px; align-items:start; border-top:1px solid #1a1814; padding-top:40px;">
+      <div>
+        <h2 style="margin:0 0 18px; display:flex; gap:14px; align-items:baseline; font-family:'Fraunces',Georgia,serif; font-weight:500; font-size:22px;"><em style="color:#a8341f; font-weight:300;">i.</em>Which outcome is closest?</h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:44px;">
+          <sc-for list="{{ scopeOptions }}" as="o" hint-placeholder-count="8">
+            <button onClick="{{ o.onClick }}" style="{{ o.style }}"><span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.12em; color:#a8341f; margin-bottom:4px;">{{ o.code }}</span><span style="display:block; font-family:'Fraunces',Georgia,serif; font-size:16px; line-height:1.25;">{{ o.title }}</span></button>
+          </sc-for>
+        </div>
+        <h2 style="margin:0 0 6px; display:flex; gap:14px; align-items:baseline; font-family:'Fraunces',Georgia,serif; font-weight:500; font-size:22px;"><em style="color:#a8341f; font-weight:300;">ii.</em>What makes it complicated?</h2>
+        <p style="margin:0 0 16px; font-size:14px; color:#6f665d;">Choose any that apply. Each one adds to the scope.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:44px;">
+          <sc-for list="{{ focusOptions }}" as="f" hint-placeholder-count="5">
+            <button onClick="{{ f.onClick }}" style="{{ f.style }}">{{ f.label }}</button>
+          </sc-for>
+        </div>
+        <h2 style="margin:0 0 16px; display:flex; gap:14px; align-items:baseline; font-family:'Fraunces',Georgia,serif; font-weight:500; font-size:22px;"><em style="color:#a8341f; font-weight:300;">iii.</em>When does it need to be done?</h2>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <sc-for list="{{ timingOptions }}" as="t" hint-placeholder-count="3">
+            <button onClick="{{ t.onClick }}" style="{{ t.style }}">{{ t.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="position:sticky; top:80px; background:#faf7f1; border:1px solid #d8d2c4; padding:30px 32px;">
+        <div style="display:flex; justify-content:space-between; font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d; padding-bottom:12px; border-bottom:2px solid #1a1814;"><span>Draft engagement outline</span><span style="color:#a8341f;">{{ outlineRef }}</span></div>
+        <h3 style="margin:20px 0 10px; font-family:'Fraunces',Georgia,serif; font-weight:400; font-size:28px; line-height:1.1; letter-spacing:-.015em;">{{ sv.title }}</h3>
+        <p style="margin:0 0 20px; font-family:'Fraunces',Georgia,serif; font-size:15.5px; color:#514c45;">{{ sv.outcome }}</p>
+        <h4 style="margin:0 0 8px; padding-top:14px; border-top:1px solid #d8d2c4; font-family:'JetBrains Mono',monospace; font-size:9.5px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; color:#6f665d;">In scope</h4>
+        <sc-for list="{{ scopeIncluded }}" as="line" hint-placeholder-count="4">
+          <p style="margin:0 0 7px; display:grid; grid-template-columns:16px 1fr; gap:8px; font-size:14px;"><span style="color:#a8341f;">+</span><span>{{ line }}</span></p>
+        </sc-for>
+        <h4 style="margin:16px 0 8px; padding-top:14px; border-top:1px solid #d8d2c4; font-family:'JetBrains Mono',monospace; font-size:9.5px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; color:#6f665d;">Not in scope</h4>
+        <sc-for list="{{ sv.excluded }}" as="line" hint-placeholder-count="2">
+          <p style="margin:0 0 7px; display:grid; grid-template-columns:16px 1fr; gap:8px; font-size:14px; color:#6f665d;"><span>×</span><span>{{ line }}</span></p>
+        </sc-for>
+        <div style="display:grid; grid-template-columns:1fr 1fr; margin-top:16px; border-top:1px solid #d8d2c4;">
+          <div style="padding:14px 14px 0 0;"><span style="display:block; font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d; margin-bottom:4px;">You receive</span><span style="font-family:'Fraunces',Georgia,serif; font-size:15px;">{{ sv.deliverable }}</span></div>
+          <div style="padding:14px 0 0 14px; border-left:1px solid #d8d2c4;"><span style="display:block; font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d; margin-bottom:4px;">Indicative run</span><span style="font-family:'Fraunces',Georgia,serif; font-size:15px;">{{ tm.duration }}</span></div>
+        </div>
+        <p style="margin:20px 0 14px; font-size:13px; color:#6f665d;">{{ tm.next }}</p>
+        <a href="{{ mailHref }}" style="display:block; text-align:center; padding:14px 20px; border-radius:5px; background:#1a1814; color:#f4f1ea; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase;" style-hover="background:#a8341f; color:#f4f1ea;">Send this outline</a>
+      </div>
+    </div>
+  </section>
+</div>
+</sc-if>
+
+<sc-if value="{{ isInsights }}" hint-placeholder-val="{{ false }}">
+<div style="animation:riseIn .56s cubic-bezier(.2,.8,.2,1) both;">
+  <section style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:64px 0 40px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#a8341f; margin-bottom:22px;">§ Notes</div>
+    <h1 style="margin:0; max-width:18ch; font-family:'Fraunces',Georgia,serif; font-weight:350; font-variation-settings:'opsz' 144,'wght' 350,'SOFT' 30; font-size:clamp(3rem,5.6vw,5rem); line-height:1; letter-spacing:-.035em;">Short reads on what is changing for finance in the region.</h1>
+    <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:44px; border-top:1px solid #1a1814; border-bottom:1px solid #d8d2c4; padding:6px 0;">
+      <sc-for list="{{ tagTabs }}" as="tg" hint-placeholder-count="6">
+        <button onClick="{{ tg.onClick }}" style="{{ tg.style }}">{{ tg.label }}</button>
+      </sc-for>
+    </div>
+  </section>
+  <section style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:0 0 96px;">
+    <sc-for list="{{ notesShown }}" as="n" hint-placeholder-count="5">
+      <article style="display:grid; grid-template-columns:140px minmax(0,1.2fr) minmax(0,1fr) 80px; gap:32px; padding:30px 0; border-bottom:1px solid #d8d2c4; cursor:pointer;" style-hover="background:#efebe1;">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:#6f665d; padding-top:6px;">{{ n.date }}</span>
+        <span>
+          <span style="display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#a8341f; margin-bottom:8px;">{{ n.tag }}</span>
+          <span style="display:block; font-family:'Fraunces',Georgia,serif; font-variation-settings:'opsz' 48,'wght' 420; font-size:26px; line-height:1.15; letter-spacing:-.015em;">{{ n.title }}</span>
+        </span>
+        <span style="font-family:'Fraunces',Georgia,serif; font-size:16px; color:#514c45; padding-top:24px;">{{ n.body }}</span>
+        <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; color:#6f665d; text-align:right; padding-top:6px;">{{ n.read }}</span>
+      </article>
+    </sc-for>
+  </section>
+</div>
+</sc-if>
+
+<sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+<div style="animation:riseIn .56s cubic-bezier(.2,.8,.2,1) both;">
+  <section style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:64px 0 96px; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); gap:80px; align-items:start;">
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#a8341f; margin-bottom:22px;">§ Contact</div>
+      <h1 style="margin:0; font-family:'Fraunces',Georgia,serif; font-weight:350; font-variation-settings:'opsz' 144,'wght' 350,'SOFT' 30; font-size:clamp(2.8rem,5vw,4.4rem); line-height:1; letter-spacing:-.035em;">Tell us the problem in a few lines.</h1>
+      <p style="margin:26px 0 40px; font-family:'Fraunces',Georgia,serif; font-size:19px; color:#514c45;">A senior reply within two working days. If we are not the right fit, we will say so and point you elsewhere.</p>
+      <div style="border-top:1px solid #1a1814;">
+        <div style="display:grid; grid-template-columns:110px 1fr; gap:20px; padding:16px 0; border-bottom:1px solid #d8d2c4;"><span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d; padding-top:3px;">Email</span><a href="mailto:ahmad@daftaradvisory.com" style="font-family:'Fraunces',Georgia,serif; font-size:18px;">ahmad@daftaradvisory.com</a></div>
+        <div style="display:grid; grid-template-columns:110px 1fr; gap:20px; padding:16px 0; border-bottom:1px solid #d8d2c4;"><span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d; padding-top:3px;">Base</span><span style="font-family:'Fraunces',Georgia,serif; font-size:18px;">Amman, Jordan</span></div>
+        <div style="display:grid; grid-template-columns:110px 1fr; gap:20px; padding:16px 0; border-bottom:1px solid #d8d2c4;"><span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d; padding-top:3px;">Call</span><span style="font-family:'Fraunces',Georgia,serif; font-size:18px;">Twenty minutes, no charge</span></div>
+      </div>
+    </div>
+
+    <div style="background:#faf7f1; border:1px solid #d8d2c4; padding:36px 38px;">
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:26px 28px;">
+          <label style="display:flex; flex-direction:column; gap:6px;"><span style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d;">Name</span><input value="{{ form.name }}" onChange="{{ setName }}" placeholder="Your name" style="border:0; border-bottom:1px solid #1a1814; background:transparent; padding:8px 0; font-family:'Fraunces',Georgia,serif; font-size:18px; color:#1a1814; outline:none;"></label>
+          <label style="display:flex; flex-direction:column; gap:6px;"><span style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d;">Company</span><input value="{{ form.company }}" onChange="{{ setCompany }}" placeholder="Company" style="border:0; border-bottom:1px solid #1a1814; background:transparent; padding:8px 0; font-family:'Fraunces',Georgia,serif; font-size:18px; color:#1a1814; outline:none;"></label>
+          <label style="grid-column:1 / -1; display:flex; flex-direction:column; gap:6px;"><span style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d;">Work email</span><input value="{{ form.email }}" onChange="{{ setEmail }}" placeholder="name@company.com" style="border:0; border-bottom:1px solid #1a1814; background:transparent; padding:8px 0; font-family:'Fraunces',Georgia,serif; font-size:18px; color:#1a1814; outline:none;"></label>
+          <div style="grid-column:1 / -1; display:flex; flex-direction:column; gap:10px;">
+            <span style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d;">Closest outcome</span>
+            <div style="display:flex; flex-wrap:wrap; gap:6px;">
+              <sc-for list="{{ topicChips }}" as="tp" hint-placeholder-count="9">
+                <button onClick="{{ tp.onClick }}" style="{{ tp.style }}">{{ tp.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+          <label style="grid-column:1 / -1; display:flex; flex-direction:column; gap:6px;"><span style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:#6f665d;">The situation</span><textarea value="{{ form.msg }}" onChange="{{ setMsg }}" rows="5" placeholder="What is the deadline, and who is asking?" style="border:1px solid #d8d2c4; background:#f4f1ea; padding:12px 14px; font-family:'Fraunces',Georgia,serif; font-size:16px; color:#1a1814; outline:none; resize:vertical;"></textarea></label>
+        </div>
+        <button onClick="{{ send }}" style="margin-top:28px; width:100%; padding:15px 20px; border-radius:5px; border:0; cursor:pointer; background:#1a1814; color:#f4f1ea; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase;" style-hover="background:#a8341f;">Send</button>
+      </sc-if>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:40px 0; text-align:center;">
+          <span style="font-family:'Fraunces',Georgia,serif; font-style:italic; font-size:56px; color:#a8341f; line-height:1;">Received.</span>
+          <p style="margin:18px auto 24px; max-width:28rem; font-family:'Fraunces',Georgia,serif; font-size:18px; color:#514c45;">Thank you. Expect a reply from Ahmad within two working days.</p>
+          <button onClick="{{ resetForm }}" style="background:none; border:0; cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#a8341f;">Send another</button>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+</div>
+</sc-if>
+
+</main>
+
+<footer style="border-top:1px solid #1a1814; background:#f4f1ea; color:#1a1814;">
+  <div style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:56px 0 32px; display:grid; grid-template-columns:minmax(0,1.3fr) repeat(3, minmax(0,1fr)); gap:40px;">
+    <div>
+      <span style="display:flex; align-items:center; gap:12px;"><svg width="30" height="30" viewBox="0 0 100 100" aria-hidden="true"><path d="M4 4H64L96 36V96H4Z" fill="#1a1814"></path><path d="M64 4L96 36H64Z" fill="#a8341f"></path></svg><span style="width:1px; align-self:stretch; background:#d8d2c4;"></span><span style="font:400 22px/1 'Fraunces',Georgia,serif; font-variation-settings:'opsz' 36; letter-spacing:-.01em; white-space:nowrap; color:#1a1814;">Daftar <em style="color:#a8341f;">Advisory.</em></span></span>
+      <p style="margin:20px 0 0; max-width:22rem; font-style:italic; font-size:16px; color:#514c45;">Rigorous finance, without the overhead.</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:8px; font-size:15px; color:#514c45;">
+      <span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:#6f665d; margin-bottom:6px;">Lanes</span>
+      <span>A · Reporting and audit</span><span>B · Growth and profit</span><span>C · Tax and compliance</span><span>D · Retainer</span>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:8px; font-size:15px; color:#514c45;">
+      <span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:#6f665d; margin-bottom:6px;">Practice</span>
+      <span>About</span><span>Notes</span><span>Scope builder</span><span>Calibre by Daftar</span>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:8px; font-size:15px; color:#514c45;">
+      <span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:#6f665d; margin-bottom:6px;">Contact</span>
+      <a href="mailto:ahmad@daftaradvisory.com">ahmad@daftaradvisory.com</a><span>Amman · MENA</span>
+    </div>
+  </div>
+  <div style="width:min(1120px, calc(100% - 64px)); margin:0 auto; padding:18px 0 28px; border-top:1px solid #d8d2c4; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:#6f665d;"><span>Ahmad Al Hinaiti · Founder</span><span>Advisory services only · No audit opinions issued</span></div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;page&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;services&quot;,&quot;service&quot;,&quot;about&quot;,&quot;scope&quot;,&quot;insights&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;service&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;A01&quot;,&quot;A02&quot;,&quot;A03&quot;,&quot;B01&quot;,&quot;B02&quot;,&quot;B03&quot;,&quot;C01&quot;,&quot;C02&quot;],&quot;default&quot;:&quot;A01&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;embedded&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { page: this.props.page || 'home', svc: this.props.service || 'A01', scopeSvc: this.props.service || 'A01', focus: [], timing: 'quarter', tag: 'All', sent: false, topic: '', form: { name: '', company: '', email: '', msg: '' } };
+
+  componentDidUpdate(p) {
+    if (this.props.page && p.page !== this.props.page) this.setState({ page: this.props.page });
+    if (this.props.service && p.service !== this.props.service) this.setState({ svc: this.props.service, scopeSvc: this.props.service });
+  }
+
+  componentDidMount() {
+    const s = new URLSearchParams(window.location.search).get('s');
+    if (s && SERVICES.some(x => x.id === s)) this.setState({ svc: s, scopeSvc: s });
+  }
+
+  go(page, extra) {
+    if (this.props.linked) { const e = extra || {}, s = e.svc || e.scopeSvc; window.location.href = encodeURI(this.props.linked + PAGE_NAMES[page] + '.dc.html') + (s ? '?s=' + s : ''); return; }
+    this.setState(Object.assign({ page }, extra || {}), () => { if (!this.props.embedded) window.scrollTo({ top: 0 }); });
+  }
+
+  setField(k) { return e => { const v = e.target.value; this.setState(s => ({ form: Object.assign({}, s.form, { [k]: v }) })); }; }
+
+  navStyle(active) {
+    return "padding:10px 14px; border:0; background:transparent; cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:" + (active ? '#1a1814' : '#6f665d') + '; box-shadow:' + (active ? 'inset 0 -2px 0 #a8341f' : 'none') + ';';
+  }
+  pick(active) {
+    return 'text-align:left; padding:14px 16px; border-radius:6px; cursor:pointer; color:#1a1814; background:' + (active ? '#faf7f1' : 'transparent') + '; border:1px solid ' + (active ? '#1a1814' : '#d8d2c4') + '; box-shadow:' + (active ? 'inset 3px 0 0 #a8341f' : 'none') + '; transition:border-color .2s;';
+  }
+  chip(active) {
+    return "padding:9px 14px; border-radius:6px; cursor:pointer; font-size:14px; border:1px solid " + (active ? '#1a1814' : '#d8d2c4') + '; background:' + (active ? '#1a1814' : 'transparent') + '; color:' + (active ? '#f4f1ea' : '#514c45') + '; transition:all .2s;';
+  }
+  tab(active) {
+    return "padding:9px 14px; border:0; cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; background:" + (active ? '#1a1814' : 'transparent') + '; color:' + (active ? '#f4f1ea' : '#514c45') + ';';
+  }
+
+  renderVals() {
+    const st = this.state, page = st.page;
+    const idx = Math.max(0, SERVICES.findIndex(s => s.id === st.svc));
+    const d = SERVICES[idx];
+    const prev = SERVICES[(idx + SERVICES.length - 1) % SERVICES.length];
+    const next = SERVICES[(idx + 1) % SERVICES.length];
+    const sv = SERVICES.find(s => s.id === st.scopeSvc) || SERVICES[0];
+    const tm = TIMING.find(t => t.key === st.timing) || TIMING[1];
+    const scopeIncluded = sv.included.concat(st.focus.map(k => FOCUS.find(f => f.key === k)).filter(Boolean).map(f => f.adds));
+    const body = encodeURIComponent('Engagement: ' + sv.code + ' ' + sv.title + '\n\n' + sv.outcome + '\n\nIn scope\n' + scopeIncluded.map(l => '+ ' + l).join('\n') + '\n\nNot in scope\n' + sv.excluded.map(l => 'x ' + l).join('\n') + '\n\nDeliverable: ' + sv.deliverable + '\nTiming: ' + tm.label + ' (' + tm.duration + ')\n');
+    const openSvc = id => () => this.go('service', { svc: id });
+    const lanes = LANES.map(l => Object.assign({}, l, { items: SERVICES.filter(s => s.lane === l.code).map(s => Object.assign({}, s, { onClick: openSvc(s.id) })) }));
+    const notesShown = st.tag === 'All' ? NOTES : NOTES.filter(n => n.group === st.tag);
+    const caseIds = ['A02', 'B02', 'B03'];
+    return {
+      isHome: page === 'home', isServices: page === 'services', isService: page === 'service', isAbout: page === 'about',
+      isScope: page === 'scope', isInsights: page === 'insights', isContact: page === 'contact',
+      goHome: () => this.go('home'), goServices: () => this.go('services'), goScope: () => this.go('scope'),
+      goInsights: () => this.go('insights'), goContact: () => this.go('contact'),
+      navItems: [['Services', 'services'], ['Notes', 'insights'], ['About', 'about'], ['Contact', 'contact']].map(([label, p]) => ({
+        label, onClick: () => this.go(p), style: this.navStyle(page === p || (p === 'services' && page === 'service'))
+      })),
+      lanes,
+      homeCases: caseIds.map((id, i) => { const s = SERVICES.find(x => x.id === id); return Object.assign({ code: s.code }, s.case, { style: 'padding:28px ' + (i === 2 ? '0' : '32px') + ' 8px ' + (i === 0 ? '0' : '32px') + ';' + (i < 2 ? ' border-right:1px solid #d8d2c4;' : '') }); }),
+      sectors: SECTORS, commitments: COMMITMENTS, steps: STEPS,
+      featured: NOTES[0], moreNotes: NOTES.slice(1, 4),
+      d, prev, next,
+      goPrev: () => this.go('service', { svc: prev.id }), goNext: () => this.go('service', { svc: next.id }),
+      scopeThis: () => this.go('scope', { scopeSvc: d.id }),
+      scopeOptions: SERVICES.map(s => ({ code: s.code, title: s.title, style: this.pick(s.id === sv.id), onClick: () => this.setState({ scopeSvc: s.id }) })),
+      focusOptions: FOCUS.map(f => ({ label: f.label, style: this.chip(st.focus.includes(f.key)), onClick: () => this.setState(s => ({ focus: s.focus.includes(f.key) ? s.focus.filter(x => x !== f.key) : s.focus.concat(f.key) })) })),
+      timingOptions: TIMING.map(t => ({ label: t.label, style: this.chip(st.timing === t.key), onClick: () => this.setState({ timing: t.key }) })),
+      sv, tm, scopeIncluded, outlineRef: sv.code + ' · ' + tm.code,
+      mailHref: 'mailto:ahmad@daftaradvisory.com?subject=' + encodeURIComponent('Scope outline: ' + sv.code + ' ' + sv.title) + '&body=' + body,
+      tagTabs: TAGS.map(t => ({ label: t, style: this.tab(st.tag === t), onClick: () => this.setState({ tag: t }) })),
+      notesShown,
+      form: st.form, setName: this.setField('name'), setCompany: this.setField('company'), setEmail: this.setField('email'), setMsg: this.setField('msg'),
+      topicChips: SERVICES.map(s => s.code).concat(['Retainer', 'Not sure']).map(c => ({ label: c, style: this.chip(st.topic === c).replace('font-size:14px', "font-family:'JetBrains Mono',monospace; font-size:11px"), onClick: () => this.setState({ topic: c }) })),
+      send: () => this.setState({ sent: true }), resetForm: () => this.setState({ sent: false, form: { name: '', company: '', email: '', msg: '' }, topic: '' }),
+      sent: st.sent, notSent: !st.sent
+    };
+  }
+}
+
+const PAGE_NAMES = { home: 'Home', services: 'Services', service: 'Service Detail', about: 'About', scope: 'Scope Builder', insights: 'Notes', contact: 'Contact' };
+
+const LANES = [
+  { code: 'A', name: 'Reporting and audit', blurb: 'The statements, the positions behind them, and the file the auditor works from.' },
+  { code: 'B', name: 'Growth and profit', blurb: 'Numbers that hold up when someone outside the company reads them closely.' },
+  { code: 'C', name: 'Tax and compliance', blurb: 'Regional tax and regulatory work, done before the deadline rather than during it.' }
+];
+
+const SERVICES = [
+  { id: 'A01', code: 'A/01', lane: 'A', title: 'IFRS Financial Statements & Group Reporting', run: '3 to 6 weeks', refs: 'IAS 1 · IFRS 10 · IFRS 18',
+    outcome: 'Accounts your auditor signs on time, for one company or a whole group.',
+    who: 'Groups with subsidiaries, companies in a first IFRS year, and teams whose statements are rebuilt by hand every year end.',
+    deliverable: 'Statement set, notes, and the live working file',
+    included: ['Trial balance mapped to every statement line', 'Primary statements and full notes drafted', 'Consolidation, eliminations and group level checks'],
+    excluded: ['Bookkeeping and transaction processing', 'The audit opinion itself'],
+    case: { sector: 'Construction JV · KSA', result: 'Rebuilt a joint venture statement set the auditor had returned. Signed on the original timetable.', context: 'Statement set rewired to the trial balance with tie out checks on every note.' } },
+  { id: 'A02', code: 'A/02', lane: 'A', title: 'Technical Accounting & Transaction Review', run: '1 to 3 weeks', refs: 'IFRS 9 · 15 · 16 · 3',
+    outcome: 'A clear written answer on a difficult accounting question, one your auditor accepts.',
+    who: 'Finance teams facing a judgment call: leases, long contract revenue, business combinations, or an unusual transaction.',
+    deliverable: 'Technical memo with standard references',
+    included: ['Reading the position and the evidence behind it', 'A written conclusion with paragraph references', 'Alternatives considered and why they were set aside'],
+    excluded: ['Preparing the underlying records', 'Representing you before a regulator'],
+    case: { sector: 'Real estate group · UAE', result: 'Recomputed a 38 lease IFRS 16 portfolio at a term banded rate. Agreed with the auditor in one meeting.', context: 'Technical memo and recomputation schedule handed to the group team.' } },
+  { id: 'A03', code: 'A/03', lane: 'A', title: 'Audit Readiness', run: '2 to 4 weeks', refs: 'ISA aligned request lists',
+    outcome: 'An audit that runs on your timetable, with no late surprises.',
+    who: 'Companies facing a first statutory audit, a change of auditor, or a prior year with late adjustments.',
+    deliverable: 'Prepared audit file and open item register',
+    included: ['Walk through of the areas the auditor tests first', 'Request list answered in advance, evidence attached', 'A short memo on positions likely to be challenged'],
+    excluded: ['Acting as your auditor', 'Signing any opinion on the statements'],
+    case: { sector: 'Services company · Jordan', result: 'First statutory audit closed with no late adjustments.', context: 'Request list answered before fieldwork began.' } },
+  { id: 'B01', code: 'B/01', lane: 'B', title: 'Funding & Investor Readiness', run: '3 to 5 weeks', refs: 'IFRS historicals · diligence index',
+    outcome: 'Numbers that hold up when an investor or lender looks closely.',
+    who: 'Founders preparing a raise, and companies expecting an investor or lender to read the file closely.',
+    deliverable: 'Model, data room index and diligence notes',
+    included: ['Historical accounts restated where needed', 'Model reviewed for the assumptions that carry value', 'Data room index and diligence question log'],
+    excluded: ['Valuation opinions for regulatory filing', 'Legal and tax structuring'],
+    case: { sector: 'Healthcare operator · KSA', result: 'Three years of restated accounts and a model in place ahead of a minority raise.', context: 'Diligence questions answered from the data room index, not from memory.' } },
+  { id: 'B02', code: 'B/02', lane: 'B', title: 'Cost & Margin Diagnostics', run: '2 to 4 weeks', refs: 'Management reporting',
+    outcome: 'See which products, projects or branches make money, and which lose it.',
+    who: 'Businesses growing revenue without growing profit, and boards asking which parts of the business pay for the rest.',
+    deliverable: 'Margin model and findings memo',
+    included: ['Cost allocation rebuilt from the ledger', 'Margin by product, project or branch', 'Findings memo written for the board'],
+    excluded: ['Operational restructuring', 'Implementing system changes'],
+    case: { sector: 'Retail group · GCC', result: 'A branch margin model showed four locations carrying the loss.', context: 'The model now reruns monthly inside the finance team.' } },
+  { id: 'B03', code: 'B/03', lane: 'B', title: 'Close Cycle & CFO Support', run: 'Monthly, 3 month minimum', refs: 'Close calendar · reconciliations',
+    outcome: 'A faster month end, and senior finance cover while you have no CFO.',
+    who: 'Finance teams with a slow close, and companies between CFOs or not yet ready to hire one.',
+    deliverable: 'Close calendar, checklists and reconciliation pack',
+    included: ['Close calendar and owner checklist', 'Reconciliation pack for the key balances', 'Monthly senior review of the reporting pack'],
+    excluded: ['Daily bookkeeping', 'Payroll processing'],
+    case: { sector: 'Investment holding · Jordan', result: 'Month end close reduced from eighteen working days to eight over two quarters.', context: 'Calendar and reconciliation pack now owned by the internal team.' } },
+  { id: 'C01', code: 'C/01', lane: 'C', title: 'Saudi ZATCA & Finance Compliance', run: '2 to 4 weeks', refs: 'ZATCA e invoicing · VAT · Zakat',
+    outcome: 'Saudi electronic invoicing, VAT and zakat in order before the deadline.',
+    who: 'Companies operating in the Kingdom approaching an integration wave, or carrying open VAT and zakat positions.',
+    deliverable: 'Readiness assessment and remediation plan',
+    included: ['Integration wave readiness review', 'VAT and zakat position check', 'Remediation plan with owners and dates'],
+    excluded: ['Software implementation', 'Filing on your behalf'],
+    case: { sector: 'Contractor · KSA', result: 'Nine integration gaps closed before go live.', context: 'Readiness review completed ahead of the wave deadline.' } },
+  { id: 'C02', code: 'C/02', lane: 'C', title: 'UAE Corporate Tax & Transfer Pricing', run: '3 to 6 weeks', refs: 'UAE CT Law · TP rules',
+    outcome: 'A clean first UAE corporate tax filing, with group pricing documented.',
+    who: 'UAE groups in an early corporate tax year, especially those with related party flows across entities.',
+    deliverable: 'Tax position memo and transfer pricing file',
+    included: ['Taxable income bridge from the accounts', 'Related party flows mapped and priced', 'Transfer pricing documentation'],
+    excluded: ['Tax structuring advice', 'Representation in disputes'],
+    case: { sector: 'Trading group · UAE', result: 'Related party flows across five entities mapped and documented before first filing.', context: 'Pricing basis written down in a file the group can update annually.' } }
+];
+
+const FOCUS = [
+  { key: 'first', label: 'First year under IFRS', adds: 'Opening balances and transition disclosures' },
+  { key: 'group', label: 'Group with subsidiaries', adds: 'Consolidation and group level checks' },
+  { key: 'open', label: 'Auditor questions still open', adds: 'Response file for points already raised' },
+  { key: 'board', label: 'Board or investor deadline', adds: 'Summary written for readers outside finance' },
+  { key: 'thin', label: 'The team is stretched', adds: 'We prepare; your team reviews rather than builds' }
+];
+
+const TIMING = [
+  { key: 'explore', code: 'T0', label: 'Still exploring', duration: 'Two to three weeks once started', next: 'We reply within two working days with a plain read on fit.' },
+  { key: 'quarter', code: 'T1', label: 'This quarter', duration: 'Three to four weeks end to end', next: 'Scope and fee are confirmed in writing before any work begins.' },
+  { key: 'urgent', code: 'T2', label: 'Urgent', duration: 'A first pass inside one week', next: 'Urgent work is accepted only when it can be staffed properly.' }
+];
+
+const COMMITMENTS = [
+  { num: 'i.', title: 'Defined scope', body: 'What we solve, what we exclude, and what you receive. Written, agreed, then followed.' },
+  { num: 'ii.', title: 'Senior contact', body: 'The person you speak with is the person doing the work. No layer between the two.' },
+  { num: 'iii.', title: 'Straight advice', body: 'If the work belongs with another specialist, or does not need doing, we say so early.' },
+  { num: 'iv.', title: 'Work you own', body: 'You keep the model and the workings, in a form your team can run again next year.' }
+];
+
+const STEPS = [
+  { num: '01', title: 'A short call', body: 'Twenty minutes on the situation, and a straight answer on fit.' },
+  { num: '02', title: 'Scope in writing', body: 'Outcome, exclusions, deliverable and fee. Nothing starts before it is agreed.' },
+  { num: '03', title: 'The work, in the open', body: 'One senior contact and a working file you can see as it develops.' },
+  { num: '04', title: 'Handover', body: 'The deliverable, the workings, and a note on how to run it again.' }
+];
+
+const SECTORS = ['Construction', 'Real estate', 'Healthcare', 'Retail', 'Trading', 'Investment holdings', 'Professional services'];
+
+const TAGS = ['All', 'IFRS', 'KSA', 'UAE', 'Audit', 'Capital'];
+
+const NOTES = [
+  { tag: 'IFRS 18', group: 'IFRS', date: 'Sep 2026', read: '8 min', title: 'IFRS 18 arrives in January. The income statement will not look the same.', body: 'New subtotals, defined performance measures, and what to restate for the comparative year.' },
+  { tag: 'KSA · ZATCA', group: 'KSA', date: 'Aug 2026', read: '6 min', title: 'Integration waves: what finance discovers late', body: 'The parts of e invoicing readiness that sit with finance, not IT.' },
+  { tag: 'UAE · CT', group: 'UAE', date: 'Jul 2026', read: '7 min', title: 'Corporate tax, second season', body: 'What the first filings taught us about related party documentation.' },
+  { tag: 'IFRS 16', group: 'IFRS', date: 'Jun 2026', read: '5 min', title: 'Leases in construction: the rate settles the argument', body: 'Why a single portfolio discount rate rarely survives review.' },
+  { tag: 'Audit', group: 'Audit', date: 'May 2026', read: '4 min', title: 'The request list, answered in advance', body: 'How a prepared file moves the audit onto your calendar.' },
+  { tag: 'Capital', group: 'Capital', date: 'Apr 2026', read: '5 min', title: 'What a data room index tells an investor', body: 'The signal sent before a single file is opened.' }
+];
+</script>
+</body>
+</html>
