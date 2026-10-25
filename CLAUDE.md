@@ -76,7 +76,7 @@ Fraunces, JetBrains Mono, the folded-file mark, and "Founder" are canonical.
    import { SiteHeader, SiteFooter, Eyebrow } from "../_components/SiteChrome";
    <Eyebrow as="h2" tone="rust">§ 01 · Services</Eyebrow>
    ```
-2. **Everything else is a page-local composition of CSS classes** from `daftar.css` (`.dft-ledger`, `.dft-notes`, `.dft-faq`, `.dft-check`, `.dft-download`, `.dft-outline`, etc.) applied directly in each `page.tsx`. There's no `<Card>`/`<Button>` abstraction — a "button" is just `className="dft-btn"` / `dft-btn-ghost` / `dft-btn-sm` on an `<a>` or `<button>`.
+2. **Everything else is a page-local composition of CSS classes** from `daftar.css` (`.dft-memo`, `.dft-service-table`, `.dft-strip`, `.dft-ledger`, `.dft-notes`, `.dft-faq`, `.dft-check`, `.dft-download`, `.dft-outline`, etc.) applied directly in each `page.tsx`. There's no `<Card>`/`<Button>` abstraction — a "button" is just `className="dft-btn"` / `dft-btn-ghost` / `dft-btn-sm` on an `<a>` or `<button>`.
 
 Content is separated from markup in `app/_data/`:
 - `practice.ts` — services, FAQ, steps, notes, timing/focus options (typed with `as const` / small interfaces), shared by the home page and the scope builder so copy can't drift between the two.

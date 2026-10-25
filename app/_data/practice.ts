@@ -172,4 +172,23 @@ export const STEPS = [
   },
 ];
 
+/* The technical memo shown in the home hero (DECISIONS.md row 3). A specimen:
+   the shape of what a client receives, with the details changed. The standard
+   references are the founder's to verify before any content change ships;
+   nothing here is a client's actual position. */
+export const MEMO = {
+  head: "Daftar Advisory · Technical memo",
+  ref: "A/02 · p. 1 of 4",
+  to: "Group Finance Director",
+  re: "Discount rate applied to the lease portfolio",
+  date: "14 September 2026",
+  question:
+    "Whether one incremental borrowing rate can be applied across 38 property leases with terms from three to twenty years.",
+  conclusion:
+    "It cannot. The single rate understates the liability on the longer leases. We recommend a rate built by term band, recomputed in Schedule 3.",
+  refs: "IFRS 16.26 · 16.BC160 · 16.C8",
+  signed: "A. Al Hinaiti",
+  caption: "Fig. 1 · What you receive: a one page answer, signed. Specimen, details changed.",
+} as const;
+
 export const EMAIL = "ahmad@daftaradvisory.com";

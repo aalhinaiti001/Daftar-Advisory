@@ -145,3 +145,21 @@ The matrix leaves these open on purpose. Each blocks a specific row.
 6. Sectors to list (row 14).
 7. Service detail pages, yes or no, and when (row 15).
 8. Form delivery mechanism (row 25).
+
+## 7. Implementation log
+
+**Phase 1** · branch `claude/editorial-phase-1`, cut from `c4a879d`.
+
+Assumptions taken where §6 was still open, each reversible in one edit:
+
+- Row 3: the memo ships as a specimen, captioned "Specimen, details changed", with the
+  concept's content and standard references carried verbatim in `practice.ts` as `MEMO`.
+  The references are the founder's to verify before merge.
+- Row 11: no "Typical time" column. The table carries Ref · Service · Outcome · You get,
+  all from fields `practice.ts` already had.
+- Row 2 and 5: the register facts became the mono strip under the hero; the concept's
+  What / For / Different lines were not carried, since the lead already states them.
+- Row 28: the footer's "Notes" link points at the home anchor until Phase 2 adds
+  `/knowledge`.
+- §3 rhythm: section padding 80px (was 88), eyebrow-to-heading 14px (was 26). The
+  concept's 8px read cramped under the fluid h2 and was not matched.

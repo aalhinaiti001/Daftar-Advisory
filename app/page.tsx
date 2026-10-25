@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteHeader, SiteFooter, Eyebrow } from "./_components/SiteChrome";
-import { SERVICE_ORDER, SERVICES, NOTES, FAQ } from "./_data/practice";
+import { SERVICE_ORDER, SERVICES, NOTES, FAQ, MEMO } from "./_data/practice";
 
 const DESC =
   "Financial statements, technical review, audit readiness and quality of earnings for founders and finance teams. A boutique firm, a defined scope, and a file you keep.";
@@ -50,7 +50,7 @@ export default function Home() {
       <main className="dft-rise">
         <section className="dft-wrap dft-hero">
           <div>
-            <Eyebrow tone="rust">Clear advice. Senior work. Nothing extra.</Eyebrow>
+            <Eyebrow tone="rust">§ 00 · Finance advisory · KSA · UAE · Jordan</Eyebrow>
             <h1 className="dft-h1">
               Finance work that feels <em>simple</em>, even when the issue is not.
             </h1>
@@ -64,36 +64,92 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="dft-register">
-            <div className="dft-register-head">
-              <span>The register</span>
-              <span>§</span>
+          {/* The evidence element of the hero: the shape of what a client receives
+              (DECISIONS.md rows 2 and 3). Headings inside are spans, not h2/h3, so the
+              figure does not sit in the document outline between the h1 and § 01. */}
+          <figure className="dft-memo">
+            <div className="dft-panel-head dft-memo-head">
+              <span>{MEMO.head}</span>
+              <span>{MEMO.ref}</span>
             </div>
-            <dl className="dft-register-body">
-              {REGISTER.map(([term, value]) => (
-                <div className="dft-register-row" key={term}>
-                  <dt>{term}</dt>
-                  <dd>{value}</dd>
-                </div>
-              ))}
+            <dl className="dft-memo-meta">
+              <div><dt>To</dt><dd>{MEMO.to}</dd></div>
+              <div><dt>Re</dt><dd>{MEMO.re}</dd></div>
+              <div><dt>Date</dt><dd>{MEMO.date}</dd></div>
             </dl>
-          </div>
+            <div className="dft-memo-body">
+              <div>
+                <span className="dft-memo-h">1 · Question</span>
+                <p>{MEMO.question}</p>
+              </div>
+              <div>
+                <span className="dft-memo-h">2 · Conclusion</span>
+                <p>{MEMO.conclusion}</p>
+              </div>
+            </div>
+            <div className="dft-memo-foot">
+              <span className="dft-memo-refs">{MEMO.refs}</span>
+              <span className="dft-memo-sig">{MEMO.signed}</span>
+            </div>
+            <figcaption>{MEMO.caption}</figcaption>
+          </figure>
         </section>
+
+        {/* The register, as a mono strip under the hero (DECISIONS.md row 2). */}
+        <div className="dft-wrap">
+          <dl className="dft-strip">
+            {REGISTER.map(([term, value]) => (
+              <div key={term}>
+                <dt>{term}</dt>
+                <dd>{value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
 
         <section id="services" className="dft-section dft-section-soft">
           <div className="dft-wrap">
             <Eyebrow>§ 01 · Services</Eyebrow>
             <h2 className="dft-h2" style={{ marginBottom: 44 }}>Four lines of work. Each one ends with a file you own.</h2>
-            <div className="dft-ledger">
-              {SERVICE_ORDER.map((key, i) => (
-                <article key={key}>
-                  <code>{"0" + (i + 1)}</code>
-                  <h3>{SERVICES[key].label}</h3>
-                  <p>{SERVICES[key].blurb}</p>
-                  <Link className="dft-btn-sm" href={`/scope?service=${key}`}>Scope this</Link>
-                </article>
-              ))}
-            </div>
+            {/* The services as a register (DECISIONS.md row 11). Columns come from
+                practice.ts; "Typical time" is deliberately absent until the founder
+                decides whether a per-service duration belongs on this page. */}
+            <table className="dft-service-table">
+              <colgroup>
+                <col className="dft-col-ref" />
+                <col />
+                <col />
+                <col />
+                <col className="dft-col-act" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">Ref</th>
+                  <th scope="col">Service</th>
+                  <th scope="col">Outcome</th>
+                  <th scope="col">You get</th>
+                  <th scope="col"><span className="dft-visually-hidden">Action</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                {SERVICE_ORDER.map((key) => (
+                  <tr key={key}>
+                    <td><code>{SERVICES[key].ref}</code></td>
+                    <td data-label="Service">
+                      <h3>{SERVICES[key].label}</h3>
+                      <p>{SERVICES[key].blurb}</p>
+                    </td>
+                    <td data-label="Outcome">{SERVICES[key].outcome}</td>
+                    <td data-label="You get">{SERVICES[key].deliverable}</td>
+                    <td><Link className="dft-btn-sm" href={`/scope?service=${key}`}>Scope this</Link></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p className="dft-table-note">
+              Daftar is a non-attest practice. We prepare and review. We do not audit, and we do
+              not sign an opinion.
+            </p>
           </div>
         </section>
 
