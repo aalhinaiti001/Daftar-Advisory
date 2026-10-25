@@ -8,6 +8,7 @@ Design concept for a Daftar Advisory website redesign, exported from Claude Desi
 | `Daftar-v2-A-Editorial.bundle.html` | The self-contained export. Open it in a browser to see the prototype. It unpacks React 18 and the page source from an embedded manifest, so it is large and not diffable. |
 | `source.dc.html` | The page source extracted from the bundle: markup, inline styles and the data block (lanes, services, cases, scope-builder options). Read and diff this one. It does not render on its own. |
 | `REVIEW.md` | The live-site vs. concept assessment and the recommended direction ("Editorial, refined"). |
+| `DECISIONS.md` | The design-decision matrix (Adopt / Adapt / Retain / Reject per element), the component set to build first, the phased page-by-page plan, and the open decisions. Read this before touching any markup. |
 
 ## What the prototype contains
 
