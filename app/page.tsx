@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteHeader, SiteFooter, Eyebrow } from "./_components/SiteChrome";
-import { SERVICE_ORDER, SERVICES, NOTES, FAQ, MEMO, formatNoteDate } from "./_data/practice";
+import { SERVICE_ORDER, SERVICES, NOTES, FAQ, MEMO, CASES, SECTORS, recordReady, formatNoteDate } from "./_data/practice";
 
 const DESC =
   "Financial statements, technical review, audit readiness and quality of earnings for founders and finance teams. A boutique firm, a defined scope, and a file you keep.";
@@ -44,6 +44,11 @@ const COMMITMENTS: [string, string, string][] = [
 
 export default function Home() {
   const [featured, ...rest] = NOTES;
+  /* "On the record" takes § 02 once CASES clears its gate (DECISIONS.md row
+     13); the chapters after it move down by one so the numbering stays
+     continuous either way. */
+  const record = recordReady();
+  const ch = (n: number) => "§ 0" + (record ? n + 1 : n);
   return (
     <div className="dft">
       <SiteHeader active="home" />
@@ -154,10 +159,41 @@ export default function Home() {
           </div>
         </section>
 
+        {record && (
+          <section id="record" className="dft-section">
+            <div className="dft-wrap">
+              <Eyebrow>§ 02 · On the record</Eyebrow>
+              <h2 className="dft-h2" style={{ marginBottom: 40 }}>Results, with the names removed.</h2>
+              <div className="dft-record">
+                {CASES.map((c) => (
+                  <article key={c.ref + c.sector}>
+                    <div className="dft-record-meta">
+                      <span className="dft-note-tag">{c.sector} · {c.market}</span>
+                      <code>{c.ref}</code>
+                    </div>
+                    <p className="dft-record-result">{c.result}</p>
+                    <p className="dft-record-context">{c.context}</p>
+                  </article>
+                ))}
+              </div>
+              <div className="dft-record-foot">
+                <p className="dft-table-note">
+                  Described with the client&rsquo;s written clearance. Names removed, details changed
+                  where asked, results as recorded.
+                </p>
+                <p className="dft-record-sectors">
+                  <span className="dft-label">Sectors served</span>
+                  {SECTORS.join(" · ")}
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
+
         <section className="dft-section">
           <div className="dft-wrap dft-split">
             <div>
-              <Eyebrow>§ 02 · Who we help</Eyebrow>
+              <Eyebrow>{ch(2)} · Who we help</Eyebrow>
               <h2 className="dft-h2">Built for the point where finance runs out of room.</h2>
             </div>
             <div>
@@ -173,7 +209,7 @@ export default function Home() {
 
         <section id="ethics-values" className="dft-section dft-section-dark">
           <div className="dft-wrap">
-            <Eyebrow tone="dark">§ 03 · How we work</Eyebrow>
+            <Eyebrow tone="dark">{ch(3)} · How we work</Eyebrow>
             <h2 className="dft-h2" style={{ margin: "0 0 50px", maxWidth: "22ch" }}>
               Four commitments, in writing, before the work starts.
             </h2>
@@ -191,7 +227,7 @@ export default function Home() {
 
         <section id="insights-briefs" className="dft-section">
           <div className="dft-wrap">
-            <Eyebrow>§ 04 · Notes</Eyebrow>
+            <Eyebrow>{ch(4)} · Notes</Eyebrow>
             <h2 className="dft-h2" style={{ marginBottom: 40 }}>
               What finance teams here are dealing with now.
             </h2>
@@ -252,7 +288,7 @@ export default function Home() {
         <section id="daftar-faq" className="dft-section dft-section-soft">
           <div className="dft-wrap dft-split dft-split-faq">
             <div>
-              <Eyebrow>§ 05 · Questions</Eyebrow>
+              <Eyebrow>{ch(5)} · Questions</Eyebrow>
               <h2 className="dft-h2">Answered plainly.</h2>
             </div>
             <div className="dft-faq">

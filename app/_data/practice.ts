@@ -245,4 +245,27 @@ export const MEMO = {
   caption: "Fig. 1 · What you receive: a one page answer, signed. Specimen, details changed.",
 } as const;
 
+/* Sectors with delivered work (DECISIONS.md row 14). The About facts and the
+   record read from here; add a sector only once an engagement in it is done. */
+export const SECTORS = ["Construction", "Services", "Investment"] as const;
+
+/* The case register (DECISIONS.md row 13). It ships only when at least
+   RECORD_MIN delivered, anonymised engagements are on file with the client's
+   written clearance. Until then CASES stays empty and the "On the record"
+   section renders nothing. Results are stated as facts: no client names, no
+   superlatives, details changed where the client asks. */
+export type Case = {
+  sector: string;
+  market: string;
+  ref: string;
+  result: string;
+  context: string;
+};
+
+export const RECORD_MIN = 3;
+
+export const CASES: Case[] = [];
+
+export const recordReady = (): boolean => CASES.length >= RECORD_MIN;
+
 export const EMAIL = "ahmad@daftaradvisory.com";

@@ -180,3 +180,18 @@ Assumptions taken where §6 was still open, each reversible in one edit:
   `/blog`) now land on `/knowledge` instead of the home anchor. `/knowledge` is in the
   sitemap.
 - §5.2 is done: `CLAUDE.md` notes the Notes nav item, the index page and the Calibre band.
+
+**Phase 3** · branch `claude/editorial-phase-3`, cut from `1e888f0`.
+
+- Row 13: the "On the record" register is built (`.dft-record`, `CASES` in
+  `practice.ts`) and verified with three temporary sample rows at 1280 and 600 pixels,
+  then shipped with `CASES` empty. The section renders nothing until three cleared
+  cases are entered, and the chapters after it renumber on their own when it appears.
+  It ships on home; About gets it by copying the block once cases exist, rather than
+  by adding a shared component outside `SiteChrome.tsx`.
+- Row 14: `SECTORS` moved into `practice.ts` (construction, services, investment, as the
+  live About page listed them) and feeds both the About facts and the record foot.
+- Row 21: the "daftar, n." definition opens About § 01; the lead no longer repeats it.
+- Row 15: service detail pages not built. A separate session's PR 44 proposes them with
+  its own knowledge index and legal pages; it conflicts with the merged Phase 2 and
+  is the founder's call.

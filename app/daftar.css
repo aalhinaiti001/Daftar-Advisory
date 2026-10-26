@@ -756,6 +756,47 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
   color: var(--forest-line);
 }
 
+/* --- On the record (case register) ---------------------------------------
+   Rendered only when CASES in practice.ts clears its gate. Same card grammar
+   as the featured note: ruled, on card, no shadow. */
+
+.dft-record { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.dft-record article {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--card);
+  padding: 26px 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.dft-record-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.dft-record-meta code { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.dft-record-result {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 24, "wght" 460, "SOFT" 24;
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.dft-record-context { font-size: 14px; color: var(--muted); }
+.dft-record-foot { display: flex; justify-content: space-between; align-items: baseline; gap: 32px; flex-wrap: wrap; }
+.dft-record-sectors { margin: 22px 0 0; font-size: 14px; color: var(--body); white-space: nowrap; }
+.dft-record-sectors .dft-label { display: inline; margin-right: 12px; }
+
+/* --- About: the definition -------------------------------------------------- */
+
+.dft-define {
+  margin: 0 0 18px;
+  padding: 0 0 18px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--body);
+}
+.dft-define b { font-weight: 500; font-variation-settings: "opsz" 20, "wght" 540, "SOFT" 20; color: var(--ink); }
+.dft-define i { color: var(--muted); }
+
 /* --- FAQ ----------------------------------------------------------------- */
 
 .dft-faq { border-top: 1px solid var(--rule); }
@@ -1211,6 +1252,7 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
   .dft-scope-head p { align-self: start; }
   .dft-notes { grid-template-columns: 1fr 1fr; }
   .dft-note-featured { grid-template-columns: 1fr; }
+  .dft-record { grid-template-columns: 1fr 1fr; }
   .dft-calibre-inner { grid-template-columns: 1fr; gap: 36px; }
   .dft-calibre-mark { flex-direction: row; align-items: center; gap: 16px; }
   .dft-commitments { grid-template-columns: 1fr 1fr; row-gap: 32px; }
@@ -1306,6 +1348,8 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
   .dft-footer .dft-foot-cols { grid-template-columns: 1fr; gap: 24px; }
   .dft-strip { flex-direction: column; gap: 10px; }
   .dft-note-lead { padding: 24px; }
+  .dft-record { grid-template-columns: 1fr; }
+  .dft-record-sectors { white-space: normal; }
   .dft-note-row { grid-template-columns: 1fr; gap: 6px; }
   .dft-notes-index article { grid-template-columns: 1fr; }
   .dft-notes-index-meta { flex-direction: row; gap: 14px; }
