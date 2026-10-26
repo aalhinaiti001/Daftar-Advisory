@@ -71,12 +71,12 @@ Fraunces, JetBrains Mono, the folded-file mark, and "Founder" are canonical.
 
 **There is no component library or Storybook.** Component-like reuse happens two ways:
 
-1. **One shared chrome file**: `app/_components/SiteChrome.tsx` exports `SiteHeader`, `SiteFooter`, `Eyebrow`, and `DaftarMark` (the folded-file logo as inline SVG with two size cuts; the Arabic pages import it too) (a section-label component with an `as` prop — `"div" | "h2" | "h3"` — used to give long-form pages a real heading outline instead of an all-`div` label). These three are the only shared React components in the app; every page imports them directly, e.g.:
+1. **One shared chrome file**: `app/_components/SiteChrome.tsx` exports `SiteHeader` (primary nav: Practice · Services · Notes (`/knowledge`) · About · Scope builder · Calibre · ع), `SiteFooter` (Practice, Contact and Founder columns per `design/concepts/a-editorial/DECISIONS.md` row 28, with Privacy and Terms on the note row), `Eyebrow`, and `DaftarMark` (the folded-file logo as inline SVG with two size cuts; the Arabic pages import it too) (a section-label component with an `as` prop — `"div" | "h2" | "h3"` — used to give long-form pages a real heading outline instead of an all-`div` label). These three are the only shared React components in the app; every page imports them directly, e.g.:
    ```tsx
    import { SiteHeader, SiteFooter, Eyebrow } from "../_components/SiteChrome";
    <Eyebrow as="h2" tone="rust">§ 01 · Services</Eyebrow>
    ```
-2. **Everything else is a page-local composition of CSS classes** from `daftar.css` (`.dft-ledger`, `.dft-notes`, `.dft-faq`, `.dft-check`, `.dft-download`, `.dft-outline`, etc.) applied directly in each `page.tsx`. There's no `<Card>`/`<Button>` abstraction — a "button" is just `className="dft-btn"` / `dft-btn-ghost` / `dft-btn-sm` on an `<a>` or `<button>`.
+2. **Everything else is a page-local composition of CSS classes** from `daftar.css` (`.dft-memo`, `.dft-service-table`, `.dft-strip`, `.dft-ledger`, `.dft-notes`, `.dft-faq`, `.dft-check`, `.dft-download`, `.dft-outline`, etc.) applied directly in each `page.tsx`. There's no `<Card>`/`<Button>` abstraction — a "button" is just `className="dft-btn"` / `dft-btn-ghost` / `dft-btn-sm` on an `<a>` or `<button>`.
 
 Content is separated from markup in `app/_data/`:
 - `practice.ts` — services, FAQ, steps, notes, timing/focus options (typed with `as const` / small interfaces), shared by the home page and the scope builder so copy can't drift between the two.
@@ -168,6 +168,8 @@ app/
   knowledge/*/page.tsx           # long-form articles + checklists, all canon
   privacy/, terms/               # legal pages linked from the footer
 design/
+  design-system/                 # Design System artifact export: README (brand book), tokens.json, component previews, fonts, marks
+  concepts/a-editorial/          # Redesign concept A (Claude Design export) + review memo — reference only, NOT built or deployed
   daftar-home.html               # OLD static home page — superseded, NOT deployed (see netlify.toml comment)
   calibre-home.html               # Calibre EN — static, Tailwind CDN, copied into /calibre at build
   calibre-home-ar.html            # Calibre AR — static, copied into /ar/calibre at build
