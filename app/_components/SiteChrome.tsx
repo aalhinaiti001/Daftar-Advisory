@@ -113,12 +113,30 @@ export function SiteHeader({ active }: { active: Page }) {
 export function SiteFooter() {
   return (
     <footer className="dft-footer">
-      <div className="dft-wrap">
+      <div className="dft-wrap dft-foot-top">
         <Mark />
         <em className="dft-foot-tag">Rigorous finance, without the overhead.</em>
-        <div className="dft-foot-links">
-          <a href={`mailto:${EMAIL}`}>{EMAIL.toUpperCase()}</a>
-          <span>AMMAN · MENA</span>
+      </div>
+      {/* One practice column and one contact column (DECISIONS.md row 28). No
+          service lanes: the four services live on the home page, not in nav.
+          "Notes" points at the home anchor until /knowledge has an index page. */}
+      <div className="dft-wrap dft-foot-cols">
+        <div className="dft-foot-col">
+          <span>Practice</span>
+          <Link href="/about">About</Link>
+          <Link href="/scope">Scope builder</Link>
+          <Link href="/#insights-briefs">Notes</Link>
+          <Link href="/calibre">Calibre by Daftar</Link>
+        </div>
+        <div className="dft-foot-col">
+          <span>Contact</span>
+          <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+          <p>Amman · Serving KSA, UAE and Jordan</p>
+        </div>
+        <div className="dft-foot-col">
+          <span>Founder</span>
+          {/* The document footer line from the brand book, in mono. */}
+          <p className="dft-foot-founder">Ahmad Al Hinaiti · Founder · {EMAIL}</p>
         </div>
       </div>
       <div className="dft-wrap">
