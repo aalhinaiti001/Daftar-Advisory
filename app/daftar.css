@@ -28,6 +28,8 @@
   --on-dark-muted: #a09585;
   --serif: "Fraunces", Georgia, serif;
   --mono: "JetBrains Mono", ui-monospace, monospace;
+  /* Arabic script only; Latin inside Arabic goes to --mono (BRAND.md §08). */
+  --arabic: "IBM Plex Sans Arabic", "Fraunces", Tahoma, sans-serif;
 
   min-height: 100vh;
   background: var(--paper);
@@ -287,7 +289,7 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
 }
 .dft-lang:hover { color: var(--rust); border-color: var(--rust); }
 
-.dft-cta { margin-left: 10px; padding: 12px 20px; }
+.dft-cta { margin-inline-start: 10px; padding: 12px 20px; }
 
 /* Visually hidden but still focusable: display:none would take the checkbox
    out of the tab order entirely, leaving the CSS-only menu unreachable by
@@ -360,7 +362,7 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
   margin: 0;
   font-family: var(--serif);
   font-size: 16px;
-  text-align: right;
+  text-align: end;
 }
 .dft-register-row:last-child dd { color: var(--rust); }
 
@@ -486,7 +488,7 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
   line-height: 1.5;
   color: var(--body);
 }
-.dft-service-table th:last-child, .dft-service-table td:last-child { padding-right: 0; text-align: end; }
+.dft-service-table th:last-child, .dft-service-table td:last-child { padding-inline-end: 0; text-align: end; }
 .dft-service-table code { font-family: var(--mono); font-size: 12px; color: var(--rust); }
 .dft-service-table h3 {
   margin-bottom: 6px;
@@ -556,8 +558,8 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
 
 .dft-commitments { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
 .dft-commitments > div { padding: 26px 24px 0; border-top: 1px solid rgba(244, 241, 234, 0.22); }
-.dft-commitments > div:first-child { padding-left: 0; }
-.dft-commitments > div:last-child { padding-right: 0; }
+.dft-commitments > div:first-child { padding-inline-start: 0; }
+.dft-commitments > div:last-child { padding-inline-end: 0; }
 .dft-commitments span {
   display: block;
   font-family: var(--mono);
@@ -782,7 +784,7 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
 .dft-record-context { font-size: 14px; color: var(--muted); }
 .dft-record-foot { display: flex; justify-content: space-between; align-items: baseline; gap: 32px; flex-wrap: wrap; }
 .dft-record-sectors { margin: 22px 0 0; font-size: 14px; color: var(--body); white-space: nowrap; }
-.dft-record-sectors .dft-label { display: inline; margin-right: 12px; }
+.dft-record-sectors .dft-label { display: inline; margin-inline-end: 12px; }
 
 /* --- About: the definition -------------------------------------------------- */
 
@@ -796,6 +798,117 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
 }
 .dft-define b { font-weight: 500; font-variation-settings: "opsz" 20, "wght" 540, "SOFT" 20; color: var(--ink); }
 .dft-define i { color: var(--muted); }
+
+/* --- Forms (scope builder send, Arabic contact) --------------------------
+   Ruled fields, mono labels, the brand focus ring. Netlify Forms carries the
+   submission; the markup is plain so it also posts without JavaScript. */
+
+.dft-form { display: flex; flex-direction: column; gap: 0; }
+.dft-form > p { margin: 0 0 16px; font-size: 13px; color: var(--muted); }
+.dft-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+.dft-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+.dft-field label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.dft-field input, .dft-field select, .dft-field textarea {
+  width: 100%;
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  border-radius: 0;
+  padding: 8px 0;
+  transition: border-color 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.dft-field select { appearance: none; -webkit-appearance: none; cursor: pointer; }
+.dft-field textarea { resize: vertical; min-height: 88px; line-height: 1.55; }
+.dft-field input:focus, .dft-field select:focus, .dft-field textarea:focus { border-color: var(--rust); }
+.dft-form .dft-btn { display: block; width: 100%; margin-top: 6px; padding: 14px 20px; }
+.dft-form .dft-btn[disabled] { opacity: 0.6; cursor: default; }
+.dft-form-alt {
+  align-self: flex-start;
+  margin-top: 14px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 13px;
+  color: var(--muted);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.dft-form-alt:hover { color: var(--rust); border-color: var(--rust); }
+.dft-form-error { margin: 14px 0 0; font-size: 13px; color: var(--rust-deep); }
+.dft-form-error a { color: var(--rust); text-decoration: underline; text-underline-offset: 3px; }
+.dft-form-note { margin: 14px 0 0; font-size: 13px; color: var(--muted); }
+.dft-hp { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.dft-sent { padding: 4px 0 8px; }
+.dft-sent p { margin: 6px 0 16px; font-size: 15px; color: var(--ink); }
+.dft-contact-line { margin-top: 26px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; color: var(--muted); }
+.dft-contact-line a { color: var(--rust); }
+
+/* Focus: a 2px rust outline offset 3px, everywhere (BRAND.md states). */
+.dft a:focus-visible,
+.dft button:focus-visible,
+.dft input:focus-visible,
+.dft select:focus-visible,
+.dft textarea:focus-visible,
+.dft .dft-menu:focus-visible { outline: 2px solid var(--rust); outline-offset: 3px; }
+.dft-field input:focus-visible, .dft-field select:focus-visible, .dft-field textarea:focus-visible { outline-offset: 4px; }
+
+/* --- Arabic and RTL --------------------------------------------------------
+   The page sets dir="rtl" lang="ar" on .dft. Layout mirrors through the
+   logical properties above; this block only changes the script: Plex Sans
+   Arabic for everything that reads, no italics, no tracking, Latin (the
+   email, "EN") in mono and left to right (BRAND.md §04, §08, §09). */
+
+.dft-hero-one { grid-template-columns: minmax(0, 760px); }
+.dft[lang="ar"],
+.dft[lang="ar"] h1, .dft[lang="ar"] h2, .dft[lang="ar"] h3, .dft[lang="ar"] p,
+.dft[lang="ar"] .dft-lead, .dft[lang="ar"] .dft-nav a, .dft[lang="ar"] .dft-btn,
+.dft[lang="ar"] .dft-btn-ghost, .dft[lang="ar"] .dft-btn-light, .dft[lang="ar"] .dft-btn-sm,
+.dft[lang="ar"] .dft-strip dd, .dft[lang="ar"] .dft-foot-col a, .dft[lang="ar"] .dft-foot-col p,
+.dft[lang="ar"] .dft-foot-tag, .dft[lang="ar"] .dft-foot-note,
+.dft[lang="ar"] .dft-field input, .dft[lang="ar"] .dft-field select, .dft[lang="ar"] .dft-field textarea,
+.dft[lang="ar"] .dft-sent p, .dft[lang="ar"] .dft-calibre-use {
+  font-family: var(--arabic);
+  font-variation-settings: normal;
+  font-style: normal;
+  letter-spacing: 0;
+}
+.dft[lang="ar"] .dft-h1 { font-weight: 600; font-size: clamp(2.3rem, 4.4vw, 3.5rem); line-height: 1.3; }
+.dft[lang="ar"] .dft-h2, .dft[lang="ar"] .dft-h2-sm { font-weight: 500; line-height: 1.45; }
+.dft[lang="ar"] h3, .dft[lang="ar"] .dft-ledger h3, .dft[lang="ar"] .dft-commitments h3 { font-weight: 500; font-variation-settings: normal; }
+.dft[lang="ar"] .dft-h1 em, .dft[lang="ar"] .dft-h2 em, .dft[lang="ar"] .dft-lead em { font-style: normal; font-weight: 500; color: var(--rust); font-variation-settings: normal; }
+.dft[lang="ar"] .dft-lead { font-size: 18px; line-height: 1.8; }
+.dft[lang="ar"] p { line-height: 1.8; }
+/* Labels: Plex Arabic 500, never tracked or uppercased (BRAND.md §08). */
+.dft[lang="ar"] .dft-eyebrow, .dft[lang="ar"] .dft-label, .dft[lang="ar"] .dft-strip dt,
+.dft[lang="ar"] .dft-commitments span, .dft[lang="ar"] .dft-ledger code,
+.dft[lang="ar"] .dft-field label, .dft[lang="ar"] .dft-foot-col > span,
+.dft[lang="ar"] .dft-calibre-kicker, .dft[lang="ar"] .dft-contact-line {
+  font-family: var(--arabic);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.dft[lang="ar"] .dft-ledger code { font-size: 13px; }
+.dft[lang="ar"] .dft-foot-founder { font-family: var(--arabic); font-size: 13px; letter-spacing: 0; }
+.dft[lang="ar"] .dft-calibre-name-ar { font-family: var(--arabic); font-style: normal; font-weight: 600; font-size: 26px; letter-spacing: 0; }
+/* Latin inside Arabic: mono, left to right. */
+.dft[lang="ar"] [lang="en"], .dft[lang="ar"] .dft-lang, .dft[lang="ar"] .dft-contact-line a,
+.dft[lang="ar"] .dft-foot-col a[href^="mailto"] { font-family: var(--mono); letter-spacing: 0.04em; direction: ltr; unicode-bidi: isolate; }
+/* Block-level Latin (footer links) keeps the column's right edge. */
+.dft[lang="ar"] .dft-foot-col [lang="en"], .dft[lang="ar"] .dft-foot-col a[href^="mailto"] { text-align: right; }
+.dft[lang="ar"] .dft-wordmark { font-family: var(--arabic); font-variation-settings: normal; letter-spacing: 0; }
+.dft[lang="ar"] .dft-wordmark em { font-style: normal; font-weight: 500; color: var(--rust); }
+.dft[lang="ar"] .dft-footer .dft-wordmark em { color: var(--rust-on-ink); }
+.dft[lang="ar"] .dft-strip > div:last-child dd { color: var(--ink); }
 
 /* --- FAQ ----------------------------------------------------------------- */
 
@@ -875,8 +988,8 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
 }
 
 .dft-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--rule); }
-.dft-facts > div { padding: 18px 20px 16px 0; border-bottom: 1px solid var(--rule); border-right: 1px solid var(--rule); }
-.dft-facts > div:nth-child(even) { padding: 18px 0 16px 20px; border-right: 0; }
+.dft-facts > div { padding: 18px 0 16px; padding-inline-end: 20px; border-bottom: 1px solid var(--rule); border-inline-end: 1px solid var(--rule); }
+.dft-facts > div:nth-child(even) { padding: 18px 0 16px; padding-inline-start: 20px; border-inline-end: 0; }
 .dft-facts .dft-label { margin-bottom: 6px; }
 .dft-facts b { font-family: var(--serif); font-size: 16px; font-weight: 400; }
 .dft-facts a { font-family: var(--serif); font-size: 16px; color: var(--rust); }
@@ -919,7 +1032,7 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
 .dft-option {
   display: block;
   width: 100%;
-  text-align: left;
+  text-align: start;
   padding: 18px 20px;
   border-radius: 6px;
   cursor: pointer;
@@ -997,8 +1110,8 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
 .dft-outline-list-out li span:first-child { color: inherit; }
 
 .dft-outline-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--rule-soft); }
-.dft-outline-meta > div { padding: 16px 16px 14px 0; border-right: 1px solid var(--rule-soft); }
-.dft-outline-meta > div:last-child { padding: 16px 0 14px 16px; border-right: 0; }
+.dft-outline-meta > div { padding: 16px 0 14px; padding-inline-end: 16px; border-inline-end: 1px solid var(--rule-soft); }
+.dft-outline-meta > div:last-child { padding: 16px 0 14px; padding-inline-start: 16px; border-inline-end: 0; }
 .dft-outline-meta .dft-label { margin-bottom: 6px; }
 .dft-outline-meta b { display: block; font-family: var(--serif); font-size: 15px; font-weight: 400; line-height: 1.35; }
 
@@ -1256,8 +1369,8 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
   .dft-calibre-inner { grid-template-columns: 1fr; gap: 36px; }
   .dft-calibre-mark { flex-direction: row; align-items: center; gap: 16px; }
   .dft-commitments { grid-template-columns: 1fr 1fr; row-gap: 32px; }
-  .dft-commitments > div:nth-child(odd) { padding-left: 0; }
-  .dft-commitments > div:nth-child(even) { padding-right: 0; }
+  .dft-commitments > div:nth-child(odd) { padding-inline-start: 0; }
+  .dft-commitments > div:nth-child(even) { padding-inline-end: 0; }
   .dft-scope-body { grid-template-columns: 1fr; gap: 44px; }
   .dft-outline { position: static; }
   .dft-founder { grid-template-columns: 1fr; gap: 36px; }
@@ -1338,15 +1451,16 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
   .dft-notes, .dft-commitments, .dft-facts, .dft-outline-meta { grid-template-columns: 1fr; }
   .dft-commitments > div { padding: 26px 0 0; }
   .dft-facts > div,
-  .dft-facts > div:nth-child(even) { padding: 18px 0 16px; border-right: 0; }
+  .dft-facts > div:nth-child(even) { padding: 18px 0 16px; border-inline-end: 0; }
   .dft-outline-meta > div,
-  .dft-outline-meta > div:last-child { padding: 16px 0 14px; border-right: 0; }
+  .dft-outline-meta > div:last-child { padding: 16px 0 14px; border-inline-end: 0; }
   .dft-outline-meta > div:first-child { border-bottom: 1px solid var(--rule-soft); }
   .dft-portrait { width: 100%; height: auto; aspect-ratio: 300 / 376; }
   .dft-actions .dft-btn, .dft-actions .dft-btn-ghost { flex: 1 1 100%; }
   .dft-footer .dft-foot-top { flex-direction: column; align-items: flex-start; gap: 26px; }
   .dft-footer .dft-foot-cols { grid-template-columns: 1fr; gap: 24px; }
   .dft-strip { flex-direction: column; gap: 10px; }
+  .dft-form-row { grid-template-columns: 1fr; }
   .dft-note-lead { padding: 24px; }
   .dft-record { grid-template-columns: 1fr; }
   .dft-record-sectors { white-space: normal; }

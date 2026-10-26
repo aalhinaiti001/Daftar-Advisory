@@ -45,9 +45,22 @@ export function DaftarMark({
   );
 }
 
-function Mark({ href = "/" }: { href?: string }) {
+export type Lang = "en" | "ar";
+
+function Mark({ lang = "en" }: { lang?: Lang }) {
+  if (lang === "ar") {
+    return (
+      <Link className="dft-brand dft-brand-ar" href="/ar" aria-label="دفتر للاستشارات، الرئيسية">
+        <DaftarMark size={30} />
+        <span className="dft-brand-rule" aria-hidden="true" />
+        <span className="dft-wordmark" aria-hidden="true">
+          دفتر <em>للاستشارات.</em>
+        </span>
+      </Link>
+    );
+  }
   return (
-    <Link className="dft-brand" href={href} aria-label="Daftar Advisory, home">
+    <Link className="dft-brand" href="/" aria-label="Daftar Advisory, home">
       <DaftarMark size={30} />
       <span className="dft-brand-rule" aria-hidden="true" />
       <span className="dft-wordmark" aria-hidden="true">
@@ -78,8 +91,34 @@ export function Eyebrow({
   return <Tag className={"dft-eyebrow" + cls}>{children}</Tag>;
 }
 
-export function SiteHeader({ active }: { active: Page }) {
+export function SiteHeader({ active, lang = "en" }: { active: Page; lang?: Lang }) {
   const current = (p: Page) => (p === active ? ("page" as const) : undefined);
+  if (lang === "ar") {
+    /* The Arabic site is one page plus one article and the Calibre page, so
+       the nav points at the page's own chapters. "EN" in mono is the language
+       switch (BRAND.md §09). */
+    return (
+      <header className="dft-header">
+        <div className="dft-header-inner">
+          <Mark lang="ar" />
+          <input type="checkbox" id="dft-nav-toggle" className="dft-nav-toggle" />
+          <label className="dft-menu" htmlFor="dft-nav-toggle" aria-label="القائمة">
+            ☰
+          </label>
+          <div className="dft-nav-wrap">
+            <nav className="dft-nav">
+              <a href="#services">الخدمات</a>
+              <a href="#plain">بعبارة بسيطة</a>
+              <Link href="/ar/knowledge/saudi-compliance-2026">المعرفة</Link>
+              <Link href="/ar/calibre">كاليبر</Link>
+              <Link href="/" className="dft-lang" aria-label="English" lang="en" dir="ltr">EN</Link>
+            </nav>
+            <a className="dft-btn-ghost dft-cta" href="#scope">ابدأ محادثة</a>
+          </div>
+        </div>
+      </header>
+    );
+  }
   return (
     <header className="dft-header">
       <div className="dft-header-inner">
@@ -111,7 +150,44 @@ export function SiteHeader({ active }: { active: Page }) {
   );
 }
 
-export function SiteFooter() {
+export function SiteFooter({ lang = "en" }: { lang?: Lang }) {
+  if (lang === "ar") {
+    /* Arabic footer. The tagline and the base line are the live /ar copy; the
+       founder line and the non-attest sentence are new Arabic strings written
+       for this port and listed in DECISIONS.md §7 for the founder's review. */
+    return (
+      <footer className="dft-footer">
+        <div className="dft-wrap dft-foot-top">
+          <Mark lang="ar" />
+          <em className="dft-foot-tag">تمويل صارم، دون العبء الإضافي.</em>
+        </div>
+        <div className="dft-wrap dft-foot-cols">
+          <div className="dft-foot-col">
+            <span>الممارسة</span>
+            <Link href="/ar/knowledge/saudi-compliance-2026">المعرفة</Link>
+            <Link href="/ar/calibre">كاليبر من دفتر</Link>
+            <Link href="/" lang="en" dir="ltr">English</Link>
+          </div>
+          <div className="dft-foot-col">
+            <span>التواصل</span>
+            <a href={`mailto:${EMAIL}`} lang="en" dir="ltr">{EMAIL}</a>
+            <p>عمّان · المنطقة</p>
+          </div>
+          <div className="dft-foot-col">
+            <span>المؤسس</span>
+            <p className="dft-foot-founder">
+              أحمد الهنائي · المؤسس · <span lang="en" dir="ltr">{EMAIL}</span>
+            </p>
+          </div>
+        </div>
+        <div className="dft-wrap">
+          <p className="dft-foot-note">
+            دفتر للاستشارات ممارسة استشارية غير تصديقية، وليست مدقّق حسابات قانونيًا مسجّلًا.
+          </p>
+        </div>
+      </footer>
+    );
+  }
   return (
     <footer className="dft-footer">
       <div className="dft-wrap dft-foot-top">

@@ -4,8 +4,8 @@ This repo runs **three separate, deliberately un-unified styling systems** under
 
 | Surface | Routes | Stylesheet | Framework |
 |---|---|---|---|
-| **Daftar (canon)** | `/`, `/about`, `/scope`, `/knowledge/*` | `app/daftar.css`, namespaced `.dft` | Next.js (React), plain CSS |
-| **Daftar (legacy) / Arabic** | `/ar`, `/ar/knowledge/*` | `app/globals.css`, namespaced `.daftar` / `.ar` | Next.js (React), plain CSS |
+| **Daftar (canon)** | `/`, `/about`, `/scope`, `/knowledge/*`, `/ar` (RTL, `.dft[lang="ar"]` block) | `app/daftar.css`, namespaced `.dft` | Next.js (React), plain CSS |
+| **Daftar (legacy) / Arabic** | `/ar/knowledge/*` | `app/globals.css`, namespaced `.daftar` / `.ar` | Next.js (React), plain CSS |
 | **Calibre** | `/calibre`, `/ar/calibre` | inline `<style>` + Tailwind Play CDN | Static HTML, copied in at build |
 
 There is no component library, no Storybook, and no design-token build pipeline. Every token is a hand-written CSS custom property or, on Calibre, a Tailwind `theme.extend` block. Treat any Figma import as producing **raw markup + CSS you adapt by hand** into one of the three systems above — never as a new fourth system.
@@ -26,6 +26,7 @@ All tokens are CSS custom properties scoped to the `.dft` class (not `:root`), s
   --on-dark: #f4f1ea; --on-dark-dim: #c4bcae; --on-dark-muted: #a09585;
   --serif: "Fraunces", Georgia, serif;   /* body AND display */
   --mono: "JetBrains Mono", ui-monospace, monospace;
+  --arabic: "IBM Plex Sans Arabic", "Fraunces", Tahoma, sans-serif; /* Arabic script only */
 }
 ```
 Spacing/radii/type scale are **not** tokenized as custom properties — they're literal values repeated per rule (radii are consistently `5px`–`6px`; measure is `min(1120px, calc(100% - 48px))` via `.dft-wrap`). Font sizes mostly use `clamp()` for fluid scaling (e.g. `.dft-h1 { font-size: clamp(2.8rem, 5.4vw, 4.6rem); }`).
@@ -42,7 +43,7 @@ Tokens on bare `:root`, overridden by a `.daftar` class for the cream variant:
 :root{--ink:#17181b;--green:#2c3a31;--paper:#fff;--soft:#f5f4f1;--muted:#6e7175;--dim:#4a4c50;--rule:#e3e0d8;--accent:#2c3a31;--serif:'Fraunces',Georgia,serif;--sans:'Fraunces',Georgia,serif;--mono:'JetBrains Mono',monospace}
 .daftar{--paper:#f4f1ea;--soft:#efebe1;--rule:#d8d2c4;--accent:#a8341f;--ink:#1a1814;--dim:#514c45;--muted:#6f665d;--serif:'Fraunces',Georgia,serif}
 ```
-This is the file `/ar` and `/ar/knowledge/*` still run on. It now uses Fraunces and
+This is the file `/ar/knowledge/*` still runs on (`/ar` itself moved to the canon stylesheet in Editorial Phase 4). It now uses Fraunces and
 JetBrains Mono for shared Latin display and label elements, while `.ar` selectors use
 IBM Plex Sans Arabic for Arabic text. Its rust matches the English surface (`#a8341f`). The file is intentionally minified; do not reformat it.
 
@@ -138,7 +139,7 @@ These use `.dft-figure` / `.dft-figure svg` wrapper classes (in `daftar.css`) fo
 - **Dark/light sections, not dark/light mode:** there's no `prefers-color-scheme` theming. "Dark" is a per-section class (`.dft-section-dark`) used sparingly (once per page max) for emphasis, per BRAND.md's "contrast used deliberately, not constantly" rule — not a site-wide theme toggle.
 - **Global styles:** `app/globals.css` (legacy/Arabic + a11y-critical rule that `.dft p` deliberately does **not** get a blanket margin reset — see the comment at `daftar.css:63-65`, because `globals.css` already zeroes `p` margin at element specificity and a `.dft p` override would outrank single-class rules that set one). `app/daftar.css` (canon). Both are imported once, globally, in `app/layout.tsx` — no per-page or per-component stylesheets on the Next side.
 - **Responsive strategy:** `daftar.css` uses three shared max-width breakpoints (`1040px`, `900px`, `620px`) with plain `@media` blocks at the bottom of the file (not a mobile-first utility system) — most layouts collapse multi-column grids to `1fr` and swap the sticky desktop nav for a checkbox-driven mobile menu (`.dft-nav-toggle` is a visually-hidden-but-focusable checkbox, not `display:none`, specifically to stay keyboard-navigable). A **print stylesheet** also exists (`@media print` at the bottom of `daftar.css`) for the checklist pages specifically — it strips header/footer/CTA and forces page-break-avoid on checklist groups. Calibre uses Tailwind's default responsive prefixes (`sm:`, `lg:`) directly in class names instead.
-- **RTL:** handled via `[dir=rtl]` attribute selectors in `globals.css` (flips border sides, margins) rather than logical properties throughout — `app/daftar.css`'s newer canon rules do use logical properties (`padding-inline-start`, `inset-inline`) more consistently. `/ar` routes get `lang="ar"` / RTL context from their own page-level markup, not a shared layout switch (BRAND.md flags this — no shared `<html lang>` switching — as a known, unfixed inconsistency).
+- **RTL:** the canon stylesheet uses logical properties throughout (`padding-inline-*`, `border-inline-end`, `text-align: start|end`), so `dir="rtl"` on `.dft` mirrors layout by itself; the `.dft[lang="ar"]` block at the end of the file only switches script (Plex Sans Arabic, no italics, no tracking, Latin in mono). `globals.css` still carries `[dir=rtl]` overrides for the legacy `/ar/knowledge/*` page. `/ar` routes get `lang="ar"` / RTL context from their own page-level markup, not a shared layout switch (BRAND.md flags this — no shared `<html lang>` switching — as a known, unfixed inconsistency).
 
 ---
 
@@ -156,9 +157,9 @@ app/
   layout.tsx                     # root layout: imports both stylesheets, sets Organization JSON-LD
   page.tsx                       # home (canon)
   about/page.tsx                 # canon
-  scope/page.tsx + ScopeBuilder.tsx  # canon; ScopeBuilder is a "use client" component
+  scope/page.tsx + ScopeBuilder.tsx  # canon; ScopeBuilder is a "use client" component; sends via Netlify Forms ("daftar-scope", declared in public/__forms.html), mailto as fallback
   knowledge/page.tsx + NotesList.tsx # Notes index (canon); NotesList is the other "use client" component (tag filter)
-  ar/page.tsx                    # Arabic home (legacy stylesheet)
+  ar/page.tsx + SentNotice.tsx   # Arabic home (canon, dir="rtl" lang="ar"); SentNotice is a tiny "use client" form notice
   ar/knowledge/saudi-compliance-2026/page.tsx
   knowledge/*/page.tsx           # long-form articles + checklists, all canon; listed by app/_data/practice.ts NOTES
 design/
