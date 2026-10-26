@@ -104,6 +104,7 @@ Content is separated from markup in `app/_data/`:
 
 ## 4. Asset management
 
+- **Calibre on Daftar pages:** the home page carries one Calibre band (`.dft-calibre-band`, forest ground). Only the Calibre *mark* uses Lora and Plus Jakarta Sans there (loaded for that purpose via the `globals.css` `@import`); the band's copy is Fraunces and JetBrains Mono. See `design/design-system/README.md` "Scope" and BRAND.md §10.
 - **Images:** `public/og-daftar.png`, `public/og-calibre.png` (Open Graph only — there are no in-page photographic/illustrative images anywhere on the Daftar canon pages by design; see §7). Referenced as root-relative paths (`images: ["/og-daftar.png"]` in each page's `metadata`).
 - **Logo and favicon:** the folded-file mark (1D). `scripts/build-brand-assets.py` generates `public/favicon.svg` (small cut on a cream tile) and `public/brand/daftar-mark*.svg` from one geometry that matches `DaftarMark`; change both together. `design/brand/og-daftar.html` is the source of `public/og-daftar.png` (render at 1200×630). Calibre's HTML files embed their own **data-URI SVG favicon** (the forest C tile) inline; that is Calibre's mark and does not change with the Daftar logo.
 - **Downloadable working files:** `public/*.xlsx` (checklists/trackers) — generated artifacts, not hand-edited; see §2.
@@ -154,10 +155,11 @@ app/
   layout.tsx                     # root layout: imports both stylesheets, sets Organization JSON-LD
   page.tsx                       # home (canon)
   about/page.tsx                 # canon
-  scope/page.tsx + ScopeBuilder.tsx  # canon; ScopeBuilder is a "use client" component (only one in the app)
+  scope/page.tsx + ScopeBuilder.tsx  # canon; ScopeBuilder is a "use client" component
+  knowledge/page.tsx + NotesList.tsx # Notes index (canon); NotesList is the other "use client" component (tag filter)
   ar/page.tsx                    # Arabic home (legacy stylesheet)
   ar/knowledge/saudi-compliance-2026/page.tsx
-  knowledge/*/page.tsx           # long-form articles + checklists, all canon
+  knowledge/*/page.tsx           # long-form articles + checklists, all canon; listed by app/_data/practice.ts NOTES
 design/
   design-system/                 # Design System artifact export: README (brand book), tokens.json, component previews, fonts, marks
   concepts/a-editorial/          # Redesign concept A (Claude Design export) + review memo — reference only, NOT built or deployed

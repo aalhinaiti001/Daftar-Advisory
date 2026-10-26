@@ -4,8 +4,8 @@ import { EMAIL } from "../_data/practice";
 /* Header and footer for the Daftar pages. The active nav item is passed in
    rather than read from usePathname so these stay server components. */
 
-/* "knowledge" has no nav entry (Knowledge articles are not in primary nav
-   yet), it only stops the header from wrongly underlining another item. */
+/* "knowledge" is the Notes item: the /knowledge index and every article
+   under it. */
 export type Page = "home" | "about" | "scope" | "knowledge";
 
 /* The Daftar mark: the folded file — an ink page with a rust corner turned
@@ -94,6 +94,7 @@ export function SiteHeader({ active }: { active: Page }) {
           <nav className="dft-nav">
             <Link href="/" aria-current={current("home")}>Practice</Link>
             <Link href="/about" aria-current={current("about")}>About</Link>
+            <Link href="/knowledge" aria-current={current("knowledge")}>Notes</Link>
             <Link href="/scope" aria-current={current("scope")}>Scope builder</Link>
             {/* Not in the design comp. Kept so the Calibre product page and the
                 Arabic site stay reachable from the primary navigation. */}
@@ -118,14 +119,13 @@ export function SiteFooter() {
         <em className="dft-foot-tag">Rigorous finance, without the overhead.</em>
       </div>
       {/* One practice column and one contact column (DECISIONS.md row 28). No
-          service lanes: the four services live on the home page, not in nav.
-          "Notes" points at the home anchor until /knowledge has an index page. */}
+          service lanes: the four services live on the home page, not in nav. */}
       <div className="dft-wrap dft-foot-cols">
         <div className="dft-foot-col">
           <span>Practice</span>
           <Link href="/about">About</Link>
           <Link href="/scope">Scope builder</Link>
-          <Link href="/#insights-briefs">Notes</Link>
+          <Link href="/knowledge">Notes</Link>
           <Link href="/calibre">Calibre by Daftar</Link>
         </div>
         <div className="dft-foot-col">

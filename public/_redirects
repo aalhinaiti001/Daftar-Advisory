@@ -4,12 +4,13 @@
 # Evaluated top to bottom; first match wins.
 
 # --- Research briefs -------------------------------------------------------
-# /articles and /insights were indexed but have never been served.
-/articles            /#insights-briefs      301
-/insights            /#insights-briefs      301
-/briefs              /#insights-briefs      301
-/research            /#insights-briefs      301
-/blog                /#insights-briefs      301
+# /articles and /insights were indexed but have never been served. They now
+# land on the Notes index, which is the page they were looking for.
+/articles            /knowledge             301
+/insights            /knowledge             301
+/briefs              /knowledge             301
+/research            /knowledge             301
+/blog                /knowledge             301
 
 # --- Services --------------------------------------------------------------
 # REQUIRES id="services" on the services section before deploying.

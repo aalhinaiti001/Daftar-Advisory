@@ -60,4 +60,4 @@ Icons sit on a 24px grid with a 1.5px stroke, round caps, no fills, drawn in `in
 
 ## Scope
 
-This system covers Daftar only. Any other product keeps its own system and never appears on a Daftar surface; no other product's colour or face is defined here.
+This system covers Daftar only. Any other product keeps its own system. On a Daftar surface it appears only as its own mark, on a band of its own ground, with the surrounding copy set in Daftar's faces; no other product's colour or face is defined here.
