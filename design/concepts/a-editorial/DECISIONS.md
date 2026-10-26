@@ -195,3 +195,26 @@ Assumptions taken where §6 was still open, each reversible in one edit:
 - Row 15: service detail pages not built. A separate session's PR 44 proposes them with
   its own knowledge index and legal pages; it conflicts with the merged Phase 2 and
   is the founder's call.
+
+**Phase 4** · branch `claude/editorial-phase-4`, cut from `f9563c0`.
+
+- Row 25: the scope outline now posts to Netlify Forms as `daftar-scope`, the form
+  `public/__forms.html` already declared, with name, work email and company fields and
+  the outline in the message field. With JavaScript the reply shows in place; without it
+  Netlify returns the visitor to `/scope?sent=1`, which the page reads. The mailto route
+  stays as "Or send it by email" and as the fallback if the post fails. Taken as the
+  founder's choice by the instruction to start Phase 4; one edit returns to mailto only.
+- Row 24: focus is a 2px rust outline offset 3px on every link, button and field.
+- Row 33: `/ar` moves to the canon stylesheet with `dir="rtl" lang="ar"`. The fifteen
+  direction-dependent rules in `daftar.css` became logical properties, so RTL mirrors
+  without overrides; a `.dft[lang="ar"]` block switches the script. The live Arabic
+  copy is carried as it was. The Arabic page keeps its own chapters (no memo, no service
+  table, no Notes): those wait for native Arabic copy. Its contact form keeps the
+  `daftar-scope` name with the field names aligned to the English form.
+- New Arabic strings written for this port, for the founder's review: the footer
+  columns ("الممارسة", "التواصل", "المؤسس", "كاليبر من دفتر", "أحمد الهنائي · المؤسس"),
+  the non-attest sentence ("دفتر للاستشارات ممارسة استشارية غير تصديقية، وليست مدقّق
+  حسابات قانونيًا مسجّلًا."), the form labels "المؤسسة" and the received note
+  ("وصلتنا" / "شكرًا لك. نردّ خلال يومي عمل."), and the kicker "من دفتر".
+- Still open: `<html lang>` is "en" on every route (BRAND.md §09). Fixing it needs
+  route-group layouts for the English and Arabic trees; not done here.

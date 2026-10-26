@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type FormEvent } from "react";
 import {
   SERVICE_ORDER,
   SERVICES,
@@ -13,6 +13,14 @@ import {
 const DEFAULT_SERVICE: ServiceKey = "statements";
 const DEFAULT_TIMING = "quarter";
 
+/* The outline posts to Netlify Forms as "daftar-scope" (declared for the
+   build-time bot in public/__forms.html, with these field names). With
+   JavaScript the submit is a fetch and the reply shows in place; without it
+   the form posts natively and Netlify returns the visitor to /scope?sent=1,
+   which the mount effect reads. The mailto route stays as the fallback. */
+const FORM_NAME = "daftar-scope";
+type SendState = "idle" | "sending" | "sent" | "failed";
+
 function isServiceKey(v: string | null): v is ServiceKey {
   return !!v && (SERVICE_ORDER as string[]).includes(v);
 }
@@ -21,14 +29,17 @@ export default function ScopeBuilder() {
   const [service, setService] = useState<ServiceKey>(DEFAULT_SERVICE);
   const [focus, setFocus] = useState<string[]>([]);
   const [timing, setTiming] = useState<string>(DEFAULT_TIMING);
+  const [send, setSend] = useState<SendState>("idle");
 
   /* /scope?service=audit lets the service rows on the home page open the
      builder with that line already chosen. Read after mount rather than with
      useSearchParams: that hook opts the route out of prerendering, which on a
      static export would ship /scope as an empty shell. */
   useEffect(() => {
-    const q = new URLSearchParams(window.location.search).get("service");
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get("service");
     if (isServiceKey(q)) setService(q);
+    if (params.get("sent") === "1") setSend("sent");
   }, []);
 
   const svc = SERVICES[service];
@@ -45,9 +56,8 @@ export default function ScopeBuilder() {
     [svc, focus],
   );
 
-  const mailHref = useMemo(() => {
-    const subject = encodeURIComponent("Scope outline: " + svc.label);
-    const body = encodeURIComponent(
+  const outlineText = useMemo(
+    () =>
       "Engagement: " +
         svc.label +
         "\n\nOutcome\n" +
@@ -63,9 +73,29 @@ export default function ScopeBuilder() {
         "\nTiming: " +
         time.label +
         "\n",
-    );
-    return `mailto:${EMAIL}?subject=${subject}&body=${body}`;
-  }, [svc, included, time]);
+    [svc, included, time],
+  );
+
+  const mailHref = useMemo(() => {
+    const subject = encodeURIComponent("Scope outline: " + svc.label);
+    return `mailto:${EMAIL}?subject=${subject}&body=${encodeURIComponent(outlineText)}`;
+  }, [svc, outlineText]);
+
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSend("sending");
+    try {
+      const body = new URLSearchParams(new FormData(e.currentTarget) as unknown as Record<string, string>);
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
+      });
+      setSend(res.ok ? "sent" : "failed");
+    } catch {
+      setSend("failed");
+    }
+  };
 
   const toggleFocus = (key: string) =>
     setFocus((f) => (f.includes(key) ? f.filter((x) => x !== key) : f.concat(key)));
@@ -74,6 +104,7 @@ export default function ScopeBuilder() {
     setService(DEFAULT_SERVICE);
     setFocus([]);
     setTiming(DEFAULT_TIMING);
+    setSend("idle");
   };
 
   return (
@@ -189,9 +220,58 @@ export default function ScopeBuilder() {
           </div>
 
           <div className="dft-outline-foot">
-            <p>{time.next}</p>
-            <a className="dft-btn" href={mailHref}>Send this outline</a>
-            <button type="button" className="dft-reset" onClick={reset}>Start over</button>
+            {send === "sent" ? (
+              <div className="dft-sent" role="status">
+                <span className="dft-label">Received</span>
+                <p>Thank you. Expect a reply from Ahmad within two working days.</p>
+                <button type="button" className="dft-reset" onClick={reset}>Start over</button>
+              </div>
+            ) : (
+              <form
+                className="dft-form"
+                name={FORM_NAME}
+                method="POST"
+                action="/scope?sent=1"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                onSubmit={submit}
+              >
+                <input type="hidden" name="form-name" value={FORM_NAME} />
+                <input type="hidden" name="service" value={svc.ref + " " + svc.label} />
+                <input type="hidden" name="timing" value={time.label} />
+                <input type="hidden" name="message" value={outlineText} />
+                <p className="dft-hp" aria-hidden="true">
+                  <label>
+                    Leave this empty <input name="bot-field" tabIndex={-1} autoComplete="off" />
+                  </label>
+                </p>
+                <p>{time.next}</p>
+                <div className="dft-field">
+                  <label htmlFor="s-name">Name</label>
+                  <input id="s-name" name="name" required autoComplete="name" />
+                </div>
+                <div className="dft-field">
+                  <label htmlFor="s-email">Work email</label>
+                  <input id="s-email" name="email" type="email" required autoComplete="email" />
+                </div>
+                <div className="dft-field">
+                  <label htmlFor="s-company">Company</label>
+                  <input id="s-company" name="company" autoComplete="organization" />
+                </div>
+                <button className="dft-btn" type="submit" disabled={send === "sending"}>
+                  {send === "sending" ? "Sending" : "Send this outline"}
+                </button>
+                {send === "failed" && (
+                  <p className="dft-form-error" role="alert">
+                    That did not send. <a href={mailHref}>Email the outline instead.</a>
+                  </p>
+                )}
+                {send !== "failed" && (
+                  <a className="dft-form-alt" href={mailHref}>Or send it by email</a>
+                )}
+                <button type="button" className="dft-reset" onClick={reset}>Start over</button>
+              </form>
+            )}
           </div>
         </div>
       </div>
