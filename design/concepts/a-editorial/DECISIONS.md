@@ -216,5 +216,17 @@ Assumptions taken where §6 was still open, each reversible in one edit:
   the non-attest sentence ("دفتر للاستشارات ممارسة استشارية غير تصديقية، وليست مدقّق
   حسابات قانونيًا مسجّلًا."), the form labels "المؤسسة" and the received note
   ("وصلتنا" / "شكرًا لك. نردّ خلال يومي عمل."), and the kicker "من دفتر".
-- Still open: `<html lang>` is "en" on every route (BRAND.md §09). Fixing it needs
-  route-group layouts for the English and Arabic trees; not done here.
+- `<html lang>` was "en" on every route (BRAND.md §09); fixed on branch
+  `claude/html-lang-switch`, below.
+
+**html lang switch** · branch `claude/html-lang-switch`, cut from `64def99`.
+
+- The English routes move into the `app/(en)` route group and the Arabic tree into
+  `app/(ar)`, each with its own root layout: `<html lang="en">` and
+  `<html lang="ar" dir="rtl">`. Route groups add no URL segment, so every address is
+  unchanged. The Arabic root carries Arabic metadata defaults and the organisation schema
+  named in Arabic with the English name as `alternateName`.
+- The exported 404 page lost its root layout in the move: Next's global not-found
+  route only honours a top-level `not-found.tsx` under a single root layout. The branded
+  page is now the `/not-found` route in the English tree, no-index, and the Netlify
+  build step copies its export over `out/404.html`.

@@ -8,7 +8,7 @@ import {
   TIMING,
   EMAIL,
   type ServiceKey,
-} from "../_data/practice";
+} from "../../_data/practice";
 
 const DEFAULT_SERVICE: ServiceKey = "statements";
 const DEFAULT_TIMING = "quarter";

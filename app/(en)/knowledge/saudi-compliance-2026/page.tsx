@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { SiteHeader, SiteFooter, Eyebrow } from "../../_components/SiteChrome";
+import { SiteHeader, SiteFooter, Eyebrow } from "../../../_components/SiteChrome";
 
 const TITLE = "Saudi Compliance in 2026";
 const DESC =

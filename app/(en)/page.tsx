@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { SiteHeader, SiteFooter, Eyebrow } from "./_components/SiteChrome";
-import { SERVICE_ORDER, SERVICES, NOTES, FAQ, MEMO, CASES, SECTORS, recordReady, formatNoteDate } from "./_data/practice";
+import { SiteHeader, SiteFooter, Eyebrow } from "../_components/SiteChrome";
+import { SERVICE_ORDER, SERVICES, NOTES, FAQ, MEMO, CASES, SECTORS, recordReady, formatNoteDate } from "../_data/practice";
 
 const DESC =
   "Financial statements, technical review, audit readiness and quality of earnings for founders and finance teams. A boutique firm, a defined scope, and a file you keep.";

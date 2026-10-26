@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { SiteHeader, SiteFooter, Eyebrow } from "../_components/SiteChrome";
-import { EMAIL } from "../_data/practice";
+import { SiteHeader, SiteFooter, Eyebrow } from "../../_components/SiteChrome";
+import { EMAIL } from "../../_data/practice";
 import SentNotice from "./SentNotice";
 
 /* The Arabic home, on the canon stylesheet (DECISIONS.md row 33). The copy is

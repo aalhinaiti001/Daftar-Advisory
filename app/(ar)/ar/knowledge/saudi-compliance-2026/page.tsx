@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { DaftarMark } from "../../../_components/SiteChrome";
+import { DaftarMark } from "../../../../_components/SiteChrome";
 import type { Metadata } from "next";
 
 const TITLE = "الالتزام الضريبي في السعودية 2026";

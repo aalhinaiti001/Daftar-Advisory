@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SiteHeader, SiteFooter, Eyebrow } from "../_components/SiteChrome";
+import { SiteHeader, SiteFooter, Eyebrow } from "../../_components/SiteChrome";
 import ScopeBuilder from "./ScopeBuilder";
 
 const DESC =
