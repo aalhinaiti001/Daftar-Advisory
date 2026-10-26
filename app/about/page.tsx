@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteHeader, SiteFooter, Eyebrow } from "../_components/SiteChrome";
-import { STEPS, EMAIL } from "../_data/practice";
+import { STEPS, EMAIL, SECTORS } from "../_data/practice";
 
 const DESC =
   "A founder led finance advisory boutique in Amman, working across Jordan, the GCC and MENA. Every engagement ends with a working file you keep.";
@@ -33,7 +33,7 @@ const PORTRAIT_SRC = "";
 
 const FACTS: [string, React.ReactNode][] = [
   ["Focus", "IFRS reporting and technical review"],
-  ["Sectors", "Construction, services, investment"],
+  ["Sectors", SECTORS.join(", ")],
   ["Languages", "Arabic and English"],
   ["Contact", <a key="mail" href={`mailto:${EMAIL}`}>{EMAIL}</a>],
 ];
@@ -53,12 +53,16 @@ export default function About() {
           <div className="dft-wrap dft-split">
             <div>
               <Eyebrow>§ 01 · The name</Eyebrow>
+              {/* The dictionary device from the editorial concept (DECISIONS.md row 21). */}
+              <p className="dft-define">
+                <b>daftar</b>, <i>n.</i> A ledger; a register; the book where things are written
+                down and kept.
+              </p>
               <h2 className="dft-h2-sm">Advice should stay useful after the adviser leaves.</h2>
             </div>
             <div>
               <p className="dft-lead" style={{ marginBottom: 22 }}>
-                Daftar is the ledger, the book where things are written down and kept. That is what
-                we sell: reasoning recorded in a form that outlives the meeting.
+                That is what we sell: reasoning recorded in a form that outlives the meeting.
               </p>
               <p style={{ marginBottom: 20 }}>
                 Too much advisory work evaporates on delivery. Every engagement here ends with a

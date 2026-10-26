@@ -80,6 +80,7 @@ Fraunces, JetBrains Mono, the folded-file mark, and "Founder" are canonical.
 
 Content is separated from markup in `app/_data/`:
 - `practice.ts` — services, FAQ, steps, notes, timing/focus options (typed with `as const` / small interfaces), shared by the home page and the scope builder so copy can't drift between the two.
+  `CASES` (the "On the record" register) ships empty on purpose: the home section renders only once `RECORD_MIN` cleared, anonymised engagements are entered, and the chapter numbers after it shift by one when it appears. `SECTORS` feeds the About facts and the record; add a sector only once work in it is delivered. See `design/concepts/a-editorial/DECISIONS.md` rows 13 and 14.
 - `audit-readiness-checklist.json`, `saudi-einvoicing-phase-2-checklist.json` — checklist content, each imported by **both** a page component and a Python script (`scripts/build-*.py`) that generates a matching downloadable `.xlsx`. If a Figma design changes a checklist's structure, the JSON schema (`{ note, groups: [{ ref, title, blurb, items[] }] }`) needs to keep working for the Python generator too.
 
 **When implementing a new Figma component:** add markup to the relevant `page.tsx` and new rules to `daftar.css` (canon) — don't invent a components folder or a CSS-in-JS system; it would be inconsistent with everything else here.
