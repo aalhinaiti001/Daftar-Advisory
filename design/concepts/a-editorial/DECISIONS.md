@@ -163,3 +163,20 @@ Assumptions taken where §6 was still open, each reversible in one edit:
   `/knowledge`.
 - §3 rhythm: section padding 80px (was 88), eyebrow-to-heading 14px (was 26). The
   concept's 8px read cramped under the fluid h2 and was not matched.
+
+**Phase 2** · branch `claude/editorial-phase-2`, cut from `d87e798`.
+
+- Row 20: `/knowledge` index with a topic filter (All · IFRS · KSA · Audit) as a small
+  client component; the full list is in the static export, so the page reads without
+  JavaScript. The home page leads with the most recently published or updated note and
+  lists the rest beside it. Dates and summaries live in `practice.ts` as `NOTES`.
+- Row 16: "Notes" added to primary nav, between About and Scope builder, taken as
+  approved by the instruction to start Phase 2. One line to remove if not.
+- Row 22: the Calibre band ships on home between § 04 Notes and § 05 Questions, on
+  forest, carrying the Calibre mark in Lora and Plus Jakarta Sans and its copy in
+  Daftar's faces. The design-system README "Scope" sentence is amended as §5.1 proposed.
+  Lora italic 500 and Plus Jakarta Sans 600 are loaded for the mark only.
+- The five legacy article redirects (`/articles`, `/insights`, `/briefs`, `/research`,
+  `/blog`) now land on `/knowledge` instead of the home anchor. `/knowledge` is in the
+  sitemap.
+- §5.2 is done: `CLAUDE.md` notes the Notes nav item, the index page and the Calibre band.

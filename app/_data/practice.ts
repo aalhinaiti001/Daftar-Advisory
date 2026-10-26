@@ -105,28 +105,82 @@ export const TIMING = [
   },
 ] as const;
 
-export const NOTES: { tag: string; title: string; href?: string }[] = [
+/* Notes (the Knowledge articles) as the home page and the /knowledge index
+   list them. Dates mirror each article's own PUBLISHED and MODIFIED constants;
+   the list is kept newest first by `updated ?? date`, and the first entry is
+   the featured note on the home page. `topic` drives the index filter. */
+export type NoteTopic = "ifrs" | "ksa" | "audit";
+
+export type Note = {
+  tag: string;
+  topic: NoteTopic;
+  kind: "Note" | "Checklist";
+  title: string;
+  summary: string;
+  href: string;
+  date: string;
+  updated?: string;
+};
+
+export const NOTE_TOPICS: { key: NoteTopic | "all"; label: string }[] = [
+  { key: "all", label: "All" },
+  { key: "ifrs", label: "IFRS" },
+  { key: "ksa", label: "KSA" },
+  { key: "audit", label: "Audit" },
+];
+
+export const NOTES: Note[] = [
   {
     tag: "IFRS 18",
-    title: "The comparative year is 2026",
+    topic: "ifrs",
+    kind: "Note",
+    title: "IFRS 18 lands in 2027. The comparative year is 2026.",
+    summary:
+      "What changes, what deliberately does not, the seven workstreams that take the longest, and a transition plan you can run.",
     href: "/knowledge/ifrs-18-transition-2026",
-  },
-  {
-    tag: "KSA",
-    title: "Electronic invoicing waves",
-    href: "/knowledge/saudi-compliance-2026",
+    date: "2026-08-19",
+    updated: "2026-09-12",
   },
   {
     tag: "Audit",
+    topic: "audit",
+    kind: "Checklist",
     title: "The audit readiness checklist",
+    summary:
+      "Thirty six checks across the close, the schedules, the judgments, the controls evidence and the request list, so fieldwork runs on your calendar.",
     href: "/knowledge/audit-readiness-checklist",
+    date: "2026-08-30",
   },
   {
     tag: "KSA",
-    title: "The Phase 2 readiness checklist",
+    topic: "ksa",
+    kind: "Checklist",
+    title: "Saudi e-invoicing Phase 2: the readiness checklist",
+    summary:
+      "Which FATOORA wave applies, what each invoice type needs, and the twenty six checks to work through before the integration deadline.",
     href: "/knowledge/saudi-e-invoicing-phase-2-checklist",
+    date: "2026-08-30",
+  },
+  {
+    tag: "KSA",
+    topic: "ksa",
+    kind: "Note",
+    title: "Saudi Compliance in 2026",
+    summary:
+      "E-invoicing and transfer pricing: FATOORA Wave 25, transfer pricing for zakat payers, and the disclosure form with no minimum threshold.",
+    href: "/knowledge/saudi-compliance-2026",
+    date: "2026-08-11",
   },
 ];
+
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+/* "2026-08-19" to "19 August 2026". Hand rolled so the static export does not
+   depend on the build machine's ICU data. */
+export function formatNoteDate(iso: string): string {
+  const [y, m, d] = iso.split("-").map(Number);
+  return `${d} ${MONTHS[m - 1]} ${y}`;
+}
 
 export const FAQ = [
   {
