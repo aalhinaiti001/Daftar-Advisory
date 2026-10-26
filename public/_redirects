@@ -4,8 +4,8 @@
 # Evaluated top to bottom; first match wins.
 
 # --- Research briefs -------------------------------------------------------
-# /articles and /insights were indexed but have never been served. /knowledge
-# is now a real index route, so these land on it rather than a home anchor.
+# /articles and /insights were indexed but have never been served. They now
+# land on the Notes index, which is the page they were looking for.
 /articles            /knowledge             301
 /insights            /knowledge             301
 /briefs              /knowledge             301

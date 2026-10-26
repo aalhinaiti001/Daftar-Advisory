@@ -634,6 +634,157 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
 .dft-related a { color: var(--rust); }
 .dft-related a:hover { color: var(--rust-deep); }
 
+/* --- Notes: featured note on home, index on /knowledge ------------------- */
+
+.dft-note-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rust);
+  white-space: nowrap;
+}
+.dft-note-featured {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+.dft-note-lead {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--card);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+.dft-note-meta { display: flex; gap: 16px; align-items: baseline; }
+.dft-note-meta time,
+.dft-note-row time,
+.dft-notes-index time {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.dft-note-lead h3 {
+  font-weight: 400;
+  font-variation-settings: "opsz" 60, "wght" 440, "SOFT" 30;
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+.dft-note-lead p { font-size: 15px; }
+.dft-note-lead .dft-btn-sm { margin-top: 6px; }
+.dft-note-list { display: flex; flex-direction: column; border-top: 1px solid var(--rule); }
+.dft-note-row {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: baseline;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  transition: color 0.2s ease;
+}
+.dft-note-row:hover .dft-note-title { color: var(--rust); }
+.dft-note-title {
+  font-weight: 500;
+  font-variation-settings: "opsz" 30, "wght" 520, "SOFT" 24;
+  font-size: 1.05rem;
+  line-height: 1.3;
+  transition: color 0.2s ease;
+}
+.dft-note-all {
+  align-self: flex-start;
+  margin-top: 18px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--ink);
+  font-size: 15px;
+  color: var(--ink);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.dft-note-all:hover { color: var(--rust); border-color: var(--rust); }
+
+.dft-page-lead { margin-top: 26px; max-width: 34rem; }
+.dft-notes-filter { margin-bottom: 32px; }
+.dft-notes-index { border-top: 1px solid var(--rule); }
+.dft-notes-index article {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr) 150px;
+  gap: 28px;
+  align-items: start;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.dft-notes-index-meta { display: flex; flex-direction: column; gap: 8px; padding-top: 4px; }
+.dft-notes-index h2 {
+  font-weight: 500;
+  font-variation-settings: "opsz" 34, "wght" 520, "SOFT" 26;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.dft-notes-index h2 a { color: var(--ink); transition: color 0.2s ease; }
+.dft-notes-index h2 a:hover { color: var(--rust); }
+.dft-notes-index p { font-size: 15px; }
+.dft-notes-index-date { display: flex; flex-direction: column; gap: 6px; padding-top: 4px; text-align: end; }
+
+/* --- Calibre band ----------------------------------------------------------
+   Calibre keeps its own ground and faces (BRAND.md §10). Inside a Daftar page
+   it is a forest band carrying its own mark; everything that reads is set in
+   Daftar's faces. No rust and no clay on this band. */
+
+.dft-calibre-band {
+  --forest: #265147;
+  --forest-deep: #1c3d35;
+  --forest-line: #d5e3de;
+  --calibre-paper: #faf8f5;
+  background: var(--forest);
+  color: var(--calibre-paper);
+  border-top: 0;
+}
+.dft-calibre-band .dft-wrap { padding: 72px 0; }
+.dft-calibre-inner {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
+}
+.dft-calibre-band .dft-eyebrow { color: var(--forest-line); margin-bottom: 14px; }
+.dft-calibre-band h2 { color: var(--calibre-paper); max-width: 24ch; }
+.dft-calibre-band .dft-calibre-use {
+  margin: 22px 0 28px;
+  max-width: 40rem;
+  font-size: 15px;
+  color: var(--forest-line);
+}
+.dft-calibre-band .dft-btn-light { background: var(--calibre-paper); color: var(--forest-deep); }
+.dft-calibre-band .dft-btn-light:hover { background: var(--forest-line); color: var(--forest-deep); }
+.dft-calibre-mark { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding-top: 6px; }
+.dft-calibre-tile {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: var(--forest-deep);
+  border: 1px solid rgba(213, 227, 222, 0.35);
+  font: italic 500 30px/1 "Lora", Georgia, serif;
+  color: #ffffff;
+}
+.dft-calibre-name { font: italic 500 30px/1.1 "Lora", Georgia, serif; color: var(--calibre-paper); letter-spacing: -0.01em; }
+.dft-calibre-kicker {
+  font: 600 10px/1 "Plus Jakarta Sans", Arial, sans-serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--forest-line);
+}
+
 /* --- FAQ ----------------------------------------------------------------- */
 
 .dft-faq { border-top: 1px solid var(--rule); }
@@ -1095,6 +1246,9 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
   .dft-split, .dft-split-faq, .dft-close-split, .dft-scope-head { grid-template-columns: 1fr; gap: 40px; }
   .dft-scope-head p { align-self: start; }
   .dft-notes, .dft-notes-3 { grid-template-columns: 1fr 1fr; }
+  .dft-note-featured { grid-template-columns: 1fr; }
+  .dft-calibre-inner { grid-template-columns: 1fr; gap: 36px; }
+  .dft-calibre-mark { flex-direction: row; align-items: center; gap: 16px; }
   .dft-commitments { grid-template-columns: 1fr 1fr; row-gap: 32px; }
   .dft-commitments > div:nth-child(odd) { padding-left: 0; }
   .dft-commitments > div:nth-child(even) { padding-right: 0; }
@@ -1164,6 +1318,8 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
   .dft-ledger article > p { grid-column: 2; }
   .dft-ledger .dft-btn-sm { grid-column: 2; justify-self: start; align-self: start; }
   .dft-faq article { grid-template-columns: 32px 1fr; gap: 16px; }
+  .dft-notes-index article { grid-template-columns: 80px minmax(0, 1fr); gap: 12px 20px; }
+  .dft-notes-index-date { grid-column: 2; flex-direction: row; gap: 12px; text-align: start; padding-top: 0; }
 }
 
 @media (max-width: 620px) {
@@ -1185,5 +1341,11 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
   .dft-footer .dft-foot-top { flex-direction: column; align-items: flex-start; gap: 26px; }
   .dft-footer .dft-foot-cols { grid-template-columns: 1fr; gap: 24px; }
   .dft-strip { flex-direction: column; gap: 10px; }
+  .dft-note-lead { padding: 24px; }
+  .dft-note-row { grid-template-columns: 1fr; gap: 6px; }
+  .dft-notes-index article { grid-template-columns: 1fr; }
+  .dft-notes-index-meta { flex-direction: row; gap: 14px; }
+  .dft-notes-index-date { grid-column: 1; }
+  .dft-calibre-band .dft-wrap { padding: 56px 0; }
   .dft-memo-meta > div { grid-template-columns: 40px minmax(0, 1fr); }
 }

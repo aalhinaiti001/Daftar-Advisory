@@ -13,7 +13,7 @@ const DESC =
    to carry: an @import is only discovered once the stylesheet has parsed,
    which put the webfonts a full round trip later on the critical path. */
 const FONTS_HREF =
-  "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=JetBrains+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap";
+  "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=JetBrains+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Lora:ital,wght@1,500&family=Plus+Jakarta+Sans:wght@600&display=swap";
 
 /* Non-attest practice: the schema type is ProfessionalService, NOT
    AccountingService/FinancialService. Those imply licensed attest work the

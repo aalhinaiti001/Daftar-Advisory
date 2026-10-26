@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteHeader, SiteFooter, Eyebrow } from "./_components/SiteChrome";
-import { SERVICE_ORDER, SERVICES, NOTES, FAQ, MEMO } from "./_data/practice";
+import { SERVICE_ORDER, SERVICES, NOTES, FAQ, MEMO, formatNoteDate } from "./_data/practice";
 import { SERVICE_SLUG } from "./_data/services";
 
 const DESC =
@@ -64,6 +64,7 @@ const COMMITMENTS: [string, string, string][] = [
 ];
 
 export default function Home() {
+  const [featured, ...rest] = NOTES;
   return (
     <div className="dft">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
@@ -219,16 +220,58 @@ export default function Home() {
           <div className="dft-wrap">
             <Eyebrow>§ 04 · Notes</Eyebrow>
             <h2 className="dft-h2" style={{ marginBottom: 40 }}>
-              <Link href="/knowledge">What finance teams here are dealing with now.</Link>
+              What finance teams here are dealing with now.
             </h2>
-            <div className="dft-notes">
-              {NOTES.map((n) => (
-                <article key={n.title}>
-                  <span>{n.tag}</span>
-                  <h3>{n.title}</h3>
-                  {n.href && <Link className="dft-btn-sm" href={n.href}>Read the note</Link>}
-                </article>
-              ))}
+            {/* The newest note leads; the rest list beside it (DECISIONS.md row 20).
+                NOTES is kept newest first in practice.ts. */}
+            <div className="dft-note-featured">
+              <article className="dft-note-lead">
+                <div className="dft-note-meta">
+                  <span className="dft-note-tag">{featured.tag}</span>
+                  <time dateTime={featured.updated ?? featured.date}>
+                    {formatNoteDate(featured.updated ?? featured.date)}
+                  </time>
+                </div>
+                <h3>{featured.title}</h3>
+                <p>{featured.summary}</p>
+                <Link className="dft-btn-sm" href={featured.href}>Read the note</Link>
+              </article>
+              <div className="dft-note-list">
+                {rest.map((n) => (
+                  <Link className="dft-note-row" href={n.href} key={n.href}>
+                    <span className="dft-note-tag">{n.tag}</span>
+                    <span className="dft-note-title">{n.title}</span>
+                    <time dateTime={n.date}>{formatNoteDate(n.date)}</time>
+                  </Link>
+                ))}
+                <Link className="dft-note-all" href="/knowledge">All notes</Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Calibre, as its own mark on its own ground, with the copy in Daftar's
+            faces (BRAND.md §10; DECISIONS.md row 22). Forest, never ink: the one
+            ink section on this page is § 03. */}
+        <section id="calibre" className="dft-section dft-calibre-band" aria-labelledby="calibre-h">
+          <div className="dft-wrap dft-calibre-inner">
+            <div className="dft-calibre-mark" aria-hidden="true">
+              <span className="dft-calibre-tile">C</span>
+              <span className="dft-calibre-name">Calibre</span>
+              <span className="dft-calibre-kicker">by Daftar</span>
+            </div>
+            <div>
+              <Eyebrow>Also from Daftar</Eyebrow>
+              <h2 id="calibre-h" className="dft-h2-sm">
+                Hiring a finance lead? The Calibre Verdict is a written decision memo on your
+                shortlist, before you make the offer.
+              </h2>
+              <p className="dft-calibre-use">
+                Structured hiring advisory for finance roles. Not a psychometric assessment. Does
+                not predict performance. The decision, and its consequences, rest with the
+                employer.
+              </p>
+              <Link className="dft-btn-light" href="/calibre">Visit Calibre</Link>
             </div>
           </div>
         </section>

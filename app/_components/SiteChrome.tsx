@@ -5,8 +5,9 @@ import { LINKEDIN } from "../_data/site";
 /* Header and footer for the Daftar pages. The active nav item is passed in
    rather than read from usePathname so these stay server components. */
 
-/* "legal" (privacy, terms) has no nav entry; it only stops the header from
-   wrongly underlining another item. */
+/* "knowledge" is the Notes item: the /knowledge index and every article
+   under it. "legal" (privacy, terms) has no nav entry; it only stops the
+   header from wrongly underlining another item. */
 export type Page = "home" | "services" | "knowledge" | "about" | "scope" | "legal";
 
 /* The Daftar mark: the folded file — an ink page with a rust corner turned
@@ -95,8 +96,8 @@ export function SiteHeader({ active }: { active: Page }) {
           <nav className="dft-nav">
             <Link href="/" aria-current={current("home")}>Practice</Link>
             <Link href="/services" aria-current={current("services")}>Services</Link>
-            <Link href="/knowledge" aria-current={current("knowledge")}>Notes</Link>
             <Link href="/about" aria-current={current("about")}>About</Link>
+            <Link href="/knowledge" aria-current={current("knowledge")}>Notes</Link>
             <Link href="/scope" aria-current={current("scope")}>Scope builder</Link>
             {/* Not in the design comp. Kept so the Calibre product page and the
                 Arabic site stay reachable from the primary navigation. */}

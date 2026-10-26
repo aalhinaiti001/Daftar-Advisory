@@ -71,7 +71,7 @@ Fraunces, JetBrains Mono, the folded-file mark, and "Founder" are canonical.
 
 **There is no component library or Storybook.** Component-like reuse happens two ways:
 
-1. **One shared chrome file**: `app/_components/SiteChrome.tsx` exports `SiteHeader` (primary nav: Practice · Services · Notes (`/knowledge`) · About · Scope builder · Calibre · ع), `SiteFooter` (Practice, Contact and Founder columns per `design/concepts/a-editorial/DECISIONS.md` row 28, with Privacy and Terms on the note row), `Eyebrow`, and `DaftarMark` (the folded-file logo as inline SVG with two size cuts; the Arabic pages import it too) (a section-label component with an `as` prop — `"div" | "h2" | "h3"` — used to give long-form pages a real heading outline instead of an all-`div` label). These three are the only shared React components in the app; every page imports them directly, e.g.:
+1. **One shared chrome file**: `app/_components/SiteChrome.tsx` exports `SiteHeader` (primary nav: Practice · Services · About · Notes (`/knowledge`) · Scope builder · Calibre · ع), `SiteFooter` (Practice, Contact and Founder columns per `design/concepts/a-editorial/DECISIONS.md` row 28, with Privacy and Terms on the note row), `Eyebrow`, and `DaftarMark` (the folded-file logo as inline SVG with two size cuts; the Arabic pages import it too) (a section-label component with an `as` prop — `"div" | "h2" | "h3"` — used to give long-form pages a real heading outline instead of an all-`div` label). These three are the only shared React components in the app; every page imports them directly, e.g.:
    ```tsx
    import { SiteHeader, SiteFooter, Eyebrow } from "../_components/SiteChrome";
    <Eyebrow as="h2" tone="rust">§ 01 · Services</Eyebrow>
@@ -81,7 +81,6 @@ Fraunces, JetBrains Mono, the folded-file mark, and "Founder" are canonical.
 Content is separated from markup in `app/_data/`:
 - `practice.ts` — services, FAQ, steps, notes, timing/focus options (typed with `as const` / small interfaces), shared by the home page and the scope builder so copy can't drift between the two.
 - `services.ts` — long-form content for the four `/services/<slug>` pages (scope, deliverables, sectors, FAQ), rendered by the one template at `app/services/[slug]/page.tsx`; `SERVICE_SLUG` maps a `practice.ts` key to its page.
-- `knowledge.ts` — the article index for `/knowledge` (title, dates, tag); mirrors the constants at the top of each article's `page.tsx`, so change both together.
 - `site.ts` — the JSON-LD `@id`s and the LinkedIn URL shared by `layout.tsx` (the `@graph` of ProfessionalService + Person + WebSite) and the pages that reference those nodes.
 - `audit-readiness-checklist.json`, `saudi-einvoicing-phase-2-checklist.json` — checklist content, each imported by **both** a page component and a Python script (`scripts/build-*.py`) that generates a matching downloadable `.xlsx`. If a Figma design changes a checklist's structure, the JSON schema (`{ note, groups: [{ ref, title, blurb, items[] }] }`) needs to keep working for the Python generator too.
 
@@ -107,6 +106,7 @@ Content is separated from markup in `app/_data/`:
 
 ## 4. Asset management
 
+- **Calibre on Daftar pages:** the home page carries one Calibre band (`.dft-calibre-band`, forest ground). Only the Calibre *mark* uses Lora and Plus Jakarta Sans there (loaded for that purpose via the Google Fonts `<link>` in `app/layout.tsx`; `globals.css` no longer carries an `@import`); the band's copy is Fraunces and JetBrains Mono. See `design/design-system/README.md` "Scope" and BRAND.md §10.
 - **Images:** `public/og-daftar.png`, `public/og-calibre.png` (Open Graph only — there are no in-page photographic/illustrative images anywhere on the Daftar canon pages by design; see §7). Referenced as root-relative paths (`images: ["/og-daftar.png"]` in each page's `metadata`).
 - **Logo and favicon:** the folded-file mark (1D). `scripts/build-brand-assets.py` generates `public/favicon.svg` (small cut on a cream tile) and `public/brand/daftar-mark*.svg` from one geometry that matches `DaftarMark`; change both together. `design/brand/og-daftar.html` is the source of `public/og-daftar.png` (render at 1200×630). Calibre's HTML files embed their own **data-URI SVG favicon** (the forest C tile) inline; that is Calibre's mark and does not change with the Daftar logo.
 - **Downloadable working files:** `public/*.xlsx` (checklists/trackers) — generated artifacts, not hand-edited; see §2.
@@ -151,7 +151,6 @@ app/
   _data/                         # content, separated from markup
     practice.ts                    # services/FAQ/steps/notes — typed, shared by home + scope builder
     services.ts                    # long-form service page content, one template renders four slugs
-    knowledge.ts                   # article index for /knowledge (keep in step with each article)
     site.ts                        # JSON-LD ids + LinkedIn URL shared by layout and pages
     audit-readiness-checklist.json # checklist content, also consumed by scripts/build-*.py
     saudi-einvoicing-phase-2-checklist.json
@@ -160,12 +159,12 @@ app/
   layout.tsx                     # root layout: imports both stylesheets, sets Organization JSON-LD
   page.tsx                       # home (canon)
   about/page.tsx                 # canon
-  scope/page.tsx + ScopeBuilder.tsx  # canon; ScopeBuilder is a "use client" component (only one in the app)
+  scope/page.tsx + ScopeBuilder.tsx  # canon; ScopeBuilder is a "use client" component
+  knowledge/page.tsx + NotesList.tsx # Notes index (canon); NotesList is the other "use client" component (tag filter)
   ar/page.tsx                    # Arabic home (legacy stylesheet)
   ar/knowledge/saudi-compliance-2026/page.tsx
   services/page.tsx + [slug]/    # service index + the four service pages (SEO landing pages)
-  knowledge/page.tsx             # article index
-  knowledge/*/page.tsx           # long-form articles + checklists, all canon
+  knowledge/*/page.tsx           # long-form articles + checklists, all canon; listed by app/_data/practice.ts NOTES
   privacy/, terms/               # legal pages linked from the footer
 design/
   design-system/                 # Design System artifact export: README (brand book), tokens.json, component previews, fonts, marks
