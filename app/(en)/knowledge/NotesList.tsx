@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { NOTES, NOTE_TOPICS, formatNoteDate, type NoteTopic } from "../_data/practice";
+import { NOTES, NOTE_TOPICS, formatNoteDate, type NoteTopic } from "../../_data/practice";
 
 /* The tag filter on /knowledge. Client side only for the chips: the list is
    in the static export in full, so the page reads without JavaScript and the

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { SiteHeader, SiteFooter, Eyebrow } from "../_components/SiteChrome";
-import { STEPS, EMAIL, SECTORS } from "../_data/practice";
+import { SiteHeader, SiteFooter, Eyebrow } from "../../_components/SiteChrome";
+import { STEPS, EMAIL, SECTORS } from "../../_data/practice";
 
 const DESC =
   "A founder led finance advisory boutique in Amman, working across Jordan, the GCC and MENA. Every engagement ends with a working file you keep.";

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { SiteHeader, SiteFooter, Eyebrow } from "../../_components/SiteChrome";
+import { SiteHeader, SiteFooter, Eyebrow } from "../../../_components/SiteChrome";
 
 const TITLE = "IFRS 18 lands in 2027. The comparative year is 2026.";
 const DESC =

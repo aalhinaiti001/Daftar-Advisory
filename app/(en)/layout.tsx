@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import "./daftar.css";
+import "../globals.css";
+import "../daftar.css";
 
 const DESC = "Clear finance work for founders and finance teams: statements, technical review, audit readiness, and quality of earnings.";
 
@@ -45,6 +45,9 @@ export const metadata: Metadata = {
   },
 };
 
+/* Root layout for the English tree. The Arabic tree has its own root layout
+   in app/(ar)/layout.tsx so <html> carries lang="ar" dir="rtl" there (BRAND.md
+   §09); the route groups do not change any URL. */
 export default function RootLayout({children}:{children:React.ReactNode}) {
   return (
     <html lang="en">

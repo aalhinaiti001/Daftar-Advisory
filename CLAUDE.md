@@ -100,7 +100,7 @@ Content is separated from markup in `app/_data/`:
   Calibre's two static HTML files pull Tailwind from the **Play CDN** (`<script src="https://cdn.tailwindcss.com">`) plus an inline `<style>` block — there is a code comment in the file itself flagging this as prototype-only and recommending a built stylesheet before real production use; that migration has not happened.
 - **Package manager:** npm (`package-lock.json` present). Only prod deps are `next`/`react`/`react-dom`; only dev deps are TS types + `typescript`. No linting config beyond Next's default (`next lint`), no test runner.
 - **Python tooling:** `scripts/*.py` (openpyxl) generate the downloadable `.xlsx` checklists from the JSON in `app/_data/`. Not part of the Next build; run manually (`pip install openpyxl && python3 scripts/build-audit-checklist.py`).
-- **Deploy:** Netlify. `netlify.toml`'s build command runs `next build` **then** copies the two Calibre HTML files into `out/calibre.html` and `out/ar/calibre.html` — Calibre is not part of the Next.js route tree at all, it's bolted on post-build. `public/_redirects` handles legacy URL redirects. `/book` and `/call`, plus the header CTA, stay on `/scope` until the Microsoft Bookings URL is live; update all three destinations together.
+- **Deploy:** Netlify. `netlify.toml`'s build command runs `next build` **then** copies the two Calibre HTML files into `out/calibre.html` and `out/ar/calibre.html`, and `out/not-found.html` over `out/404.html` — Calibre is not part of the Next.js route tree at all, it's bolted on post-build. `public/_redirects` handles legacy URL redirects. `/book` and `/call`, plus the header CTA, stay on `/scope` until the Microsoft Bookings URL is live; update all three destinations together.
 
 ---
 
@@ -139,7 +139,7 @@ These use `.dft-figure` / `.dft-figure svg` wrapper classes (in `daftar.css`) fo
 - **Dark/light sections, not dark/light mode:** there's no `prefers-color-scheme` theming. "Dark" is a per-section class (`.dft-section-dark`) used sparingly (once per page max) for emphasis, per BRAND.md's "contrast used deliberately, not constantly" rule — not a site-wide theme toggle.
 - **Global styles:** `app/globals.css` (legacy/Arabic + a11y-critical rule that `.dft p` deliberately does **not** get a blanket margin reset — see the comment at `daftar.css:63-65`, because `globals.css` already zeroes `p` margin at element specificity and a `.dft p` override would outrank single-class rules that set one). `app/daftar.css` (canon). Both are imported once, globally, in `app/layout.tsx` — no per-page or per-component stylesheets on the Next side.
 - **Responsive strategy:** `daftar.css` uses three shared max-width breakpoints (`1040px`, `900px`, `620px`) with plain `@media` blocks at the bottom of the file (not a mobile-first utility system) — most layouts collapse multi-column grids to `1fr` and swap the sticky desktop nav for a checkbox-driven mobile menu (`.dft-nav-toggle` is a visually-hidden-but-focusable checkbox, not `display:none`, specifically to stay keyboard-navigable). A **print stylesheet** also exists (`@media print` at the bottom of `daftar.css`) for the checklist pages specifically — it strips header/footer/CTA and forces page-break-avoid on checklist groups. Calibre uses Tailwind's default responsive prefixes (`sm:`, `lg:`) directly in class names instead.
-- **RTL:** the canon stylesheet uses logical properties throughout (`padding-inline-*`, `border-inline-end`, `text-align: start|end`), so `dir="rtl"` on `.dft` mirrors layout by itself; the `.dft[lang="ar"]` block at the end of the file only switches script (Plex Sans Arabic, no italics, no tracking, Latin in mono). `globals.css` still carries `[dir=rtl]` overrides for the legacy `/ar/knowledge/*` page. `/ar` routes get `lang="ar"` / RTL context from their own page-level markup, not a shared layout switch (BRAND.md flags this — no shared `<html lang>` switching — as a known, unfixed inconsistency).
+- **RTL:** the canon stylesheet uses logical properties throughout (`padding-inline-*`, `border-inline-end`, `text-align: start|end`), so `dir="rtl"` on `.dft` mirrors layout by itself; the `.dft[lang="ar"]` block at the end of the file only switches script (Plex Sans Arabic, no italics, no tracking, Latin in mono). `globals.css` still carries `[dir=rtl]` overrides for the legacy `/ar/knowledge/*` page. `<html lang>` and `dir` are set per tree by two root layouts: `app/(en)/layout.tsx` renders `<html lang="en">` and `app/(ar)/layout.tsx` renders `<html lang="ar" dir="rtl">`; the route groups do not change any URL. Each Arabic page still sets `lang`/`dir` on its `.dft` wrapper for the stylesheet.
 
 ---
 
@@ -147,21 +147,25 @@ These use `.dft-figure` / `.dft-figure svg` wrapper classes (in `daftar.css`) fo
 
 ```
 app/
-  _components/SiteChrome.tsx     # only shared React components (header/footer/eyebrow)
+  _components/SiteChrome.tsx     # only shared React components (header/footer/eyebrow/mark); header and footer take lang="en" | "ar"
   _data/                         # content, separated from markup
     practice.ts                    # services/FAQ/steps/notes — typed, shared by home + scope builder
     audit-readiness-checklist.json # checklist content, also consumed by scripts/build-*.py
     saudi-einvoicing-phase-2-checklist.json
   daftar.css                     # canon stylesheet (.dft namespace) — most active development happens here
   globals.css                    # legacy/Arabic stylesheet (:root, .daftar, .ar) — minified, single-line
-  layout.tsx                     # root layout: imports both stylesheets, sets Organization JSON-LD
-  page.tsx                       # home (canon)
-  about/page.tsx                 # canon
-  scope/page.tsx + ScopeBuilder.tsx  # canon; ScopeBuilder is a "use client" component; sends via Netlify Forms ("daftar-scope", declared in public/__forms.html), mailto as fallback
-  knowledge/page.tsx + NotesList.tsx # Notes index (canon); NotesList is the other "use client" component (tag filter)
-  ar/page.tsx + SentNotice.tsx   # Arabic home (canon, dir="rtl" lang="ar"); SentNotice is a tiny "use client" form notice
-  ar/knowledge/saudi-compliance-2026/page.tsx
-  knowledge/*/page.tsx           # long-form articles + checklists, all canon; listed by app/_data/practice.ts NOTES
+  (en)/                          # English tree: route group, no URL segment
+    layout.tsx                     # root layout for English: <html lang="en">, imports both stylesheets, Organization JSON-LD
+    not-found/page.tsx             # the branded 404; netlify.toml copies out/not-found.html over out/404.html after the build
+    page.tsx                       # home (canon)
+    about/page.tsx                 # canon
+    scope/page.tsx + ScopeBuilder.tsx  # canon; ScopeBuilder is a "use client" component; sends via Netlify Forms ("daftar-scope", declared in public/__forms.html), mailto as fallback
+    knowledge/page.tsx + NotesList.tsx # Notes index (canon); NotesList is the other "use client" component (tag filter)
+    knowledge/*/page.tsx           # long-form articles + checklists, all canon; listed by app/_data/practice.ts NOTES
+  (ar)/                          # Arabic tree: route group, no URL segment
+    layout.tsx                     # root layout for Arabic: <html lang="ar" dir="rtl">, Arabic JSON-LD and metadata defaults
+    ar/page.tsx + SentNotice.tsx   # Arabic home (canon); SentNotice is a tiny "use client" form notice
+    ar/knowledge/saudi-compliance-2026/page.tsx  # legacy stylesheet
 design/
   design-system/                 # Design System artifact export: README (brand book), tokens.json, component previews, fonts, marks
   concepts/a-editorial/          # Redesign concept A (Claude Design export) + review memo — reference only, NOT built or deployed

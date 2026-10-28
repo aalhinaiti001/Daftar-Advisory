@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { SiteHeader, SiteFooter, Eyebrow } from "../../_components/SiteChrome";
-import checklist from "../../_data/audit-readiness-checklist.json";
+import { SiteHeader, SiteFooter, Eyebrow } from "../../../_components/SiteChrome";
+import checklist from "../../../_data/audit-readiness-checklist.json";
 
 const TITLE = "The audit readiness checklist";
 const DESC =

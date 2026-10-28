@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { SiteHeader, SiteFooter, Eyebrow } from "../../_components/SiteChrome";
-import checklist from "../../_data/saudi-einvoicing-phase-2-checklist.json";
+import { SiteHeader, SiteFooter, Eyebrow } from "../../../_components/SiteChrome";
+import checklist from "../../../_data/saudi-einvoicing-phase-2-checklist.json";
 
 const TITLE = "Saudi e-invoicing Phase 2: the readiness checklist";
 const DESC =
