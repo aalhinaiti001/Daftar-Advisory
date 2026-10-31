@@ -11,7 +11,7 @@ const MODIFIED = "2026-09-12";
 const PLAN_FILE = "/ifrs-18-transition-plan-2026.xlsx";
 
 export const metadata: Metadata = {
-  title: `${TITLE} — Daftar Advisory`,
+  title: `${TITLE} | Daftar Advisory`,
   description: DESC,
   alternates: { canonical: URL },
   openGraph: {
@@ -50,14 +50,13 @@ const ARTICLE_SCHEMA = {
   image: "https://daftaradvisory.com/og-daftar.png",
 };
 
-/* Two levels only. There is no /knowledge index route yet, so a three-level
-   trail would advertise a URL that 404s. */
 const BREADCRUMB_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Daftar Advisory", item: "https://daftaradvisory.com" },
-    { "@type": "ListItem", position: 2, name: TITLE, item: `https://daftaradvisory.com${URL}` },
+    { "@type": "ListItem", position: 2, name: "Notes", item: "https://daftaradvisory.com/knowledge" },
+    { "@type": "ListItem", position: 3, name: TITLE, item: `https://daftaradvisory.com${URL}` },
   ],
 };
 

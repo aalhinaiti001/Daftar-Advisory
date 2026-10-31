@@ -13,7 +13,7 @@ import SentNotice from "./SentNotice";
 const DESC = "عمل مالي بسيط، حتى حين لا تكون المسألة كذلك. قوائم مالية، استعداد للتدقيق، مراجعة فنية، ودعم صفقات.";
 
 export const metadata: Metadata = {
-  title: "دفتر للاستشارات",
+  title: "القوائم المالية وفق IFRS والاستعداد للتدقيق | دفتر للاستشارات",
   description: DESC,
   alternates: {
     canonical: "/ar",

@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { EMAIL } from "../_data/practice";
+import { LINKEDIN } from "../_data/site";
 
 /* Header and footer for the Daftar pages. The active nav item is passed in
    rather than read from usePathname so these stay server components. */
 
 /* "knowledge" is the Notes item: the /knowledge index and every article
-   under it. */
-export type Page = "home" | "about" | "scope" | "knowledge";
+   under it. "legal" (privacy, terms) has no nav entry; it only stops the
+   header from wrongly underlining another item. */
+export type Page = "home" | "about" | "scope" | "knowledge" | "legal";
 
 /* The Daftar mark: the folded file — an ink page with a rust corner turned
    down (House Brand Guide v1.6, §02). Daftar means the ledger; every
@@ -207,6 +209,7 @@ export function SiteFooter({ lang = "en" }: { lang?: Lang }) {
         <div className="dft-foot-col">
           <span>Contact</span>
           <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+          <a href={LINKEDIN} rel="me noopener" target="_blank">LinkedIn</a>
           <p>Amman · Serving KSA, UAE and Jordan</p>
         </div>
         <div className="dft-foot-col">
@@ -218,6 +221,8 @@ export function SiteFooter({ lang = "en" }: { lang?: Lang }) {
       <div className="dft-wrap">
         <p className="dft-foot-note">
           Daftar Advisory is a non-attest advisory practice, not a registered statutory auditor.
+          Content on this site is general information, not advice on your situation.{" "}
+          <Link href="/privacy">Privacy</Link> · <Link href="/terms">Terms</Link>
         </p>
       </div>
     </footer>
