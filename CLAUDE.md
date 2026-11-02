@@ -4,7 +4,7 @@ This repo runs **three separate, deliberately un-unified styling systems** under
 
 | Surface | Routes | Stylesheet | Framework |
 |---|---|---|---|
-| **Daftar (canon)** | `/`, `/about`, `/scope`, `/knowledge/*`, `/ar` (RTL, `.dft[lang="ar"]` block) | `app/daftar.css`, namespaced `.dft` | Next.js (React), plain CSS |
+| **Daftar (canon)** | `/`, `/about`, `/scope`, `/knowledge`, `/knowledge/*`, `/privacy`, `/terms`, `/ar` (RTL, `.dft[lang="ar"]` block) | `app/daftar.css`, namespaced `.dft` | Next.js (React), plain CSS |
 | **Daftar (legacy) / Arabic** | `/ar/knowledge/*` | `app/globals.css`, namespaced `.daftar` / `.ar` | Next.js (React), plain CSS |
 | **Calibre** | `/calibre`, `/ar/calibre` | inline `<style>` + Tailwind Play CDN | Static HTML, copied in at build |
 
@@ -81,6 +81,7 @@ Fraunces, JetBrains Mono, the folded-file mark, and "Founder" are canonical.
 
 Content is separated from markup in `app/_data/`:
 - `practice.ts` — services, FAQ, steps, notes, timing/focus options (typed with `as const` / small interfaces), shared by the home page and the scope builder so copy can't drift between the two.
+- `site.ts` — the site URL, the JSON-LD `@id`s (organisation, founder, website), the LinkedIn URL and the Google Fonts `href`, shared by both root layouts and the pages that reference those nodes (`/about` AboutPage, `/knowledge` CollectionPage, the home FAQPage).
   `CASES` (the "On the record" register) ships empty on purpose: the home section renders only once `RECORD_MIN` cleared, anonymised engagements are entered, and the chapter numbers after it shift by one when it appears. `SECTORS` feeds the About facts and the record; add a sector only once work in it is delivered. See `design/concepts/a-editorial/DECISIONS.md` rows 13 and 14.
 - `audit-readiness-checklist.json`, `saudi-einvoicing-phase-2-checklist.json` — checklist content, each imported by **both** a page component and a Python script (`scripts/build-*.py`) that generates a matching downloadable `.xlsx`. If a Figma design changes a checklist's structure, the JSON schema (`{ note, groups: [{ ref, title, blurb, items[] }] }`) needs to keep working for the Python generator too.
 
@@ -92,7 +93,7 @@ Content is separated from markup in `app/_data/`:
 
 - **Framework:** Next.js 15.5 (App Router), React 19, TypeScript 5, `strict: true`. See `package.json` / `tsconfig.json`.
 - **Build/export:** `next.config.ts` sets `output: "export"` — this is a **fully static site**, no server runtime, no API routes, no image optimization loader (don't add `next/image` remote loaders or server actions; they silently break the export).
-- **Styling:** No CSS-in-JS, no Tailwind in the Next app, no CSS Modules. Plain global stylesheets imported once in `app/layout.tsx`:
+- **Styling:** No CSS-in-JS, no Tailwind in the Next app, no CSS Modules. Plain global stylesheets imported once in each root layout (`app/(en)/layout.tsx`, `app/(ar)/layout.tsx`):
   ```tsx
   import "./globals.css";
   import "./daftar.css";
@@ -106,7 +107,7 @@ Content is separated from markup in `app/_data/`:
 
 ## 4. Asset management
 
-- **Calibre on Daftar pages:** the home page carries one Calibre band (`.dft-calibre-band`, forest ground). Only the Calibre *mark* uses Lora and Plus Jakarta Sans there (loaded for that purpose via the `globals.css` `@import`); the band's copy is Fraunces and JetBrains Mono. See `design/design-system/README.md` "Scope" and BRAND.md §10.
+- **Calibre on Daftar pages:** the home page carries one Calibre band (`.dft-calibre-band`, forest ground). Only the Calibre *mark* uses Lora and Plus Jakarta Sans there (loaded for that purpose via the Google Fonts `<link>` both root layouts render from `FONTS_HREF` in `app/_data/site.ts`; `globals.css` no longer carries an `@import`); the band's copy is Fraunces and JetBrains Mono. See `design/design-system/README.md` "Scope" and BRAND.md §10.
 - **Images:** `public/og-daftar.png`, `public/og-calibre.png` (Open Graph only — there are no in-page photographic/illustrative images anywhere on the Daftar canon pages by design; see §7). Referenced as root-relative paths (`images: ["/og-daftar.png"]` in each page's `metadata`).
 - **Logo and favicon:** the folded-file mark (1D). `scripts/build-brand-assets.py` generates `public/favicon.svg` (small cut on a cream tile) and `public/brand/daftar-mark*.svg` from one geometry that matches `DaftarMark`; change both together. `design/brand/og-daftar.html` is the source of `public/og-daftar.png` (render at 1200×630). Calibre's HTML files embed their own **data-URI SVG favicon** (the forest C tile) inline; that is Calibre's mark and does not change with the Daftar logo.
 - **Downloadable working files:** `public/*.xlsx` (checklists/trackers) — generated artifacts, not hand-edited; see §2.
@@ -150,18 +151,20 @@ app/
   _components/SiteChrome.tsx     # only shared React components (header/footer/eyebrow/mark); header and footer take lang="en" | "ar"
   _data/                         # content, separated from markup
     practice.ts                    # services/FAQ/steps/notes — typed, shared by home + scope builder
+    site.ts                        # site URL, JSON-LD ids, LinkedIn URL, Google Fonts href
     audit-readiness-checklist.json # checklist content, also consumed by scripts/build-*.py
     saudi-einvoicing-phase-2-checklist.json
   daftar.css                     # canon stylesheet (.dft namespace) — most active development happens here
   globals.css                    # legacy/Arabic stylesheet (:root, .daftar, .ar) — minified, single-line
   (en)/                          # English tree: route group, no URL segment
-    layout.tsx                     # root layout for English: <html lang="en">, imports both stylesheets, Organization JSON-LD
+    layout.tsx                     # root layout for English: <html lang="en">, imports both stylesheets, fonts <link>, JSON-LD @graph (ProfessionalService + Person + WebSite)
     not-found/page.tsx             # the branded 404; netlify.toml copies out/not-found.html over out/404.html after the build
     page.tsx                       # home (canon)
     about/page.tsx                 # canon
     scope/page.tsx + ScopeBuilder.tsx  # canon; ScopeBuilder is a "use client" component; sends via Netlify Forms ("daftar-scope", declared in public/__forms.html), mailto as fallback
     knowledge/page.tsx + NotesList.tsx # Notes index (canon); NotesList is the other "use client" component (tag filter)
     knowledge/*/page.tsx           # long-form articles + checklists, all canon; listed by app/_data/practice.ts NOTES
+    privacy/, terms/               # legal pages, linked from the footer note row; /terms#disclaimer carries the professional disclaimer
   (ar)/                          # Arabic tree: route group, no URL segment
     layout.tsx                     # root layout for Arabic: <html lang="ar" dir="rtl">, Arabic JSON-LD and metadata defaults
     ar/page.tsx + SentNotice.tsx   # Arabic home (canon); SentNotice is a tiny "use client" form notice

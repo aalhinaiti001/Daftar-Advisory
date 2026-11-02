@@ -8,7 +8,7 @@ const DESC =
 const URL = "/ar/knowledge/saudi-compliance-2026";
 
 export const metadata: Metadata = {
-  title: `${TITLE} — دفتر للاستشارات`,
+  title: `${TITLE} | دفتر للاستشارات`,
   description: DESC,
   alternates: {
     canonical: URL,

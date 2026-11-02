@@ -1,33 +1,37 @@
 import type { Metadata } from "next";
 import "../globals.css";
 import "../daftar.css";
+import { SITE, ORG_ID, PERSON_ID, LINKEDIN, FONTS_HREF } from "../_data/site";
 
 const DESC = "عمل مالي بسيط، حتى حين لا تكون المسألة كذلك. قوائم مالية، استعداد للتدقيق، مراجعة فنية، ودعم صفقات.";
 
-/* Same entity as the English root layout's schema, named in Arabic with the
-   English name as alternateName. ProfessionalService, not an attest type. */
+/* Same entity as the English root layout's graph, so it carries the same
+   @id and merges with it: named in Arabic with the English name as
+   alternateName. ProfessionalService, not an attest type. */
 const ORG_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": ORG_ID,
   name: "دفتر للاستشارات",
   alternateName: "Daftar Advisory",
   description: DESC,
-  url: "https://daftaradvisory.com/ar",
+  url: `${SITE}/ar`,
   email: "ahmad@daftaradvisory.com",
   areaServed: ["Jordan", "Saudi Arabia", "United Arab Emirates", "Middle East"],
   address: { "@type": "PostalAddress", addressLocality: "Amman", addressCountry: "JO" },
   founder: {
     "@type": "Person",
+    "@id": PERSON_ID,
     name: "أحمد الهنائي",
     alternateName: "Ahmad Al Hinaiti",
     jobTitle: "Founder",
-    sameAs: ["https://linkedin.com/in/ahmad-alhinaiti"],
+    sameAs: [LINKEDIN],
   },
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://daftaradvisory.com"),
-  title: "دفتر للاستشارات",
+  title: "القوائم المالية وفق IFRS والاستعداد للتدقيق | دفتر للاستشارات",
   description: DESC,
   icons: { icon: "/favicon.svg" },
   openGraph: {
@@ -57,6 +61,7 @@ export default function ArabicRootLayout({ children }: { children: React.ReactNo
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="stylesheet" href={FONTS_HREF} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_SCHEMA) }}

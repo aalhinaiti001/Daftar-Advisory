@@ -4,12 +4,14 @@ import { SiteHeader, SiteFooter, Eyebrow } from "../_components/SiteChrome";
 import { SERVICE_ORDER, SERVICES, NOTES, FAQ, MEMO, CASES, SECTORS, recordReady, formatNoteDate } from "../_data/practice";
 
 const DESC =
-  "Financial statements, technical review, audit readiness and quality of earnings for founders and finance teams. A boutique firm, a defined scope, and a file you keep.";
+  "IFRS financial statements, technical review, audit readiness and quality of earnings for finance teams in Saudi Arabia, Jordan and the UAE. Scope a project in two minutes.";
+
+/* Primary term first, brand last: "Daftar Advisory" alone tells a search
+   result nothing about what the practice does. */
+const TITLE = "IFRS Financial Statements and Audit Readiness | Daftar Advisory";
 
 export const metadata: Metadata = {
-  /* Names the actual services, not just the firm: "Daftar Advisory" alone
-     tells a search result nothing about what the practice does. */
-  title: "Daftar Advisory — IFRS financial statements and audit readiness",
+  title: TITLE,
   description: DESC,
   /* /ar is the Arabic counterpart of this page; x-default points at the
      English one. Without these the two rank as duplicates of each other. */
@@ -25,6 +27,24 @@ export const metadata: Metadata = {
     url: "/",
     images: ["/og-daftar.png"],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESC,
+    images: ["/og-daftar.png"],
+  },
+};
+
+/* The questions in the Questions chapter, as FAQPage markup. The answers are
+   the same strings the page renders, so the two cannot drift. */
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 
 const REGISTER: [string, string][] = [
@@ -51,14 +71,18 @@ export default function Home() {
   const ch = (n: number) => "§ 0" + (record ? n + 1 : n);
   return (
     <div className="dft">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
       <SiteHeader active="home" />
 
       <main className="dft-rise">
         <section className="dft-wrap dft-hero">
           <div>
             <Eyebrow tone="rust">§ 00 · Finance advisory · KSA · UAE · Jordan</Eyebrow>
+            {/* The one H1 carries the two terms the page is meant to rank for;
+                the italic accent word stays, per the brand guide. */}
             <h1 className="dft-h1">
-              Finance work that feels <em>simple</em>, even when the issue is not.
+              Financial statements and audit readiness that feel <em>simple</em>, even when the
+              issue is not.
             </h1>
             <p className="dft-lead">
               Statements, technical review, audit readiness, quality of earnings. A boutique firm,

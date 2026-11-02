@@ -1203,6 +1203,8 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
   font-size: 13px;
   color: var(--on-dark-muted);
 }
+.dft-foot-note a { color: var(--on-dark-dim); text-decoration: underline; text-underline-offset: 0.14em; }
+.dft-foot-note a:hover { color: var(--paper); }
 
 /* --- Article --------------------------------------------------------------
    Long-form body copy (Knowledge). Reuses .dft-section/.dft-wrap for rhythm;
