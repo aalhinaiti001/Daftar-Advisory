@@ -169,7 +169,7 @@ app/
 design/
   design-system/                 # Design System artifact export: README (brand book), tokens.json, component previews, fonts, marks
   concepts/a-editorial/          # Redesign concept A (Claude Design export) + review memo — reference only, NOT built or deployed
-  collateral/flier/              # one-page print flier (Claude Design export) + extracted source + preview — print collateral, not part of the build
+  collateral/flier/              # one-page print flier: flier-print.html is the source (A4 primary, A5 reflow, ?size=), with PDFs and previews; the Claude Design export is kept as reference — print collateral, not part of the build
   daftar-home.html               # OLD static home page — superseded, NOT deployed (see netlify.toml comment)
   calibre-home.html               # Calibre EN — static, Tailwind CDN, copied into /calibre at build
   calibre-home-ar.html            # Calibre AR — static, copied into /ar/calibre at build
