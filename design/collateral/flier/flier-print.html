@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daftar Advisory · Flier (A4 and A5)</title>
+<!--
+  One source, two page sizes. Open with ?size=a4 (default) or ?size=a5 and print to
+  PDF with "background graphics" on and margins "none"; the page size comes from the
+  sheet. ?size=both shows both sheets on screen. The A5 sheet is a reflow of the A4,
+  not a scale: the commitments row folds into one line and every size holds a
+  readable floor. Fonts are the design system's own files; colours are its tokens.
+-->
+<style>
+@font-face { font-family: "Fraunces"; src: url("../../design-system/fonts/fraunces-normal.woff2") format("woff2"); font-weight: 100 900; font-style: normal; }
+@font-face { font-family: "Fraunces"; src: url("../../design-system/fonts/fraunces-italic.woff2") format("woff2"); font-weight: 100 900; font-style: italic; }
+@font-face { font-family: "JetBrains Mono"; src: url("../../design-system/fonts/jbmono-400.woff2") format("woff2"); font-weight: 400; font-style: normal; }
+
+:root {
+  --paper: #f4f1ea; --ink: #1a1814; --rust: #a8341f; --rust-on-ink: #e07458;
+  --body: #514c45; --muted: #6f665d; --rule: #d8d2c4;
+  --on-dark-dim: #c4bcae; --on-dark-muted: #a09585;
+  --serif: "Fraunces", Georgia, serif; --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+@page a4 { size: 210mm 297mm; margin: 0; }
+@page a5 { size: 148mm 210mm; margin: 0; }
+
+html, body { margin: 0; background: #e9e5dc; }
+body { font-family: var(--serif); color: var(--ink); font-optical-sizing: auto; font-variant-numeric: lining-nums;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body[data-size="a4"] .sheet.a5, body[data-size="a5"] .sheet.a4 { display: none; }
+
+.sheet { background: var(--paper); box-sizing: border-box; position: relative; overflow: hidden;
+  margin: 12mm auto; display: flex; flex-direction: column; break-after: page; }
+.sheet.a4 { width: 210mm; height: 297mm; padding: 18mm 18mm 14mm; page: a4;
+  --display: 50pt; --lead: 12.5pt; --title: 16pt; --get: 11pt; --mono: 7.5pt; --commit: 10.5pt; --url: 26pt; --foot: 7pt;
+  --gap: 13mm; --row: 8mm; }
+.sheet.a5 { width: 148mm; height: 210mm; padding: 12mm 12mm 10mm; page: a5;
+  --display: 30pt; --lead: 10pt; --title: 12pt; --get: 9pt; --mono: 6.5pt; --commit: 8pt; --url: 17pt; --foot: 6.5pt;
+  --gap: 6mm; --row: 5.5mm; }
+@media print { html, body { background: none; } .sheet { margin: 0; } }
+
+/* Lockup: folded-file mark, hairline, wordmark (BRAND.md §02). */
+.head { display: flex; align-items: center; justify-content: space-between; padding-bottom: 4mm; border-bottom: 1px solid var(--ink); }
+.lockup { display: flex; align-items: center; gap: 3.5mm; }
+.lockup svg { display: block; width: 8mm; height: 8mm; color: var(--ink); }
+.a5 .lockup svg { width: 6.5mm; height: 6.5mm; }
+.lockup .hair { width: 1px; align-self: stretch; background: var(--rule); }
+.wm { font-size: calc(var(--lead) * 1.5); line-height: 1; letter-spacing: -0.01em; font-variation-settings: "opsz" 36; white-space: nowrap; }
+.wm em { font-style: italic; color: var(--rust); }
+.mono { font-family: var(--mono); font-size: var(--mono); letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+.mono.rust { color: var(--rust); }
+
+.hero { padding-top: var(--gap); }
+.hero .mono { display: block; margin-bottom: calc(var(--gap) * 0.45); }
+h1 { margin: 0; font-weight: 400; font-size: var(--display); line-height: 1.02; letter-spacing: -0.03em;
+  font-variation-settings: "opsz" 144, "wght" 400, "SOFT" 40; max-width: 12ch; text-wrap: balance; }
+h1 em { font-style: italic; color: var(--rust); font-variation-settings: "opsz" 96, "wght" 400, "SOFT" 90; }
+.lead { margin: calc(var(--gap) * 0.5) 0 0; font-size: var(--lead); line-height: 1.5; color: var(--body); max-width: 34em;
+  font-variation-settings: "opsz" 20, "wght" 380, "SOFT" 20; }
+
+.register { margin-top: var(--gap); }
+.register .rowhead { display: flex; justify-content: space-between; padding-bottom: 2.2mm; border-bottom: 1px solid var(--ink); }
+.register .row { display: grid; grid-template-columns: 14mm minmax(0, 1fr) auto; gap: 0 4mm; align-items: baseline;
+  padding: calc(var(--row) * 0.55) 0; border-bottom: 1px solid var(--rule); }
+.a5 .register .row { grid-template-columns: 11mm minmax(0, 1fr) auto; }
+.register code { font-family: var(--mono); font-size: var(--mono); letter-spacing: 0.08em; color: var(--rust); }
+.register .title { font-size: var(--title); line-height: 1.2; font-weight: 500; font-variation-settings: "opsz" 34, "wght" 520, "SOFT" 26; }
+.register .get { font-size: var(--get); font-style: italic; color: var(--body); text-align: end; white-space: nowrap;
+  font-variation-settings: "opsz" 20, "wght" 400, "SOFT" 40; }
+
+.commit { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 5mm; margin-top: calc(var(--gap) * 0.7); }
+.commit div { font-size: var(--commit); line-height: 1.35; color: var(--body); }
+.commit .mono { display: block; margin-bottom: 1.5mm; color: var(--rust); }
+.commit-line { display: none; margin-top: calc(var(--gap) * 0.6); font-size: var(--commit); line-height: 1.5; color: var(--body); }
+.commit-line .mono { color: var(--rust); margin-right: 2mm; }
+.a5 .commit { display: none; } .a5 .commit-line { display: block; }
+
+.spacer { flex: 1 1 auto; }
+.band { background: var(--ink); color: var(--paper); padding: calc(var(--gap) * 0.55) calc(var(--gap) * 0.6);
+  display: flex; justify-content: space-between; align-items: flex-end; gap: 6mm; }
+.band .mono { color: var(--rust-on-ink); display: block; margin-bottom: 2mm; }
+.band .url { font-size: var(--url); line-height: 1; letter-spacing: -0.015em; font-variation-settings: "opsz" 72, "wght" 400, "SOFT" 30; white-space: nowrap; }
+.band .url em { font-style: italic; color: var(--rust-on-ink); }
+.band .contact { text-align: end; font-family: var(--mono); font-size: var(--mono); letter-spacing: 0.06em; line-height: 1.7; color: var(--on-dark-dim); text-transform: none; }
+.band .contact span { display: block; color: var(--on-dark-muted); letter-spacing: 0.14em; text-transform: uppercase; }
+.a5 .band { flex-direction: column; align-items: flex-start; }
+.a5 .band .contact { text-align: start; }
+
+.foot { margin-top: 4mm; font-family: var(--mono); font-size: var(--foot); letter-spacing: 0.04em; line-height: 1.5; color: var(--muted); }
+</style>
+</head>
+<body data-size="a4">
+
+<section class="sheet a4" id="source">
+  <header class="head">
+    <span class="lockup" aria-label="Daftar Advisory">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M4 4H64L96 36V96H4Z" fill="currentColor"/><path d="M64 4L96 36H64Z" fill="#a8341f"/></svg>
+      <span class="hair"></span>
+      <span class="wm">Daftar <em>Advisory.</em></span>
+    </span>
+    <span class="mono">KSA · UAE · Jordan</span>
+  </header>
+
+  <div class="hero">
+    <span class="mono rust">§ 00 · Finance advisory</span>
+    <h1>Rigorous finance, <em>without</em> the overhead.</h1>
+    <p class="lead">Statements, technical review, audit readiness and quality of earnings. A boutique firm, a defined scope, a file you keep.</p>
+  </div>
+
+  <div class="register">
+    <div class="rowhead"><span class="mono">§ 01 · Four lines of work</span><span class="mono">You get</span></div>
+    <div class="row"><code>A/01</code><span class="title">Financial statements</span><span class="get">IFRS set + working file</span></div>
+    <div class="row"><code>A/02</code><span class="title">Technical review</span><span class="get">Signed memo with references</span></div>
+    <div class="row"><code>A/03</code><span class="title">Audit readiness</span><span class="get">Audit file + open item register</span></div>
+    <div class="row"><code>C/03</code><span class="title">Quality of earnings</span><span class="get">QoE report + workbook</span></div>
+  </div>
+
+  <div class="commit">
+    <div><span class="mono">01</span>Defined scope, in writing, first.</div>
+    <div><span class="mono">02</span>The person you speak to does the work.</div>
+    <div><span class="mono">03</span>Straight advice, even when it is no.</div>
+    <div><span class="mono">04</span>You keep the model and the workings.</div>
+  </div>
+  <p class="commit-line"><span class="mono">How we work</span>Defined scope, in writing, first · The person you speak to does the work · Straight advice, even when it is no · You keep the model and the workings.</p>
+
+  <div class="spacer"></div>
+
+  <div class="band">
+    <div>
+      <span class="mono">Scope a project in two minutes</span>
+      <span class="url">daftaradvisory.com<em>/scope</em></span>
+    </div>
+    <div class="contact">ahmad@daftaradvisory.com<span>Amman · Founder led</span></div>
+  </div>
+
+  <p class="foot">Daftar is a non-attest practice. We prepare and review. We do not audit, and we do not sign an opinion.</p>
+</section>
+
+<script>
+  // The A5 sheet is the same markup; CSS on .a5 does the reflow.
+  (function () {
+    var src = document.getElementById("source");
+    var a5 = src.cloneNode(true); a5.id = ""; a5.className = "sheet a5";
+    src.parentNode.insertBefore(a5, src.nextSibling);
+    var size = new URLSearchParams(location.search).get("size");
+    if (size === "a5" || size === "both") document.body.setAttribute("data-size", size);
+  })();
+</script>
+</body>
+</html>
