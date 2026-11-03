@@ -1270,6 +1270,7 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
   font-size: 1.15rem;
 }
 .dft-download p { font-size: 14px; margin: 0 0 16px; }
+.dft-download-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 
 /* The FAQ rows are shared with the home page, where they sit in a wide split
    column. In an article they need to hold the prose measure. */

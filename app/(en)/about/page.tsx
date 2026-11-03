@@ -169,6 +169,30 @@ export default function About() {
           </div>
         </section>
 
+        <section id="flier" className="dft-section dft-section-about">
+          <div className="dft-wrap">
+            <Eyebrow as="h2">§ 04 · Take it with you</Eyebrow>
+            {/* The print flier from design/collateral/flier, served from public/.
+                Same pattern as the checklist downloads on the Knowledge pages. */}
+            <div className="dft-download">
+              <span className="dft-label">The practice on one page</span>
+              <h3>The one-page flier</h3>
+              <p>
+                The four lines of work, what each one leaves you with, the four commitments and
+                the scope address, on one sheet. A4 for print and PDF; A5 for the pocket.
+              </p>
+              <div className="dft-download-actions">
+                <a className="dft-btn-sm" href="/daftar-advisory-flier-a4.pdf" download>
+                  Download A4 (PDF)
+                </a>
+                <a className="dft-btn-sm" href="/daftar-advisory-flier-a5.pdf" download>
+                  Download A5 (PDF)
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="dft-section dft-section-about dft-section-dark">
           <div className="dft-wrap dft-close-split">
             <h2 className="dft-h2-sm">If the work fits, we will say so in two days.</h2>

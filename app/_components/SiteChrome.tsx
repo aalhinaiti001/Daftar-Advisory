@@ -204,6 +204,7 @@ export function SiteFooter({ lang = "en" }: { lang?: Lang }) {
           <Link href="/about">About</Link>
           <Link href="/scope">Scope builder</Link>
           <Link href="/knowledge">Notes</Link>
+          <a href="/daftar-advisory-flier-a4.pdf" download>One-page flier (PDF)</a>
           <Link href="/calibre">Calibre by Daftar</Link>
         </div>
         <div className="dft-foot-col">
