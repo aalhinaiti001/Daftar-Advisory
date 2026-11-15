@@ -1,0 +1,296 @@
+/* Homepage art direction. Shared type, colour and spacing remain in daftar.css. */
+.dft-home-layered {
+  --home-rule: #d4ccb9;
+  --home-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.dft-home-layered .dft-home-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.07fr);
+  align-items: center;
+  gap: clamp(32px, 4.5vw, 72px);
+  width: min(1216px, calc(100% - 72px));
+  padding: 72px 0 80px;
+}
+
+.dft-home-intro .dft-h1 {
+  max-width: 13ch;
+  font-size: clamp(3rem, 5.2vw, 5.35rem);
+  line-height: 0.99;
+  letter-spacing: -0.045em;
+  text-wrap: initial;
+}
+
+.dft-home-intro .dft-lead {
+  max-width: 32rem;
+}
+
+.dft-home-stage {
+  position: relative;
+  display: grid;
+  justify-items: end;
+  padding-inline-start: 12px;
+}
+
+.dft-home-stage::before {
+  position: absolute;
+  inset: 12px 12px 32px 0;
+  border: 1px solid var(--home-rule);
+  content: "";
+}
+
+.dft-home-art {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: 4px 4px 0 0;
+  background: var(--ink);
+}
+
+.dft-home-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dft-home-stage .dft-register {
+  position: relative;
+  width: min(100%, 354px);
+  margin: clamp(-92px, -6vw, -56px) 18px 0 0;
+  border-color: var(--home-rule);
+  border-radius: 3px;
+  background: var(--card);
+}
+
+.dft-home-stage .dft-register-head {
+  padding: 12px 18px;
+}
+
+.dft-home-stage .dft-register-body {
+  padding: 2px 18px 6px;
+}
+
+.dft-home-stage .dft-register-row {
+  padding: 9px 0;
+}
+
+.dft-home-stage .dft-register-row dt {
+  font-size: 9px;
+  letter-spacing: 0.11em;
+}
+
+.dft-home-stage .dft-register-row dd {
+  font-size: 15px;
+}
+
+.dft-home-services-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.07fr);
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.dft-home-services-head .dft-h2 {
+  max-width: 22ch;
+}
+
+.dft-home-service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  padding: 1px;
+  background: var(--home-rule);
+}
+
+.dft-home-service-card {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  background: var(--card);
+}
+
+.dft-home-service-card a {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  align-content: start;
+  gap: 12px;
+  padding: clamp(24px, 3vw, 42px);
+  color: var(--ink);
+  transition: background-color 200ms var(--home-ease);
+}
+
+.dft-home-service-card a:hover,
+.dft-home-service-card a:focus-visible {
+  background: var(--paper);
+}
+
+.dft-home-service-card a:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline-offset: -3px;
+}
+
+.dft-home-service-card code,
+.dft-home-service-action {
+  color: var(--rust);
+  font: 500 11px / 1.5 var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.dft-home-service-card h3 {
+  font-size: clamp(1.55rem, 2.6vw, 2.35rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.dft-home-service-card p {
+  max-width: 34ch;
+  font-size: 16px;
+}
+
+.dft-home-service-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--home-rule);
+}
+
+.dft-home-service-action span {
+  font-size: 17px;
+  transition: transform 200ms var(--home-ease);
+}
+
+.dft-home-service-card a:hover .dft-home-service-action span,
+.dft-home-service-card a:focus-visible .dft-home-service-action span {
+  transform: translate(3px, -3px);
+}
+
+.dft-home-layered .dft-commitments > div {
+  min-width: 0;
+}
+
+.dft-home-layered .dft-commitments > div > span {
+  color: var(--rust-on-ink);
+}
+
+.dft-home-layered .dft-foot-note {
+  color: var(--on-dark-muted);
+}
+
+.dft-home-faq {
+  border-top: 1px solid var(--home-rule);
+}
+
+.dft-home-faq details {
+  border-bottom: 1px solid var(--home-rule);
+}
+
+.dft-home-faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 0;
+  cursor: pointer;
+  list-style: none;
+  color: var(--ink);
+  font-size: 1.22rem;
+}
+
+.dft-home-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.dft-home-faq summary::after {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--home-rule);
+  border-radius: 50%;
+  color: var(--rust);
+  font: 14px / 20px var(--mono);
+  text-align: center;
+  content: "+";
+}
+
+.dft-home-faq details[open] summary::after {
+  content: "−";
+}
+
+.dft-home-faq details p {
+  padding: 0 32px 22px 0;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .dft-home-art img {
+    transition: transform 320ms var(--home-ease);
+  }
+
+  .dft-home-stage:hover .dft-home-art img {
+    transform: scale(1.025);
+  }
+}
+
+@media (max-width: 1060px) {
+  .dft-home-layered .dft-home-hero {
+    width: min(1120px, calc(100% - 48px));
+    gap: 32px;
+    padding: 60px 0 64px;
+  }
+
+  .dft-home-intro .dft-h1 {
+    font-size: clamp(2.65rem, 5.1vw, 4rem);
+  }
+}
+
+@media (max-width: 760px) {
+  .dft-home-layered .dft-home-hero {
+    grid-template-columns: minmax(0, 1fr);
+    width: min(560px, calc(100% - 32px));
+    padding: 52px 0 56px;
+  }
+
+  .dft-home-intro .dft-h1 {
+    max-width: 16ch;
+  }
+
+  .dft-home-stage .dft-register {
+    width: min(calc(100% - 30px), 354px);
+    margin-top: -48px;
+    margin-right: 12px;
+  }
+
+  .dft-home-services-head {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .dft-home-service-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dft-home-intro .dft-h1 {
+    font-size: clamp(2.55rem, 10vw, 3.35rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dft-home-service-card a,
+  .dft-home-service-action span {
+    transition: none;
+  }
+
+  .dft-home-service-card a:hover .dft-home-service-action span,
+  .dft-home-service-card a:focus-visible .dft-home-service-action span {
+    transform: none;
+  }
+}

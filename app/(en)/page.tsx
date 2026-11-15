@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteHeader, SiteFooter, Eyebrow } from "../_components/SiteChrome";
 import { SERVICE_ORDER, SERVICES, FAQ } from "../_data/practice";
+import "./home.css";
 
 const DESC =
   "IFRS financial statements, technical review, audit readiness and quality of earnings for finance teams in Saudi Arabia, Jordan and the UAE. Scope a project in two minutes.";
@@ -71,13 +72,13 @@ const HOME_NOTES = [
 
 export default function Home() {
   return (
-    <div className="dft dft-home">
+    <div className="dft dft-home dft-home-layered">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
       <SiteHeader active="home" />
 
       <main className="dft-rise">
-        <section className="dft-wrap dft-hero">
-          <div>
+        <section className="dft-wrap dft-hero dft-home-hero">
+          <div className="dft-home-intro">
             <Eyebrow tone="rust">Clear advice. Senior work. Nothing extra.</Eyebrow>
             <h1 className="dft-h1">
               Finance work that feels <em>simple</em>, even when the issue is not.
@@ -92,33 +93,51 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="dft-register">
-            <div className="dft-register-head">
-              <span>The register</span>
-              <span>§</span>
+          <div className="dft-home-stage">
+            <div className="dft-home-art">
+              {/* Responsive, local asset for the static export. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/daftar-ledger-640.webp"
+                srcSet="/daftar-ledger-640.webp 640w, /daftar-ledger-1200.webp 1200w"
+                sizes="(max-width: 592px) calc(100vw - 44px), (max-width: 760px) 548px, (max-width: 1288px) 50vw, 600px"
+                width={1200}
+                height={800}
+                alt=""
+                fetchPriority="high"
+              />
             </div>
-            <dl className="dft-register-body">
-              {REGISTER.map(([term, value]) => (
-                <div className="dft-register-row" key={term}>
-                  <dt>{term}</dt>
-                  <dd>{value}</dd>
-                </div>
-              ))}
-            </dl>
+            <div className="dft-register">
+              <div className="dft-register-head"><span>The register</span></div>
+              <dl className="dft-register-body">
+                {REGISTER.map(([term, value]) => (
+                  <div className="dft-register-row" key={term}>
+                    <dt>{term}</dt>
+                    <dd>{value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </div>
         </section>
 
         <section id="services" className="dft-section dft-section-soft">
           <div className="dft-wrap">
-            <Eyebrow>§ 01 · Services</Eyebrow>
-            <h2 className="dft-h2" style={{ marginBottom: 44 }}>Four lines of work. Each one ends with a file you own.</h2>
-            <div className="dft-ledger">
-              {SERVICE_ORDER.map((key, i) => (
-                <article key={key}>
-                  <code>{"0" + (i + 1)}</code>
-                  <h3>{SERVICES[key].label}</h3>
-                  <p>{SERVICES[key].blurb}</p>
-                  <Link className="dft-btn-sm" href={`/scope?service=${key}`}>Scope this</Link>
+            <div className="dft-home-services-head">
+              <Eyebrow>§ 01 · Services</Eyebrow>
+              <h2 className="dft-h2">Four lines of work. Each one ends with a file you own.</h2>
+            </div>
+            <div className="dft-home-service-grid">
+              {SERVICE_ORDER.map((key) => (
+                <article className="dft-home-service-card" key={key}>
+                  <Link href={`/scope?service=${key}`} aria-label={`Scope this service: ${SERVICES[key].label}`}>
+                    <code>{SERVICES[key].ref}</code>
+                    <h3>{SERVICES[key].label}</h3>
+                    <p>{SERVICES[key].blurb}</p>
+                    <div className="dft-home-service-action">
+                      Scope this <span aria-hidden="true">↗</span>
+                    </div>
+                  </Link>
                 </article>
               ))}
             </div>
@@ -184,15 +203,12 @@ export default function Home() {
               <Eyebrow>§ 05 · Questions</Eyebrow>
               <h2 className="dft-h2">Answered plainly.</h2>
             </div>
-            <div className="dft-faq">
-              {FAQ.map((f) => (
-                <article key={f.num}>
-                  <code>{f.num}</code>
-                  <div>
-                    <h3>{f.q}</h3>
-                    <p>{f.a}</p>
-                  </div>
-                </article>
+            <div className="dft-home-faq">
+              {FAQ.map((f, i) => (
+                <details key={f.num} open={i === 0}>
+                  <summary>{f.q}</summary>
+                  <p>{f.a}</p>
+                </details>
               ))}
             </div>
           </div>
