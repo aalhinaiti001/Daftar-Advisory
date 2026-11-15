@@ -15,3 +15,6 @@ export const LINKEDIN = "https://linkedin.com/in/ahmad-alhinaiti";
    the home band only (CLAUDE.md §4). */
 export const FONTS_HREF =
   "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=JetBrains+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Lora:ital,wght@1,500&family=Plus+Jakarta+Sans:wght@600&display=swap";
+
+export const ARABIC_PRACTICE_DESCRIPTION =
+  "عمل مالي بسيط، حتى حين لا تكون المسألة كذلك. قوائم مالية، استعداد للتدقيق، مراجعة فنية، وتحليل جودة الأرباح.";

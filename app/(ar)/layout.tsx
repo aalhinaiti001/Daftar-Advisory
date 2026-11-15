@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "../globals.css";
 import "../daftar.css";
-import { SITE, ORG_ID, PERSON_ID, LINKEDIN, FONTS_HREF } from "../_data/site";
+import { SITE, ORG_ID, PERSON_ID, LINKEDIN, FONTS_HREF, ARABIC_PRACTICE_DESCRIPTION } from "../_data/site";
 
-const DESC = "عمل مالي بسيط، حتى حين لا تكون المسألة كذلك. قوائم مالية، استعداد للتدقيق، مراجعة فنية، ودعم صفقات.";
+const DESC = ARABIC_PRACTICE_DESCRIPTION;
 
 /* Same entity as the English root layout's graph, so it carries the same
    @id and merges with it: named in Arabic with the English name as
@@ -15,7 +15,7 @@ const ORG_SCHEMA = {
   name: "دفتر للاستشارات",
   alternateName: "Daftar Advisory",
   description: DESC,
-  url: `${SITE}/ar`,
+  url: `${SITE}/`,
   email: "ahmad@daftaradvisory.com",
   areaServed: ["Jordan", "Saudi Arabia", "United Arab Emirates", "Middle East"],
   address: { "@type": "PostalAddress", addressLocality: "Amman", addressCountry: "JO" },

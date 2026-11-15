@@ -8,7 +8,7 @@ import { LINKEDIN } from "../_data/site";
 /* "knowledge" is the Notes item: the /knowledge index and every article
    under it. "legal" (privacy, terms) has no nav entry; it only stops the
    header from wrongly underlining another item. */
-export type Page = "home" | "about" | "scope" | "knowledge" | "legal";
+export type Page = "home" | "about" | "scope" | "knowledge" | "services" | "legal";
 
 /* The Daftar mark: the folded file — an ink page with a rust corner turned
    down (House Brand Guide v1.6, §02). Daftar means the ledger; every

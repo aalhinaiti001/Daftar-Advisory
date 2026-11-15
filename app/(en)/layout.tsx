@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../globals.css";
 import "../daftar.css";
 import { SERVICE_ORDER, SERVICES, EMAIL } from "../_data/practice";
+import { SERVICE_PAGES } from "../_data/service-pages";
 import { SITE, ORG_ID, PERSON_ID, WEBSITE_ID, LINKEDIN, FONTS_HREF } from "../_data/site";
 
 const DESC =
@@ -13,9 +14,7 @@ const DESC =
    ProfessionalService is a LocalBusiness subtype, so the address and area
    served here are what a local listing reads. One graph, three nodes: the
    practice, the founder, the site. Pages reference the ids rather than
-   repeating the nodes; the Arabic root layout shares the same ids. The four
-   services are listed by name only: there are no service pages to point at
-   (DECISIONS.md row 15). */
+   repeating the nodes; the Arabic root layout shares the same ids. */
 const SITE_SCHEMA = {
   "@context": "https://schema.org",
   "@graph": [
@@ -25,7 +24,7 @@ const SITE_SCHEMA = {
       name: "Daftar Advisory",
       alternateName: "دفتر للاستشارات",
       description: DESC,
-      url: SITE,
+      url: `${SITE}/`,
       logo: `${SITE}/brand/daftar-mark-tile.svg`,
       image: `${SITE}/og-daftar.png`,
       email: EMAIL,
@@ -54,9 +53,10 @@ const SITE_SCHEMA = {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: SERVICES[key].label,
+            name: SERVICE_PAGES[key].title,
             description: SERVICES[key].blurb,
-            url: `${SITE}/#services`,
+            "@id": `${SITE}${SERVICE_PAGES[key].path}#service`,
+            url: `${SITE}${SERVICE_PAGES[key].path}`,
           },
         })),
       },

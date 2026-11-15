@@ -56,12 +56,45 @@ function linkFile(target) {
 }
 
 const sitemap = readFileSync(join(root, "sitemap.xml"), "utf8");
-const urls = Array.from(sitemap.matchAll(/<loc>\s*([^<]+?)\s*<\/loc>/g), ([, url]) => url);
-if (!urls.length) errors.push("Sitemap has no page URLs.");
+const rows = Array.from(sitemap.matchAll(/<url>\s*([\s\S]*?)<\/url>/g), ([, row]) => row);
+if (!rows.length) errors.push("Sitemap has no page URLs.");
+
+function alternates(markup, tagName, source) {
+  const result = new Map();
+  for (const tag of tags(markup, tagName)) {
+    if (tag.get("rel")?.toLowerCase() !== "alternate" || !tag.has("hreflang")) continue;
+    const language = tag.get("hreflang").trim().toLowerCase();
+    const href = tag.get("href");
+    if (!language || !URL.canParse(href) || result.has(language)) {
+      errors.push("Invalid or repeated hreflang entry in " + source + ": " + language);
+      continue;
+    }
+    result.set(language, new URL(href).href);
+  }
+  return result;
+}
+
+function sameAlternates(first, second) {
+  return first.size === second.size && [...first].every(([language, href]) => second.get(language) === href);
+}
+
+function uniqueMetadata(value, kind, page, seen) {
+  const key = value?.trim().replace(/\s+/g, " ").toLowerCase();
+  if (!key) {
+    errors.push("Missing " + kind + " on " + page.pathname);
+  } else if (seen.has(key)) {
+    errors.push("Duplicate " + kind + " on " + page.pathname + " and " + seen.get(key));
+  } else {
+    seen.set(key, page.pathname);
+  }
+}
 
 const links = new Map();
-const pages = new Set();
-for (const url of urls) {
+const pages = new Map();
+const titles = new Map();
+const descriptions = new Map();
+for (const row of rows) {
+  const url = row.match(/<loc>\s*([^<]+?)\s*<\/loc>/)?.[1] ?? "";
   const page = URL.canParse(url) ? new URL(url) : null;
   if (!page || page.origin !== origin || page.href !== url || page.search || page.hash) {
     errors.push("Invalid sitemap page URL: " + url);
@@ -71,7 +104,8 @@ for (const url of urls) {
     errors.push("Duplicate sitemap page URL: " + url);
     continue;
   }
-  pages.add(url);
+  const sitemapAlternates = alternates(row, "xhtml:link", "sitemap " + page.pathname);
+  pages.set(url, sitemapAlternates);
 
   const file = exportedFile(page.pathname);
   if (!file?.endsWith(".html") || redirects.get(page.pathname)?.force) {
@@ -81,6 +115,22 @@ for (const url of urls) {
 
   const html = readFileSync(file, "utf8");
   const head = html.match(/<head\b[^>]*>([\s\S]*?)<\/head>/i)?.[1] ?? "";
+  const fileLanguage = tags(html, "html")[0]?.get("lang")?.trim().toLowerCase();
+  if (!fileLanguage || (sitemapAlternates.size && sitemapAlternates.get(fileLanguage) !== url)) {
+    errors.push("Missing or mismatched document language on " + page.pathname);
+  }
+  if (!sameAlternates(sitemapAlternates, alternates(head, "link", "HTML " + page.pathname))) {
+    errors.push("HTML hreflang entries differ from the sitemap on " + page.pathname);
+  }
+  const meta = tags(head, "meta");
+  const robots = meta.filter((tag) => ["robots", "googlebot"].includes(tag.get("name")?.toLowerCase()));
+  if (robots.some((tag) => /(?:^|[\s,])(?:noindex|none)(?:$|[\s,])/i.test(tag.get("content") ?? ""))) {
+    errors.push("Sitemap page has a noindex directive: " + page.pathname);
+  }
+  const description = meta.find((tag) => tag.get("name")?.toLowerCase() === "description")?.get("content");
+  uniqueMetadata(head.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1], "title", page, titles);
+  uniqueMetadata(description, "meta description", page, descriptions);
+
   const canonicals = tags(head, "link").filter((tag) =>
     tag.get("rel")?.toLowerCase().split(/\s+/).includes("canonical"),
   );
@@ -99,6 +149,15 @@ for (const url of urls) {
     const target = new URL(href, page);
     if (!["https:", "http:"].includes(target.protocol) || !siteHosts.has(target.hostname)) continue;
     if (!links.has(target.pathname)) links.set(target.pathname, { target, source: page.pathname });
+  }
+}
+
+for (const [url, group] of pages) {
+  for (const href of new Set(group.values())) {
+    const other = pages.get(href);
+    if (!other || !sameAlternates(group, other)) {
+      errors.push("Sitemap hreflang must be reciprocal: " + url + " and " + href);
+    }
   }
 }
 

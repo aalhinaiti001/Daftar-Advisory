@@ -2,11 +2,12 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteHeader, SiteFooter, Eyebrow } from "../../_components/SiteChrome";
 import { EMAIL } from "../../_data/practice";
+import { ARABIC_PRACTICE_DESCRIPTION } from "../../_data/site";
 import SentNotice from "./SentNotice";
 
 /* The Arabic home shares the canon stylesheet and offers the same four services as the English home. */
 
-const DESC = "عمل مالي بسيط، حتى حين لا تكون المسألة كذلك. قوائم مالية، استعداد للتدقيق، مراجعة فنية، وتحليل جودة الأرباح.";
+const DESC = ARABIC_PRACTICE_DESCRIPTION;
 
 export const metadata: Metadata = {
   title: "القوائم المالية وفق IFRS والاستعداد للتدقيق | دفتر للاستشارات",
