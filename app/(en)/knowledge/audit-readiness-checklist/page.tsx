@@ -231,7 +231,8 @@ export default function AuditReadinessChecklist() {
             </h2>
             <div>
               <p>
-                We prepare the audit file and answer the request list in advance, so the audit starts
+                In our <Link href="/services/audit-readiness">audit readiness work</Link>, we prepare the
+                audit file and answer the request list in advance, so the audit starts
                 on evidence rather than on questions. Fixed scope, fixed fee, and the working file
                 stays with you.
               </p>

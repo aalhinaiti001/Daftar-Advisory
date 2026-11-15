@@ -13,11 +13,8 @@
 /blog                /knowledge             301
 
 # --- Services --------------------------------------------------------------
-# REQUIRES id="services" on the services section before deploying.
-# EXPIRES when real service pages ship (A/02, A/01, A/03, C/03) — replace
-# these lines with direct routes at that point, do not leave them pointing
-# at an anchor that no longer holds the content. The scope builder takes a
-# preselected line via /scope?service=statements|audit|review|transaction.
+# The homepage service catalogue links to each service detail page. Keep the
+# category-level shortcuts pointing to that catalogue.
 /services            /#services             301
 /what-we-do          /#services             301
 

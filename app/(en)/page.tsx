@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { SERVICE_PAGES } from "../_data/service-pages";
 import { SiteHeader, SiteFooter, Eyebrow } from "../_components/SiteChrome";
 import { SERVICE_ORDER, SERVICES, NOTES, FAQ, MEMO, CASES, SECTORS, recordReady, formatNoteDate } from "../_data/practice";
 
@@ -13,8 +14,7 @@ const TITLE = "IFRS Financial Statements and Audit Readiness | Daftar Advisory";
 export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
-  /* /ar is the Arabic counterpart of this page; x-default points at the
-     English one. Without these the two rank as duplicates of each other. */
+  /* /ar is the Arabic counterpart of this page; x-default points at the English one. */
   alternates: {
     canonical: "/",
     languages: { en: "/", ar: "/ar", "x-default": "/" },
@@ -166,7 +166,7 @@ export default function Home() {
                   <tr key={key}>
                     <td><code>{SERVICES[key].ref}</code></td>
                     <td data-label="Service">
-                      <h3>{SERVICES[key].label}</h3>
+                      <h3><Link href={SERVICE_PAGES[key].path}>{SERVICES[key].label}</Link></h3>
                       <p>{SERVICES[key].blurb}</p>
                     </td>
                     <td data-label="Outcome">{SERVICES[key].outcome}</td>

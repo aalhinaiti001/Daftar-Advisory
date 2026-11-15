@@ -632,8 +632,8 @@ export default function Ifrs18Transition2026() {
             <div>
               <p>
                 And the year that has to be rebuilt is the year still on the calendar. If your FY2026
-                file has not had an IFRS 18 check yet, that is a fixed scope, fixed fee conversation,
-                not a stage of the audit.
+                file has not had an IFRS 18 check yet, a <Link href="/services/technical-accounting-review">technical accounting review</Link>
+                can help your team decide what needs to change before the audit.
               </p>
               <Link className="dft-btn dft-btn-light" href="/scope?service=review">
                 Open the scope builder
