@@ -318,6 +318,12 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
   align-items: start;
 }
 .dft-hero .dft-eyebrow { margin-bottom: 28px; }
+
+@media (min-width: 1041px) {
+  .dft-home .dft-hero { grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.85fr); gap: 72px; }
+  .dft-home .dft-section .dft-wrap:not(.dft-close) { padding: 88px 0; }
+}
+.dft-home .dft-section .dft-eyebrow { margin-bottom: 26px; }
 .dft-hero h1 { max-width: 15ch; }
 .dft-hero .dft-lead { margin-top: 30px; max-width: 34rem; }
 .dft-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
@@ -1205,6 +1211,10 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
 }
 .dft-foot-note a { color: var(--on-dark-dim); text-decoration: underline; text-underline-offset: 0.14em; }
 .dft-foot-note a:hover { color: var(--paper); }
+.dft-footer-compact .dft-foot-top { padding: 44px 0; }
+.dft-foot-links { display: flex; gap: 26px; font-family: var(--mono); font-size: 10px; color: var(--on-dark-dim); }
+.dft-foot-links a { color: inherit; }
+.dft-foot-links a:hover { color: var(--paper); }
 
 /* --- Article --------------------------------------------------------------
    Long-form body copy (Knowledge). Reuses .dft-section/.dft-wrap for rhythm;
@@ -1461,6 +1471,7 @@ footer .dft-brand-ar .dft-wordmark em { color: #e07458; }
   .dft-portrait { width: 100%; height: auto; aspect-ratio: 300 / 376; }
   .dft-actions .dft-btn, .dft-actions .dft-btn-ghost { flex: 1 1 100%; }
   .dft-footer .dft-foot-top { flex-direction: column; align-items: flex-start; gap: 26px; }
+  .dft-foot-links { flex-direction: column; gap: 10px; }
   .dft-footer .dft-foot-cols { grid-template-columns: 1fr; gap: 24px; }
   .dft-strip { flex-direction: column; gap: 10px; }
   .dft-form-row { grid-template-columns: 1fr; }
