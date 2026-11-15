@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteHeader, SiteFooter, Eyebrow } from "../_components/SiteChrome";
 import { SERVICE_ORDER, SERVICES, FAQ } from "../_data/practice";
+import { ESTABLISHED_YEAR } from "../_data/site";
 import "./home.css";
 
 const DESC =
@@ -49,7 +50,7 @@ const FAQ_SCHEMA = {
 };
 
 const REGISTER: [string, string][] = [
-  ["Established", "2024"],
+  ["Established", ESTABLISHED_YEAR],
   ["Base", "Amman, Jordan"],
   ["Reach", "Jordan, GCC, MENA"],
   ["Model", "Founder led"],

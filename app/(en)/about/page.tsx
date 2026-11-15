@@ -1,11 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteHeader, SiteFooter, Eyebrow } from "../../_components/SiteChrome";
-import { STEPS, EMAIL, SECTORS } from "../../_data/practice";
-import { SITE, ORG_ID, PERSON_ID, WEBSITE_ID, LINKEDIN } from "../../_data/site";
+import { STEPS, EMAIL } from "../../_data/practice";
+import { SITE, ORG_ID, PERSON_ID, WEBSITE_ID, LINKEDIN, ESTABLISHED_YEAR } from "../../_data/site";
+import "./about.css";
 
 const DESC =
-  "Ahmad Al Hinaiti founded Daftar Advisory, a finance advisory boutique in Amman working across Saudi Arabia, Jordan and the UAE. See how an engagement runs.";
+  "Meet Ahmad Al Hinaiti, founder of Daftar Advisory, and see how the Amman-based finance advisory practice scopes, delivers and hands over its work.";
 const TITLE = "About Ahmad Al Hinaiti, Founder | Daftar Advisory";
 
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   description: DESC,
   alternates: { canonical: "/about" },
   openGraph: {
-    type: "profile",
+    type: "website",
     siteName: "Daftar Advisory",
     title: TITLE,
     description: DESC,
@@ -63,124 +64,103 @@ const BREADCRUMB_SCHEMA = {
   ],
 };
 
-/* Drop a portrait at public/founder.jpg and set this to "/founder.jpg".
-   While it is empty the slot renders as a ruled placeholder rather than a
-   broken image. (In the design prototype this was the droppable image slot.) */
-const PORTRAIT_SRC = "";
-
-const FACTS: [string, React.ReactNode][] = [
-  ["Focus", "IFRS reporting and technical review"],
-  ["Sectors", SECTORS.join(", ")],
-  ["Markets", "Saudi Arabia, Jordan, the UAE"],
-  ["Languages", "Arabic and English"],
-  ["Contact", <a key="mail" href={`mailto:${EMAIL}`}>{EMAIL}</a>],
-  ["Profile", <a key="in" href={LINKEDIN} rel="me noopener" target="_blank">LinkedIn</a>],
-];
+const FACTS = [
+  ["Established", ESTABLISHED_YEAR],
+  ["Based in", "Amman, Jordan"],
+  ["Markets served", "Saudi Arabia (primary), the UAE and Jordan"],
+  ["Working languages", "Arabic and English"],
+] as const;
 
 export default function About() {
   return (
-    <div className="dft">
+    <div className="dft dft-about-refresh">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ABOUT_SCHEMA) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }} />
       <SiteHeader active="about" />
 
       <main className="dft-rise">
-        <section className="dft-wrap dft-page-head">
-          <Eyebrow tone="rust">§ 00 · About</Eyebrow>
-          <h1 className="dft-h1">A finance advisory boutique in Amman, held to one standard.</h1>
+        <section className="dft-about-hero">
+          <div className="dft-wrap dft-about-hero-inner">
+            <div>
+              <Eyebrow>About Daftar Advisory</Eyebrow>
+              <h1 className="dft-h1">Advice you can use after the work is done.</h1>
+              <p className="dft-lead">
+                Daftar is a founder-led finance advisory practice in Amman. We help founders, CFOs
+                and boards with IFRS financial statements, technical accounting review, audit
+                readiness and quality of earnings.
+              </p>
+              <div className="dft-actions">
+                <Link className="dft-btn dft-btn-light" href="/scope">Scope a project</Link>
+              </div>
+            </div>
+            <figure className="dft-about-art">
+              {/* Responsive, local asset for the static export. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/daftar-ledger-640.webp"
+                srcSet="/daftar-ledger-640.webp 640w, /daftar-ledger-1200.webp 1200w"
+                sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 860px) 560px, (max-width: 1168px) 44vw, 500px"
+                width={1200}
+                height={800}
+                alt=""
+                fetchPriority="high"
+              />
+              <figcaption className="dft-about-caption">
+                <b>daftar <span aria-hidden="true">·</span> <span lang="ar" dir="rtl">دَفْتَر</span></b>
+                A ledger or register. A record you keep.
+              </figcaption>
+            </figure>
+          </div>
         </section>
 
-        <section className="dft-section dft-section-about">
+        <section id="ahmad-al-hinaiti" className="dft-section dft-section-about dft-about-profile">
           <div className="dft-wrap dft-split">
             <div>
-              <Eyebrow>§ 01 · The name</Eyebrow>
-              {/* The dictionary device from the editorial concept (DECISIONS.md row 21). */}
-              <p className="dft-define">
-                <b>daftar</b>, <i>n.</i> A ledger; a register; the book where things are written
-                down and kept.
+              <Eyebrow>Who you work with</Eyebrow>
+              <h2 className="dft-h2">Ahmad Al Hinaiti</h2>
+              <p className="dft-founder-role">Founder</p>
+              <p className="dft-lead-sm">
+                Ahmad leads the work directly, from the first conversation to the final file.
+                You discuss the evidence with the person who prepares the answer, and you keep
+                the working file after handover.
               </p>
-              <h2 className="dft-h2-sm">Advice should stay useful after the adviser leaves.</h2>
-            </div>
-            <div>
-              <p className="dft-lead" style={{ marginBottom: 22 }}>
-                That is what we sell: reasoning recorded in a form that outlives the meeting.
-              </p>
-              <p style={{ marginBottom: 20 }}>
-                Too much advisory work evaporates on delivery. Every engagement here ends with a
-                model you can rerun, a method you can repeat, or a memo that answers the question.
-              </p>
-              <p>We take only what we can staff properly. That limit is the point.</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="ahmad-al-hinaiti" className="dft-section dft-section-about dft-section-soft">
-          <div className="dft-wrap">
-            <Eyebrow wide>§ 02 · Who you work with</Eyebrow>
-            <div className="dft-founder">
-              <div className="dft-founder-portrait">
-                {/* Renders nothing until a real portrait exists. An empty ruled
-                    box captioned "Portrait" reads as an unfinished site, which
-                    costs more credibility than having no photograph at all. */}
-                {PORTRAIT_SRC && (
-                  /* eslint-disable-next-line @next/next/no-img-element */
-                  <img className="dft-portrait" src={PORTRAIT_SRC} alt="Ahmad Al Hinaiti" width={300} height={376} />
-                )}
-                <span className="dft-label">Amman, Jordan</span>
+              <div className="dft-actions">
+                <a className="dft-btn-sm" href={"mailto:" + EMAIL}>Email Ahmad</a>
+                <a className="dft-btn-sm" href={LINKEDIN} rel="me noopener" target="_blank">LinkedIn profile</a>
               </div>
-              <div>
-                <h2>Ahmad Al Hinaiti</h2>
-                <p className="dft-founder-role">Founder · Advisory and technical review</p>
-                <p className="dft-lead-sm" style={{ marginBottom: 20 }}>
-                  Ahmad works on the problems clients bring, personally, from first call to final
-                  file. Statements, audit preparation, IFRS questions, and the numbers behind a deal.
-                </p>
-                <p style={{ marginBottom: 30 }}>
-                  That is on purpose. It keeps you talking to the person who formed the view.
-                </p>
-                <div className="dft-facts">
-                  {FACTS.map(([label, value], i) => (
-                    <div key={i}>
-                      <span className="dft-label">{label}</span>
-                      <b>{value}</b>
-                    </div>
-                  ))}
+            </div>
+            <dl className="dft-about-facts">
+              {FACTS.map(([label, value]) => (
+                <div key={label}>
+                  <dt className="dft-label">{label}</dt>
+                  <dd>{value}</dd>
                 </div>
-              </div>
-            </div>
+              ))}
+            </dl>
           </div>
         </section>
 
-        <section className="dft-section dft-section-about">
+        <section className="dft-section dft-section-about dft-section-soft dft-about-process">
           <div className="dft-wrap">
-            <Eyebrow>§ 03 · How an engagement runs</Eyebrow>
-            <h2 className="dft-h2-sm" style={{ margin: "0 0 44px", maxWidth: "24ch" }}>
-              Four steps, from first call to final file.
-            </h2>
-            <div className="dft-ledger">
-              {STEPS.map((s) => (
-                <article className="dft-ledger-3" key={s.num}>
-                  <code>{s.num}</code>
-                  <h3>{s.title}</h3>
-                  <p>{s.body}</p>
-                </article>
+            <Eyebrow>How an engagement runs</Eyebrow>
+            <h2 className="dft-h2">From the first conversation to the handover.</h2>
+            <ol className="dft-about-steps">
+              {STEPS.map((step) => (
+                <li key={step.num}>
+                  <code aria-hidden="true">{step.num}</code>
+                  <h3>{step.title}</h3>
+                  <p>{step.body}</p>
+                </li>
               ))}
-            </div>
+            </ol>
           </div>
         </section>
 
         <section id="flier" className="dft-section dft-section-about">
           <div className="dft-wrap">
-            <Eyebrow as="h2">§ 04 · Take it with you</Eyebrow>
-            {/* The print flier from design/collateral/flier, served from public/.
-                Same pattern as the checklist downloads on the Knowledge pages. */}
             <div className="dft-download">
-              <span className="dft-label">The practice on one page</span>
-              <h3>The one-page flier</h3>
-              <p>
-                The four lines of work, what each one leaves you with, the four commitments and
-                the scope address, on one sheet. A4 for print and PDF; A5 for the pocket.
-              </p>
+              <h2 className="dft-h2-sm">Daftar on one page</h2>
+              <p>A printable overview of our services, what we deliver, and how we work.</p>
               <div className="dft-download-actions">
                 <a className="dft-btn-sm" href="/daftar-advisory-flier-a4.pdf" download>
                   Download A4 (PDF)
@@ -195,9 +175,9 @@ export default function About() {
 
         <section className="dft-section dft-section-about dft-section-dark">
           <div className="dft-wrap dft-close-split">
-            <h2 className="dft-h2-sm">If the work fits, we will say so in two days.</h2>
+            <h2 className="dft-h2-sm">What does the work need to answer?</h2>
             <div>
-              <p>Describe it as you would to a colleague. If it belongs elsewhere, we say so.</p>
+              <p>Tell us the question, what’s on file, and when you need an answer.</p>
               <Link className="dft-btn dft-btn-light" href="/scope">Open the scope builder</Link>
             </div>
           </div>

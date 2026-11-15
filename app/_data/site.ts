@@ -3,6 +3,7 @@
    because a layout should only export what Next expects from it. */
 
 export const SITE = "https://daftaradvisory.com";
+export const ESTABLISHED_YEAR = "2026";
 export const ORG_ID = `${SITE}/#organization`;
 export const PERSON_ID = `${SITE}/about#ahmad-al-hinaiti`;
 export const WEBSITE_ID = `${SITE}/#website`;

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "../globals.css";
 import "../daftar.css";
 import { SERVICE_ORDER, SERVICES, EMAIL } from "../_data/practice";
-import { SITE, ORG_ID, PERSON_ID, WEBSITE_ID, LINKEDIN, FONTS_HREF } from "../_data/site";
+import { SITE, ORG_ID, PERSON_ID, WEBSITE_ID, LINKEDIN, FONTS_HREF, ESTABLISHED_YEAR } from "../_data/site";
 
 const DESC =
   "IFRS financial statements, technical accounting review, audit readiness and quality of earnings for finance teams in Saudi Arabia, Jordan and the UAE.";
@@ -29,7 +29,7 @@ const SITE_SCHEMA = {
       logo: `${SITE}/brand/daftar-mark-tile.svg`,
       image: `${SITE}/og-daftar.png`,
       email: EMAIL,
-      foundingDate: "2024",
+      foundingDate: ESTABLISHED_YEAR,
       founder: { "@id": PERSON_ID },
       address: { "@type": "PostalAddress", addressLocality: "Amman", addressCountry: "JO" },
       areaServed: [
