@@ -207,7 +207,7 @@ export const STEPS = [
   {
     num: "01",
     title: "A short call",
-    body: "Twenty minutes, and a straight answer on whether to take it.",
+    body: "We discuss what you need to decide and whether we can help.",
   },
   {
     num: "02",

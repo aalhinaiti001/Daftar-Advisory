@@ -283,8 +283,7 @@ Each line records what that version introduced; later lines win.
   folded-file mark (`public/brand/daftar-mark-tile.svg`).
 - `daftar-engagement-letter` skill and capability statement — swap the monogram for the
   folded-file lockup; fonts already match.
-- "Established 2024" appears on the site and brochure; the playbook asks for it to be
-  anchored to the entity registration date — confirm before reprinting.
+- Use 2026 as Daftar’s establishment year. Check the date on historical collateral before reissuing it.
 
 ### Open items on the live Calibre pages
 Tracked in `docs/CALIBRE_BRAND_AUDIT_2026-09-27.md`: fixed-fee and timing promises, three
