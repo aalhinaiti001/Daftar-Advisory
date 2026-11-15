@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteHeader, SiteFooter, Eyebrow } from "../_components/SiteChrome";
-import { SERVICE_ORDER, SERVICES, NOTES, FAQ, MEMO, CASES, SECTORS, recordReady, formatNoteDate } from "../_data/practice";
+import { SERVICE_ORDER, SERVICES, FAQ } from "../_data/practice";
 
 const DESC =
   "IFRS financial statements, technical review, audit readiness and quality of earnings for finance teams in Saudi Arabia, Jordan and the UAE. Scope a project in two minutes.";
@@ -62,27 +62,25 @@ const COMMITMENTS: [string, string, string][] = [
   ["04", "Work you own", "You keep the model and the workings, in a form you can rerun."],
 ];
 
+const HOME_NOTES = [
+  { tag: "IFRS 18", title: "The comparative year is 2026", href: "/knowledge/ifrs-18-transition-2026" },
+  { tag: "KSA", title: "Electronic invoicing waves", href: "/knowledge/saudi-compliance-2026" },
+  { tag: "Audit", title: "The audit readiness checklist", href: "/knowledge/audit-readiness-checklist" },
+  { tag: "KSA", title: "The Phase 2 readiness checklist", href: "/knowledge/saudi-e-invoicing-phase-2-checklist" },
+];
+
 export default function Home() {
-  const [featured, ...rest] = NOTES;
-  /* "On the record" takes § 02 once CASES clears its gate (DECISIONS.md row
-     13); the chapters after it move down by one so the numbering stays
-     continuous either way. */
-  const record = recordReady();
-  const ch = (n: number) => "§ 0" + (record ? n + 1 : n);
   return (
-    <div className="dft">
+    <div className="dft dft-home">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
       <SiteHeader active="home" />
 
       <main className="dft-rise">
         <section className="dft-wrap dft-hero">
           <div>
-            <Eyebrow tone="rust">§ 00 · Finance advisory · KSA · UAE · Jordan</Eyebrow>
-            {/* The one H1 carries the two terms the page is meant to rank for;
-                the italic accent word stays, per the brand guide. */}
+            <Eyebrow tone="rust">Clear advice. Senior work. Nothing extra.</Eyebrow>
             <h1 className="dft-h1">
-              Financial statements and audit readiness that feel <em>simple</em>, even when the
-              issue is not.
+              Finance work that feels <em>simple</em>, even when the issue is not.
             </h1>
             <p className="dft-lead">
               Statements, technical review, audit readiness, quality of earnings. A boutique firm,
@@ -94,130 +92,43 @@ export default function Home() {
             </div>
           </div>
 
-          {/* The evidence element of the hero: the shape of what a client receives
-              (DECISIONS.md rows 2 and 3). Headings inside are spans, not h2/h3, so the
-              figure does not sit in the document outline between the h1 and § 01. */}
-          <figure className="dft-memo">
-            <div className="dft-panel-head dft-memo-head">
-              <span>{MEMO.head}</span>
-              <span>{MEMO.ref}</span>
+          <div className="dft-register">
+            <div className="dft-register-head">
+              <span>The register</span>
+              <span>§</span>
             </div>
-            <dl className="dft-memo-meta">
-              <div><dt>To</dt><dd>{MEMO.to}</dd></div>
-              <div><dt>Re</dt><dd>{MEMO.re}</dd></div>
-              <div><dt>Date</dt><dd>{MEMO.date}</dd></div>
+            <dl className="dft-register-body">
+              {REGISTER.map(([term, value]) => (
+                <div className="dft-register-row" key={term}>
+                  <dt>{term}</dt>
+                  <dd>{value}</dd>
+                </div>
+              ))}
             </dl>
-            <div className="dft-memo-body">
-              <div>
-                <span className="dft-memo-h">1 · Question</span>
-                <p>{MEMO.question}</p>
-              </div>
-              <div>
-                <span className="dft-memo-h">2 · Conclusion</span>
-                <p>{MEMO.conclusion}</p>
-              </div>
-            </div>
-            <div className="dft-memo-foot">
-              <span className="dft-memo-refs">{MEMO.refs}</span>
-              <span className="dft-memo-sig">{MEMO.signed}</span>
-            </div>
-            <figcaption>{MEMO.caption}</figcaption>
-          </figure>
+          </div>
         </section>
-
-        {/* The register, as a mono strip under the hero (DECISIONS.md row 2). */}
-        <div className="dft-wrap">
-          <dl className="dft-strip">
-            {REGISTER.map(([term, value]) => (
-              <div key={term}>
-                <dt>{term}</dt>
-                <dd>{value}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
 
         <section id="services" className="dft-section dft-section-soft">
           <div className="dft-wrap">
             <Eyebrow>§ 01 · Services</Eyebrow>
             <h2 className="dft-h2" style={{ marginBottom: 44 }}>Four lines of work. Each one ends with a file you own.</h2>
-            {/* The services as a register (DECISIONS.md row 11). Columns come from
-                practice.ts; "Typical time" is deliberately absent until the founder
-                decides whether a per-service duration belongs on this page. */}
-            <table className="dft-service-table">
-              <colgroup>
-                <col className="dft-col-ref" />
-                <col />
-                <col />
-                <col />
-                <col className="dft-col-act" />
-              </colgroup>
-              <thead>
-                <tr>
-                  <th scope="col">Ref</th>
-                  <th scope="col">Service</th>
-                  <th scope="col">Outcome</th>
-                  <th scope="col">You get</th>
-                  <th scope="col"><span className="dft-visually-hidden">Action</span></th>
-                </tr>
-              </thead>
-              <tbody>
-                {SERVICE_ORDER.map((key) => (
-                  <tr key={key}>
-                    <td><code>{SERVICES[key].ref}</code></td>
-                    <td data-label="Service">
-                      <h3>{SERVICES[key].label}</h3>
-                      <p>{SERVICES[key].blurb}</p>
-                    </td>
-                    <td data-label="Outcome">{SERVICES[key].outcome}</td>
-                    <td data-label="You get">{SERVICES[key].deliverable}</td>
-                    <td><Link className="dft-btn-sm" href={`/scope?service=${key}`}>Scope this</Link></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            <p className="dft-table-note">
-              Daftar is a non-attest practice. We prepare and review. We do not audit, and we do
-              not sign an opinion.
-            </p>
+            <div className="dft-ledger">
+              {SERVICE_ORDER.map((key, i) => (
+                <article key={key}>
+                  <code>{"0" + (i + 1)}</code>
+                  <h3>{SERVICES[key].label}</h3>
+                  <p>{SERVICES[key].blurb}</p>
+                  <Link className="dft-btn-sm" href={`/scope?service=${key}`}>Scope this</Link>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
-
-        {record && (
-          <section id="record" className="dft-section">
-            <div className="dft-wrap">
-              <Eyebrow>§ 02 · On the record</Eyebrow>
-              <h2 className="dft-h2" style={{ marginBottom: 40 }}>Results, with the names removed.</h2>
-              <div className="dft-record">
-                {CASES.map((c) => (
-                  <article key={c.ref + c.sector}>
-                    <div className="dft-record-meta">
-                      <span className="dft-note-tag">{c.sector} · {c.market}</span>
-                      <code>{c.ref}</code>
-                    </div>
-                    <p className="dft-record-result">{c.result}</p>
-                    <p className="dft-record-context">{c.context}</p>
-                  </article>
-                ))}
-              </div>
-              <div className="dft-record-foot">
-                <p className="dft-table-note">
-                  Described with the client&rsquo;s written clearance. Names removed, details changed
-                  where asked, results as recorded.
-                </p>
-                <p className="dft-record-sectors">
-                  <span className="dft-label">Sectors served</span>
-                  {SECTORS.join(" · ")}
-                </p>
-              </div>
-            </div>
-          </section>
-        )}
 
         <section className="dft-section">
           <div className="dft-wrap dft-split">
             <div>
-              <Eyebrow>{ch(2)} · Who we help</Eyebrow>
+              <Eyebrow>§ 02 · Who we help</Eyebrow>
               <h2 className="dft-h2">Built for the point where finance runs out of room.</h2>
             </div>
             <div>
@@ -233,7 +144,7 @@ export default function Home() {
 
         <section id="ethics-values" className="dft-section dft-section-dark">
           <div className="dft-wrap">
-            <Eyebrow tone="dark">{ch(3)} · How we work</Eyebrow>
+            <Eyebrow tone="dark">§ 03 · How we work</Eyebrow>
             <h2 className="dft-h2" style={{ margin: "0 0 50px", maxWidth: "22ch" }}>
               Four commitments, in writing, before the work starts.
             </h2>
@@ -251,60 +162,18 @@ export default function Home() {
 
         <section id="insights-briefs" className="dft-section">
           <div className="dft-wrap">
-            <Eyebrow>{ch(4)} · Notes</Eyebrow>
+            <Eyebrow>§ 04 · Notes</Eyebrow>
             <h2 className="dft-h2" style={{ marginBottom: 40 }}>
               What finance teams here are dealing with now.
             </h2>
-            {/* The newest note leads; the rest list beside it (DECISIONS.md row 20).
-                NOTES is kept newest first in practice.ts. */}
-            <div className="dft-note-featured">
-              <article className="dft-note-lead">
-                <div className="dft-note-meta">
-                  <span className="dft-note-tag">{featured.tag}</span>
-                  <time dateTime={featured.updated ?? featured.date}>
-                    {formatNoteDate(featured.updated ?? featured.date)}
-                  </time>
-                </div>
-                <h3>{featured.title}</h3>
-                <p>{featured.summary}</p>
-                <Link className="dft-btn-sm" href={featured.href}>Read the note</Link>
-              </article>
-              <div className="dft-note-list">
-                {rest.map((n) => (
-                  <Link className="dft-note-row" href={n.href} key={n.href}>
-                    <span className="dft-note-tag">{n.tag}</span>
-                    <span className="dft-note-title">{n.title}</span>
-                    <time dateTime={n.date}>{formatNoteDate(n.date)}</time>
-                  </Link>
-                ))}
-                <Link className="dft-note-all" href="/knowledge">All notes</Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Calibre, as its own mark on its own ground, with the copy in Daftar's
-            faces (BRAND.md §10; DECISIONS.md row 22). Forest, never ink: the one
-            ink section on this page is § 03. */}
-        <section id="calibre" className="dft-section dft-calibre-band" aria-labelledby="calibre-h">
-          <div className="dft-wrap dft-calibre-inner">
-            <div className="dft-calibre-mark" aria-hidden="true">
-              <span className="dft-calibre-tile">C</span>
-              <span className="dft-calibre-name">Calibre</span>
-              <span className="dft-calibre-kicker">by Daftar</span>
-            </div>
-            <div>
-              <Eyebrow>Also from Daftar</Eyebrow>
-              <h2 id="calibre-h" className="dft-h2-sm">
-                Hiring a finance lead? The Calibre Verdict is a written decision memo on your
-                shortlist, before you make the offer.
-              </h2>
-              <p className="dft-calibre-use">
-                Structured hiring advisory for finance roles. Not a psychometric assessment. Does
-                not predict performance. The decision, and its consequences, rest with the
-                employer.
-              </p>
-              <Link className="dft-btn-light" href="/calibre">Visit Calibre</Link>
+            <div className="dft-notes">
+              {HOME_NOTES.map((n) => (
+                <article key={n.title}>
+                  <span>{n.tag}</span>
+                  <h3>{n.title}</h3>
+                  <Link className="dft-btn-sm" href={n.href}>Read the note</Link>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -312,7 +181,7 @@ export default function Home() {
         <section id="daftar-faq" className="dft-section dft-section-soft">
           <div className="dft-wrap dft-split dft-split-faq">
             <div>
-              <Eyebrow>{ch(5)} · Questions</Eyebrow>
+              <Eyebrow>§ 05 · Questions</Eyebrow>
               <h2 className="dft-h2">Answered plainly.</h2>
             </div>
             <div className="dft-faq">
@@ -338,7 +207,7 @@ export default function Home() {
         </section>
       </main>
 
-      <SiteFooter />
+      <SiteFooter compact />
     </div>
   );
 }

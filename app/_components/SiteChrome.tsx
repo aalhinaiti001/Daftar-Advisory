@@ -135,7 +135,7 @@ export function SiteHeader({ active, lang = "en" }: { active: Page; lang?: Lang 
           <nav className="dft-nav">
             <Link href="/" aria-current={current("home")}>Practice</Link>
             <Link href="/about" aria-current={current("about")}>About</Link>
-            <Link href="/knowledge" aria-current={current("knowledge")}>Notes</Link>
+            {active !== "home" && <Link href="/knowledge" aria-current={current("knowledge")}>Notes</Link>}
             <Link href="/scope" aria-current={current("scope")}>Scope builder</Link>
             {/* Not in the design comp. Kept so the Calibre product page and the
                 Arabic site stay reachable from the primary navigation. */}
@@ -152,7 +152,7 @@ export function SiteHeader({ active, lang = "en" }: { active: Page; lang?: Lang 
   );
 }
 
-export function SiteFooter({ lang = "en" }: { lang?: Lang }) {
+export function SiteFooter({ lang = "en", compact = false }: { lang?: Lang; compact?: boolean }) {
   if (lang === "ar") {
     /* Arabic footer. The tagline and the base line are the live /ar copy; the
        founder line and the non-attest sentence are new Arabic strings written
@@ -190,6 +190,27 @@ export function SiteFooter({ lang = "en" }: { lang?: Lang }) {
       </footer>
     );
   }
+  if (compact) {
+    return (
+      <footer className="dft-footer dft-footer-compact">
+        <div className="dft-wrap dft-foot-top">
+          <Mark />
+          <em className="dft-foot-tag">Rigorous finance, without the overhead.</em>
+          <div className="dft-foot-links">
+            <a href={"mailto:" + EMAIL}>{EMAIL.toUpperCase()}</a>
+            <span>AMMAN · MENA</span>
+          </div>
+        </div>
+        <div className="dft-wrap">
+          <p className="dft-foot-note">
+            Daftar Advisory is a non-attest advisory practice, not a registered statutory auditor.{" "}
+            <Link href="/knowledge">Notes</Link> · <Link href="/privacy">Privacy</Link> · <Link href="/terms">Terms</Link>
+          </p>
+        </div>
+      </footer>
+    );
+  }
+
   return (
     <footer className="dft-footer">
       <div className="dft-wrap dft-foot-top">
