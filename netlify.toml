@@ -16,7 +16,7 @@
   # out/not-found.html is the branded 404 (app/(en)/not-found/page.tsx). Next's
   # own /_not-found export has no root layout once the app has two of them
   # (English and Arabic), so it is copied over 404.html here.
-  command = "npm run build && mkdir -p out/ar && cp design/calibre-home.html out/calibre.html && cp design/calibre-home-ar.html out/ar/calibre.html && cp out/not-found.html out/404.html"
+  command = "npm run build && mkdir -p out/ar && cp design/calibre-home.html out/calibre.html && cp design/calibre-home-ar.html out/ar/calibre.html && cp out/not-found.html out/404.html && node scripts/check-site-health.mjs"
   publish = "out"
 
 [build.environment]

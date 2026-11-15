@@ -145,7 +145,7 @@ export function SiteHeader({ active, lang = "en" }: { active: Page; lang?: Lang 
           {/* Keep the CTA on the scope builder until the Microsoft Bookings
               page for ahmad@daftaradvisory.com is ready. Then replace this
               destination and the /book and /call redirects together. */}
-          <Link className="dft-btn-ghost dft-cta" href="/scope">Book a call</Link>
+          <Link className="dft-btn-ghost dft-cta" href="/scope">Scope a project</Link>
         </div>
       </div>
     </header>
