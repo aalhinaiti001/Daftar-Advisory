@@ -4,13 +4,9 @@ import { SiteHeader, SiteFooter, Eyebrow } from "../../_components/SiteChrome";
 import { EMAIL } from "../../_data/practice";
 import SentNotice from "./SentNotice";
 
-/* The Arabic home, on the canon stylesheet (DECISIONS.md row 33). The copy is
-   the live /ar page's, carried as it was; the only new Arabic strings are the
-   form field labels, the "received" note, and the footer lines, all listed in
-   DECISIONS.md §7 for the founder's review. Chapters the English page has and
-   this one does not (the memo, the service table, Notes) wait for native copy. */
+/* The Arabic home shares the canon stylesheet and offers the same four services as the English home. */
 
-const DESC = "عمل مالي بسيط، حتى حين لا تكون المسألة كذلك. قوائم مالية، استعداد للتدقيق، مراجعة فنية، ودعم صفقات.";
+const DESC = "عمل مالي بسيط، حتى حين لا تكون المسألة كذلك. قوائم مالية، استعداد للتدقيق، مراجعة فنية، وتحليل جودة الأرباح.";
 
 export const metadata: Metadata = {
   title: "القوائم المالية وفق IFRS والاستعداد للتدقيق | دفتر للاستشارات",
@@ -24,7 +20,7 @@ export const metadata: Metadata = {
 };
 
 const STATS: [string, string][] = [
-  ["ممارس أقدم", "واحد"],
+  ["التواصل", "مع المؤسّس"],
   ["النطاق", "واضح"],
   ["الأتعاب", "ثابتة"],
   ["المخرَج", "عملي"],
@@ -34,7 +30,7 @@ const SERVICES_AR: [string, string, string][] = [
   ["٠١", "القوائم المالية", "إعدادها أو تنظيفها، مع ملفّاتها الداعمة."],
   ["٠٢", "الاستعداد للتدقيق", "قبل وصول المدقّق: فجوات، مستندات، خطة."],
   ["٠٣", "المراجعة الفنية", "رأي ثانٍ في رقم أو معالجة أو موقف محاسبي."],
-  ["٠٤", "دعم الصفقات", "مهمّات محدّدة حول الصفقات والمشاريع الخاصة."],
+  ["٠٤", "تحليل جودة الأرباح", "نحلّل الأرباح القابلة للاستمرار ورأس المال العامل والتعديلات المؤثّرة، ونقدّم تقريرًا وملفّ عمل داعمًا."],
 ];
 
 const FIT: [string, string, string][] = [
@@ -53,10 +49,10 @@ export default function DaftarAr() {
         <section className="dft-wrap dft-hero dft-hero-one">
           <div>
             <Eyebrow tone="rust">§ ٠٠ · الشركة</Eyebrow>
-            <h1 className="dft-h1">مشورة واضحة. عمل أقدم. بلا طبقات.</h1>
+            <h1 className="dft-h1">مشورة واضحة وعمل يتولّاه المؤسّس مباشرةً.</h1>
             <p className="dft-lead">
               دفتر يساعد المؤسّسين والفِرق المالية في أهمّ الأعمال: القوائم المالية، والاستعداد
-              للتدقيق، والمراجعة الفنية، ودعم الصفقات.
+              للتدقيق، والمراجعة الفنية، وتحليل جودة الأرباح.
             </p>
             <div className="dft-actions">
               <a className="dft-btn" href="#scope">ابدأ محادثة</a>
@@ -87,7 +83,7 @@ export default function DaftarAr() {
                 دفتر — <em>دَفْتَر</em>، السجلّ. نجهّز أرقامك للتدقيق والمجالس والمقرضين والمستثمرين —
                 دون كلفة شركة كبيرة.
               </p>
-              <p>ممارس أقدم واحد، نطاق واضح، أتعاب ثابتة، ومخرَج يبقى في يد فريقك.</p>
+              <p>يتولّى المؤسّس العمل مباشرةً، بنطاق واضح وأتعاب ثابتة، ويترك لفريقك ملفّ عمل يمكنه استخدامه.</p>
             </div>
           </div>
         </section>
@@ -204,7 +200,7 @@ export default function DaftarAr() {
                   </select>
                 </div>
                 <button className="dft-btn" type="submit">ابدأ محادثة</button>
-                <p className="dft-form-note">قراءة أقدم لما إن كنّا نستطيع المساعدة.</p>
+                <p className="dft-form-note">يراجع المؤسّس طلبك لتحديد ما إذا كان بإمكاننا المساعدة.</p>
               </form>
             </div>
           </div>
