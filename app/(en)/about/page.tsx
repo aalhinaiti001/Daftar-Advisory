@@ -109,7 +109,10 @@ export default function About() {
                 Too much advisory work evaporates on delivery. Every engagement here ends with a
                 model you can rerun, a method you can repeat, or a memo that answers the question.
               </p>
-              <p>We take only what we can staff properly. That limit is the point.</p>
+              <p>
+                We take only what we can staff properly, and we do not wrap a straightforward
+                problem in an advisory layer. That limit is the point.
+              </p>
             </div>
           </div>
         </section>
@@ -136,7 +139,10 @@ export default function About() {
                   file. Statements, audit preparation, IFRS questions, and the numbers behind a deal.
                 </p>
                 <p style={{ marginBottom: 30 }}>
-                  That is on purpose. It keeps you talking to the person who formed the view.
+                  That is on purpose. Reporting work goes wrong when responsibility is spread
+                  thin: one person prepares, another reviews, a third holds the relationship, and
+                  nobody is close enough to the detail. Here the person you speak to forms the view
+                  and does the work.
                 </p>
                 <div className="dft-facts">
                   {FACTS.map(([label, value], i) => (
@@ -195,9 +201,13 @@ export default function About() {
 
         <section className="dft-section dft-section-about dft-section-dark">
           <div className="dft-wrap dft-close-split">
-            <h2 className="dft-h2-sm">If the work fits, we will say so in two days.</h2>
+            <h2 className="dft-h2-sm">Start with the facts of the situation.</h2>
             <div>
-              <p>Describe it as you would to a colleague. If it belongs elsewhere, we say so.</p>
+              <p>
+                Describe it as you would to a colleague. Within two working days we say what the
+                scope is, what decision it turns on, and whether it is work for us or for someone
+                else.
+              </p>
               <Link className="dft-btn dft-btn-light" href="/scope">Open the scope builder</Link>
             </div>
           </div>
